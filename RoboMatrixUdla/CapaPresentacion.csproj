@@ -69,6 +69,9 @@
     <EmbeddedResource Include="frmIngresoEquipo.resx">
       <DependentUpon>frmIngresoEquipo.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="frmIngresoRobot.resx">
+      <DependentUpon>frmIngresoRobot.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmMDI.resx">
       <DependentUpon>frmMDI.cs</DependentUpon>
     </EmbeddedResource>
