@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="Class1.cs" />
     <Compile Include="Class2.cs" />
+    
     <Compile Include="clsN_IngresoEquipo.cs" />
+    <Compile Include="clsNRobot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
