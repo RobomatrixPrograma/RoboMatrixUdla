@@ -1,0 +1,37 @@
+CREATE DATABASE dbRoboMatrixUdla
+ON (NAME = 'dbSistemaCitas',
+FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\SistemaCitas.mdf',
+SIZE = 5000 MB,
+FILEGROWTH = 0)
+LOG ON (NAME = 'dbSistemaCitas_Log',
+FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\SistemaCitas_Log.ldf',
+SIZE = 1000 MB,
+FILEGROWTH = 0)
+GO
+
+USE dbRoboMatrixUdla
+GO
+
+CREATE TABLE TblCategoria
+(
+idCat int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+nomCat varchar(25) NOT NULL,
+descripcion (500) NULL,
+)
+
+CREATE TABLE TblEquipo
+(
+idEquipo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+nomEquipo varchar (50) NOT NULL,
+paisEquipo varchar (25) NOT NULL,
+lugarEquipo varchar (50) NULL,
+imgEquipo image NULL,
+)
+
+CREATE TABLE TblRobot
+(
+idRobot int PRIMARY KEY,
+nomRobot varchar (50) NOT NULL,
+estadoRobot char (2) NOT NULL,
+
+)
