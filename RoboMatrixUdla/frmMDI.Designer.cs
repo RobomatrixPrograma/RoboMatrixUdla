@@ -1,6 +1,6 @@
 ﻿namespace RoboMatrixUdla
 {
-    partial class Form1
+    partial class frmMDI
     {
         /// <summary>
         /// Variable del diseñador necesaria.

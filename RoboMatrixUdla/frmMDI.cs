@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace RoboMatrixUdla
 {
-    public partial class Form1 : Form
+    public partial class frmMDI : Form
     {
-        public Form1()
+        public frmMDI()
         {
             InitializeComponent();
         }
