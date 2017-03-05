@@ -84,6 +84,7 @@
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(174, 20);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtPais
             // 
@@ -91,6 +92,7 @@
             this.txtPais.Name = "txtPais";
             this.txtPais.Size = new System.Drawing.Size(174, 20);
             this.txtPais.TabIndex = 5;
+            this.txtPais.TextChanged += new System.EventHandler(this.txtPais_TextChanged);
             // 
             // txtLugar
             // 
@@ -126,6 +128,7 @@
             this.btnIngresar.TabIndex = 9;
             this.btnIngresar.Text = "Ingresar Equipo";
             this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresar.Click += new System.EventHandler(this.btnIngresar_Click);
             // 
             // frmIngresoEquipo
             // 
