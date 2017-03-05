@@ -74,36 +74,37 @@
             this.lblLogo.AutoSize = true;
             this.lblLogo.Location = new System.Drawing.Point(46, 170);
             this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(35, 13);
+            this.lblLogo.Size = new System.Drawing.Size(34, 13);
             this.lblLogo.TabIndex = 3;
-            this.lblLogo.Text = "label4";
+            this.lblLogo.Text = "Logo:";
             // 
             // txtNombre
             // 
             this.txtNombre.Location = new System.Drawing.Point(108, 31);
             this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(146, 20);
+            this.txtNombre.Size = new System.Drawing.Size(174, 20);
             this.txtNombre.TabIndex = 4;
             // 
             // txtPais
             // 
             this.txtPais.Location = new System.Drawing.Point(108, 77);
             this.txtPais.Name = "txtPais";
-            this.txtPais.Size = new System.Drawing.Size(146, 20);
+            this.txtPais.Size = new System.Drawing.Size(174, 20);
             this.txtPais.TabIndex = 5;
             // 
             // txtLugar
             // 
             this.txtLugar.Location = new System.Drawing.Point(108, 121);
             this.txtLugar.Name = "txtLugar";
-            this.txtLugar.Size = new System.Drawing.Size(146, 20);
+            this.txtLugar.Size = new System.Drawing.Size(174, 20);
             this.txtLugar.TabIndex = 6;
             // 
             // pcbLogo
             // 
             this.pcbLogo.Location = new System.Drawing.Point(108, 158);
             this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(146, 116);
+            this.pcbLogo.Size = new System.Drawing.Size(174, 116);
+            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.pcbLogo.TabIndex = 7;
             this.pcbLogo.TabStop = false;
             // 
@@ -146,6 +147,7 @@
             this.Name = "frmIngresoEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar Nuevo Equipo";
+            this.Load += new System.EventHandler(this.frmIngresoEquipo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
