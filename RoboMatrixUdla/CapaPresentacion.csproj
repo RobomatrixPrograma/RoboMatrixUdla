@@ -52,6 +52,12 @@
     <Compile Include="frmIngresoEquipo.Designer.cs">
       <DependentUpon>frmIngresoEquipo.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmIngresoRobot.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmIngresoRobot.Designer.cs">
+      <DependentUpon>frmIngresoRobot.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMDI.cs">
       <SubType>Form</SubType>
     </Compile>
