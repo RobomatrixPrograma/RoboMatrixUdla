@@ -16,5 +16,12 @@ namespace RoboMatrixUdla
         {
             InitializeComponent();
         }
+
+        private void ingresarEquipoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIngresoEquipo objIngresoEquipo = new frmIngresoEquipo();
+            objIngresoEquipo.MdiParent = this;
+            objIngresoEquipo.Show();
+        }
     }
 }

@@ -84,6 +84,7 @@
             this.ingresarEquipoToolStripMenuItem.Name = "ingresarEquipoToolStripMenuItem";
             this.ingresarEquipoToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.ingresarEquipoToolStripMenuItem.Text = "Ingresar Equipo";
+            this.ingresarEquipoToolStripMenuItem.Click += new System.EventHandler(this.ingresarEquipoToolStripMenuItem_Click);
             // 
             // ingresarRobotToolStripMenuItem
             // 
@@ -160,6 +161,7 @@
             this.Name = "frmMDI";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Robomatrix UDLA";
+            this.WindowState = System.Windows.Forms.FormWindowState.Maximized;
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
