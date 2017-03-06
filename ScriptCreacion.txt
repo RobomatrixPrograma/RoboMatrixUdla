@@ -32,6 +32,8 @@ CREATE TABLE TblRobot
 (
 idRobot int PRIMARY KEY,
 nomRobot varchar (50) NOT NULL,
-estadoRobot char (2) NOT NULL,
-
+estadoRobot char (2) NULL DEFAULT ('AC'),
+liderRobot varchar (25) NULL,
+idCategoria int NOT NULL FOREIGN KEY REFERENCES TblCategoria(idCat),
+idEquipo int NOT NULL FOREIGN KEY REFERENCES TblEquipo(idEquipo),
 )
