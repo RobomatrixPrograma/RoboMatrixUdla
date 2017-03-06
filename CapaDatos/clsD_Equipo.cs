@@ -45,6 +45,16 @@ namespace CapaDatos
             }
         }
 
+        public object D_consultaPais()
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataSet D_consultaEquipo(string paisEquipo)
+        {
+            throw new NotImplementedException();
+        }
+
         public DataSet D_consultaEquipo(int idEquipo)
         {
             DataSet ds2 = new DataSet();
@@ -61,6 +71,16 @@ namespace CapaDatos
             clsConexion.cerrarConexion();
 
             return ds2;
+        }
+
+        public object D_consultaLugar()
+        {
+            throw new NotImplementedException();
+        }
+
+        public DataSet D_consultaEquipo(string paisEquipo, string lugarEquipo)
+        {
+            throw new NotImplementedException();
         }
 
         public DataSet D_consultaEquipo()

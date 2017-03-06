@@ -31,5 +31,30 @@ namespace CapaNegocio
         {
             return (objD_Equipo.D_consultaEquipo());
         }
+
+        public object N_consultaPais()
+        {
+            var equ1 = objD_Equipo.D_consultaPais();
+            return equ1;
+        }
+
+        public DataSet consultaEquipo(string pais)
+        {
+            paisEquipo = pais;
+            return (objD_Equipo.D_consultaEquipo(paisEquipo));
+        }
+
+        public DataSet consultaEquipo(string pais, string lugar)
+        {
+            paisEquipo = pais;
+            lugarEquipo = lugar;
+            return (objD_Equipo.D_consultaEquipo(paisEquipo, lugarEquipo));
+        }
+
+        public object N_consutlaLugar()
+        {
+            var equ1 = objD_Equipo.D_consultaLugar();
+            return equ1;
+        }
     }
 }
