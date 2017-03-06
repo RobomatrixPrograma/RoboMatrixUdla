@@ -40,6 +40,8 @@ namespace RoboMatrixUdla
             txtId.Enabled = false;
             btnIngresarEquipo.Enabled = false;
             cargarDataGridView();
+            cmbLugar.Enabled = false;
+            cmbPais.Enabled = false;
         }
 
         private void habilitarBoton()
@@ -84,6 +86,8 @@ namespace RoboMatrixUdla
             txtNombre.Clear();
             txtPais.Clear();
             txtLugar.Clear();
+            cmbLugar.Enabled = false;
+            cmbPais.Enabled = false;
         }
 
         private void btnHabilitarModificaciones_Click(object sender, EventArgs e)
@@ -101,7 +105,10 @@ namespace RoboMatrixUdla
 
         private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            cmbLugar.Enabled = true;
+            string pais = cmbPais.SelectedText;
+            cargarDataGridView(pais);
+            cargarLugar(pais);
         }
 
         private void dgvEquipo_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -123,9 +130,74 @@ namespace RoboMatrixUdla
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Erro al recuperar la informacio", "Error",
+                MessageBox.Show("Error al recuperar la informacion", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+        }
+        private void cargarDataGridView(string pais)
+        {
+            try
+            {
+                ds = objN_Equipo.consultaEquipo(pais);
+                dgvEquipo.DataSource = ds;
+                dgvEquipo.DataMember = "TblEquipo";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al recuperar la informacion", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+        private void cargarDataGridView(string pais, string lugar)
+        {
+            try
+            {
+                ds = objN_Equipo.consultaEquipo(pais, lugar);
+                dgvEquipo.DataSource = ds;
+                dgvEquipo.DataMember = "TblEquipo";
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al recuperar la informacion", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cargarPais()
+        {
+
+            cmbPais.DataSource = objN_Equipo.N_consultaPais();
+            cmbPais.ValueMember = "idEquipo";
+            cmbPais.DisplayMember = "paisEquipo";
+        }
+
+        private void cargarLugar(string pais)
+        {
+            cmbLugar.DataSource = objN_Equipo.N_consutlaLugar();
+            cmbLugar.ValueMember = "idEquipo";
+            cmbLugar.DisplayMember = "lugarEquipo";
+        }
+
+        private void cmbLugar_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string pais = cmbPais.SelectedText;
+            string lugar = cmbLugar.SelectedText;
+            cargarDataGridView(pais, lugar);
+        }
+
+        private void btnAgregarFiltro_Click(object sender, EventArgs e)
+        {
+            cmbLugar.Enabled = true;
+            cargarPais();
+            cmbPais.Enabled = false;
+
+        }
+
+        private void btnQuitarFiltro_Click(object sender, EventArgs e)
+        {
+            cmbLugar.Enabled = false;
+            cmbPais.Enabled = false;
+            cargarDataGridView();
         }
     }
 }
