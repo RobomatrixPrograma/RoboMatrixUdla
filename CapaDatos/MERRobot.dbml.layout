@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="DataClasses1">
+  <DataContextMoniker Name="/DataClasses1DataContext" />
+  <nestedChildShapes>
+    <classShape Id="e23ed854-261c-4579-bc24-6c77cfe06631" absoluteBounds="0.5, 3.25, 2, 1.3862939453125">
+      <DataClassMoniker Name="/DataClasses1DataContext/TblCategoria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="666bc4d1-2e32-4f64-8c2a-540f80c43d8a" absoluteBounds="0.515, 3.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1fe60cd2-b260-4a55-86cd-4cf55d92b778" absoluteBounds="5, 1.75, 2, 1.7708968098958331">
+      <DataClassMoniker Name="/DataClasses1DataContext/TblEquipo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="c6c56296-3789-47a9-be95-a57f6b6dc663" absoluteBounds="5.0150000000000006, 2.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="343ea694-2b50-4379-a441-edd9fb628b22" absoluteBounds="2, 0.5, 2, 1.9631982421875">
+      <DataClassMoniker Name="/DataClasses1DataContext/TblRobot" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f11be39f-eaa5-420d-82ab-4d0978bbe5f0" absoluteBounds="2.015, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.25 : 3.25); (2.25 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/TblCategoria/TblCategoria_TblRobot" />
+      <nodes>
+        <classShapeMoniker Id="e23ed854-261c-4579-bc24-6c77cfe06631" />
+        <classShapeMoniker Id="343ea694-2b50-4379-a441-edd9fb628b22" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5 : 2.10659912109375); (4 : 2.10659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/DataClasses1DataContext/TblEquipo/TblEquipo_TblRobot" />
+      <nodes>
+        <classShapeMoniker Id="1fe60cd2-b260-4a55-86cd-4cf55d92b778" />
+        <classShapeMoniker Id="343ea694-2b50-4379-a441-edd9fb628b22" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

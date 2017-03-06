@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbRoboMatrixUdla" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=.;Initial Catalog=dbRoboMatrixUdla;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="dbRoboMatrixUdlaConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.TblCategoria" Member="TblCategorias">
+    <Type Name="TblCategoria">
+      <Column Name="idCat" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nomCat" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="descripcion" Type="System.String" DbType="VarChar(500)" CanBeNull="true" />
+      <Association Name="TblCategoria_TblRobot" Member="TblRobots" ThisKey="idCat" OtherKey="idCategoria" Type="TblRobot" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblEquipo" Member="TblEquipos">
+    <Type Name="TblEquipo">
+      <Column Name="idEquipo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="nomEquipo" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="paisEquipo" Type="System.String" DbType="VarChar(25) NOT NULL" CanBeNull="false" />
+      <Column Name="lugarEquipo" Type="System.String" DbType="VarChar(50)" CanBeNull="true" />
+      <Column Name="imgEquipo" Type="System.Data.Linq.Binary" DbType="Image" CanBeNull="true" UpdateCheck="Never" />
+      <Association Name="TblEquipo_TblRobot" Member="TblRobots" ThisKey="idEquipo" OtherKey="idEquipo" Type="TblRobot" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblRobot" Member="TblRobots">
+    <Type Name="TblRobot">
+      <Column Name="idRobot" Type="System.Int32" DbType="Int NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="nomRobot" Type="System.String" DbType="VarChar(50) NOT NULL" CanBeNull="false" />
+      <Column Name="estadoRobot" Type="System.String" DbType="Char(2)" CanBeNull="true" />
+      <Column Name="liderRobot" Type="System.String" DbType="VarChar(25)" CanBeNull="true" />
+      <Column Name="idCategoria" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idEquipo" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Association Name="TblCategoria_TblRobot" Member="TblCategoria" ThisKey="idCategoria" OtherKey="idCat" Type="TblCategoria" IsForeignKey="true" />
+      <Association Name="TblEquipo_TblRobot" Member="TblEquipo" ThisKey="idEquipo" OtherKey="idEquipo" Type="TblEquipo" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
