@@ -13,6 +13,8 @@ namespace RoboMatrixUdla
     public partial class frmIngresoRobot : Form
     {
         clsNRobot N_objRobot = new clsNRobot();
+        clsNEquipo N_objEquipo = new clsNEquipo();
+
         DataSet ds = new DataSet();
         int a = 0;
         public frmIngresoRobot()
@@ -23,11 +25,12 @@ namespace RoboMatrixUdla
         {
             dgvRobot.DataSource = N_objRobot.N_consultaRobot();
         }
+
         private void cargarCombo()
         {
-            cmbIdRobot.DataSource = N_objRobot.N_consultaRobot();
-            cmbIdRobot.ValueMember = "idRobot";
-            cmbIdRobot.DisplayMember = "nomRobot";
+            cmbCategoria.DataSource = N_objEquipo.N_consultaEquipo();
+            cmbCategoria.ValueMember = "idEquipo";
+            cmbCategoria.DisplayMember = "nomEquipo";
         }
         private void frmIngresoRobot_Load(object sender, EventArgs e)
         {
@@ -50,7 +53,7 @@ namespace RoboMatrixUdla
             {
                 try
                 {
-                    if (N_objRobot.N_IngresarRobot(txtNombre.Text, cmbEstado.Text))
+                    if (N_objRobot.N_IngresarRobot(int.Parse(txtIdRobot.Text), txtNombre.Text, cmbEstado.Text, txtlider.Text, int.Parse(cmbCategoria.SelectedValue.ToString()), int.Parse(cmbEquipo.SelectedValue.ToString())))
                     {
                         MessageBox.Show("INGRESO CORRECTO");
                     }
@@ -84,8 +87,6 @@ namespace RoboMatrixUdla
                 MessageBox.Show("ESTADO DESCONOCIDO");
             }
             
-
-            btnHabilitarModificaciones.Enabled = true;
             btnHabilitarRobot.Enabled = true;
         }
 
@@ -93,7 +94,7 @@ namespace RoboMatrixUdla
         {
             try
             {
-                if (N_objRobot.N_ActualizarRobot(int.Parse(cmbIdRobot.SelectedValue.ToString()), txtNombre.Text, cmbEstado.Text))
+                if (N_objRobot.N_ActualizarRobot(int.Parse(txtIdRobot.Text), txtNombre.Text, cmbEstado.Text, txtlider.Text, int.Parse(cmbCategoria.SelectedValue.ToString()), int.Parse(cmbEquipo.SelectedValue.ToString())))
                 {
                     MessageBox.Show("ACTUALIZACION CORRECTA");
                 }
@@ -115,18 +116,17 @@ namespace RoboMatrixUdla
             {
                 MessageBox.Show("ERROR EN LA CONSULTA DE CATEGORÍAS");
             }
-            cmbIdRobot.Enabled = true;
+            txtIdRobot.Enabled = true;
         }
 
         private void btnHabilitarModificaciones_Click(object sender, EventArgs e)
         {
-            btnHabilitarModificaciones.Enabled = false;
             btnIngresarRobot.Enabled = false;
             btnHabilitarRobot.Enabled = true;
             btnModificarRobot.Enabled = true;
             btnBorrarRobot.Enabled = true;
-            cmbIdRobot.Enabled = true;
-            cmbIdRobot.Text = "";
+            txtIdRobot.Enabled = true;
+            txtIdRobot.Text = "";
             txtNombre.Clear();
         }
 
@@ -136,31 +136,21 @@ namespace RoboMatrixUdla
             btnHabilitarRobot.Enabled = false;
             btnModificarRobot.Enabled = false;
             btnBorrarRobot.Enabled = false;
-            cmbIdRobot.Enabled = false;
-            cmbIdRobot.Text = "";
+            txtIdRobot.Enabled = false;
+            txtIdRobot.Text = "";
             txtNombre.Clear();
-            btnHabilitarModificaciones.Enabled = true;
         }
 
         private void cmbIdRobot_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (a == 1)
-            {
-                btnHabilitarModificaciones.Enabled = false;
-                ds = N_objRobot.N_consultaRobot(int.Parse(cmbIdRobot.SelectedValue.ToString()));
-                cmbIdRobot.Text = ds.Tables[0].Rows[0]["idRobot"].ToString();
-                txtNombre.Text = ds.Tables[0].Rows[0]["nomRobot"].ToString();
-                cmbEstado.Text = ds.Tables[0].Rows[0]["estadoRobot"].ToString();
-                cmbIdRobot.Enabled = false;
-                btnIngresarRobot.Enabled = false;
-            }
+            
         }
 
         private void btnBorrarRobot_Click(object sender, EventArgs e)
         {
             try
             {
-                if (N_objRobot.N_EliminarRobot(int.Parse(cmbIdRobot.SelectedValue.ToString())))
+                if (N_objRobot.N_EliminarRobot(int.Parse(txtIdRobot.Text)))
                 {
                     MessageBox.Show("ELIMINACION CORRECTA");
                 }
@@ -183,7 +173,41 @@ namespace RoboMatrixUdla
             {
                 MessageBox.Show("ERROR EN LA CONSULTA DE CATEGORÍAS");
             }
-            cmbIdRobot.Enabled = true;
+            txtIdRobot.Enabled = true;
+        }
+
+        private void dgvRobot_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            btnIngresarRobot.Enabled = false;
+            btnHabilitarRobot.Enabled = true;
+            btnModificarRobot.Enabled = true;
+            btnBorrarRobot.Enabled = true;
+            txtIdRobot.Enabled = true;
+            txtIdRobot.Text = "";
+            txtNombre.Clear();
+            int b = int.Parse(dgvRobot.CurrentRow.Cells[0].Value.ToString());
+            if (a == 1)
+            {
+                ds = N_objRobot.N_consultaRobot(b);
+                txtIdRobot.Text = ds.Tables[0].Rows[0]["idRobot"].ToString();
+                txtNombre.Text = ds.Tables[0].Rows[0]["nomRobot"].ToString();
+                cmbEstado.Text = ds.Tables[0].Rows[0]["estadoRobot"].ToString();
+                txtlider.Text= ds.Tables[0].Rows[0]["liderRobot"].ToString();
+                cmbCategoria.Text = ds.Tables[0].Rows[0]["idCategoria"].ToString();
+                cmbEquipo.Text = ds.Tables[0].Rows[0]["idEquipo"].ToString();
+                txtIdRobot.Enabled = false;
+                btnIngresarRobot.Enabled = false;
+            }
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (a == 1)
+            {
+                
+                 dgvRobot.DataSource = N_objRobot.N_consultaRobotPorNombre(txtFiltroNombre.Text);
+           
+            }
         }
     }
 }
