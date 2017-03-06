@@ -31,20 +31,34 @@
             this.lblNombre = new System.Windows.Forms.Label();
             this.lblPais = new System.Windows.Forms.Label();
             this.lblLugar = new System.Windows.Forms.Label();
-            this.lblLogo = new System.Windows.Forms.Label();
             this.txtNombre = new System.Windows.Forms.TextBox();
             this.txtPais = new System.Windows.Forms.TextBox();
             this.txtLugar = new System.Windows.Forms.TextBox();
-            this.pcbLogo = new System.Windows.Forms.PictureBox();
-            this.btnCargar = new System.Windows.Forms.Button();
-            this.btnIngresar = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).BeginInit();
+            this.grbOperaciones = new System.Windows.Forms.GroupBox();
+            this.btnHabilitarModificaciones = new System.Windows.Forms.Button();
+            this.btnIngresarEquipo = new System.Windows.Forms.Button();
+            this.btnBorrarEquipo = new System.Windows.Forms.Button();
+            this.btnHabilitarEquipo = new System.Windows.Forms.Button();
+            this.btnModificarEquipo = new System.Windows.Forms.Button();
+            this.grbEquipos = new System.Windows.Forms.GroupBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.txtFiltroNombre = new System.Windows.Forms.TextBox();
+            this.lblTipoFiltro = new System.Windows.Forms.Label();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.dgvEquipo = new System.Windows.Forms.DataGridView();
+            this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.lblidEquipo = new System.Windows.Forms.Label();
+            this.txtId = new System.Windows.Forms.TextBox();
+            this.grbOperaciones.SuspendLayout();
+            this.grbEquipos.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipo)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
             // lblNombre
             // 
             this.lblNombre.AutoSize = true;
-            this.lblNombre.Location = new System.Drawing.Point(46, 34);
+            this.lblNombre.Location = new System.Drawing.Point(32, 55);
             this.lblNombre.Name = "lblNombre";
             this.lblNombre.Size = new System.Drawing.Size(47, 13);
             this.lblNombre.TabIndex = 0;
@@ -53,7 +67,7 @@
             // lblPais
             // 
             this.lblPais.AutoSize = true;
-            this.lblPais.Location = new System.Drawing.Point(46, 80);
+            this.lblPais.Location = new System.Drawing.Point(47, 94);
             this.lblPais.Name = "lblPais";
             this.lblPais.Size = new System.Drawing.Size(32, 13);
             this.lblPais.TabIndex = 1;
@@ -62,95 +76,220 @@
             // lblLugar
             // 
             this.lblLugar.AutoSize = true;
-            this.lblLugar.Location = new System.Drawing.Point(24, 111);
+            this.lblLugar.Location = new System.Drawing.Point(10, 125);
             this.lblLugar.Name = "lblLugar";
             this.lblLugar.Size = new System.Drawing.Size(69, 39);
             this.lblLugar.TabIndex = 2;
             this.lblLugar.Text = "Universidad \r\nu \r\nOrganizacion";
             this.lblLugar.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
-            // lblLogo
-            // 
-            this.lblLogo.AutoSize = true;
-            this.lblLogo.Location = new System.Drawing.Point(46, 170);
-            this.lblLogo.Name = "lblLogo";
-            this.lblLogo.Size = new System.Drawing.Size(34, 13);
-            this.lblLogo.TabIndex = 3;
-            this.lblLogo.Text = "Logo:";
-            // 
             // txtNombre
             // 
-            this.txtNombre.Location = new System.Drawing.Point(108, 31);
+            this.txtNombre.Location = new System.Drawing.Point(94, 52);
             this.txtNombre.Name = "txtNombre";
             this.txtNombre.Size = new System.Drawing.Size(174, 20);
             this.txtNombre.TabIndex = 4;
+            this.txtNombre.TextChanged += new System.EventHandler(this.txtNombre_TextChanged);
             // 
             // txtPais
             // 
-            this.txtPais.Location = new System.Drawing.Point(108, 77);
+            this.txtPais.Location = new System.Drawing.Point(94, 91);
             this.txtPais.Name = "txtPais";
             this.txtPais.Size = new System.Drawing.Size(174, 20);
             this.txtPais.TabIndex = 5;
+            this.txtPais.TextChanged += new System.EventHandler(this.txtPais_TextChanged);
             // 
             // txtLugar
             // 
-            this.txtLugar.Location = new System.Drawing.Point(108, 121);
+            this.txtLugar.Location = new System.Drawing.Point(94, 135);
             this.txtLugar.Name = "txtLugar";
             this.txtLugar.Size = new System.Drawing.Size(174, 20);
             this.txtLugar.TabIndex = 6;
             // 
-            // pcbLogo
+            // grbOperaciones
             // 
-            this.pcbLogo.Location = new System.Drawing.Point(108, 158);
-            this.pcbLogo.Name = "pcbLogo";
-            this.pcbLogo.Size = new System.Drawing.Size(174, 116);
-            this.pcbLogo.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pcbLogo.TabIndex = 7;
-            this.pcbLogo.TabStop = false;
+            this.grbOperaciones.Controls.Add(this.btnHabilitarModificaciones);
+            this.grbOperaciones.Controls.Add(this.btnIngresarEquipo);
+            this.grbOperaciones.Controls.Add(this.btnBorrarEquipo);
+            this.grbOperaciones.Controls.Add(this.btnHabilitarEquipo);
+            this.grbOperaciones.Controls.Add(this.btnModificarEquipo);
+            this.grbOperaciones.Location = new System.Drawing.Point(315, 30);
+            this.grbOperaciones.Name = "grbOperaciones";
+            this.grbOperaciones.Size = new System.Drawing.Size(274, 133);
+            this.grbOperaciones.TabIndex = 10;
+            this.grbOperaciones.TabStop = false;
+            this.grbOperaciones.Text = "Operaciones";
             // 
-            // btnCargar
+            // btnHabilitarModificaciones
             // 
-            this.btnCargar.Location = new System.Drawing.Point(191, 280);
-            this.btnCargar.Name = "btnCargar";
-            this.btnCargar.Size = new System.Drawing.Size(63, 23);
-            this.btnCargar.TabIndex = 8;
-            this.btnCargar.Text = "Cargar...";
-            this.btnCargar.UseVisualStyleBackColor = true;
-            this.btnCargar.Click += new System.EventHandler(this.btnCargar_Click);
+            this.btnHabilitarModificaciones.Location = new System.Drawing.Point(133, 35);
+            this.btnHabilitarModificaciones.Name = "btnHabilitarModificaciones";
+            this.btnHabilitarModificaciones.Size = new System.Drawing.Size(131, 23);
+            this.btnHabilitarModificaciones.TabIndex = 12;
+            this.btnHabilitarModificaciones.Text = "Habilitar Modificaciones";
+            this.btnHabilitarModificaciones.UseVisualStyleBackColor = true;
+            this.btnHabilitarModificaciones.Click += new System.EventHandler(this.btnHabilitarModificaciones_Click);
             // 
-            // btnIngresar
+            // btnIngresarEquipo
             // 
-            this.btnIngresar.Location = new System.Drawing.Point(128, 328);
-            this.btnIngresar.Name = "btnIngresar";
-            this.btnIngresar.Size = new System.Drawing.Size(117, 31);
-            this.btnIngresar.TabIndex = 9;
-            this.btnIngresar.Text = "Ingresar Equipo";
-            this.btnIngresar.UseVisualStyleBackColor = true;
+            this.btnIngresarEquipo.Location = new System.Drawing.Point(6, 64);
+            this.btnIngresarEquipo.Name = "btnIngresarEquipo";
+            this.btnIngresarEquipo.Size = new System.Drawing.Size(118, 23);
+            this.btnIngresarEquipo.TabIndex = 11;
+            this.btnIngresarEquipo.Text = "Ingresar Equipo";
+            this.btnIngresarEquipo.UseVisualStyleBackColor = true;
+            this.btnIngresarEquipo.Click += new System.EventHandler(this.btnIngresar_Click);
+            // 
+            // btnBorrarEquipo
+            // 
+            this.btnBorrarEquipo.Location = new System.Drawing.Point(133, 93);
+            this.btnBorrarEquipo.Name = "btnBorrarEquipo";
+            this.btnBorrarEquipo.Size = new System.Drawing.Size(131, 23);
+            this.btnBorrarEquipo.TabIndex = 14;
+            this.btnBorrarEquipo.Text = "Borrar Equipo";
+            this.btnBorrarEquipo.UseVisualStyleBackColor = true;
+            // 
+            // btnHabilitarEquipo
+            // 
+            this.btnHabilitarEquipo.Location = new System.Drawing.Point(6, 36);
+            this.btnHabilitarEquipo.Name = "btnHabilitarEquipo";
+            this.btnHabilitarEquipo.Size = new System.Drawing.Size(118, 23);
+            this.btnHabilitarEquipo.TabIndex = 10;
+            this.btnHabilitarEquipo.Text = "Habilitar Ingreso";
+            this.btnHabilitarEquipo.UseVisualStyleBackColor = true;
+            this.btnHabilitarEquipo.Click += new System.EventHandler(this.btnHabilitarEquipo_Click);
+            // 
+            // btnModificarEquipo
+            // 
+            this.btnModificarEquipo.Location = new System.Drawing.Point(133, 64);
+            this.btnModificarEquipo.Name = "btnModificarEquipo";
+            this.btnModificarEquipo.Size = new System.Drawing.Size(131, 23);
+            this.btnModificarEquipo.TabIndex = 13;
+            this.btnModificarEquipo.Text = "Modificar Equipo";
+            this.btnModificarEquipo.UseVisualStyleBackColor = true;
+            // 
+            // grbEquipos
+            // 
+            this.grbEquipos.Controls.Add(this.comboBox3);
+            this.grbEquipos.Controls.Add(this.txtFiltroNombre);
+            this.grbEquipos.Controls.Add(this.lblTipoFiltro);
+            this.grbEquipos.Controls.Add(this.comboBox2);
+            this.grbEquipos.Controls.Add(this.dgvEquipo);
+            this.grbEquipos.Location = new System.Drawing.Point(24, 230);
+            this.grbEquipos.Name = "grbEquipos";
+            this.grbEquipos.Size = new System.Drawing.Size(565, 233);
+            this.grbEquipos.TabIndex = 104;
+            this.grbEquipos.TabStop = false;
+            this.grbEquipos.Text = "Robots";
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "ACTIVO",
+            "DESACTIVADO"});
+            this.comboBox3.Location = new System.Drawing.Point(235, 26);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(121, 21);
+            this.comboBox3.TabIndex = 106;
+            // 
+            // txtFiltroNombre
+            // 
+            this.txtFiltroNombre.Location = new System.Drawing.Point(235, 26);
+            this.txtFiltroNombre.Name = "txtFiltroNombre";
+            this.txtFiltroNombre.Size = new System.Drawing.Size(121, 20);
+            this.txtFiltroNombre.TabIndex = 105;
+            // 
+            // lblTipoFiltro
+            // 
+            this.lblTipoFiltro.AutoSize = true;
+            this.lblTipoFiltro.Location = new System.Drawing.Point(13, 29);
+            this.lblTipoFiltro.Name = "lblTipoFiltro";
+            this.lblTipoFiltro.Size = new System.Drawing.Size(53, 13);
+            this.lblTipoFiltro.TabIndex = 104;
+            this.lblTipoFiltro.Text = "Filtrar por:";
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Nombre",
+            "Estado"});
+            this.comboBox2.Location = new System.Drawing.Point(85, 26);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(121, 21);
+            this.comboBox2.TabIndex = 103;
+            this.comboBox2.SelectedIndexChanged += new System.EventHandler(this.comboBox2_SelectedIndexChanged);
+            // 
+            // dgvEquipo
+            // 
+            this.dgvEquipo.AllowUserToAddRows = false;
+            this.dgvEquipo.AllowUserToDeleteRows = false;
+            this.dgvEquipo.BackgroundColor = System.Drawing.SystemColors.Info;
+            this.dgvEquipo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvEquipo.Enabled = false;
+            this.dgvEquipo.Location = new System.Drawing.Point(13, 55);
+            this.dgvEquipo.Margin = new System.Windows.Forms.Padding(2);
+            this.dgvEquipo.Name = "dgvEquipo";
+            this.dgvEquipo.RowTemplate.Height = 24;
+            this.dgvEquipo.Size = new System.Drawing.Size(542, 162);
+            this.dgvEquipo.TabIndex = 102;
+            this.dgvEquipo.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvEquipo_CellContentClick);
+            // 
+            // groupBox1
+            // 
+            this.groupBox1.Controls.Add(this.txtId);
+            this.groupBox1.Controls.Add(this.lblidEquipo);
+            this.groupBox1.Controls.Add(this.lblNombre);
+            this.groupBox1.Controls.Add(this.lblPais);
+            this.groupBox1.Controls.Add(this.lblLugar);
+            this.groupBox1.Controls.Add(this.txtLugar);
+            this.groupBox1.Controls.Add(this.txtNombre);
+            this.groupBox1.Controls.Add(this.txtPais);
+            this.groupBox1.Location = new System.Drawing.Point(25, 17);
+            this.groupBox1.Name = "groupBox1";
+            this.groupBox1.Size = new System.Drawing.Size(274, 187);
+            this.groupBox1.TabIndex = 105;
+            this.groupBox1.TabStop = false;
+            this.groupBox1.Text = "Datos del Equipo";
+            // 
+            // lblidEquipo
+            // 
+            this.lblidEquipo.AutoSize = true;
+            this.lblidEquipo.Location = new System.Drawing.Point(24, 22);
+            this.lblidEquipo.Name = "lblidEquipo";
+            this.lblidEquipo.Size = new System.Drawing.Size(55, 13);
+            this.lblidEquipo.TabIndex = 7;
+            this.lblidEquipo.Text = "Id Equipo:";
+            // 
+            // txtId
+            // 
+            this.txtId.Location = new System.Drawing.Point(94, 19);
+            this.txtId.Name = "txtId";
+            this.txtId.Size = new System.Drawing.Size(92, 20);
+            this.txtId.TabIndex = 8;
             // 
             // frmIngresoEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(302, 371);
-            this.Controls.Add(this.btnIngresar);
-            this.Controls.Add(this.btnCargar);
-            this.Controls.Add(this.pcbLogo);
-            this.Controls.Add(this.txtLugar);
-            this.Controls.Add(this.txtPais);
-            this.Controls.Add(this.txtNombre);
-            this.Controls.Add(this.lblLogo);
-            this.Controls.Add(this.lblLugar);
-            this.Controls.Add(this.lblPais);
-            this.Controls.Add(this.lblNombre);
+            this.ClientSize = new System.Drawing.Size(614, 475);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.grbEquipos);
+            this.Controls.Add(this.grbOperaciones);
             this.MaximizeBox = false;
             this.MinimizeBox = false;
             this.Name = "frmIngresoEquipo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar Nuevo Equipo";
             this.Load += new System.EventHandler(this.frmIngresoEquipo_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.pcbLogo)).EndInit();
+            this.grbOperaciones.ResumeLayout(false);
+            this.grbEquipos.ResumeLayout(false);
+            this.grbEquipos.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvEquipo)).EndInit();
+            this.groupBox1.ResumeLayout(false);
+            this.groupBox1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -159,12 +298,23 @@
         private System.Windows.Forms.Label lblNombre;
         private System.Windows.Forms.Label lblPais;
         private System.Windows.Forms.Label lblLugar;
-        private System.Windows.Forms.Label lblLogo;
         private System.Windows.Forms.TextBox txtNombre;
         private System.Windows.Forms.TextBox txtPais;
         private System.Windows.Forms.TextBox txtLugar;
-        private System.Windows.Forms.PictureBox pcbLogo;
-        private System.Windows.Forms.Button btnCargar;
-        private System.Windows.Forms.Button btnIngresar;
+        private System.Windows.Forms.GroupBox grbOperaciones;
+        private System.Windows.Forms.Button btnHabilitarModificaciones;
+        private System.Windows.Forms.Button btnIngresarEquipo;
+        private System.Windows.Forms.Button btnBorrarEquipo;
+        private System.Windows.Forms.Button btnHabilitarEquipo;
+        private System.Windows.Forms.Button btnModificarEquipo;
+        private System.Windows.Forms.GroupBox grbEquipos;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.TextBox txtFiltroNombre;
+        private System.Windows.Forms.Label lblTipoFiltro;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.DataGridView dgvEquipo;
+        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.TextBox txtId;
+        private System.Windows.Forms.Label lblidEquipo;
     }
 }
