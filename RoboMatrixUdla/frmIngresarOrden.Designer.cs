@@ -1,6 +1,6 @@
 ﻿namespace RoboMatrixUdla
 {
-    partial class frmGenerarOrden
+    partial class frmIngresarOrden
     {
         /// <summary>
         /// Required designer variable.

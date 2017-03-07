@@ -11,30 +11,34 @@ using CapaNegocio;
 
 namespace RoboMatrixUdla
 {
-    public partial class frmGenerarLlaves : Form
+    public partial class frmIngresarOrden : Form
     {
         clsN_Categoria N_Categoria = new clsN_Categoria();
-        public frmGenerarLlaves()
+        public frmIngresarOrden()
         {
             InitializeComponent();
         }
 
-        private void frmGenerarLlaves_Load(object sender, EventArgs e)
+        private void btnGenerar_Click(object sender, EventArgs e)
         {
-            cargarCategorias();
-        }
+            btnGenerar.Enabled = false;
+            int id = int.Parse(cmbCategoria.SelectedValue.ToString());
+            string nom = cmbCategoria.SelectedItem.ToString();
+            var cat = N_Categoria.GenerarOrden(id,nom);
+            dgvOrden.DataSource = cat.ToList();
 
+        }
         private void cargarCategorias()
         {
-            var cat = N_Categoria.N_consultaCategoria(1);
+            var cat = N_Categoria.N_consultaCategoria(2);
             cmbCategoria.DataSource = cat;
             cmbCategoria.DisplayMember = "nomCat";
             cmbCategoria.ValueMember = "idCat";
         }
 
-        private void btnGenerar_Click(object sender, EventArgs e)
+        private void frmGenerarOrden_Load(object sender, EventArgs e)
         {
-            int id = int.Parse(cmbCategoria.SelectedValue.ToString());
+            cargarCategorias();
         }
     }
 }

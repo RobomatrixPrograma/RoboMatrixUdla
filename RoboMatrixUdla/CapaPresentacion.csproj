@@ -46,17 +46,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="frmGenerarLlaves.cs">
+    <Compile Include="frmIngresarLlaves.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGenerarLlaves.Designer.cs">
-      <DependentUpon>frmGenerarLlaves.cs</DependentUpon>
+    <Compile Include="frmIngresarLlaves.Designer.cs">
+      <DependentUpon>frmIngresarLlaves.cs</DependentUpon>
     </Compile>
-    <Compile Include="frmGenerarOrden.cs">
+    <Compile Include="frmIngresarOrden.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="frmGenerarOrden.Designer.cs">
-      <DependentUpon>frmGenerarOrden.cs</DependentUpon>
+    <Compile Include="frmIngresarOrden.Designer.cs">
+      <DependentUpon>frmIngresarOrden.cs</DependentUpon>
     </Compile>
     <Compile Include="frmIngresoEquipo.cs">
       <SubType>Form</SubType>
@@ -78,11 +78,11 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="frmGenerarLlaves.resx">
-      <DependentUpon>frmGenerarLlaves.cs</DependentUpon>
+    <EmbeddedResource Include="frmIngresarLlaves.resx">
+      <DependentUpon>frmIngresarLlaves.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="frmGenerarOrden.resx">
-      <DependentUpon>frmGenerarOrden.cs</DependentUpon>
+    <EmbeddedResource Include="frmIngresarOrden.resx">
+      <DependentUpon>frmIngresarOrden.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmIngresoEquipo.resx">
       <DependentUpon>frmIngresoEquipo.cs</DependentUpon>
