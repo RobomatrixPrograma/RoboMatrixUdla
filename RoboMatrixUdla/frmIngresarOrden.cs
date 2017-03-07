@@ -24,8 +24,6 @@ namespace RoboMatrixUdla
             btnGenerar.Enabled = false;
             int id = int.Parse(cmbCategoria.SelectedValue.ToString());
             string nom = cmbCategoria.SelectedItem.ToString();
-            var cat = N_Categoria.GenerarOrden(id,nom);
-            dgvOrden.DataSource = cat.ToList();
 
         }
         private void cargarCategorias()

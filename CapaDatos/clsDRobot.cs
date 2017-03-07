@@ -16,7 +16,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblRobots
+                var rob1 = from r in bd.TblRobot
                            select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
                 return rob1;
             }
@@ -31,7 +31,7 @@ namespace CapaDatos
             try
             {
                 TblRobot rob1 = new TblRobot { idRobot=id, nomRobot = nombre, estadoRobot = estado, liderRobot = lider, idCategoria=idC, idEquipo=idE };
-                bd.TblRobots.InsertOnSubmit(rob1);
+                bd.TblRobot.InsertOnSubmit(rob1);
                 bd.SubmitChanges();
                 return true;
             }
@@ -79,7 +79,7 @@ namespace CapaDatos
             }
             try
             {
-                var rob1 = from r in bd.TblRobots
+                var rob1 = from r in bd.TblRobot
                            where r.nomRobot==nombre || r.idRobot==a
                            select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
                 return rob1;
@@ -94,7 +94,7 @@ namespace CapaDatos
         {
             try
             {
-                TblRobot rob1 = bd.TblRobots.First(r => r.idRobot == id);
+                TblRobot rob1 = bd.TblRobot.First(r => r.idRobot == id);
                 rob1.nomRobot = nombre;
                 rob1.estadoRobot = estado;
                 rob1.liderRobot = lider;
@@ -132,9 +132,9 @@ namespace CapaDatos
         {
             try
             {
-                TblRobot rob1 = bd.TblRobots.First(r => r.idRobot == id);
+                TblRobot rob1 = bd.TblRobot.First(r => r.idRobot == id);
 
-                bd.TblRobots.DeleteOnSubmit(rob1);
+                bd.TblRobot.DeleteOnSubmit(rob1);
                 bd.SubmitChanges();
                 return true;
             }

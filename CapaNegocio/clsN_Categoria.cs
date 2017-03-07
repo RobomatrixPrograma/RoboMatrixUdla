@@ -10,8 +10,9 @@ namespace CapaNegocio
     public class clsN_Categoria
     {
         clsD_Categoria objD_Categoria = new clsD_Categoria();
-        public int idCat { get; set; }
-        public string nomCat { get; set; }
+
+        int idCategoria { get; set; }
+        string nombre { get; set; }
         public int tipoCat { get; set; }
 
         public object N_consultaCategoria()
@@ -23,14 +24,16 @@ namespace CapaNegocio
         public object N_consultaCategoria(int tipo)
         {
             tipoCat = tipo;
-            var Cat1 = objD_Categoria.D_consultaCategoria(tipoCat);
+            var Cat1 = objD_Categoria.D_consultaCategoriaOpcion(tipoCat);
             return Cat1;
-
         }
 
-        public object GenerarOrden(int id, string nom)
+        public string consultaCategoria(int id)
         {
-
+            idCategoria = id;
+            return objD_Categoria.D_consultaCategoria(idCategoria);
         }
+
+
     }
 }
