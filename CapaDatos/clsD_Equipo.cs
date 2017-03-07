@@ -63,53 +63,11 @@ namespace CapaDatos
         {
             DataSet ds2 = new DataSet();
             SqlDataAdapter adaptador;
-
             clsConexion.abrirConexion();
-
             string sql = "select distinct paisEquipo from TblEquipo ";
-
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
-
             adaptador.Fill(ds2, "TblEquipo");
-
             clsConexion.cerrarConexion();
-
-            return ds2;
-        }
-
-        public DataSet D_consultaEquipo(string paisEquipo)
-        {
-            DataSet ds2 = new DataSet();
-            SqlDataAdapter adaptador;
-
-            clsConexion.abrirConexion();
-
-            string sql = "select * from TblEquipo where paisEquipo =" + paisEquipo;
-
-            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
-
-            adaptador.Fill(ds2, "TblEquipo");
-
-            clsConexion.cerrarConexion();
-
-            return ds2;
-        }
-
-        public DataSet D_consultaEquipo(int idEquipo)
-        {
-            DataSet ds2 = new DataSet();
-            SqlDataAdapter adaptador;
-
-            clsConexion.abrirConexion();
-
-            string sql = "select * from TblEquipo where idEquipo =" + idEquipo;
-
-            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
-
-            adaptador.Fill(ds2, "TblEquipo");
-
-            clsConexion.cerrarConexion();
-
             return ds2;
         }
 
@@ -117,17 +75,23 @@ namespace CapaDatos
         {
             DataSet ds2 = new DataSet();
             SqlDataAdapter adaptador;
-
             clsConexion.abrirConexion();
-
             string sql = "select distinct lugarEquipo from TblEquipo ";
-
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
-
             adaptador.Fill(ds2, "TblEquipo");
-
             clsConexion.cerrarConexion();
+            return ds2;
+        }
 
+        public DataSet D_consultaEquipo(string paisEquipo)
+        {
+            DataSet ds2 = new DataSet();
+            SqlDataAdapter adaptador;
+            clsConexion.abrirConexion();
+            string sql = "select * from TblEquipo where paisEquipo = " + paisEquipo;
+            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
+            adaptador.Fill(ds2, "TblEquipo");
+            clsConexion.cerrarConexion();
             return ds2;
         }
 
@@ -135,17 +99,11 @@ namespace CapaDatos
         {
             DataSet ds2 = new DataSet();
             SqlDataAdapter adaptador;
-
             clsConexion.abrirConexion();
-
             string sql = "select * from TblEquipo where paisEquipo =" + paisEquipo +" AND lugarEquipo = "+ lugarEquipo ;
-
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
-
             adaptador.Fill(ds2, "TblEquipo");
-
             clsConexion.cerrarConexion();
-
             return ds2;
         }
 
@@ -153,17 +111,11 @@ namespace CapaDatos
         {
             DataSet ds2 = new DataSet();
             SqlDataAdapter adaptador;
-
             clsConexion.abrirConexion();
-
-            string sql = "select * from TblEquipos ";
-
+            string sql = "select * from TblEquipo ";
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
-
-            adaptador.Fill(ds2, "TblEquipos");
-
+            adaptador.Fill(ds2, "TblEquipo");
             clsConexion.cerrarConexion();
-
             return ds2;
         }
 

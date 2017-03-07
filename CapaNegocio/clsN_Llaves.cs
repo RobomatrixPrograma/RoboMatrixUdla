@@ -23,10 +23,16 @@ namespace CapaNegocio
             switch(cat)
             {
                 case "Minisumo":
+                    return true;
                     break;
                 case "Megasumo":
+                    return true;
                     break;
                 case "Sumo Lego":
+                    return true;
+                    break;
+                default:
+                    return false;
                     break;
             }
         }

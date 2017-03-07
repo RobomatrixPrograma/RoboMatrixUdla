@@ -38,9 +38,11 @@
             this.btnHabilitarModificaciones = new System.Windows.Forms.Button();
             this.btnIngresarEquipo = new System.Windows.Forms.Button();
             this.btnBorrarEquipo = new System.Windows.Forms.Button();
-            this.btnHabilitarEquipo = new System.Windows.Forms.Button();
+            this.btnHabilitarIngreso = new System.Windows.Forms.Button();
             this.btnModificarEquipo = new System.Windows.Forms.Button();
             this.grbEquipos = new System.Windows.Forms.GroupBox();
+            this.btnQuitarFiltro = new System.Windows.Forms.Button();
+            this.btnAgregarFiltro = new System.Windows.Forms.Button();
             this.cmbLugar = new System.Windows.Forms.ComboBox();
             this.txtFiltroNombre = new System.Windows.Forms.TextBox();
             this.lblTipoFiltro = new System.Windows.Forms.Label();
@@ -49,8 +51,6 @@
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.txtId = new System.Windows.Forms.TextBox();
             this.lblidEquipo = new System.Windows.Forms.Label();
-            this.btnAgregarFiltro = new System.Windows.Forms.Button();
-            this.btnQuitarFiltro = new System.Windows.Forms.Button();
             this.grbOperaciones.SuspendLayout();
             this.grbEquipos.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvEquipo)).BeginInit();
@@ -113,7 +113,7 @@
             this.grbOperaciones.Controls.Add(this.btnHabilitarModificaciones);
             this.grbOperaciones.Controls.Add(this.btnIngresarEquipo);
             this.grbOperaciones.Controls.Add(this.btnBorrarEquipo);
-            this.grbOperaciones.Controls.Add(this.btnHabilitarEquipo);
+            this.grbOperaciones.Controls.Add(this.btnHabilitarIngreso);
             this.grbOperaciones.Controls.Add(this.btnModificarEquipo);
             this.grbOperaciones.Location = new System.Drawing.Point(315, 30);
             this.grbOperaciones.Name = "grbOperaciones";
@@ -151,15 +151,15 @@
             this.btnBorrarEquipo.Text = "Borrar Equipo";
             this.btnBorrarEquipo.UseVisualStyleBackColor = true;
             // 
-            // btnHabilitarEquipo
+            // btnHabilitarIngreso
             // 
-            this.btnHabilitarEquipo.Location = new System.Drawing.Point(6, 36);
-            this.btnHabilitarEquipo.Name = "btnHabilitarEquipo";
-            this.btnHabilitarEquipo.Size = new System.Drawing.Size(118, 23);
-            this.btnHabilitarEquipo.TabIndex = 10;
-            this.btnHabilitarEquipo.Text = "Habilitar Ingreso";
-            this.btnHabilitarEquipo.UseVisualStyleBackColor = true;
-            this.btnHabilitarEquipo.Click += new System.EventHandler(this.btnHabilitarEquipo_Click);
+            this.btnHabilitarIngreso.Location = new System.Drawing.Point(6, 36);
+            this.btnHabilitarIngreso.Name = "btnHabilitarIngreso";
+            this.btnHabilitarIngreso.Size = new System.Drawing.Size(118, 23);
+            this.btnHabilitarIngreso.TabIndex = 10;
+            this.btnHabilitarIngreso.Text = "Habilitar Ingreso";
+            this.btnHabilitarIngreso.UseVisualStyleBackColor = true;
+            this.btnHabilitarIngreso.Click += new System.EventHandler(this.btnHabilitarEquipo_Click);
             // 
             // btnModificarEquipo
             // 
@@ -169,6 +169,7 @@
             this.btnModificarEquipo.TabIndex = 13;
             this.btnModificarEquipo.Text = "Modificar Equipo";
             this.btnModificarEquipo.UseVisualStyleBackColor = true;
+            this.btnModificarEquipo.Click += new System.EventHandler(this.btnModificarEquipo_Click);
             // 
             // grbEquipos
             // 
@@ -185,6 +186,26 @@
             this.grbEquipos.TabIndex = 104;
             this.grbEquipos.TabStop = false;
             this.grbEquipos.Text = "Robots";
+            // 
+            // btnQuitarFiltro
+            // 
+            this.btnQuitarFiltro.Location = new System.Drawing.Point(470, 24);
+            this.btnQuitarFiltro.Name = "btnQuitarFiltro";
+            this.btnQuitarFiltro.Size = new System.Drawing.Size(75, 23);
+            this.btnQuitarFiltro.TabIndex = 108;
+            this.btnQuitarFiltro.Text = "Quitar Filtro";
+            this.btnQuitarFiltro.UseVisualStyleBackColor = true;
+            this.btnQuitarFiltro.Click += new System.EventHandler(this.btnQuitarFiltro_Click);
+            // 
+            // btnAgregarFiltro
+            // 
+            this.btnAgregarFiltro.Location = new System.Drawing.Point(6, 23);
+            this.btnAgregarFiltro.Name = "btnAgregarFiltro";
+            this.btnAgregarFiltro.Size = new System.Drawing.Size(81, 23);
+            this.btnAgregarFiltro.TabIndex = 107;
+            this.btnAgregarFiltro.Text = "Agregar Filtro";
+            this.btnAgregarFiltro.UseVisualStyleBackColor = true;
+            this.btnAgregarFiltro.Click += new System.EventHandler(this.btnAgregarFiltro_Click);
             // 
             // cmbLugar
             // 
@@ -274,26 +295,6 @@
             this.lblidEquipo.TabIndex = 7;
             this.lblidEquipo.Text = "Id Equipo:";
             // 
-            // btnAgregarFiltro
-            // 
-            this.btnAgregarFiltro.Location = new System.Drawing.Point(6, 23);
-            this.btnAgregarFiltro.Name = "btnAgregarFiltro";
-            this.btnAgregarFiltro.Size = new System.Drawing.Size(81, 23);
-            this.btnAgregarFiltro.TabIndex = 107;
-            this.btnAgregarFiltro.Text = "Agregar Filtro";
-            this.btnAgregarFiltro.UseVisualStyleBackColor = true;
-            this.btnAgregarFiltro.Click += new System.EventHandler(this.btnAgregarFiltro_Click);
-            // 
-            // btnQuitarFiltro
-            // 
-            this.btnQuitarFiltro.Location = new System.Drawing.Point(470, 24);
-            this.btnQuitarFiltro.Name = "btnQuitarFiltro";
-            this.btnQuitarFiltro.Size = new System.Drawing.Size(75, 23);
-            this.btnQuitarFiltro.TabIndex = 108;
-            this.btnQuitarFiltro.Text = "Quitar Filtro";
-            this.btnQuitarFiltro.UseVisualStyleBackColor = true;
-            this.btnQuitarFiltro.Click += new System.EventHandler(this.btnQuitarFiltro_Click);
-            // 
             // frmIngresoEquipo
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -330,7 +331,7 @@
         private System.Windows.Forms.Button btnHabilitarModificaciones;
         private System.Windows.Forms.Button btnIngresarEquipo;
         private System.Windows.Forms.Button btnBorrarEquipo;
-        private System.Windows.Forms.Button btnHabilitarEquipo;
+        private System.Windows.Forms.Button btnHabilitarIngreso;
         private System.Windows.Forms.Button btnModificarEquipo;
         private System.Windows.Forms.GroupBox grbEquipos;
         private System.Windows.Forms.ComboBox cmbLugar;
