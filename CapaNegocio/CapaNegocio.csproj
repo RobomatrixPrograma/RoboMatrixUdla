@@ -40,6 +40,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsN_Categoria.cs" />
     <Compile Include="clsN_Equipo.cs" />
     <Compile Include="clsNRobot.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

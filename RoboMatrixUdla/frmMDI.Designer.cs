@@ -30,29 +30,22 @@
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.archivoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarEquipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarRobotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.megaSumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.seguidorDeLineaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.laberintoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.nuevaBatallaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verLlavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generarLlavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.generarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.llavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.ordenDeParticipacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.reportesToolStripMenuItem,
-            this.megaSumoToolStripMenuItem,
-            this.seguidorDeLineaToolStripMenuItem,
-            this.laberintoToolStripMenuItem});
+            this.archivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1205, 24);
@@ -64,20 +57,12 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresarEquipoToolStripMenuItem,
             this.ingresarRobotToolStripMenuItem,
+            this.llavesToolStripMenuItem,
+            this.ordenDeParticipacionToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
             this.archivoToolStripMenuItem.Text = "Configuracion";
-            // 
-            // reportesToolStripMenuItem
-            // 
-            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.nuevaBatallaToolStripMenuItem,
-            this.verLlavesToolStripMenuItem,
-            this.generarLlavesToolStripMenuItem});
-            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
-            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
-            this.reportesToolStripMenuItem.Text = "MiniSumo";
             // 
             // ingresarEquipoToolStripMenuItem
             // 
@@ -91,6 +76,7 @@
             this.ingresarRobotToolStripMenuItem.Name = "ingresarRobotToolStripMenuItem";
             this.ingresarRobotToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.ingresarRobotToolStripMenuItem.Text = "Ingresar Robot";
+            this.ingresarRobotToolStripMenuItem.Click += new System.EventHandler(this.ingresarRobotToolStripMenuItem_Click);
             // 
             // salirToolStripMenuItem
             // 
@@ -98,44 +84,29 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
-            // megaSumoToolStripMenuItem
+            // llavesToolStripMenuItem
             // 
-            this.megaSumoToolStripMenuItem.Name = "megaSumoToolStripMenuItem";
-            this.megaSumoToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
-            this.megaSumoToolStripMenuItem.Text = "MegaSumo";
+            this.llavesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verToolStripMenuItem1,
+            this.generarToolStripMenuItem1});
+            this.llavesToolStripMenuItem.Name = "llavesToolStripMenuItem";
+            this.llavesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.llavesToolStripMenuItem.Text = "Llaves";
             // 
-            // seguidorDeLineaToolStripMenuItem
+            // ordenDeParticipacionToolStripMenuItem
             // 
-            this.seguidorDeLineaToolStripMenuItem.Name = "seguidorDeLineaToolStripMenuItem";
-            this.seguidorDeLineaToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
-            this.seguidorDeLineaToolStripMenuItem.Text = "Seguidor de Linea";
+            this.ordenDeParticipacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.verToolStripMenuItem,
+            this.generarToolStripMenuItem});
+            this.ordenDeParticipacionToolStripMenuItem.Name = "ordenDeParticipacionToolStripMenuItem";
+            this.ordenDeParticipacionToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
+            this.ordenDeParticipacionToolStripMenuItem.Text = "Orden de Participacion";
             // 
-            // laberintoToolStripMenuItem
+            // verToolStripMenuItem
             // 
-            this.laberintoToolStripMenuItem.Name = "laberintoToolStripMenuItem";
-            this.laberintoToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
-            this.laberintoToolStripMenuItem.Text = "Laberinto";
-            // 
-            // nuevaBatallaToolStripMenuItem
-            // 
-            this.nuevaBatallaToolStripMenuItem.Name = "nuevaBatallaToolStripMenuItem";
-            this.nuevaBatallaToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.nuevaBatallaToolStripMenuItem.Text = "Nueva Batalla";
-            // 
-            // verLlavesToolStripMenuItem
-            // 
-            this.verLlavesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.generarToolStripMenuItem,
-            this.verToolStripMenuItem});
-            this.verLlavesToolStripMenuItem.Name = "verLlavesToolStripMenuItem";
-            this.verLlavesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.verLlavesToolStripMenuItem.Text = "Lllaves";
-            // 
-            // generarLlavesToolStripMenuItem
-            // 
-            this.generarLlavesToolStripMenuItem.Name = "generarLlavesToolStripMenuItem";
-            this.generarLlavesToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.generarLlavesToolStripMenuItem.Text = "Resultados";
+            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
+            this.verToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.verToolStripMenuItem.Text = "Ver";
             // 
             // generarToolStripMenuItem
             // 
@@ -143,11 +114,17 @@
             this.generarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.generarToolStripMenuItem.Text = "Generar";
             // 
-            // verToolStripMenuItem
+            // verToolStripMenuItem1
             // 
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.verToolStripMenuItem.Text = "Ver";
+            this.verToolStripMenuItem1.Name = "verToolStripMenuItem1";
+            this.verToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.verToolStripMenuItem1.Text = "Ver";
+            // 
+            // generarToolStripMenuItem1
+            // 
+            this.generarToolStripMenuItem1.Name = "generarToolStripMenuItem1";
+            this.generarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.generarToolStripMenuItem1.Text = "Generar";
             // 
             // frmMDI
             // 
@@ -176,15 +153,12 @@
         private System.Windows.Forms.ToolStripMenuItem ingresarEquipoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarRobotToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevaBatallaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verLlavesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem llavesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem generarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ordenDeParticipacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generarLlavesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem megaSumoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem seguidorDeLineaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem laberintoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generarToolStripMenuItem;
     }
 }
 

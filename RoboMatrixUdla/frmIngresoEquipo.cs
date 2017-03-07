@@ -180,8 +180,8 @@ namespace RoboMatrixUdla
 
         private void cmbLugar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string pais = cmbPais.SelectedText;
-            string lugar = cmbLugar.SelectedText;
+            string pais = cmbPais.SelectedItem.ToString();
+            string lugar = cmbLugar.SelectedItem.ToString();
             cargarDataGridView(pais, lugar);
         }
 
