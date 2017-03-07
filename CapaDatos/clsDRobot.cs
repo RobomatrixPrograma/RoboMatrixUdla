@@ -80,7 +80,7 @@ namespace CapaDatos
             try
             {
                 var rob1 = from r in bd.TblRobots
-                           where r.nomRobot==nombre || r.idRobot==a
+                           where r.nomRobot==nombre || r.idRobot==a || r.estadoRobot == nombre || r.liderRobot == nombre || r.idCategoria==a || r.idEquipo ==a
                            select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
                 return rob1;
             }
