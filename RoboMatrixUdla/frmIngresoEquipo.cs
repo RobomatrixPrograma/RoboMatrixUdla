@@ -18,19 +18,16 @@ namespace RoboMatrixUdla
         public frmIngresoEquipo()
         {
             InitializeComponent();
+            limpiar();
         }
-        /*
-        private void btnCargar_Click(object sender, EventArgs e)
-        {
-            OpenFileDialog fileDialog = new OpenFileDialog();
-            fileDialog.Filter = "Archivo JPG|*.jpg";
 
-            if (fileDialog.ShowDialog() == DialogResult.OK)
-            {
-                pcbLogo.Image = Image.FromFile(fileDialog.FileName);
-            }
+        private void limpiar()
+        {
+            txtId.Clear();
+            txtNombre.Clear();
+            txtPais.Clear();
+            txtLugar.Clear();
         }
-        */
 
         private void frmIngresoEquipo_Load(object sender, EventArgs e)
         {
@@ -39,14 +36,19 @@ namespace RoboMatrixUdla
             txtLugar.MaxLength = 50;
             txtId.Enabled = false;
             btnIngresarEquipo.Enabled = false;
+            btnModificarEquipo.Enabled = false;
+            btnBorrarEquipo.Enabled = false;
             cargarDataGridView();
             cmbLugar.Enabled = false;
             cmbPais.Enabled = false;
+            txtNombre.Enabled = false;
+            txtPais.Enabled = false;
+            txtLugar.Enabled = false;
         }
 
         private void habilitarBoton()
         {
-            if (txtNombre.Text != "" && txtPais.Text!= "")
+            if (txtNombre.Text != "" && txtPais.Text!= "" && btnModificarEquipo.Enabled == false)
                 btnIngresarEquipo.Enabled = true;
             else
                 btnIngresarEquipo.Enabled = false;
@@ -72,12 +74,15 @@ namespace RoboMatrixUdla
             else
                 MessageBox.Show("Ingreso Incorrecto");
             cargarDataGridView();
+            limpiar();
+            btnHabilitarIngreso.Enabled = true;
+            btnHabilitarModificaciones.Enabled = true;
         }
 
         private void btnHabilitarEquipo_Click(object sender, EventArgs e)
         {
             btnIngresarEquipo.Enabled = true;
-            btnHabilitarEquipo.Enabled = false;
+            btnHabilitarIngreso.Enabled = false;
             btnModificarEquipo.Enabled = false;
             btnBorrarEquipo.Enabled = false;
             btnHabilitarModificaciones.Enabled = true;
@@ -88,15 +93,16 @@ namespace RoboMatrixUdla
             txtLugar.Clear();
             cmbLugar.Enabled = false;
             cmbPais.Enabled = false;
+            txtNombre.Enabled = true;
+            txtPais.Enabled = true;
+            txtLugar.Enabled = true;
         }
 
         private void btnHabilitarModificaciones_Click(object sender, EventArgs e)
         {
             btnHabilitarModificaciones.Enabled = false;
             btnIngresarEquipo.Enabled = false;
-            btnHabilitarEquipo.Enabled = true;
-            btnModificarEquipo.Enabled = true;
-            btnBorrarEquipo.Enabled = true;
+            btnHabilitarIngreso.Enabled = true;
             dgvEquipo.Enabled = true;
             txtNombre.Clear();
             txtPais.Clear();
@@ -113,6 +119,8 @@ namespace RoboMatrixUdla
 
         private void dgvEquipo_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+            btnModificarEquipo.Enabled = true;
+            btnBorrarEquipo.Enabled = true;
             txtId.Text = dgvEquipo.CurrentRow.Cells["idEquipo"].Value.ToString();
             txtNombre.Text = (string)dgvEquipo.CurrentRow.Cells["nomEquipo"].Value;
             txtPais.Text= (string)dgvEquipo.CurrentRow.Cells["paisEquipo"].Value;
@@ -180,8 +188,8 @@ namespace RoboMatrixUdla
 
         private void cmbLugar_SelectedIndexChanged(object sender, EventArgs e)
         {
-            string pais = cmbPais.SelectedText;
-            string lugar = cmbLugar.SelectedText;
+            string pais = cmbPais.SelectedItem.ToString();
+            string lugar = cmbLugar.SelectedItem.ToString();
             cargarDataGridView(pais, lugar);
         }
 
@@ -198,6 +206,11 @@ namespace RoboMatrixUdla
             cmbLugar.Enabled = false;
             cmbPais.Enabled = false;
             cargarDataGridView();
+        }
+
+        private void btnModificarEquipo_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
