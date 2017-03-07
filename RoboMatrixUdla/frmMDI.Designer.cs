@@ -33,6 +33,7 @@
             this.ingresarEquipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarRobotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
             this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nuevaBatallaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.verLlavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -48,11 +49,7 @@
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.archivoToolStripMenuItem,
-            this.reportesToolStripMenuItem,
-            this.megaSumoToolStripMenuItem,
-            this.seguidorDeLineaToolStripMenuItem,
-            this.laberintoToolStripMenuItem});
+            this.archivoToolStripMenuItem});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(1205, 24);
@@ -64,6 +61,8 @@
             this.archivoToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
             this.ingresarEquipoToolStripMenuItem,
             this.ingresarRobotToolStripMenuItem,
+            this.llavesToolStripMenuItem,
+            this.ordenDeParticipacionToolStripMenuItem,
             this.salirToolStripMenuItem});
             this.archivoToolStripMenuItem.Name = "archivoToolStripMenuItem";
             this.archivoToolStripMenuItem.Size = new System.Drawing.Size(95, 20);
@@ -89,6 +88,7 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
+
             // reportesToolStripMenuItem
             // 
             this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -113,6 +113,7 @@
             this.verLlavesToolStripMenuItem.Name = "verLlavesToolStripMenuItem";
             this.verLlavesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.verLlavesToolStripMenuItem.Text = "Lllaves";
+
             // 
             // generarToolStripMenuItem
             // 
@@ -120,11 +121,19 @@
             this.generarToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.generarToolStripMenuItem.Text = "Generar";
             // 
-            // verToolStripMenuItem
+            // verToolStripMenuItem1
+
+
+            this.verToolStripMenuItem1.Name = "verToolStripMenuItem1";
+            this.verToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.verToolStripMenuItem1.Text = "Ver";
             // 
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
-            this.verToolStripMenuItem.Text = "Ver";
+            // generarToolStripMenuItem1
+            // 
+            this.generarToolStripMenuItem1.Name = "generarToolStripMenuItem1";
+            this.generarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
+            this.generarToolStripMenuItem1.Text = "Generar";
+
             // 
             // generarLlavesToolStripMenuItem
             // 
@@ -177,15 +186,12 @@
         private System.Windows.Forms.ToolStripMenuItem ingresarEquipoToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem ingresarRobotToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem salirToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem reportesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem nuevaBatallaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem verLlavesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generarToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem llavesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem generarToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem ordenDeParticipacionToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem verToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem generarLlavesToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem megaSumoToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem seguidorDeLineaToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem laberintoToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem generarToolStripMenuItem;
     }
 }
 

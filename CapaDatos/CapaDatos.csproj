@@ -42,9 +42,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsConexion.cs" />
-    <Compile Include="clsDCategoria.cs" />
+    <Compile Include="clsD_Categoria.cs" />
     <Compile Include="clsD_Equipo.cs" />
     <Compile Include="clsDRobot.cs" />
+    <Compile Include="clsD_Megasumo.cs" />
+    <Compile Include="clsD_Minisumo.cs" />
+    <Compile Include="clsD_SumoLego.cs" />
     <Compile Include="MERRobot.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

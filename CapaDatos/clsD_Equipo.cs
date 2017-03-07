@@ -62,12 +62,38 @@ namespace CapaDatos
 
         public object D_consultaPais()
         {
-            throw new NotImplementedException();
+            DataSet ds2 = new DataSet();
+            SqlDataAdapter adaptador;
+
+            clsConexion.abrirConexion();
+
+            string sql = "select distinct paisEquipo from TblEquipos ";
+
+            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
+
+            adaptador.Fill(ds2, "TblEquipos");
+
+            clsConexion.cerrarConexion();
+
+            return ds2;
         }
 
         public DataSet D_consultaEquipo(string paisEquipo)
         {
-            throw new NotImplementedException();
+            DataSet ds2 = new DataSet();
+            SqlDataAdapter adaptador;
+
+            clsConexion.abrirConexion();
+
+            string sql = "select * from TblEquipos where paisEquipo =" + paisEquipo;
+
+            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
+
+            adaptador.Fill(ds2, "TblEquipos");
+
+            clsConexion.cerrarConexion();
+
+            return ds2;
         }
 
         public DataSet D_consultaEquipo(int idEquipo)
@@ -77,11 +103,11 @@ namespace CapaDatos
 
             clsConexion.abrirConexion();
 
-            string sql = "select * from TblEquipo where idEquipo" + idEquipo;
+            string sql = "select * from TblEquipos where idEquipo =" + idEquipo;
 
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
 
-            adaptador.Fill(ds2, "TblEquipo");
+            adaptador.Fill(ds2, "TblEquipos");
 
             clsConexion.cerrarConexion();
 
@@ -90,12 +116,38 @@ namespace CapaDatos
 
         public object D_consultaLugar()
         {
-            throw new NotImplementedException();
+            DataSet ds2 = new DataSet();
+            SqlDataAdapter adaptador;
+
+            clsConexion.abrirConexion();
+
+            string sql = "select distinct lugarEquipo from TblEquipos ";
+
+            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
+
+            adaptador.Fill(ds2, "TblEquipos");
+
+            clsConexion.cerrarConexion();
+
+            return ds2;
         }
 
         public DataSet D_consultaEquipo(string paisEquipo, string lugarEquipo)
         {
-            throw new NotImplementedException();
+            DataSet ds2 = new DataSet();
+            SqlDataAdapter adaptador;
+
+            clsConexion.abrirConexion();
+
+            string sql = "select * from TblEquipos where paisEquipo =" + paisEquipo +" AND lugarEquipo = "+ lugarEquipo ;
+
+            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
+
+            adaptador.Fill(ds2, "TblEquipos");
+
+            clsConexion.cerrarConexion();
+
+            return ds2;
         }
 
         public DataSet D_consultaEquipo()
@@ -105,11 +157,11 @@ namespace CapaDatos
 
             clsConexion.abrirConexion();
 
-            string sql = "select * from TblEquipo ";
+            string sql = "select * from TblEquipos ";
 
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
 
-            adaptador.Fill(ds2, "TblEquipo");
+            adaptador.Fill(ds2, "TblEquipos");
 
             clsConexion.cerrarConexion();
 
