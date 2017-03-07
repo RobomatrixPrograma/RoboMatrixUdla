@@ -16,7 +16,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblRobots
+                var rob1 = from r in bd.TblRobot
                            select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
                 return rob1;
             }
@@ -31,7 +31,7 @@ namespace CapaDatos
             try
             {
                 TblRobot rob1 = new TblRobot { idRobot=id, nomRobot = nombre, estadoRobot = estado, liderRobot = lider, idCategoria=idC, idEquipo=idE };
-                bd.TblRobots.InsertOnSubmit(rob1);
+                bd.TblRobot.InsertOnSubmit(rob1);
                 bd.SubmitChanges();
                 return true;
             }
@@ -40,29 +40,6 @@ namespace CapaDatos
                 return false;
 
             }
-            /*try
-            {
-                clsConexion.abrirConexion();
-                string sql = "insert into  TblRobot values(@id,@nombre,@estado,@lider,@idC,@idE)";
-                SqlCommand comando = new SqlCommand(sql, clsConexion.conexion);
-                comando.Parameters.Add("@id", SqlDbType.Int, 3, "idRobot").Value = id;
-                comando.Parameters.Add("@nombre", SqlDbType.VarChar, 50, "nomRobot").Value = nombre;
-                comando.Parameters.Add("@estado", SqlDbType.VarChar, 2, "estadoRobot").Value = estado;
-                comando.Parameters.Add("@lider", SqlDbType.VarChar, 50, "liderRobot").Value = lider;
-                comando.Parameters.Add("@idC", SqlDbType.Int, 3, "idCategoria").Value = idC;
-                comando.Parameters.Add("@idE", SqlDbType.Int, 3, "idEquipo").Value = idE;
-                comando.ExecuteNonQuery();
-                return true;
-            }
-            catch (Exception ex)
-            {
-                throw ex;
-                return false;
-            }
-            finally
-            {
-                clsConexion.cerrarConexion();
-            }*/
         }
 
         public object D_consultaRobotPorNombre(string nombre)
@@ -79,7 +56,7 @@ namespace CapaDatos
             }
             try
             {
-                var rob1 = from r in bd.TblRobots
+                var rob1 = from r in bd.TblRobot
                            where r.nomRobot==nombre || r.idRobot==a || r.estadoRobot == nombre || r.liderRobot == nombre || r.idCategoria==a || r.idEquipo ==a
                            select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
                 return rob1;
@@ -132,9 +109,9 @@ namespace CapaDatos
         {
             try
             {
-                TblRobot rob1 = bd.TblRobots.First(r => r.idRobot == id);
+                TblRobot rob1 = bd.TblRobot.First(r => r.idRobot == id);
 
-                bd.TblRobots.DeleteOnSubmit(rob1);
+                bd.TblRobot.DeleteOnSubmit(rob1);
                 bd.SubmitChanges();
                 return true;
             }
