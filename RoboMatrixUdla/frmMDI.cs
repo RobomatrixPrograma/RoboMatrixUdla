@@ -23,5 +23,12 @@ namespace RoboMatrixUdla
             objIngresoEquipo.MdiParent = this;
             objIngresoEquipo.Show();
         }
+
+        private void ingresarRobotToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIngresoRobot objIngresoRobot = new frmIngresoRobot();
+            objIngresoRobot.MdiParent = this;
+            objIngresoRobot.Show();
+        }
     }
 }

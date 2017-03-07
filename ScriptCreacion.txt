@@ -16,7 +16,7 @@ CREATE TABLE TblCategoria
 (
 idCat int IDENTITY (1,1) NOT NULL PRIMARY KEY,
 nomCat varchar(25) NOT NULL,
-descripcion (500) NULL,
+tipoCat int NOT NULL,
 )
 
 CREATE TABLE TblEquipo
@@ -36,4 +36,25 @@ estadoRobot char (2) NULL DEFAULT ('AC'),
 liderRobot varchar (25) NULL,
 idCategoria int NOT NULL FOREIGN KEY REFERENCES TblCategoria(idCat),
 idEquipo int NOT NULL FOREIGN KEY REFERENCES TblEquipo(idEquipo),
+)
+
+CREATE TABLE TblParticipantesMinisumo
+(
+idBatalla_minisumo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+CREATE TABLE TblParticipantesNanosumo
+(
+idBatalla_nanosumo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+CREATE TABLE TblParticipantesLegosumo
+(
+idBatalla_Legosumo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
 )
