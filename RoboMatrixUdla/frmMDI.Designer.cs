@@ -33,12 +33,16 @@
             this.ingresarEquipoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.ingresarRobotToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.salirToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.llavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.ordenDeParticipacionToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+
+            this.reportesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.nuevaBatallaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.verLlavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.generarToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.verToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.generarToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.verToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.generarLlavesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.megaSumoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.seguidorDeLineaToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.laberintoToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -84,38 +88,42 @@
             this.salirToolStripMenuItem.Size = new System.Drawing.Size(156, 22);
             this.salirToolStripMenuItem.Text = "Salir";
             // 
-            // llavesToolStripMenuItem
+
+            // reportesToolStripMenuItem
             // 
-            this.llavesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verToolStripMenuItem1,
-            this.generarToolStripMenuItem1});
-            this.llavesToolStripMenuItem.Name = "llavesToolStripMenuItem";
-            this.llavesToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.llavesToolStripMenuItem.Text = "Llaves";
+            this.reportesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.nuevaBatallaToolStripMenuItem,
+            this.verLlavesToolStripMenuItem,
+            this.generarLlavesToolStripMenuItem});
+            this.reportesToolStripMenuItem.Name = "reportesToolStripMenuItem";
+            this.reportesToolStripMenuItem.Size = new System.Drawing.Size(74, 20);
+            this.reportesToolStripMenuItem.Text = "MiniSumo";
             // 
-            // ordenDeParticipacionToolStripMenuItem
+            // nuevaBatallaToolStripMenuItem
             // 
-            this.ordenDeParticipacionToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.verToolStripMenuItem,
-            this.generarToolStripMenuItem});
-            this.ordenDeParticipacionToolStripMenuItem.Name = "ordenDeParticipacionToolStripMenuItem";
-            this.ordenDeParticipacionToolStripMenuItem.Size = new System.Drawing.Size(195, 22);
-            this.ordenDeParticipacionToolStripMenuItem.Text = "Orden de Participacion";
+            this.nuevaBatallaToolStripMenuItem.Name = "nuevaBatallaToolStripMenuItem";
+            this.nuevaBatallaToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.nuevaBatallaToolStripMenuItem.Text = "Nueva Batalla";
             // 
-            // verToolStripMenuItem
+            // verLlavesToolStripMenuItem
             // 
-            this.verToolStripMenuItem.Name = "verToolStripMenuItem";
-            this.verToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
-            this.verToolStripMenuItem.Text = "Ver";
+            this.verLlavesToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.generarToolStripMenuItem,
+            this.verToolStripMenuItem});
+            this.verLlavesToolStripMenuItem.Name = "verLlavesToolStripMenuItem";
+            this.verLlavesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.verLlavesToolStripMenuItem.Text = "Lllaves";
+
             // 
             // generarToolStripMenuItem
             // 
             this.generarToolStripMenuItem.Name = "generarToolStripMenuItem";
-            this.generarToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.generarToolStripMenuItem.Size = new System.Drawing.Size(115, 22);
             this.generarToolStripMenuItem.Text = "Generar";
             // 
             // verToolStripMenuItem1
-            // 
+
+
             this.verToolStripMenuItem1.Name = "verToolStripMenuItem1";
             this.verToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.verToolStripMenuItem1.Text = "Ver";
@@ -125,6 +133,31 @@
             this.generarToolStripMenuItem1.Name = "generarToolStripMenuItem1";
             this.generarToolStripMenuItem1.Size = new System.Drawing.Size(152, 22);
             this.generarToolStripMenuItem1.Text = "Generar";
+
+            // 
+            // generarLlavesToolStripMenuItem
+            // 
+            this.generarLlavesToolStripMenuItem.Name = "generarLlavesToolStripMenuItem";
+            this.generarLlavesToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
+            this.generarLlavesToolStripMenuItem.Text = "Resultados";
+            // 
+            // megaSumoToolStripMenuItem
+            // 
+            this.megaSumoToolStripMenuItem.Name = "megaSumoToolStripMenuItem";
+            this.megaSumoToolStripMenuItem.Size = new System.Drawing.Size(80, 20);
+            this.megaSumoToolStripMenuItem.Text = "MegaSumo";
+            // 
+            // seguidorDeLineaToolStripMenuItem
+            // 
+            this.seguidorDeLineaToolStripMenuItem.Name = "seguidorDeLineaToolStripMenuItem";
+            this.seguidorDeLineaToolStripMenuItem.Size = new System.Drawing.Size(113, 20);
+            this.seguidorDeLineaToolStripMenuItem.Text = "Seguidor de Linea";
+            // 
+            // laberintoToolStripMenuItem
+            // 
+            this.laberintoToolStripMenuItem.Name = "laberintoToolStripMenuItem";
+            this.laberintoToolStripMenuItem.Size = new System.Drawing.Size(69, 20);
+            this.laberintoToolStripMenuItem.Text = "Laberinto";
             // 
             // frmMDI
             // 

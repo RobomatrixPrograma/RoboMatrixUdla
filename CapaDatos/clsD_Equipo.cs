@@ -46,6 +46,20 @@ namespace CapaDatos
             }
         }
 
+        public object D_consultaEquipo2()
+        {
+            try
+            {
+                var equ1 = from e in bd.TblEquipos
+                           select new { e.idEquipo, e.nomEquipo, e.paisEquipo, e.lugarEquipo, e.imgEquipo };
+                return equ1;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public object D_consultaPais()
         {
             DataSet ds2 = new DataSet();

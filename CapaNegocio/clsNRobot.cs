@@ -33,7 +33,14 @@ namespace CapaNegocio
         {
             idRobot = id;
             Nombre = nombre;
-            Estado = estado;
+            if(estado == "ACTIVO")
+            {
+                Estado = "AC";
+            }
+            else
+            {
+                Estado = "DC";
+            }
             lider = lid;
             idCat = idC;
             idEq = idE;
@@ -47,7 +54,14 @@ namespace CapaNegocio
         {
             idRobot = id;
             Nombre = nombre;
-            Estado = estado;
+            if (estado == "ACTIVADO")
+            {
+                Estado = "AC";
+            }
+            else
+            {
+                Estado = "DC";
+            }
             lider = lid;
             idCat = idC;
             idEq = idE;

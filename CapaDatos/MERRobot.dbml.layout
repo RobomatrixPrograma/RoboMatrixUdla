@@ -14,24 +14,24 @@
         <elementListCompartment Id="c6c56296-3789-47a9-be95-a57f6b6dc663" absoluteBounds="5.0150000000000006, 2.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <classShape Id="343ea694-2b50-4379-a441-edd9fb628b22" absoluteBounds="2, 0.5, 2, 1.9631982421875">
+    <classShape Id="490f49fe-5d41-4106-8d20-ae8bddc2ac4c" absoluteBounds="1.875, 0.625, 2, 1.9631982421875">
       <DataClassMoniker Name="/DataClasses1DataContext/TblRobot" />
       <nestedChildShapes>
-        <elementListCompartment Id="f11be39f-eaa5-420d-82ab-4d0978bbe5f0" absoluteBounds="2.015, 0.96, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+        <elementListCompartment Id="22645b49-f739-41f5-9015-767ce58a794b" absoluteBounds="1.8900000000000001, 1.085, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
       </nestedChildShapes>
     </classShape>
-    <associationConnector edgePoints="[(2.25 : 3.25); (2.25 : 2.4631982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(2.1875 : 3.25); (2.1875 : 2.5881982421875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataClasses1DataContext/TblCategoria/TblCategoria_TblRobot" />
       <nodes>
         <classShapeMoniker Id="e23ed854-261c-4579-bc24-6c77cfe06631" />
-        <classShapeMoniker Id="343ea694-2b50-4379-a441-edd9fb628b22" />
+        <classShapeMoniker Id="490f49fe-5d41-4106-8d20-ae8bddc2ac4c" />
       </nodes>
     </associationConnector>
-    <associationConnector edgePoints="[(5 : 2.10659912109375); (4 : 2.10659912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+    <associationConnector edgePoints="[(5 : 2.16909912109375); (3.875 : 2.16909912109375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
       <AssociationMoniker Name="/DataClasses1DataContext/TblEquipo/TblEquipo_TblRobot" />
       <nodes>
         <classShapeMoniker Id="1fe60cd2-b260-4a55-86cd-4cf55d92b778" />
-        <classShapeMoniker Id="343ea694-2b50-4379-a441-edd9fb628b22" />
+        <classShapeMoniker Id="490f49fe-5d41-4106-8d20-ae8bddc2ac4c" />
       </nodes>
     </associationConnector>
   </nestedChildShapes>
