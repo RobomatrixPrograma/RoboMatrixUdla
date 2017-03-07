@@ -27,6 +27,12 @@ namespace CapaNegocio
                 return false;
         }
 
+        public object consultaEquipo2()
+        {
+            var cat1 = objD_Equipo.D_consultaEquipo2();
+            return cat1;
+        }
+
         public DataSet consultaEquipo()
         {
             return (objD_Equipo.D_consultaEquipo());

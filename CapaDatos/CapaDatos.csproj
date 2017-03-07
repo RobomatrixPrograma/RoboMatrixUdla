@@ -41,6 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsConexion.cs" />
+    <Compile Include="clsDCategoria.cs" />
     <Compile Include="clsD_Equipo.cs" />
     <Compile Include="clsDRobot.cs" />
     <Compile Include="MERRobot.designer.cs">

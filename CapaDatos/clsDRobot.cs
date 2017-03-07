@@ -30,7 +30,7 @@ namespace CapaDatos
         {
             try
             {
-                TblRobot rob1 = new TblRobot { idRobot = id, nomRobot = nombre, estadoRobot = estado, liderRobot = lider, idCategoria=idC, idEquipo=idE };
+                TblRobot rob1 = new TblRobot { idRobot=id, nomRobot = nombre, estadoRobot = estado, liderRobot = lider, idCategoria=idC, idEquipo=idE };
                 bd.TblRobots.InsertOnSubmit(rob1);
                 bd.SubmitChanges();
                 return true;
@@ -40,14 +40,47 @@ namespace CapaDatos
                 return false;
 
             }
+            /*try
+            {
+                clsConexion.abrirConexion();
+                string sql = "insert into  TblRobot values(@id,@nombre,@estado,@lider,@idC,@idE)";
+                SqlCommand comando = new SqlCommand(sql, clsConexion.conexion);
+                comando.Parameters.Add("@id", SqlDbType.Int, 3, "idRobot").Value = id;
+                comando.Parameters.Add("@nombre", SqlDbType.VarChar, 50, "nomRobot").Value = nombre;
+                comando.Parameters.Add("@estado", SqlDbType.VarChar, 2, "estadoRobot").Value = estado;
+                comando.Parameters.Add("@lider", SqlDbType.VarChar, 50, "liderRobot").Value = lider;
+                comando.Parameters.Add("@idC", SqlDbType.Int, 3, "idCategoria").Value = idC;
+                comando.Parameters.Add("@idE", SqlDbType.Int, 3, "idEquipo").Value = idE;
+                comando.ExecuteNonQuery();
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw ex;
+                return false;
+            }
+            finally
+            {
+                clsConexion.cerrarConexion();
+            }*/
         }
 
         public object D_consultaRobotPorNombre(string nombre)
         {
+            int a = 0;
+            try
+            {
+                a = int.Parse(nombre);
+
+            }
+            catch
+            {
+                a = -1;
+            }
             try
             {
                 var rob1 = from r in bd.TblRobots
-                           where r.nomRobot==nombre
+                           where r.nomRobot==nombre || r.idRobot==a
                            select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
                 return rob1;
             }
@@ -82,15 +115,15 @@ namespace CapaDatos
             DataSet ds2 = new DataSet();
             SqlDataAdapter adaptador;
 
-            //clsConexion.abrirConexion();
+            clsConexion.abrirConexion();
 
             string sql = "select * from TblRobot where idRobot=" + idRobot;
 
-            //adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
+            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
 
-            //adaptador.Fill(ds2, "TblRobot");
+            adaptador.Fill(ds2, "TblRobot");
 
-            //clsConexion.cerrarConexion();
+            clsConexion.cerrarConexion();
 
             return ds2;
         }

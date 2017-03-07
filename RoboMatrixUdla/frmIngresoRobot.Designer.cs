@@ -48,10 +48,10 @@
             this.btnModificarRobot = new System.Windows.Forms.Button();
             this.dgvRobot = new System.Windows.Forms.DataGridView();
             this.grbRobots = new System.Windows.Forms.GroupBox();
+            this.btnFiltrar = new System.Windows.Forms.Button();
             this.txtFiltroNombre = new System.Windows.Forms.TextBox();
             this.lblTipoFiltro = new System.Windows.Forms.Label();
-            this.cmbTipoFiltro = new System.Windows.Forms.ComboBox();
-            this.btnFiltrar = new System.Windows.Forms.Button();
+            this.btnQuitarFiltro = new System.Windows.Forms.Button();
             this.grbDatosRobot.SuspendLayout();
             this.grbOperaciones.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvRobot)).BeginInit();
@@ -121,7 +121,7 @@
             this.cmbEquipo.Location = new System.Drawing.Point(167, 215);
             this.cmbEquipo.Name = "cmbEquipo";
             this.cmbEquipo.Size = new System.Drawing.Size(171, 21);
-            this.cmbEquipo.TabIndex = 11;
+            this.cmbEquipo.TabIndex = 7;
             // 
             // label4
             // 
@@ -135,19 +135,10 @@
             // cmbCategoria
             // 
             this.cmbCategoria.FormattingEnabled = true;
-            this.cmbCategoria.Items.AddRange(new object[] {
-            "MEGASUMO",
-            "MINISUMO",
-            "SEGUIDOR DE LÍNEAS",
-            "DRONES",
-            "LEGO SUMO",
-            "SEGUIDOR DE LÍNEAS LEGO",
-            "ROBOTOPIA",
-            "LABERINTO"});
             this.cmbCategoria.Location = new System.Drawing.Point(167, 176);
             this.cmbCategoria.Name = "cmbCategoria";
             this.cmbCategoria.Size = new System.Drawing.Size(171, 21);
-            this.cmbCategoria.TabIndex = 9;
+            this.cmbCategoria.TabIndex = 6;
             // 
             // lblCategoria
             // 
@@ -172,14 +163,14 @@
             this.txtlider.Location = new System.Drawing.Point(167, 135);
             this.txtlider.Name = "txtlider";
             this.txtlider.Size = new System.Drawing.Size(171, 20);
-            this.txtlider.TabIndex = 7;
+            this.txtlider.TabIndex = 4;
             // 
             // txtIdRobot
             // 
             this.txtIdRobot.Location = new System.Drawing.Point(167, 23);
             this.txtIdRobot.Name = "txtIdRobot";
             this.txtIdRobot.Size = new System.Drawing.Size(171, 20);
-            this.txtIdRobot.TabIndex = 5;
+            this.txtIdRobot.TabIndex = 1;
             // 
             // lblIdRobot
             // 
@@ -199,7 +190,7 @@
             this.grbOperaciones.Location = new System.Drawing.Point(379, 12);
             this.grbOperaciones.Name = "grbOperaciones";
             this.grbOperaciones.Size = new System.Drawing.Size(188, 244);
-            this.grbOperaciones.TabIndex = 6;
+            this.grbOperaciones.TabIndex = 8;
             this.grbOperaciones.TabStop = false;
             this.grbOperaciones.Text = "Operaciones";
             // 
@@ -208,7 +199,7 @@
             this.btnIngresarRobot.Location = new System.Drawing.Point(17, 66);
             this.btnIngresarRobot.Name = "btnIngresarRobot";
             this.btnIngresarRobot.Size = new System.Drawing.Size(155, 23);
-            this.btnIngresarRobot.TabIndex = 11;
+            this.btnIngresarRobot.TabIndex = 10;
             this.btnIngresarRobot.Text = "Ingresar Robot";
             this.btnIngresarRobot.UseVisualStyleBackColor = true;
             this.btnIngresarRobot.Click += new System.EventHandler(this.btnIngresarRobot_Click);
@@ -218,7 +209,7 @@
             this.btnBorrarRobot.Location = new System.Drawing.Point(17, 124);
             this.btnBorrarRobot.Name = "btnBorrarRobot";
             this.btnBorrarRobot.Size = new System.Drawing.Size(155, 23);
-            this.btnBorrarRobot.TabIndex = 14;
+            this.btnBorrarRobot.TabIndex = 12;
             this.btnBorrarRobot.Text = "Borrar Robot";
             this.btnBorrarRobot.UseVisualStyleBackColor = true;
             this.btnBorrarRobot.Click += new System.EventHandler(this.btnBorrarRobot_Click);
@@ -228,7 +219,7 @@
             this.btnHabilitarRobot.Location = new System.Drawing.Point(17, 38);
             this.btnHabilitarRobot.Name = "btnHabilitarRobot";
             this.btnHabilitarRobot.Size = new System.Drawing.Size(155, 23);
-            this.btnHabilitarRobot.TabIndex = 10;
+            this.btnHabilitarRobot.TabIndex = 9;
             this.btnHabilitarRobot.Text = "Habilitar Ingreso";
             this.btnHabilitarRobot.UseVisualStyleBackColor = true;
             this.btnHabilitarRobot.Click += new System.EventHandler(this.btnHabilitarRobot_Click);
@@ -238,7 +229,7 @@
             this.btnModificarRobot.Location = new System.Drawing.Point(17, 95);
             this.btnModificarRobot.Name = "btnModificarRobot";
             this.btnModificarRobot.Size = new System.Drawing.Size(155, 23);
-            this.btnModificarRobot.TabIndex = 13;
+            this.btnModificarRobot.TabIndex = 11;
             this.btnModificarRobot.Text = "Modificar Robot";
             this.btnModificarRobot.UseVisualStyleBackColor = true;
             this.btnModificarRobot.Click += new System.EventHandler(this.btnModificarRobot_Click);
@@ -249,21 +240,21 @@
             this.dgvRobot.AllowUserToDeleteRows = false;
             this.dgvRobot.BackgroundColor = System.Drawing.SystemColors.Info;
             this.dgvRobot.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvRobot.Enabled = false;
             this.dgvRobot.Location = new System.Drawing.Point(13, 55);
             this.dgvRobot.Margin = new System.Windows.Forms.Padding(2);
             this.dgvRobot.Name = "dgvRobot";
             this.dgvRobot.RowTemplate.Height = 24;
             this.dgvRobot.Size = new System.Drawing.Size(532, 162);
             this.dgvRobot.TabIndex = 102;
+            this.dgvRobot.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRobot_CellClick);
             this.dgvRobot.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvRobot_CellContentClick);
             // 
             // grbRobots
             // 
+            this.grbRobots.Controls.Add(this.btnQuitarFiltro);
             this.grbRobots.Controls.Add(this.btnFiltrar);
             this.grbRobots.Controls.Add(this.txtFiltroNombre);
             this.grbRobots.Controls.Add(this.lblTipoFiltro);
-            this.grbRobots.Controls.Add(this.cmbTipoFiltro);
             this.grbRobots.Controls.Add(this.dgvRobot);
             this.grbRobots.Location = new System.Drawing.Point(12, 262);
             this.grbRobots.Name = "grbRobots";
@@ -272,9 +263,19 @@
             this.grbRobots.TabStop = false;
             this.grbRobots.Text = "Robots";
             // 
+            // btnFiltrar
+            // 
+            this.btnFiltrar.Location = new System.Drawing.Point(268, 24);
+            this.btnFiltrar.Name = "btnFiltrar";
+            this.btnFiltrar.Size = new System.Drawing.Size(114, 23);
+            this.btnFiltrar.TabIndex = 107;
+            this.btnFiltrar.Text = "Filtrar";
+            this.btnFiltrar.UseVisualStyleBackColor = true;
+            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            // 
             // txtFiltroNombre
             // 
-            this.txtFiltroNombre.Location = new System.Drawing.Point(235, 26);
+            this.txtFiltroNombre.Location = new System.Drawing.Point(102, 27);
             this.txtFiltroNombre.Name = "txtFiltroNombre";
             this.txtFiltroNombre.Size = new System.Drawing.Size(121, 20);
             this.txtFiltroNombre.TabIndex = 105;
@@ -288,26 +289,15 @@
             this.lblTipoFiltro.TabIndex = 104;
             this.lblTipoFiltro.Text = "Filtrar por:";
             // 
-            // cmbTipoFiltro
+            // btnQuitarFiltro
             // 
-            this.cmbTipoFiltro.FormattingEnabled = true;
-            this.cmbTipoFiltro.Items.AddRange(new object[] {
-            "NOMBRE",
-            "ESTADO"});
-            this.cmbTipoFiltro.Location = new System.Drawing.Point(85, 26);
-            this.cmbTipoFiltro.Name = "cmbTipoFiltro";
-            this.cmbTipoFiltro.Size = new System.Drawing.Size(121, 21);
-            this.cmbTipoFiltro.TabIndex = 103;
-            // 
-            // btnFiltrar
-            // 
-            this.btnFiltrar.Location = new System.Drawing.Point(384, 25);
-            this.btnFiltrar.Name = "btnFiltrar";
-            this.btnFiltrar.Size = new System.Drawing.Size(114, 23);
-            this.btnFiltrar.TabIndex = 107;
-            this.btnFiltrar.Text = "Filtrar";
-            this.btnFiltrar.UseVisualStyleBackColor = true;
-            this.btnFiltrar.Click += new System.EventHandler(this.btnFiltrar_Click);
+            this.btnQuitarFiltro.Location = new System.Drawing.Point(408, 24);
+            this.btnQuitarFiltro.Name = "btnQuitarFiltro";
+            this.btnQuitarFiltro.Size = new System.Drawing.Size(114, 23);
+            this.btnQuitarFiltro.TabIndex = 108;
+            this.btnQuitarFiltro.Text = "Quitar Filtro";
+            this.btnQuitarFiltro.UseVisualStyleBackColor = true;
+            this.btnQuitarFiltro.Click += new System.EventHandler(this.btnQuitarFiltro_Click);
             // 
             // frmIngresoRobot
             // 
@@ -346,7 +336,6 @@
         private System.Windows.Forms.GroupBox grbRobots;
         private System.Windows.Forms.TextBox txtFiltroNombre;
         private System.Windows.Forms.Label lblTipoFiltro;
-        private System.Windows.Forms.ComboBox cmbTipoFiltro;
         private System.Windows.Forms.Label lblIdRobot;
         private System.Windows.Forms.ComboBox cmbEquipo;
         private System.Windows.Forms.Label label4;
@@ -356,5 +345,6 @@
         private System.Windows.Forms.TextBox txtlider;
         private System.Windows.Forms.TextBox txtIdRobot;
         private System.Windows.Forms.Button btnFiltrar;
+        private System.Windows.Forms.Button btnQuitarFiltro;
     }
 }
