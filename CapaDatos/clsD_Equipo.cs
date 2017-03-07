@@ -16,14 +16,13 @@ namespace CapaDatos
             try
             {
                 TblEquipo equi1 = new TblEquipo { nomEquipo = nom, paisEquipo = pais, lugarEquipo = lugar };
-                bd.TblEquipos.InsertOnSubmit(equi1);
+                bd.TblEquipo.InsertOnSubmit(equi1);
                 bd.SubmitChanges();
                 return true;
             }
             catch
             {
                 return false;
-
             }
 
         }
@@ -32,7 +31,7 @@ namespace CapaDatos
         {
             try
             {
-                TblEquipo equi1 = bd.TblEquipos.First(r => r.idEquipo == id);
+                TblEquipo equi1 = bd.TblEquipo.First(r => r.idEquipo == id);
                 equi1.nomEquipo = nomEquipo;
                 equi1.paisEquipo  = paisEquipo;
                 equi1.lugarEquipo = lugarEquipo;
@@ -50,7 +49,7 @@ namespace CapaDatos
         {
             try
             {
-                var equ1 = from e in bd.TblEquipos
+                var equ1 = from e in bd.TblEquipo
                            select new { e.idEquipo, e.nomEquipo, e.paisEquipo, e.lugarEquipo, e.imgEquipo };
                 return equ1;
             }
@@ -67,11 +66,11 @@ namespace CapaDatos
 
             clsConexion.abrirConexion();
 
-            string sql = "select distinct paisEquipo from TblEquipos ";
+            string sql = "select distinct paisEquipo from TblEquipo ";
 
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
 
-            adaptador.Fill(ds2, "TblEquipos");
+            adaptador.Fill(ds2, "TblEquipo");
 
             clsConexion.cerrarConexion();
 
@@ -85,11 +84,11 @@ namespace CapaDatos
 
             clsConexion.abrirConexion();
 
-            string sql = "select * from TblEquipos where paisEquipo =" + paisEquipo;
+            string sql = "select * from TblEquipo where paisEquipo =" + paisEquipo;
 
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
 
-            adaptador.Fill(ds2, "TblEquipos");
+            adaptador.Fill(ds2, "TblEquipo");
 
             clsConexion.cerrarConexion();
 
@@ -103,11 +102,11 @@ namespace CapaDatos
 
             clsConexion.abrirConexion();
 
-            string sql = "select * from TblEquipos where idEquipo =" + idEquipo;
+            string sql = "select * from TblEquipo where idEquipo =" + idEquipo;
 
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
 
-            adaptador.Fill(ds2, "TblEquipos");
+            adaptador.Fill(ds2, "TblEquipo");
 
             clsConexion.cerrarConexion();
 
@@ -121,11 +120,11 @@ namespace CapaDatos
 
             clsConexion.abrirConexion();
 
-            string sql = "select distinct lugarEquipo from TblEquipos ";
+            string sql = "select distinct lugarEquipo from TblEquipo ";
 
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
 
-            adaptador.Fill(ds2, "TblEquipos");
+            adaptador.Fill(ds2, "TblEquipo");
 
             clsConexion.cerrarConexion();
 
@@ -139,11 +138,11 @@ namespace CapaDatos
 
             clsConexion.abrirConexion();
 
-            string sql = "select * from TblEquipos where paisEquipo =" + paisEquipo +" AND lugarEquipo = "+ lugarEquipo ;
+            string sql = "select * from TblEquipo where paisEquipo =" + paisEquipo +" AND lugarEquipo = "+ lugarEquipo ;
 
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
 
-            adaptador.Fill(ds2, "TblEquipos");
+            adaptador.Fill(ds2, "TblEquipo");
 
             clsConexion.cerrarConexion();
 
@@ -172,9 +171,9 @@ namespace CapaDatos
         {
             try
             {
-                TblEquipo equi1 = bd.TblEquipos.First(r => r.idEquipo == id);
+                TblEquipo equi1 = bd.TblEquipo.First(r => r.idEquipo == id);
 
-                bd.TblEquipos.DeleteOnSubmit(equi1);
+                bd.TblEquipo.DeleteOnSubmit(equi1);
                 bd.SubmitChanges();
                 return true;
             }

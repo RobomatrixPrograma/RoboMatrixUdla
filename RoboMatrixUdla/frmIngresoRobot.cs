@@ -14,7 +14,7 @@ namespace RoboMatrixUdla
     {
         clsNRobot N_objRobot = new clsNRobot();
         clsN_Equipo N_objEquipo = new clsN_Equipo();
-        clsNCategoria N_objCategoria = new clsNCategoria();
+        clsN_Categoria N_objCategoria = new clsN_Categoria();
         DataSet ds = new DataSet();
         int a = 0;
         public frmIngresoRobot()
@@ -34,7 +34,7 @@ namespace RoboMatrixUdla
         }
         private void cargarCombo2()
         {
-            cmbCategoria.DataSource = N_objCategoria.consultaCategoria();
+            cmbCategoria.DataSource = N_objCategoria.N_consultaCategoria();
             cmbCategoria.ValueMember = "idCat";
             cmbCategoria.DisplayMember = "nomCat";
         }

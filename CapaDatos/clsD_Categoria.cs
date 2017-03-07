@@ -14,7 +14,7 @@ namespace CapaDatos
         {
             try
             {
-                var Cat = from c in bd.TblCategorias
+                var Cat = from c in bd.TblCategoria
                           select new
                           {
                               c.idCat,
@@ -29,12 +29,12 @@ namespace CapaDatos
             }
         }
 
-        public object D_consultaCategoria(int opcion)
+        public object D_consultaCategoriaOpcion(int opcion)
         {
             try
             {
-                var Cat = from c in bd.TblCategorias
-                          where tipoCat == opcion
+                var Cat = from c in bd.TblCategoria
+                          where c.tipoCat == opcion
                           select new
                           {
                               c.idCat,
@@ -48,6 +48,22 @@ namespace CapaDatos
                 throw ex;
             }
         }
+
+        public string D_consultaCategoria(int idCategoria)
+        {
+            try
+            {
+                var cat1 = (from c in bd.TblCategoria
+                            where c.idCat == idCategoria
+                            select new { c.nomCat }).FirstOrDefault().nomCat.ToString();
+                return cat1;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
+
 
 
     }
