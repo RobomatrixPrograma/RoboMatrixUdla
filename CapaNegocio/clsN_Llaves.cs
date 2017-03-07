@@ -9,7 +9,7 @@ namespace CapaNegocio
 {
     public class clsN_Llaves
     {
-        cls
+        clsD_Minisumo D_Minisumo = new clsD_Minisumo();
         public int robot1 { get; set; }
         public int robot2 { get; set; }
         public string nomRobot1 { get; set; }
@@ -23,11 +23,16 @@ namespace CapaNegocio
             switch(cat)
             {
                 case "Minisumo":
-
+                    return true;
                     break;
                 case "Megasumo":
+                    return true;
                     break;
                 case "Sumo Lego":
+                    return true;
+                    break;
+                default:
+                    return false;
                     break;
             }
         }

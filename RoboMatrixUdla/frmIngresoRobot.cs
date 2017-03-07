@@ -13,8 +13,8 @@ namespace RoboMatrixUdla
     public partial class frmIngresoRobot : Form
     {
         clsNRobot N_objRobot = new clsNRobot();
-        clsNEquipo N_objEquipo = new clsNEquipo();
-
+        clsN_Equipo N_objEquipo = new clsN_Equipo();
+        clsN_Categoria N_objCategoria = new clsN_Categoria();
         DataSet ds = new DataSet();
         int a = 0;
         public frmIngresoRobot()
@@ -28,9 +28,15 @@ namespace RoboMatrixUdla
 
         private void cargarCombo()
         {
-            cmbCategoria.DataSource = N_objEquipo.N_consultaEquipo();
-            cmbCategoria.ValueMember = "idEquipo";
-            cmbCategoria.DisplayMember = "nomEquipo";
+            cmbEquipo.DataSource = N_objEquipo.consultaEquipo2();
+            cmbEquipo.ValueMember = "idEquipo";
+            cmbEquipo.DisplayMember = "nomEquipo";
+        }
+        private void cargarCombo2()
+        {
+            cmbCategoria.DataSource = N_objCategoria.N_consultaCategoria();
+            cmbCategoria.ValueMember = "idCat";
+            cmbCategoria.DisplayMember = "nomCat";
         }
         private void frmIngresoRobot_Load(object sender, EventArgs e)
         {
@@ -38,10 +44,13 @@ namespace RoboMatrixUdla
             {
                 consultaRobot();
                 cargarCombo();
+                cargarCombo2();
+                cmbCategoria.SelectedIndex = 0;
+                cmbEstado.SelectedIndex = 0;
             }
             catch
             {
-                MessageBox.Show("ERROR EN LA CONSULTA DE CATEGORÍAS");
+                MessageBox.Show("ERROR EN LA CONSULTA");
             }
 
             a = 1;
@@ -53,7 +62,7 @@ namespace RoboMatrixUdla
             {
                 try
                 {
-                    if (N_objRobot.N_IngresarRobot(int.Parse(txtIdRobot.Text), txtNombre.Text, cmbEstado.Text, txtlider.Text, int.Parse(cmbCategoria.SelectedValue.ToString()), int.Parse(cmbEquipo.SelectedValue.ToString())))
+                    if (N_objRobot.N_IngresarRobot(int.Parse(txtIdRobot.Text),txtNombre.Text,cmbEstado.Text,txtlider.Text,int.Parse(cmbCategoria.SelectedValue.ToString()),int.Parse(cmbEquipo.SelectedValue.ToString())))
                     {
                         MessageBox.Show("INGRESO CORRECTO");
                     }
@@ -66,7 +75,6 @@ namespace RoboMatrixUdla
                 {
                     MessageBox.Show("INGRESO INCORRECTO");
                 }
-
                 try
                 {
                     consultaRobot();
@@ -136,9 +144,10 @@ namespace RoboMatrixUdla
             btnHabilitarRobot.Enabled = false;
             btnModificarRobot.Enabled = false;
             btnBorrarRobot.Enabled = false;
-            txtIdRobot.Enabled = false;
+            txtIdRobot.Enabled = true;
             txtIdRobot.Text = "";
             txtNombre.Clear();
+            
         }
 
         private void cmbIdRobot_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,6 +187,26 @@ namespace RoboMatrixUdla
 
         private void dgvRobot_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
+           
+        }
+
+        private void btnFiltrar_Click(object sender, EventArgs e)
+        {
+            if (a == 1)
+            {
+                
+                 dgvRobot.DataSource = N_objRobot.N_consultaRobotPorNombre(txtFiltroNombre.Text);
+           
+            }
+        }
+
+        private void btnQuitarFiltro_Click(object sender, EventArgs e)
+        {
+            consultaRobot();
+        }
+
+        private void dgvRobot_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
             btnIngresarRobot.Enabled = false;
             btnHabilitarRobot.Enabled = true;
             btnModificarRobot.Enabled = true;
@@ -192,21 +221,12 @@ namespace RoboMatrixUdla
                 txtIdRobot.Text = ds.Tables[0].Rows[0]["idRobot"].ToString();
                 txtNombre.Text = ds.Tables[0].Rows[0]["nomRobot"].ToString();
                 cmbEstado.Text = ds.Tables[0].Rows[0]["estadoRobot"].ToString();
-                txtlider.Text= ds.Tables[0].Rows[0]["liderRobot"].ToString();
-                cmbCategoria.Text = ds.Tables[0].Rows[0]["idCategoria"].ToString();
+                txtlider.Text = ds.Tables[0].Rows[0]["liderRobot"].ToString();
+                cmbCategoria.Text = N_objCategoria.consultaCategoria(int.Parse(ds.Tables[0].Rows[0]["idCategoria"].ToString()));
+
                 cmbEquipo.Text = ds.Tables[0].Rows[0]["idEquipo"].ToString();
                 txtIdRobot.Enabled = false;
                 btnIngresarRobot.Enabled = false;
-            }
-        }
-
-        private void btnFiltrar_Click(object sender, EventArgs e)
-        {
-            if (a == 1)
-            {
-                
-                 dgvRobot.DataSource = N_objRobot.N_consultaRobotPorNombre(txtFiltroNombre.Text);
-           
             }
         }
     }

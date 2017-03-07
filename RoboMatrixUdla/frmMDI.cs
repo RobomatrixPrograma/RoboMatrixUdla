@@ -17,18 +17,34 @@ namespace RoboMatrixUdla
             InitializeComponent();
         }
 
-        private void ingresarEquipoToolStripMenuItem_Click(object sender, EventArgs e)
+
+        private void ingresarRobotToolStripMenuItem1_Click(object sender, EventArgs e)
         {
             frmIngresoEquipo objIngresoEquipo = new frmIngresoEquipo();
             objIngresoEquipo.MdiParent = this;
             objIngresoEquipo.Show();
+
         }
 
-        private void ingresarRobotToolStripMenuItem_Click(object sender, EventArgs e)
+        private void ingresarRobotToolStripMenuItem2_Click(object sender, EventArgs e)
         {
             frmIngresoRobot objIngresoRobot = new frmIngresoRobot();
             objIngresoRobot.MdiParent = this;
             objIngresoRobot.Show();
+        }
+
+        private void toolStripMenuItem2_Click(object sender, EventArgs e)
+        {
+            frmIngresarLlaves objIngresoLlaves = new frmIngresarLlaves();
+            objIngresoLlaves.MdiParent = this;
+            objIngresoLlaves.Show();
+        }
+
+        private void oToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmIngresarOrden objIngresoOrden = new frmIngresarOrden();
+            objIngresoOrden.MdiParent = this;
+            objIngresoOrden.Show();
         }
     }
 }
