@@ -16,7 +16,7 @@ namespace CapaDatos
             try
             {
                 TblEquipo equi1 = new TblEquipo { nomEquipo = nom, paisEquipo = pais, lugarEquipo = lugar };
-                bd.TblEquipo.InsertOnSubmit(equi1);
+                bd.TblEquipos.InsertOnSubmit(equi1);
                 bd.SubmitChanges();
                 return true;
             }
@@ -31,7 +31,7 @@ namespace CapaDatos
         {
             try
             {
-                TblEquipo equi1 = bd.TblEquipo.First(r => r.idEquipo == id);
+                TblEquipo equi1 = bd.TblEquipos.First(r => r.idEquipo == id);
                 equi1.nomEquipo = nomEquipo;
                 equi1.paisEquipo  = paisEquipo;
                 equi1.lugarEquipo = lugarEquipo;
@@ -49,7 +49,7 @@ namespace CapaDatos
         {
             try
             {
-                var equ1 = from e in bd.TblEquipo
+                var equ1 = from e in bd.TblEquipos
                            select new { e.idEquipo, e.nomEquipo, e.paisEquipo, e.lugarEquipo, e.imgEquipo };
                 return equ1;
             }
@@ -123,9 +123,9 @@ namespace CapaDatos
         {
             try
             {
-                TblEquipo equi1 = bd.TblEquipo.First(r => r.idEquipo == id);
+                TblEquipo equi1 = bd.TblEquipos.First(r => r.idEquipo == id);
 
-                bd.TblEquipo.DeleteOnSubmit(equi1);
+                bd.TblEquipos.DeleteOnSubmit(equi1);
                 bd.SubmitChanges();
                 return true;
             }

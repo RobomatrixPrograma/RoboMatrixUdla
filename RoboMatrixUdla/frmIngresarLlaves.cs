@@ -16,6 +16,7 @@ namespace RoboMatrixUdla
         clsN_Llaves N_llaves = new clsN_Llaves();
         clsN_Categoria N_Categoria = new clsN_Categoria();
         clsNRobot N_Robot = new clsNRobot();
+        int a = 0;
         public frmIngresarLlaves()
         {
             InitializeComponent();
@@ -27,6 +28,8 @@ namespace RoboMatrixUdla
             cmbRobot1.Enabled = false;
             cmbRobot2.Enabled = false;
             btnGenerar.Enabled = false;
+            a = 1;
+
         }
 
         private void cargarCategorias()
@@ -60,16 +63,29 @@ namespace RoboMatrixUdla
 
         private void cargarRobot1(int cat)
         {
-            var robot = N_Robot.N_consultaRobotCat(cat);
-            if (robot != null)
-            {
-                cmbRobot1.DataSource = robot;
-                cmbRobot1.DisplayMember = "nomRobot";
-                cmbRobot1.ValueMember = "idRobot";
 
-            }
+            var robot = N_Robot.N_consultaRobot();
+            cmbRobot1.DataSource = robot;
+            cmbRobot1.DisplayMember = "nomRobot";
+            cmbRobot1.ValueMember = "idRobot";
+            cmbRobot1.SelectedIndex = 0;
         }
 
+        private void cargarRobot2()
+        {
+            if(a==1)
+            {
+                var robot = N_Robot.N_consultaRobot();
+                cmbRobot2.DataSource = robot;
+                cmbRobot2.DisplayMember = "nomRobot";
+                cmbRobot2.ValueMember = "idRobot";
+                cmbRobot2.SelectedIndex = 0;
+
+
+            }
+
+        }
+        
         private void cmbRobot2_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnGenerar.Enabled = true;
@@ -77,8 +93,20 @@ namespace RoboMatrixUdla
 
         private void cmbRobot1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
         }
 
+
+
+            if (a == 1)
+            {
+                cargarRobot2();
+                //cmbRobot2.Items.Remove(cmbRobot1.SelectedItem);
+                cmbRobot2.Enabled = true;
+            }
+            
+
+        }
         private void cmbCategoria_Click(object sender, EventArgs e)
         {
             int cat = int.Parse(cmbCategoria.SelectedValue.ToString());
@@ -86,17 +114,6 @@ namespace RoboMatrixUdla
             cmbRobot1.Enabled = true;
             cmbRobot2.Enabled = false;
 
-        }
-
-        private void cmbRobot2_Click(object sender, EventArgs e)
-        {
-        }
-
-        private void cmbRobot1_Click(object sender, EventArgs e)
-        {
-            int idR = int.Parse(cmbRobot1.SelectedValue.ToString());
-            cargarRobot2(idR);
-            cmbRobot2.Enabled = true;
         }
 
         private void cargarRobot2(int idR)
