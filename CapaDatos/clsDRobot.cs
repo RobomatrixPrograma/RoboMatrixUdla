@@ -90,6 +90,25 @@ namespace CapaDatos
             }
         }
 
+        public object D_consultaRobotExcepto(int idRobot)
+        {
+            try
+            {
+                var rob1 = from r in bd.TblRobot
+                           select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
+                var rob2 = from p in bd.TblRobot
+                           where p.idRobot  == idRobot
+                           select new { p.idRobot, p.nomRobot, p.estadoRobot, p.liderRobot, p.idCategoria, p.idEquipo };
+                var resultado = rob1.Except(rob2);
+
+                return resultado;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public bool D_ActualizaRobot(int id, string nombre, string estado, string lider, int idC, int idE)
         {
             try
@@ -114,17 +133,22 @@ namespace CapaDatos
         {
             DataSet ds2 = new DataSet();
             SqlDataAdapter adaptador;
-
             clsConexion.abrirConexion();
-
-            string sql = "select * from TblRobot where idRobot=" + idRobot;
-
+            string sql = "select * from TblRobot where idRobot =" + idRobot;
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
-
             adaptador.Fill(ds2, "TblRobot");
-
             clsConexion.cerrarConexion();
-
+            return ds2;
+        }
+        public DataSet D_consultaRobotCat(int idCat)
+        {
+            DataSet ds2 = new DataSet();
+            SqlDataAdapter adaptador;
+            clsConexion.abrirConexion();
+            string sql = "select * from TblRobot where idCategoria = " + idCat;
+            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
+            adaptador.Fill(ds2, "TblRobot");
+            clsConexion.cerrarConexion();
             return ds2;
         }
 

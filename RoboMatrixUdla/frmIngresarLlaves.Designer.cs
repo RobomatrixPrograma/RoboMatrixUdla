@@ -48,6 +48,7 @@
             this.cmbCategoria.Size = new System.Drawing.Size(183, 21);
             this.cmbCategoria.TabIndex = 0;
             this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
+            this.cmbCategoria.Click += new System.EventHandler(this.cmbCategoria_Click);
             // 
             // lblCategoria
             // 
@@ -105,6 +106,7 @@
             this.cmbRobot1.Size = new System.Drawing.Size(183, 21);
             this.cmbRobot1.TabIndex = 6;
             this.cmbRobot1.SelectedIndexChanged += new System.EventHandler(this.cmbRobot1_SelectedIndexChanged);
+            this.cmbRobot1.Click += new System.EventHandler(this.cmbRobot1_Click);
             // 
             // cmbRobot2
             // 
@@ -115,6 +117,7 @@
             this.cmbRobot2.Size = new System.Drawing.Size(182, 21);
             this.cmbRobot2.TabIndex = 7;
             this.cmbRobot2.SelectedIndexChanged += new System.EventHandler(this.cmbRobot2_SelectedIndexChanged);
+            this.cmbRobot2.Click += new System.EventHandler(this.cmbRobot2_Click);
             // 
             // frmIngresarLlaves
             // 
