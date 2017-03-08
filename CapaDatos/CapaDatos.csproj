@@ -42,6 +42,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsConexion.cs" />
+    <Compile Include="clsDLaberinto.cs" />
+    <Compile Include="clsDPuntajeLaberinto.cs" />
     <Compile Include="clsD_Categoria.cs" />
     <Compile Include="clsD_Equipo.cs" />
     <Compile Include="clsDRobot.cs" />
