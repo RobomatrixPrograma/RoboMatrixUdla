@@ -11,7 +11,7 @@ namespace CapaDatos
 {
     public static class clsConexion
     {
-        public static string rutaBD = @"Data Source=JUANMAVIANA;Initial Catalog=dbRoboMatrixUdla;Integrated Security=True";
+        public static string rutaBD = @"Data Source=.;Initial Catalog=dbRoboMatrixUdla;Integrated Security=True";
         public static SqlConnection conexion = new SqlConnection(rutaBD);
         public static void abrirConexion()
         {

@@ -24,6 +24,7 @@ namespace RoboMatrixUdla
         private void consultaRobot()
         {
             dgvRobot.DataSource = N_objRobot.N_consultaRobot();
+            
         }
 
         private void cargarCombo()
@@ -220,7 +221,15 @@ namespace RoboMatrixUdla
                 ds = N_objRobot.N_consultaRobot(b);
                 txtIdRobot.Text = ds.Tables[0].Rows[0]["idRobot"].ToString();
                 txtNombre.Text = ds.Tables[0].Rows[0]["nomRobot"].ToString();
-                cmbEstado.Text = ds.Tables[0].Rows[0]["estadoRobot"].ToString();
+                if(ds.Tables[0].Rows[0]["estadoRobot"].ToString()=="AC")
+                {
+                    cmbEstado.Text = "ACTIVO";
+                }
+                else
+                {
+                    cmbEstado.Text = "DESACTIVADO";
+                }
+
                 txtlider.Text = ds.Tables[0].Rows[0]["liderRobot"].ToString();
                 cmbCategoria.Text = N_objCategoria.consultaCategoria(int.Parse(ds.Tables[0].Rows[0]["idCategoria"].ToString()));
 
