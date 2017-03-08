@@ -10,6 +10,8 @@ namespace CapaNegocio
     public class clsN_Llaves
     {
         clsD_Minisumo D_Minisumo = new clsD_Minisumo();
+        clsD_Megasumo D_Megasumo = new clsD_Megasumo();
+        clsD_SumoLego D_Sumolego = new clsD_SumoLego();
         public int robot1 { get; set; }
         public int robot2 { get; set; }
         public string nomRobot1 { get; set; }
@@ -23,13 +25,22 @@ namespace CapaNegocio
             switch(cat)
             {
                 case "Minisumo":
-                    return true;
+                    if (D_Minisumo.agregarBatalla(robot1, nom1, robot2, nomRobot2))
+                        return true;
+                    else
+                        return false;
                     break;
                 case "Megasumo":
-                    return true;
+                    if (D_Megasumo.agregarBatalla(robot1, nom1, robot2, nomRobot2))
+                        return true;
+                    else
+                        return false;
                     break;
                 case "Sumo Lego":
-                    return true;
+                    if (D_Sumolego.agregarBatalla(robot1, nom1, robot2, nomRobot2))
+                        return true;
+                    else
+                        return false;
                     break;
                 default:
                     return false;

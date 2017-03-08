@@ -5,7 +5,7 @@ SIZE = 5000 MB,
 FILEGROWTH = 0)
 LOG ON (NAME = 'dbSistemaCitas_Log',
 FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\SistemaCitas_Log.ldf',
-SIZE = 1000 MB,
+SIZE = 1024 MB,
 FILEGROWTH = 0)
 GO
 
@@ -38,23 +38,104 @@ idCategoria int NOT NULL FOREIGN KEY REFERENCES TblCategoria(idCat),
 idEquipo int NOT NULL FOREIGN KEY REFERENCES TblEquipo(idEquipo),
 )
 
-CREATE TABLE TblParticipantesMinisumo
+CREATE TABLE TblMinisumo
 (
 idBatalla_minisumo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
 idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
 idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
 )
 
-CREATE TABLE TblParticipantesNanosumo
+CREATE TABLE TblResultadoMinisumo
 (
-idBatalla_nanosumo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idBatalla int NOT NULL FOREIGN KEY REFERENCES TblMinisumo(idBatalla_minisumo),
+puntosUno int NOT NULL,
+puntosDos int NOT NULL,
 idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
 idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
 )
 
-CREATE TABLE TblParticipantesLegosumo
+CREATE TABLE TblMegasumo
+(
+idBatalla_megasumo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+
+CREATE TABLE TblResultadosMegasumo
+(
+idBatalla int NOT NULL FOREIGN KEY REFERENCES TblMegasumo(idBatalla_megasumo),
+puntosUno int NOT NULL,
+puntosDos int NOT NULL,
+idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+CREATE TABLE TblLegosumo
 (
 idBatalla_Legosumo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
 idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
 idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+CREATE TABLE TblResultadoLegosumo
+(
+idBatalla int NOT NULL FOREIGN KEY REFERENCES TblLegoSumo(idBatalla_Legosumo),
+puntosUno int NOT NULL,
+puntosDos int NOT NULL,
+idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+
+)
+
+CREATE TABLE TbSeguidorLinea
+(
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+
+CREATE TABLE TbPuntajeSeguidorLinea
+(
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+timepo1 decimal(5,2) NULL,
+tiempo2 decimal(5,2) NULL,
+tiempo3 decimal(5,2) NULL,
+)
+
+CREATE TABLE TblDrone
+(
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+CREATE Table TblPuntajeDrone
+(
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+timepo1 decimal(5,2) NULL,
+puntaje int NOT NULL,
+)
+
+CREATE TABLE TblSeguidorLego
+(
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+CREATE TABLE TbPuntajeSeguidorLego
+(
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+timepo1 decimal(5,2) NULL,
+tiempo2 decimal(5,2) NULL,
+tiempo3 decimal(5,2) NULL,
+)
+
+CREATE TABLE TblLaberinto
+(
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+CREATE TABLE TblPuntajeLaberinto
+(
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+timepo1 decimal(5,2) NULL,
+tiempo2 decimal(5,2) NULL,
+tiempo3 decimal(5,2) NULL,
 )

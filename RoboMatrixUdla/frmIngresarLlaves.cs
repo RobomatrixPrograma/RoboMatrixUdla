@@ -47,18 +47,23 @@ namespace RoboMatrixUdla
             string nom1 = cmbRobot1.SelectedItem.ToString();
             string nom2 = cmbRobot2.SelectedItem.ToString();
             string cat = cmbCategoria.SelectedText.ToString();
-            if (N_llaves.N_ingresarCategoria(cat, idr1, idr2, nom1, nom2)) ;
+            if(idr1 != idr2)
+            {
+
+                if (N_llaves.N_ingresarCategoria(cat, idr1, idr2, nom1, nom2))
+                    MessageBox.Show("Ingreso Correcto");
+                else
+                    MessageBox.Show("Ingreso Incorrecto");
+            }
         }
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
-            cargarRobot1();
-            cmbRobot1.Enabled = true;
-            cmbRobot2.Enabled = false;
         }
 
-        private void cargarRobot1()
+        private void cargarRobot1(int cat)
         {
+
             var robot = N_Robot.N_consultaRobot();
             cmbRobot1.DataSource = robot;
             cmbRobot1.DisplayMember = "nomRobot";
@@ -76,6 +81,7 @@ namespace RoboMatrixUdla
                 cmbRobot2.ValueMember = "idRobot";
                 cmbRobot2.SelectedIndex = 0;
 
+
             }
 
         }
@@ -87,6 +93,11 @@ namespace RoboMatrixUdla
 
         private void cmbRobot1_SelectedIndexChanged(object sender, EventArgs e)
         {
+
+        }
+
+
+
             if (a == 1)
             {
                 cargarRobot2();
@@ -94,6 +105,23 @@ namespace RoboMatrixUdla
                 cmbRobot2.Enabled = true;
             }
             
+
+        }
+        private void cmbCategoria_Click(object sender, EventArgs e)
+        {
+            int cat = int.Parse(cmbCategoria.SelectedValue.ToString());
+            cargarRobot1(cat);
+            cmbRobot1.Enabled = true;
+            cmbRobot2.Enabled = false;
+
+        }
+
+        private void cargarRobot2(int idR)
+        {
+            var robot = N_Robot.N_consultaRobotExcepto(idR);
+            cmbRobot2.DataSource = robot;
+            cmbRobot2.DisplayMember = "nomRobot";
+            cmbRobot2.ValueMember = "idRobot";
         }
     }
 }
