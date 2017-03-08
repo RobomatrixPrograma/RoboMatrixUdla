@@ -16,7 +16,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblRobot
+                var rob1 = from r in bd.TblRobots
                            select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
                 return rob1;
             }
@@ -31,7 +31,7 @@ namespace CapaDatos
             try
             {
                 TblRobot rob1 = new TblRobot { idRobot=id, nomRobot = nombre, estadoRobot = estado, liderRobot = lider, idCategoria=idC, idEquipo=idE };
-                bd.TblRobot.InsertOnSubmit(rob1);
+                bd.TblRobots.InsertOnSubmit(rob1);
                 bd.SubmitChanges();
                 return true;
             }
@@ -79,8 +79,8 @@ namespace CapaDatos
             }
             try
             {
-                var rob1 = from r in bd.TblRobot
-                           where r.nomRobot==nombre || r.idRobot==a
+                var rob1 = from r in bd.TblRobots
+                           where r.nomRobot==nombre || r.idRobot==a || r.estadoRobot==nombre || r.liderRobot==nombre || r.idCategoria==a || r.idEquipo==a
                            select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
                 return rob1;
             }
@@ -94,7 +94,7 @@ namespace CapaDatos
         {
             try
             {
-                TblRobot rob1 = bd.TblRobot.First(r => r.idRobot == id);
+                TblRobot rob1 = bd.TblRobots.First(r => r.idRobot == id);
                 rob1.nomRobot = nombre;
                 rob1.estadoRobot = estado;
                 rob1.liderRobot = lider;
@@ -127,14 +127,31 @@ namespace CapaDatos
 
             return ds2;
         }
+        public DataSet D_consultaRobot2()
+        {
+            DataSet ds2 = new DataSet();
+            SqlDataAdapter adaptador;
+
+            clsConexion.abrirConexion();
+
+            string sql = "select * from TblRobot";
+
+            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
+
+            adaptador.Fill(ds2, "TblRobot");
+
+            clsConexion.cerrarConexion();
+
+            return ds2;
+        }
 
         public bool D_EliminarRobot(int id)
         {
             try
             {
-                TblRobot rob1 = bd.TblRobot.First(r => r.idRobot == id);
+                TblRobot rob1 = bd.TblRobots.First(r => r.idRobot == id);
 
-                bd.TblRobot.DeleteOnSubmit(rob1);
+                bd.TblRobots.DeleteOnSubmit(rob1);
                 bd.SubmitChanges();
                 return true;
             }
