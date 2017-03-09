@@ -46,6 +46,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="frmDrones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmDrones.Designer.cs">
+      <DependentUpon>frmDrones.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmIngresarLlaves.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -102,6 +108,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="frmDrones.resx">
+      <DependentUpon>frmDrones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="frmIngresarLlaves.resx">
       <DependentUpon>frmIngresarLlaves.cs</DependentUpon>
     </EmbeddedResource>
