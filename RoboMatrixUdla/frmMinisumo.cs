@@ -86,14 +86,12 @@ namespace RoboMatrixUdla
             {
                 empezarBatalla();
                 int idBatalla = N_Minisumo.N_ConsultaIdBatalla();
-                int robot1 = N_Minisumo.N_ConsultaRobot1();
-                int robot2 = N_Minisumo.N_ConsultaRobot2();
+                int robot1 = N_Minisumo.N_ConsultaRobot1(idBatalla);
+                int robot2 = N_Minisumo.N_ConsultaRobot2(idBatalla);
                 string nom1 = N_Robot.N_ConsultaNombre(robot1);
                 string nom2 = N_Robot.N_ConsultaNombre(robot2);
-                int eq1 = N_Robot.N_ConsultaEquipo(robot1);
-                int eq2 = N_Robot.N_ConsultaEquip(robot2);
-                string equi1 = N_Equipo.N_consultaNombre(eq1);
-                string equi2 = N_Equipo.N_consultaNombre(eq2);
+                string equi1 = N_Robot.N_ConsultaEquipo(robot1);
+                string equi2 = N_Robot.N_ConsultaEquipo(robot1);
                 MessageBox.Show("Siguiente Batalla: " + nom1 + " vs " + nom2);
                 lblRobot1.Text = nom1;
                 lblRobot2.Text = nom2;

@@ -48,9 +48,7 @@ namespace RoboMatrixUdla
             int idr2 = int.Parse(cmbRobot2.SelectedValue.ToString());
             int cat = int.Parse(cmbCategoria.SelectedValue.ToString());
             Console.WriteLine("Robot 1: " + idr1 + "  Robot 2: " + idr2);
-            if(N_llaves.comprobar(idr1, idr2,cat))
-            {
-                if (idr1 != idr2)
+            if (idr1 != idr2)
                 {
                     Console.WriteLine("Categoria: " + cat);
                     if (N_llaves.N_ingresarCategoria(cat, idr1, idr2))
@@ -58,11 +56,10 @@ namespace RoboMatrixUdla
                     else
                         MessageBox.Show("Ingreso Incorrecto");
                 }
-            }
-            else
-                MessageBox.Show("Llave Ya Existe");
+
             frmGenerarLlaves_Load(sender, e);
         }
+        
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {

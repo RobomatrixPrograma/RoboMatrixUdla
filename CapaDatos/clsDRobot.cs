@@ -107,6 +107,22 @@ namespace CapaDatos
             }*/
         }
 
+        public string consultaEquipo(int idRobot)
+        {
+            string rob1 = (from r in bd.TblRobots
+                           where r.idRobot  == idRobot
+                           select new { r.TblEquipo.nomEquipo }).FirstOrDefault().nomEquipo;
+            return rob1;
+        }
+
+        public string D_consultaNombre(int idRobot)
+        {
+            string rob1 = (from r in bd.TblRobots
+                           where r.idRobot == idRobot
+                           select new { r.nomRobot }).FirstOrDefault().nomRobot;
+            return rob1;
+        }
+
         public object D_consultaRobotPorNombre(string nombre)
         {
             int a = 0;

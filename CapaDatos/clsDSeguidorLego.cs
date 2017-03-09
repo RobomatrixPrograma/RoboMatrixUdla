@@ -112,7 +112,7 @@ namespace CapaDatos
 
             try
             {
-                TblSeguidorLego seguidor = new TblSeguidorLego { idRobot = robot1 };
+                TblSeguidorLego seguidor = new TblSeguidorLego { idRobot = robot1, estado = "SI" };
                 bd.TblSeguidorLegos.InsertOnSubmit(seguidor);
                 bd.SubmitChanges();
                 return true;

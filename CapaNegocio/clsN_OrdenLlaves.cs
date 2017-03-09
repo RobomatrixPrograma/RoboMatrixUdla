@@ -27,12 +27,12 @@ namespace CapaNegocio
             Console.WriteLine(cat);
             switch(cat)
             {
-                case 2:
+                case 1:
                     if (D_Minisumo.agregarBatalla(robot1, robot2))
                         return true;
                     else
                         return false; 
-                case 1:
+                case 2:
                     if (D_Megasumo.agregarBatalla(robot1, robot2))
                         return true;
                     else
@@ -57,17 +57,17 @@ namespace CapaNegocio
                         return true;
                     else
                         return false;
-                case 5:
+                case 6:
                     if (D_Dron.ingresarOrden(robot1))
                         return true;
                     else
                         return false;
-                case 9:
+                case 5:
                     if (D_SeguidorLego.ingresarOrden(robot1))
                         return true;
                     else
                         return false;
-                case 10:
+                case 7:
                     if (D_Laberinto.ingresarOrden(robot1))
                         return true;
                     else
@@ -81,10 +81,10 @@ namespace CapaNegocio
         {
             switch (cat)
             {
-                case 2:
+                case 1:
                     var minis = D_Minisumo.consultaMinisumo();
                     return minis;
-                case 1:
+                case 2:
                     var megas = D_Megasumo.consultaMegasumo();
                     return megas;
                 case 3:
@@ -93,13 +93,13 @@ namespace CapaNegocio
                 case 4:
                     var seguidor = D_SeguidorLinea.D_consultaLista();
                     return seguidor;
-                case 5:
+                case 6:
                     var dron = D_Dron.D_consultaLista();
                     return dron;
-                case 9:
+                case 5:
                     var seguidorLego = D_SeguidorLego.D_consultaListaPresentacion();
                     return seguidorLego;
-                case 10:
+                case 7:
                     var laberinto = D_Laberinto.D_consultaListaPresentacion();
                     return laberinto;
                 default:
@@ -113,13 +113,13 @@ namespace CapaNegocio
             robot2 = id2;           
             switch (cat)
             {
-                case 2:
+                case 1:
                     var minis = D_Minisumo.comprobar(robot1, robot2);
                     if (minis != null)
                         return false;
                     else
                         return true;
-                case 1:
+                case 2:
                     var megas = D_Megasumo.comprobar(robot1, robot2);
                     if (megas != null)
                         return false;
