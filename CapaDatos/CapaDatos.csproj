@@ -44,7 +44,9 @@
     <Compile Include="clsConexion.cs" />
     <Compile Include="clsDLaberinto.cs" />
     <Compile Include="clsDPuntajeLaberinto.cs" />
+    <Compile Include="clsDPuntajeSeguidorLinea.cs" />
     <Compile Include="clsDPuntajeSeguidorLego.cs" />
+    <Compile Include="clsDSeguidorLinea.cs" />
     <Compile Include="clsDSeguidorLego.cs" />
     <Compile Include="clsD_Categoria.cs" />
     <Compile Include="clsD_Dron.cs" />
