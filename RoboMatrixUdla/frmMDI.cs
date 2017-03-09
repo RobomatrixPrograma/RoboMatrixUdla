@@ -46,5 +46,28 @@ namespace RoboMatrixUdla
             objIngresoOrden.MdiParent = this;
             objIngresoOrden.Show();
         }
+
+        private void seguidorDeLíneaToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void seguidorDeLíneaLegoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmSeguidorLego objSeguidorLego = new frmSeguidorLego();
+            objSeguidorLego.Show();
+        }
+
+        private void laberintoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmLaberinto objLaberinto = new frmLaberinto();
+            objLaberinto.Show();
+        }
+
+        private void minisumoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMinisumo objMinisumo = new frmMinisumo();
+            objMinisumo.Show();
+        }
     }
 }

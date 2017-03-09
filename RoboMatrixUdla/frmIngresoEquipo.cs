@@ -38,45 +38,35 @@ namespace RoboMatrixUdla
             btnIngresarEquipo.Enabled = false;
             btnModificarEquipo.Enabled = false;
             btnBorrarEquipo.Enabled = false;
+            dgvEquipo.Enabled = true;
             cargarDataGridView();
-            cmbLugar.Enabled = false;
-            cmbPais.Enabled = false;
             txtNombre.Enabled = false;
             txtPais.Enabled = false;
             txtLugar.Enabled = false;
+            txtPais.CharacterCasing = CharacterCasing.Upper;
         }
-
-        private void habilitarBoton()
-        {
-            if (txtNombre.Text != "" && txtPais.Text!= "" && btnModificarEquipo.Enabled == false)
-                btnIngresarEquipo.Enabled = true;
-            else
-                btnIngresarEquipo.Enabled = false;
-        }
-
-        private void txtNombre_TextChanged(object sender, EventArgs e)
-        {
-            habilitarBoton();
-        }
-
-        private void txtPais_TextChanged(object sender, EventArgs e)
-        {
-            habilitarBoton();
-        }
+        
 
         private void btnIngresar_Click(object sender, EventArgs e)
         {
-            string nombre = txtNombre.Text;
-            string pais = txtPais.Text;
-            string lugar = txtLugar.Text;
-            if (objN_Equipo.ingresarEquipo(nombre, pais, lugar))
-                MessageBox.Show("Ingreso Correcto");
+            if (txtNombre.Text != "" && txtPais.Text != "" && btnModificarEquipo.Enabled == false)
+            {
+                string nombre = txtNombre.Text;
+                string pais = txtPais.Text;
+                string lugar = txtLugar.Text;
+                if (objN_Equipo.ingresarEquipo(nombre, pais, lugar))
+                    MessageBox.Show("Ingreso Correcto");
+                else
+                    MessageBox.Show("Ingreso Incorrecto");
+                cargarDataGridView();
+                btnHabilitarIngreso.Enabled = true;
+                txtNombre.Enabled = false;
+                txtPais.Enabled = false;
+                txtLugar.Enabled = false;
+                limpiar();
+            }
             else
-                MessageBox.Show("Ingreso Incorrecto");
-            cargarDataGridView();
-            limpiar();
-            btnHabilitarIngreso.Enabled = true;
-            btnHabilitarModificaciones.Enabled = true;
+                MessageBox.Show("Llene todos los campos");
         }
 
         private void btnHabilitarEquipo_Click(object sender, EventArgs e)
@@ -85,132 +75,105 @@ namespace RoboMatrixUdla
             btnHabilitarIngreso.Enabled = false;
             btnModificarEquipo.Enabled = false;
             btnBorrarEquipo.Enabled = false;
-            btnHabilitarModificaciones.Enabled = true;
-            dgvEquipo.Enabled = false;            
-            txtId.Clear();
-            txtNombre.Clear();
-            txtPais.Clear();
-            txtLugar.Clear();
-            cmbLugar.Enabled = false;
-            cmbPais.Enabled = false;
+            limpiar();
             txtNombre.Enabled = true;
             txtPais.Enabled = true;
             txtLugar.Enabled = true;
         }
+        
 
-        private void btnHabilitarModificaciones_Click(object sender, EventArgs e)
+        private void HabilitarModificaciones()
         {
-            btnHabilitarModificaciones.Enabled = false;
+            btnHabilitarIngreso.Enabled = true;
             btnIngresarEquipo.Enabled = false;
             btnHabilitarIngreso.Enabled = true;
-            dgvEquipo.Enabled = true;
-            txtNombre.Clear();
-            txtPais.Clear();
-            txtLugar.Clear();
-        }
-
-        private void comboBox2_SelectedIndexChanged(object sender, EventArgs e)
-        {
-            cmbLugar.Enabled = true;
-            string pais = cmbPais.SelectedText;
-            cargarDataGridView(pais);
-            cargarLugar(pais);
-        }
-
-        private void dgvEquipo_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
             btnModificarEquipo.Enabled = true;
             btnBorrarEquipo.Enabled = true;
-            txtId.Text = dgvEquipo.CurrentRow.Cells["idEquipo"].Value.ToString();
-            txtNombre.Text = (string)dgvEquipo.CurrentRow.Cells["nomEquipo"].Value;
-            txtPais.Text= (string)dgvEquipo.CurrentRow.Cells["paisEquipo"].Value;
-            txtLugar.Text = (string)dgvEquipo.CurrentRow.Cells["lugarEquipo"].Value;
-
+            txtNombre.Enabled = true;
+            txtLugar.Enabled = true;
+            txtPais.Enabled = true;
         }
 
         private void cargarDataGridView()
         {
             try
             {
-                ds = objN_Equipo.consultaEquipo();
-                dgvEquipo.DataSource = ds;
-                dgvEquipo.DataMember = "TblEquipo";
+                dgvEquipo.DataSource = objN_Equipo.consultaEquipoPresentacion();
             }
             catch (Exception ex)
             {
                 MessageBox.Show("Error al recuperar la informacion", "Error",
                     MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
-        }
-        private void cargarDataGridView(string pais)
+        }        
+        
+        private void btnModificarEquipo_Click(object sender, EventArgs e)
         {
-            try
+            if (txtNombre.Text != "" && txtPais.Text != "")
             {
-                ds = objN_Equipo.consultaEquipo(pais);
-                dgvEquipo.DataSource = ds;
-                dgvEquipo.DataMember = "TblEquipo";
+                int id = int.Parse(txtId.Text);
+                string nombre = txtNombre.Text;
+                string pais = txtPais.Text;
+                string lugar = txtLugar.Text;
+                if (objN_Equipo.actualizarEquipo(id, nombre, pais, lugar))
+                    MessageBox.Show("Actualización Correcto");
+                else
+                    MessageBox.Show("Actualización Incorrecto");
+                limpiar();
+                cargarDataGridView();
+                txtId.Enabled = false;
+                btnIngresarEquipo.Enabled = false;
+                btnModificarEquipo.Enabled = false;
+                btnBorrarEquipo.Enabled = false;
+                dgvEquipo.Enabled = true;
+                txtNombre.Enabled = false;
+                txtPais.Enabled = false;
+                txtLugar.Enabled = false;
             }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al recuperar la informacion", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
-        }
-        private void cargarDataGridView(string pais, string lugar)
-        {
-            try
-            {
-                ds = objN_Equipo.consultaEquipo(pais, lugar);
-                dgvEquipo.DataSource = ds;
-                dgvEquipo.DataMember = "TblEquipo";
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show("Error al recuperar la informacion", "Error",
-                    MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }
+            else
+                MessageBox.Show("Llene todos los campos");
+
         }
 
-        private void cargarPais()
+        private void dgvEquipo_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-
-            cmbPais.DataSource = objN_Equipo.N_consultaPais();
-            cmbPais.ValueMember = "idEquipo";
-            cmbPais.DisplayMember = "paisEquipo";
+            HabilitarModificaciones();
+            limpiar();
+            txtId.Text = dgvEquipo.CurrentRow.Cells["Código_Equipo"].Value.ToString();
+            txtNombre.Text = (string)dgvEquipo.CurrentRow.Cells["Nombre"].Value;
+            txtPais.Text = (string)dgvEquipo.CurrentRow.Cells["País"].Value;
+            txtLugar.Text = (string)dgvEquipo.CurrentRow.Cells["Universidad"].Value;
         }
 
-        private void cargarLugar(string pais)
+        private void btnBorrarEquipo_Click(object sender, EventArgs e)
         {
-            cmbLugar.DataSource = objN_Equipo.N_consutlaLugar();
-            cmbLugar.ValueMember = "idEquipo";
-            cmbLugar.DisplayMember = "lugarEquipo";
+            int id = int.Parse(txtId.Text);
+            if (objN_Equipo.borrarEquipo(id))
+                MessageBox.Show("Eliminación Correcto");
+            else
+                MessageBox.Show("Eliminación Incorrecto");
+
+            cargarDataGridView();
+            limpiar();
+            txtId.Enabled = false;
+            btnIngresarEquipo.Enabled = false;
+            btnModificarEquipo.Enabled = false;
+            btnBorrarEquipo.Enabled = false;
+            dgvEquipo.Enabled = true;
+            txtNombre.Enabled = false;
+            txtPais.Enabled = false;
+            txtLugar.Enabled = false;
         }
 
-        private void cmbLugar_SelectedIndexChanged(object sender, EventArgs e)
+        private void txtFiltro_TextChanged(object sender, EventArgs e)
         {
-            string pais = cmbPais.SelectedItem.ToString();
-            string lugar = cmbLugar.SelectedItem.ToString();
-            cargarDataGridView(pais, lugar);
-        }
-
-        private void btnAgregarFiltro_Click(object sender, EventArgs e)
-        {
-            cmbLugar.Enabled = true;
-            cargarPais();
-            cmbPais.Enabled = false;
-
+            dgvEquipo.DataSource = objN_Equipo.consultaPorNombre(txtFiltro.Text);
         }
 
         private void btnQuitarFiltro_Click(object sender, EventArgs e)
         {
-            cmbLugar.Enabled = false;
-            cmbPais.Enabled = false;
             cargarDataGridView();
-        }
-
-        private void btnModificarEquipo_Click(object sender, EventArgs e)
-        {
-
+            txtFiltro.Clear();
         }
     }
 }

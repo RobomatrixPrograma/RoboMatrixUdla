@@ -5,8 +5,10 @@ SIZE = 5000 MB,
 FILEGROWTH = 0)
 LOG ON (NAME = 'dbSistemaCitas_Log',
 FILENAME = 'C:\Program Files\Microsoft SQL Server\MSSQL12.MSSQLSERVER\MSSQL\DATA\SistemaCitas_Log.ldf',
-SIZE = 1000 MB,
+SIZE = 1024 MB,
 FILEGROWTH = 0)
+GO
+USE dbRoboMatrixUdla
 GO
 
 USE dbRoboMatrixUdla
@@ -38,23 +40,122 @@ idCategoria int NOT NULL FOREIGN KEY REFERENCES TblCategoria(idCat),
 idEquipo int NOT NULL FOREIGN KEY REFERENCES TblEquipo(idEquipo),
 )
 
-CREATE TABLE TblParticipantesMinisumo
+CREATE TABLE TblMinisumo
 (
 idBatalla_minisumo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
 idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
 idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+estado char (2) NOT NULL DEFAULT ('NO'),
 )
 
-CREATE TABLE TblParticipantesNanosumo
+CREATE TABLE TblResultadoMinisumo
 (
-idBatalla_nanosumo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idBatalla int NOT NULL FOREIGN KEY REFERENCES TblMinisumo(idBatalla_minisumo),
+idPuntaje int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+puntosUno int NOT NULL,
+puntosDos int NOT NULL,
+idGanador int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+CREATE TABLE TblMegasumo
+(
+idBatalla_megasumo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
 idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
 idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+estado char (2) NOT NULL DEFAULT ('NO'),
 )
 
-CREATE TABLE TblParticipantesLegosumo
+
+CREATE TABLE TblResultadosMegasumo
+(
+idPuntaje int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idBatalla int NOT NULL FOREIGN KEY REFERENCES TblMegasumo(idBatalla_megasumo),
+puntosUno int NOT NULL,
+puntosDos int NOT NULL,
+idGanador int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+CREATE TABLE TblLegosumo
 (
 idBatalla_Legosumo int IDENTITY (1,1) NOT NULL PRIMARY KEY,
 idRobotUno int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
 idRobotDos int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+estado char (2) NOT NULL DEFAULT ('NO'),
+
+)
+
+CREATE TABLE TblResultadoLegosumo
+(
+idPuntaje int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idBatalla int NOT NULL FOREIGN KEY REFERENCES TblLegoSumo(idBatalla_Legosumo),
+puntosUno int NOT NULL,
+puntosDos int NOT NULL,
+idGanador int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+)
+
+CREATE TABLE TblSeguidorLinea
+(
+idBatalla_SeguidorLinea int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+estado char (2) NOT NULL DEFAULT ('NO'),
+)
+
+
+CREATE TABLE TblPuntajeSeguidorLinea
+(
+idPuntaje int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idBatalla int NOT NULL FOREIGN KEY REFERENCES TblSeguidorLinea(idBatalla_SeguidorLinea),
+tiempo1 decimal(5,2) NULL,
+tiempo2 decimal(5,2) NULL,
+tiempo3 decimal(5,2) NULL,
+mejorTiempo decimal(5,2) NULL,
+)
+
+CREATE TABLE TblDrones
+(
+idBatalla_Drones int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+estado char (2) NOT NULL DEFAULT ('NO'),
+)
+
+CREATE Table TblPuntajeDrones
+(
+idPuntaje int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idBatalla int NOT NULL FOREIGN KEY REFERENCES TblDrones(idBatalla_Drones),
+tiempo1 decimal(5,2) NULL,
+puntaje int NOT NULL,
+)
+
+CREATE TABLE TblSeguidorLego
+(
+idBatalla_SeguidorLego int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+estado char (2) NOT NULL DEFAULT ('NO'),
+)
+
+CREATE TABLE TbPuntajeSeguidorLego
+(
+idPuntaje int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idBatalla int NOT NULL FOREIGN KEY REFERENCES TblSeguidorLego(idBatalla_SeguidorLego),
+tiempo1 decimal(5,2) NULL,
+tiempo2 decimal(5,2) NULL,
+tiempo3 decimal(5,2) NULL,
+mejorTiempo decimal (5,2) NULL,
+)
+
+CREATE TABLE TblLaberinto
+(
+idBatalla_Laberinto int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idRobot int NOT NULL FOREIGN KEY REFERENCES TblRobot(idRobot),
+estado char (2) NOT NULL DEFAULT ('NO'),
+)
+
+CREATE TABLE TblPuntajeLaberinto
+(
+idPuntaje int IDENTITY (1,1) NOT NULL PRIMARY KEY,
+idBatalla int NOT NULL FOREIGN KEY REFERENCES TblLaberinto(idBatalla_Laberinto),
+tiempo1 decimal(5,2) NULL,
+tiempo2 decimal(5,2) NULL,
+tiempo3 decimal(5,2) NULL,
+mejorTiempo decimal (5,2) NULL,
 )

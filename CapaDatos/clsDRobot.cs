@@ -12,11 +12,53 @@ namespace CapaDatos
     {
         MERRobotDataContext bd = new MERRobotDataContext();
 
+        public object D_consultaRobotPresentacion()
+        {
+            try
+            {
+                var rob1 = from r in bd.TblRobots
+                           select new {
+                               Código_Robot = r.idRobot,
+                               Nombre = r.nomRobot,
+                               Estado = r.estadoRobot,
+                               Líder = r.liderRobot,
+                               Categoría = r.TblCategoria.nomCat,
+                               Equipo = r.TblEquipo.nomEquipo,
+                           };
+                return rob1;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
         public object D_consultaRobot()
         {
             try
             {
                 var rob1 = from r in bd.TblRobots
+                           select new {
+                               r.idRobot,
+                               r.nomRobot,
+                               r.estadoRobot,
+                               r.liderRobot,
+                               r.idCategoria,
+                               r.idEquipo,
+                           };
+                return rob1;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public object D_consultaRobotCategoria(int cat)
+        {
+            try
+            {
+                var rob1 = from r in bd.TblRobots
+                           where r.idCategoria == cat
                            select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
                 return rob1;
             }
@@ -65,6 +107,22 @@ namespace CapaDatos
             }*/
         }
 
+        public string consultaEquipo(int idRobot)
+        {
+            string rob1 = (from r in bd.TblRobots
+                           where r.idRobot  == idRobot
+                           select new { r.TblEquipo.nomEquipo }).FirstOrDefault().nomEquipo;
+            return rob1;
+        }
+
+        public string D_consultaNombre(int idRobot)
+        {
+            string rob1 = (from r in bd.TblRobots
+                           where r.idRobot == idRobot
+                           select new { r.nomRobot }).FirstOrDefault().nomRobot;
+            return rob1;
+        }
+
         public object D_consultaRobotPorNombre(string nombre)
         {
             int a = 0;
@@ -80,9 +138,37 @@ namespace CapaDatos
             try
             {
                 var rob1 = from r in bd.TblRobots
-                           where r.nomRobot==nombre || r.idRobot==a || r.estadoRobot==nombre || r.liderRobot==nombre || r.idCategoria==a || r.idEquipo==a
-                           select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
+                           where r.nomRobot.Contains(nombre) || r.idRobot==a || r.estadoRobot.Contains(nombre) || r.liderRobot.Contains(nombre) || r.TblCategoria.nomCat.Contains(nombre) || r.TblEquipo.nomEquipo.Contains(nombre)
+                           select new
+                           {
+                               Código_Robot = r.idRobot,
+                               Nombre = r.nomRobot,
+                               Estado = r.estadoRobot,
+                               Líder = r.liderRobot,
+                               Categoría = r.TblCategoria.nomCat,
+                               Equipo = r.TblEquipo.nomEquipo,
+                           };
                 return rob1;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public object D_consultaRobotExcepto(int idRobot, int cat)
+        {
+            try
+            {
+                var rob1 = from r in bd.TblRobots
+                           where r.idCategoria == cat
+                           select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
+                var rob2 = from p in bd.TblRobots
+                           where p.idRobot  == idRobot && p.idCategoria == cat
+                           select new { p.idRobot, p.nomRobot, p.estadoRobot, p.liderRobot, p.idCategoria, p.idEquipo };
+                var resultado = rob1.Except(rob2);
+
+                return resultado;
             }
             catch
             {
@@ -114,34 +200,11 @@ namespace CapaDatos
         {
             DataSet ds2 = new DataSet();
             SqlDataAdapter adaptador;
-
             clsConexion.abrirConexion();
-
-            string sql = "select * from TblRobot where idRobot=" + idRobot;
-
+            string sql = "select * from TblRobot where idRobot =" + idRobot;
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
-
             adaptador.Fill(ds2, "TblRobot");
-
             clsConexion.cerrarConexion();
-
-            return ds2;
-        }
-        public DataSet D_consultaRobot2()
-        {
-            DataSet ds2 = new DataSet();
-            SqlDataAdapter adaptador;
-
-            clsConexion.abrirConexion();
-
-            string sql = "select * from TblRobot";
-
-            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
-
-            adaptador.Fill(ds2, "TblRobot");
-
-            clsConexion.cerrarConexion();
-
             return ds2;
         }
 
