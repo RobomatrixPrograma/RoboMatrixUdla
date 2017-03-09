@@ -13,7 +13,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TbPuntajeSeguidorLego
+                var rob1 = from r in bd.TbPuntajeSeguidorLegos
                            select new { r.TblSeguidorLego.TblRobot.nomRobot, r.mejorTiempo, r.tiempo1, r.tiempo2, r.tiempo3 };
                 return rob1;
             }
@@ -28,7 +28,7 @@ namespace CapaDatos
             try
             {
                 TbPuntajeSeguidorLego p1 = new TbPuntajeSeguidorLego{ idBatalla = id, tiempo1 = t1, tiempo2 = t2, tiempo3 = t3, mejorTiempo = mejor };
-                bd.TbPuntajeSeguidorLego.InsertOnSubmit(p1);
+                bd.TbPuntajeSeguidorLegos.InsertOnSubmit(p1);
                 bd.SubmitChanges();
                 return true;
             }

@@ -16,7 +16,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblRobot
+                var rob1 = from r in bd.TblRobots
                            select new {
                                Código_Robot = r.idRobot,
                                Nombre = r.nomRobot,
@@ -36,7 +36,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblRobot
+                var rob1 = from r in bd.TblRobots
                            select new {
                                r.idRobot,
                                r.nomRobot,
@@ -57,7 +57,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblRobot
+                var rob1 = from r in bd.TblRobots
                            where r.idCategoria == cat
                            select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
                 return rob1;
@@ -73,7 +73,7 @@ namespace CapaDatos
             try
             {
                 TblRobot rob1 = new TblRobot { idRobot=id, nomRobot = nombre, estadoRobot = estado, liderRobot = lider, idCategoria=idC, idEquipo=idE };
-                bd.TblRobot.InsertOnSubmit(rob1);
+                bd.TblRobots.InsertOnSubmit(rob1);
                 bd.SubmitChanges();
                 return true;
             }
@@ -109,7 +109,7 @@ namespace CapaDatos
 
         public string consultaEquipo(int idRobot)
         {
-            string rob1 = (from r in bd.TblRobot
+            string rob1 = (from r in bd.TblRobots
                            where r.idRobot  == idRobot
                            select new { r.TblEquipo.nomEquipo }).FirstOrDefault().nomEquipo;
             return rob1;
@@ -117,7 +117,7 @@ namespace CapaDatos
 
         public string D_consultaNombre(int idRobot)
         {
-            string rob1 = (from r in bd.TblRobot
+            string rob1 = (from r in bd.TblRobots
                            where r.idRobot == idRobot
                            select new { r.nomRobot }).FirstOrDefault().nomRobot;
             return rob1;
@@ -137,7 +137,7 @@ namespace CapaDatos
             }
             try
             {
-                var rob1 = from r in bd.TblRobot
+                var rob1 = from r in bd.TblRobots
                            where r.nomRobot.Contains(nombre) || r.idRobot==a || r.estadoRobot.Contains(nombre) || r.liderRobot.Contains(nombre) || r.TblCategoria.nomCat.Contains(nombre) || r.TblEquipo.nomEquipo.Contains(nombre)
                            select new
                            {
@@ -160,10 +160,10 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblRobot
+                var rob1 = from r in bd.TblRobots
                            where r.idCategoria == cat
                            select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
-                var rob2 = from p in bd.TblRobot 
+                var rob2 = from p in bd.TblRobots 
                            where p.idRobot  == idRobot && p.idCategoria == cat
                            select new { p.idRobot, p.nomRobot, p.estadoRobot, p.liderRobot, p.idCategoria, p.idEquipo };
                 var resultado = rob1.Except(rob2);
@@ -180,7 +180,7 @@ namespace CapaDatos
         {
             try
             {
-                TblRobot rob1 = bd.TblRobot.First(r => r.idRobot == id);
+                TblRobot rob1 = bd.TblRobots.First(r => r.idRobot == id);
                 rob1.nomRobot = nombre;
                 rob1.estadoRobot = estado;
                 rob1.liderRobot = lider;
@@ -212,9 +212,9 @@ namespace CapaDatos
         {
             try
             {
-                TblRobot rob1 = bd.TblRobot.First(r => r.idRobot == id);
+                TblRobot rob1 = bd.TblRobots.First(r => r.idRobot == id);
 
-                bd.TblRobot.DeleteOnSubmit(rob1);
+                bd.TblRobots.DeleteOnSubmit(rob1);
                 bd.SubmitChanges();
                 return true;
             }
