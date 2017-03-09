@@ -12,6 +12,7 @@ namespace CapaNegocio
     public class clsN_Equipo
     {
         clsD_Equipo objD_Equipo = new clsD_Equipo();
+        int idEquipo { get; set; }
         string nomEquipo { get; set; }
         string paisEquipo { get; set; }
         string lugarEquipo { get; set; }
@@ -27,15 +28,16 @@ namespace CapaNegocio
                 return false;
         }
 
-        public object consultaEquipo2()
+        public object consultaEquipoPresentacion()
         {
-            var cat1 = objD_Equipo.D_consultaEquipo2();
+            var cat1 = objD_Equipo.D_consultaEquipoPresentacion();
             return cat1;
         }
 
-        public DataSet consultaEquipo()
+        public object consultaEquipo()
         {
-            return (objD_Equipo.D_consultaEquipo());
+            var equi =  (objD_Equipo.D_consultaEquipo());
+            return equi;
         }
 
         public object N_consultaPais()
@@ -61,6 +63,51 @@ namespace CapaNegocio
         {
             var equ1 = objD_Equipo.D_consultaLugar();
             return equ1;
+        }
+
+        public bool borrarEquipo(int id)
+        {
+            idEquipo = id;
+            if (objD_Equipo.D_EliminarEquipo(idEquipo))
+                return true;
+            else
+                return false;
+        }
+
+        public bool actualizarEquipo(int id, string nombre, string pais, string lugar)
+        {
+            idEquipo = id;
+            nomEquipo = nombre;
+            paisEquipo = pais;
+            lugarEquipo = lugar;
+            if (objD_Equipo.D_ActualizaEquipo(idEquipo,nomEquipo,paisEquipo,lugarEquipo))
+                return true;
+            else
+                return false;
+        }
+
+        public object consultaPorNombre(string text)
+        {
+            nomEquipo = text;
+            try
+            {
+                idEquipo = int.Parse(text);
+            }
+            catch
+            {
+                idEquipo = -1;
+                Console.WriteLine("Id Equipo: " + idEquipo);
+            }
+            if (idEquipo ==-1)
+            {
+                var equi = objD_Equipo.D_consultaEquipoNombre(nomEquipo);
+                return equi;
+            }
+            else
+            {
+                var equi = objD_Equipo.D_consultaEquipoId(idEquipo);
+                return equi;
+            }
         }
     }
 }
