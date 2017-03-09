@@ -97,10 +97,10 @@ namespace CapaNegocio
                     var dron = D_Dron.D_consultaLista();
                     return dron;
                 case 9:
-                    var seguidorLego = D_SeguidorLego.D_consultaLista();
+                    var seguidorLego = D_SeguidorLego.D_consultaListaPresentacion();
                     return seguidorLego;
                 case 10:
-                    var laberinto = D_Laberinto.D_consultaLista();
+                    var laberinto = D_Laberinto.D_consultaListaPresentacion();
                     return laberinto;
                 default:
                     return null;

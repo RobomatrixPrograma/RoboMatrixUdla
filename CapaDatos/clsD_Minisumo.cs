@@ -60,5 +60,53 @@ namespace CapaDatos
                          select grp.Key;
             return minis;
         }
+        public int D_consultaListaID()
+        {
+            try
+            {
+                int a = (from r in bd.TblMinisumos
+                         where r.estado != "SI"
+                         select new { r.idBatalla_minisumo }).FirstOrDefault().idBatalla_minisumo;
+
+                return a;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
+
+        public int D_consultaRobot1(int idB)
+        {
+            try
+            {
+                int a = (from r in bd.TblMinisumos
+                         where r.estado != "SI" && r.idBatalla_minisumo == idB
+                         select new { r.idRobotUno }).FirstOrDefault().idRobotUno;
+
+                return a;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+
+        }
+
+        public int D_consultaRobot2(int idB)
+        {
+            try
+            {
+                int a = (from r in bd.TblMinisumos
+                         where r.estado != "SI" && r.idBatalla_minisumo == idB
+                         select new { r.idRobotDos }).FirstOrDefault().idRobotDos;
+
+                return a;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

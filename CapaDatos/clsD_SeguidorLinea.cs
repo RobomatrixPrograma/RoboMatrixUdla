@@ -36,7 +36,6 @@ namespace CapaDatos
             try
             {
                 var rob1 = from r in bd.TblSeguidorLineas
-                           where r.estado != "SI"
                            select new {
                                Código_Robot = r.idRobot,
                                Nombre = r.TblRobot.nomRobot,

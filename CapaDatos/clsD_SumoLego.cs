@@ -61,5 +61,21 @@ namespace CapaDatos
                         select grp.Key;
             return legos;
         }
+
+        public int D_consultaListaID()
+        {
+            try
+            {
+                int a = (from r in bd.TblLegosumos
+                         where r.estado != "SI"
+                         select new { r.idBatalla_Legosumo }).FirstOrDefault().idBatalla_Legosumo;
+
+                return a;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

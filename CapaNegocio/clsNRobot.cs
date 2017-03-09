@@ -38,7 +38,8 @@ namespace CapaNegocio
         {
             idRobot = id;
             Nombre = nombre;
-            if(estado == "ACTIVO")
+            int e = int.Parse(estado);
+            if(e == 0)
             {
                 Estado = "AC";
             }
@@ -59,7 +60,8 @@ namespace CapaNegocio
         {
             idRobot = id;
             Nombre = nombre;
-            if (estado == "ACTIVADO")
+            int e = int.Parse(estado);
+            if (e == 0)
             {
                 Estado = "AC";
             }

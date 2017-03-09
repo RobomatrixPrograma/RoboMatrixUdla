@@ -62,5 +62,20 @@ namespace CapaDatos
                         select grp.Key;
             return megas;
         }
+        public int D_consultaListaID()
+        {
+            try
+            {
+                int a = (from r in bd.TblMegasumos
+                         where r.estado != "SI"
+                         select new { r.idBatalla_megasumo }).FirstOrDefault().idBatalla_megasumo;
+
+                return a;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
     }
 }

@@ -21,6 +21,8 @@ namespace RoboMatrixUdla
             InitializeComponent();
             btnGenerar.Enabled = false;
             btnSeleccionar.Enabled = true;
+            cmbCategoria.Enabled = false;
+            cmbRobot.Enabled = false;
         }
 
         private void btnGenerar_Click(object sender, EventArgs e)
@@ -29,9 +31,11 @@ namespace RoboMatrixUdla
             int idC = int.Parse(cmbCategoria.SelectedValue.ToString());
             int idR = int.Parse(cmbRobot.SelectedValue.ToString());
             if(N_OrdenLlaves.N_ingresarCategoria(idC,idR))
-                MessageBox.Show("Ingreso Correcto");
+                MessageBox.Show("Ingreso Correcto");  
             else
                 MessageBox.Show("Ingreso Incorrecto");
+            int cat = int.Parse(cmbCategoria.SelectedValue.ToString());
+            consultaCategoria(cat);
 
         }
         private void cargarCategorias()

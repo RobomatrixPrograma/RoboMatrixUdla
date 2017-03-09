@@ -71,11 +71,11 @@ namespace RoboMatrixUdla
 
         private void btnIngresarRobot_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text != "" && (cmbEstado.Text == "ACTIVO" && cmbEstado.Text == "DESACTIVADO") && txtIdRobot.Text != "" )
+            if (txtNombre.Text != ""  && txtIdRobot.Text != "" )
             {
                 try
                 {
-                    if (N_objRobot.N_IngresarRobot(int.Parse(txtIdRobot.Text),txtNombre.Text,cmbEstado.Text,txtlider.Text,int.Parse(cmbCategoria.SelectedValue.ToString()),int.Parse(cmbEquipo.SelectedValue.ToString())))
+                    if (N_objRobot.N_IngresarRobot(int.Parse(txtIdRobot.Text),txtNombre.Text,cmbEstado.SelectedIndex.ToString(),txtlider.Text,int.Parse(cmbCategoria.SelectedValue.ToString()),int.Parse(cmbEquipo.SelectedValue.ToString())))
                     {
                         MessageBox.Show("INGRESO CORRECTO");
                         Limpiar();
@@ -124,7 +124,7 @@ namespace RoboMatrixUdla
             {
                 if(txtNombre.Text!= "" && txtIdRobot.Text != "")
                 {
-                    if (N_objRobot.N_ActualizarRobot(int.Parse(txtIdRobot.Text), txtNombre.Text, cmbEstado.Text, txtlider.Text, int.Parse(cmbCategoria.SelectedValue.ToString()), int.Parse(cmbEquipo.SelectedValue.ToString())))
+                    if (N_objRobot.N_ActualizarRobot(int.Parse(txtIdRobot.Text), txtNombre.Text, cmbEstado.SelectedIndex.ToString(), txtlider.Text, int.Parse(cmbCategoria.SelectedValue.ToString()), int.Parse(cmbEquipo.SelectedValue.ToString())))
                     {
                         MessageBox.Show("ACTUALIZACION CORRECTA");
                         Limpiar();

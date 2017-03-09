@@ -31,7 +31,6 @@ namespace CapaDatos
             try
             {
                 var rob1 = from r in bd.TblDrones
-                           where r.estado != "SI"
                            select new
                            {
                                Código_Robot = r.idRobot,

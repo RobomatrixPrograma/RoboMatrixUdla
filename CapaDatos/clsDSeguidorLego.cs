@@ -24,6 +24,25 @@ namespace CapaDatos
             }
         }
 
+        public object D_consultaListaPresentacion()
+        {
+            try
+            {
+                var rob1 = from r in bd.TblSeguidorLegos
+                           select new
+                           {
+                               Código_Robot = r.idRobot,
+                               Nombre = r.TblRobot.nomRobot,
+                               Equipo = r.TblRobot.TblEquipo.nomEquipo,
+                           };
+                return rob1;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
+
         public int D_consultaListaID()
         {
             try
