@@ -15,7 +15,7 @@ namespace CapaDatos
             try
             {
                 TblMinisumo minis = new TblMinisumo { idRobotUno = robot1, idRobotDos = robot2, estado= "NO"};
-                bd.TblMinisumos.InsertOnSubmit(minis);
+                bd.TblMinisumo.InsertOnSubmit(minis);
                 bd.SubmitChanges();
                 return true;
             }
@@ -29,7 +29,7 @@ namespace CapaDatos
         {
             try
             {
-                var minis = from m in bd.TblMinisumos
+                var minis = from m in bd.TblMinisumo
                             select new
                             {
                                 Batalla = m.idBatalla_minisumo,
@@ -46,11 +46,26 @@ namespace CapaDatos
             }
         }
 
+        public object cargarParticipantes()
+        {
+            var minis = from m in bd.TblMinisumo
+                        where m.estado !="SI"
+                        select new
+                        {
+                            N_Batalla = m.idBatalla_minisumo,
+                            Nombre_1 = m.TblRobot.nomRobot,
+                            Equipo_1 = m.TblRobot.TblEquipo.nomEquipo,
+                            Nombre_2 = m.TblRobot1.nomRobot,
+                            Equipo_2 = m.TblRobot1.TblEquipo.nomEquipo,
+                        };
+            return minis;
+        }
+
         public bool D_actualizarEstado(int idBatalla, string estado)
         {
             try
             {
-                TblMinisumo minis = bd.TblMinisumos.First(r => r.idBatalla_minisumo == idBatalla);
+                TblMinisumo minis = bd.TblMinisumo.First(r => r.idBatalla_minisumo == idBatalla);
                 minis.estado = estado;
                 bd.SubmitChanges();
                 return true;
@@ -64,7 +79,7 @@ namespace CapaDatos
 
         public object comprobar(int robot1, int robot2)
         {
-            var minis = from m in bd.TblMinisumos
+            var minis = from m in bd.TblMinisumo
                         where m.idRobotUno == robot1 && m.idRobotDos == robot2 || 
                         m.idRobotUno == robot2 && m.idRobotDos == robot1
                         group m by                     
@@ -81,7 +96,7 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblMinisumos
+                int a = (from r in bd.TblMinisumo
                          where r.estado != "SI"
                          select new { r.idBatalla_minisumo }).FirstOrDefault().idBatalla_minisumo;
 
@@ -97,7 +112,7 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblMinisumos
+                int a = (from r in bd.TblMinisumo
                          where r.estado != "SI" && r.idBatalla_minisumo == idB
                          select new { r.idRobotUno }).FirstOrDefault().idRobotUno;
 
@@ -114,7 +129,7 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblMinisumos
+                int a = (from r in bd.TblMinisumo
                          where r.estado != "SI" && r.idBatalla_minisumo == idB
                          select new { r.idRobotDos }).FirstOrDefault().idRobotDos;
 

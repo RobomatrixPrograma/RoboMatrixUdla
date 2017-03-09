@@ -51,19 +51,21 @@
             // 
             this.dgvParticipantes.AllowUserToAddRows = false;
             this.dgvParticipantes.AllowUserToDeleteRows = false;
+            this.dgvParticipantes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvParticipantes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvParticipantes.Location = new System.Drawing.Point(12, 87);
             this.dgvParticipantes.Name = "dgvParticipantes";
             this.dgvParticipantes.ReadOnly = true;
-            this.dgvParticipantes.Size = new System.Drawing.Size(344, 533);
+            this.dgvParticipantes.Size = new System.Drawing.Size(360, 533);
             this.dgvParticipantes.TabIndex = 0;
             // 
             // dgvResultados
             // 
+            this.dgvResultados.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvResultados.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvResultados.Location = new System.Drawing.Point(362, 360);
+            this.dgvResultados.Location = new System.Drawing.Point(378, 360);
             this.dgvResultados.Name = "dgvResultados";
-            this.dgvResultados.Size = new System.Drawing.Size(453, 260);
+            this.dgvResultados.Size = new System.Drawing.Size(544, 260);
             this.dgvResultados.TabIndex = 1;
             // 
             // lblBatallas
@@ -81,7 +83,7 @@
             // 
             this.lblResultados.AutoSize = true;
             this.lblResultados.Font = new System.Drawing.Font("Microsoft Sans Serif", 25.25F);
-            this.lblResultados.Location = new System.Drawing.Point(498, 318);
+            this.lblResultados.Location = new System.Drawing.Point(574, 318);
             this.lblResultados.Name = "lblResultados";
             this.lblResultados.Size = new System.Drawing.Size(188, 39);
             this.lblResultados.TabIndex = 3;
@@ -184,7 +186,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(827, 632);
+            this.ClientSize = new System.Drawing.Size(934, 632);
             this.Controls.Add(this.lblEquipo2);
             this.Controls.Add(this.lblEquipo1);
             this.Controls.Add(this.btnTerminar);

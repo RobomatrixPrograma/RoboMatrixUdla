@@ -14,8 +14,12 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblResultadoMinisumos
+                var rob1 = from r in bd.TblResultadoMinisumo
                            select new {
+                               N_Batalla = r.idBatalla,
+                               Robot_1 = r.TblMinisumo.TblRobot.nomRobot,
+                               Puntaje = r.puntosUno,
+                               
                            };
                 return rob1;
             }

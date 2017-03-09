@@ -14,6 +14,7 @@ namespace CapaNegocio
         public int idRobot1 { get; set; }
         public int idRobot2 { get; set; }
         public string  estado { get; set; }
+
         public int N_ConsultaIdBatalla()
         {
             return D_Minisumo.D_consultaListaID();
@@ -36,6 +37,11 @@ namespace CapaNegocio
             idBatalla = idB;
             estado = "SI";
             return D_Minisumo.D_actualizarEstado(idBatalla, estado);
+        }
+
+        public object cargarParticipantes()
+        {
+            return (D_Minisumo.cargarParticipantes());
         }
     }
 }

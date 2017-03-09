@@ -30,6 +30,8 @@ namespace RoboMatrixUdla
         {
             terminarBatalla();
             nudRobot1.Maximum = 3;
+            nudRobot1.Minimum = 0;
+            nudRobot2.Maximum = 3;
             nudRobot2.Minimum = 0;
             btnSiguiente.Enabled = true;
             ocultarLbl();
@@ -56,7 +58,7 @@ namespace RoboMatrixUdla
 
         private void cargarParticipantes()
         {
-
+            dgvParticipantes.DataSource = N_Minisumo.cargarParticipantes();
         }
 
         private void cargarResultados()

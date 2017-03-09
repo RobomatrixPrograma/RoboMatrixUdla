@@ -14,7 +14,7 @@ namespace CapaDatos
 
             try
             {
-                TblDrone dron = new TblDrone { idRobot = robot1 };
+                TblDrones dron = new TblDrones { idRobot = robot1 };
                 bd.TblDrones.InsertOnSubmit(dron);
                 bd.SubmitChanges();
                 return true;

@@ -16,7 +16,7 @@ namespace CapaDatos
             try
             {
                 TblEquipo equi1 = new TblEquipo { nomEquipo = nom, paisEquipo = pais, lugarEquipo = lugar };
-                bd.TblEquipos.InsertOnSubmit(equi1);
+                bd.TblEquipo.InsertOnSubmit(equi1);
                 bd.SubmitChanges();
                 return true;
             }
@@ -31,7 +31,7 @@ namespace CapaDatos
         {
             try
             {
-                TblEquipo equi1 = bd.TblEquipos.First(r => r.idEquipo == id);
+                TblEquipo equi1 = bd.TblEquipo.First(r => r.idEquipo == id);
                 equi1.nomEquipo = nomEquipo;
                 equi1.paisEquipo = paisEquipo;
                 equi1.lugarEquipo = lugarEquipo;
@@ -48,9 +48,9 @@ namespace CapaDatos
         {
             try
             {
-                TblEquipo equi1 = bd.TblEquipos.First(r => r.idEquipo == id);
+                TblEquipo equi1 = bd.TblEquipo.First(r => r.idEquipo == id);
 
-                bd.TblEquipos.DeleteOnSubmit(equi1);
+                bd.TblEquipo.DeleteOnSubmit(equi1);
                 bd.SubmitChanges();
                 return true;
             }
@@ -65,7 +65,7 @@ namespace CapaDatos
         {
             try
             {
-                var equ1 = from e in bd.TblEquipos
+                var equ1 = from e in bd.TblEquipo
                            select new
                            {
                                Código_Equipo = e.idEquipo,
@@ -96,7 +96,7 @@ namespace CapaDatos
 
         public object D_consultaEquipoId(int idEquipo)
         {
-            var equ1 = from e in bd.TblEquipos
+            var equ1 = from e in bd.TblEquipo
                       where e.idEquipo == idEquipo
                       select new
                       {
@@ -112,7 +112,7 @@ namespace CapaDatos
         public object D_consultaEquipoNombre(string nombre)
         {
             Console.WriteLine(nombre);
-            var equ1= from r in bd.TblEquipos
+            var equ1= from r in bd.TblEquipo
                       where r.nomEquipo.Contains(nombre) || r.paisEquipo.Contains(nombre) || r.lugarEquipo.Contains(nombre)
                       select new
                       {
@@ -166,7 +166,7 @@ namespace CapaDatos
         {
             try
             {
-                var equ1 = from e in bd.TblEquipos
+                var equ1 = from e in bd.TblEquipo
                            select new
                            {
                                e.idEquipo,
