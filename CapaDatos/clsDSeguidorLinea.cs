@@ -13,7 +13,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblSeguidorLineas
+                var rob1 = from r in bd.TblSeguidorLinea
                            where r.estado != "SI"
                            select new { r.idRobot, r.TblRobot.nomRobot };
                 return rob1;
@@ -28,7 +28,7 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblSeguidorLineas
+                int a = (from r in bd.TblSeguidorLinea
                          where r.estado != "SI"
                          select new { r.idRobot }).FirstOrDefault().idRobot;
 
@@ -44,7 +44,7 @@ namespace CapaDatos
         {
             try
             {
-                TblSeguidorLinea lab1 = bd.TblSeguidorLineas.First(r => r.idBatalla_SeguidorLinea == id);
+                TblSeguidorLinea lab1 = bd.TblSeguidorLinea.First(r => r.idBatalla_SeguidorLinea == id);
                 lab1.estado = estado;
                 bd.SubmitChanges();
                 return true;
@@ -60,7 +60,7 @@ namespace CapaDatos
         {
             try
             {
-                string rob1 = (from r in bd.TblSeguidorLineas
+                string rob1 = (from r in bd.TblSeguidorLinea
                                where r.estado != "SI"
                                select new { r.TblRobot.nomRobot }).FirstOrDefault().nomRobot;
 
@@ -75,9 +75,9 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblSeguidorLineas
+                int a = (from r in bd.TblSeguidorLinea
                          select new { r.idRobot }).FirstOrDefault().idRobot;
-                string rob1 = (from r in bd.TblRobots
+                string rob1 = (from r in bd.TblRobot
                                where r.idRobot == a
                                select new { r.TblEquipo.nomEquipo }).FirstOrDefault().nomEquipo;
                 return rob1;
@@ -91,7 +91,7 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblSeguidorLineas
+                int a = (from r in bd.TblSeguidorLinea
                          where r.estado != "SI"
                          select new { r.idBatalla_SeguidorLinea }).FirstOrDefault().idBatalla_SeguidorLinea;
 
