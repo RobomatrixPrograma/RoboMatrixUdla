@@ -15,7 +15,7 @@ namespace CapaDatos
 
             try
             {
-                TblSeguidorLinea seguidor = new TblSeguidorLinea{ idRobot = robot1, estado = "SI" };
+                TblSeguidorLinea seguidor = new TblSeguidorLinea{ idRobot = robot1, estado = "NO" };
                 bd.TblSeguidorLineas.InsertOnSubmit(seguidor);
                 bd.SubmitChanges();
                 return true;

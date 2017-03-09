@@ -14,7 +14,7 @@ namespace CapaDatos
 
             try
             {
-                TblMinisumo minis = new TblMinisumo { idRobotUno = robot1, idRobotDos = robot2, estado= "SI"};
+                TblMinisumo minis = new TblMinisumo { idRobotUno = robot1, idRobotDos = robot2, estado= "NO"};
                 bd.TblMinisumos.InsertOnSubmit(minis);
                 bd.SubmitChanges();
                 return true;
