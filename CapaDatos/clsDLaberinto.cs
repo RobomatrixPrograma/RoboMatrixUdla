@@ -23,6 +23,24 @@ namespace CapaDatos
                 throw new NotImplementedException();
             }
         }
+        public object D_consultaListaPresentacion()
+        {
+            try
+            {
+                var rob1 = from r in bd.TblLaberintos
+                           select new
+                           {
+                               Código_Robot = r.idRobot,
+                               Nombre = r.TblRobot.nomRobot,
+                               Equipo = r.TblRobot.TblEquipo.nomEquipo,
+                           };
+                return rob1;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
 
         public string D_consultaListaParticipante()
         {
@@ -102,6 +120,21 @@ namespace CapaDatos
             catch
             {
                 throw new NotImplementedException();
+            }
+        }
+
+        public bool ingresarOrden(int robot1)
+        {
+            try
+            {
+                TblLaberinto laberinto = new TblLaberinto { idRobot = robot1, estado = "NO" };
+                bd.TblLaberintos.InsertOnSubmit(laberinto);
+                bd.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
             }
         }
     }

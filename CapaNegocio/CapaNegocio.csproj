@@ -49,7 +49,8 @@
     <Compile Include="clsN_Categoria.cs" />
     <Compile Include="clsN_Equipo.cs" />
     <Compile Include="clsNRobot.cs" />
-    <Compile Include="clsN_Llaves.cs" />
+    <Compile Include="clsN_Minisumo.cs" />
+    <Compile Include="clsN_OrdenLlaves.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

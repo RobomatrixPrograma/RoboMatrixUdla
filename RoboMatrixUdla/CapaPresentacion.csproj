@@ -82,6 +82,12 @@
     <Compile Include="frmMDI.Designer.cs">
       <DependentUpon>frmMDI.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmMinisumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmMinisumo.Designer.cs">
+      <DependentUpon>frmMinisumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmSeguidorLego.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -113,6 +119,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmMDI.resx">
       <DependentUpon>frmMDI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmMinisumo.resx">
+      <DependentUpon>frmMinisumo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeguidorLego.resx">
       <DependentUpon>frmSeguidorLego.cs</DependentUpon>
