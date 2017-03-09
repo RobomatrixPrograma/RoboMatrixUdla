@@ -11,7 +11,18 @@ namespace CapaDatos
         MERRobotDataContext bd = new MERRobotDataContext();
         public bool ingresarOrden(int robot1)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                TblDrone dron = new TblDrone { idRobot = robot1 };
+                bd.TblDrones.InsertOnSubmit(dron);
+                bd.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
         
 

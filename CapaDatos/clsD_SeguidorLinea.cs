@@ -12,7 +12,18 @@ namespace CapaDatos
         MERRobotDataContext bd = new MERRobotDataContext();
         public bool ingresarOrden(int robot1)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                TblSeguidorLinea seguidor = new TblSeguidorLinea{ idRobot = robot1 };
+                bd.TblSeguidorLineas.InsertOnSubmit(seguidor);
+                bd.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public object D_consultaListaParticipante()

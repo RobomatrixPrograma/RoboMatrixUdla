@@ -73,7 +73,7 @@
             this.dgvOrden.AllowUserToDeleteRows = false;
             this.dgvOrden.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.dgvOrden.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvOrden.Location = new System.Drawing.Point(47, 120);
+            this.dgvOrden.Location = new System.Drawing.Point(12, 120);
             this.dgvOrden.Name = "dgvOrden";
             this.dgvOrden.ReadOnly = true;
             this.dgvOrden.Size = new System.Drawing.Size(524, 244);
@@ -112,7 +112,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(548, 376);
+            this.ClientSize = new System.Drawing.Size(571, 376);
             this.Controls.Add(this.btnSeleccionar);
             this.Controls.Add(this.cmbRobot);
             this.Controls.Add(this.lblRobot);
@@ -120,7 +120,10 @@
             this.Controls.Add(this.btnGenerar);
             this.Controls.Add(this.cmbCategoria);
             this.Controls.Add(this.lblCategoria);
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "frmIngresarOrden";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Ingresar Orden";
             this.Load += new System.EventHandler(this.frmGenerarOrden_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvOrden)).EndInit();

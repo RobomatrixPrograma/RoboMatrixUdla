@@ -90,7 +90,18 @@ namespace CapaDatos
 
         public bool ingresarOrden(int robot1)
         {
-            throw new NotImplementedException();
+
+            try
+            {
+                TblSeguidorLego seguidor = new TblSeguidorLego { idRobot = robot1 };
+                bd.TblSeguidorLegos.InsertOnSubmit(seguidor);
+                bd.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
 
         public int D_consultaListaIDBatalla()

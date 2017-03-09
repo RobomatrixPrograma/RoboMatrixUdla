@@ -107,7 +107,17 @@ namespace CapaDatos
 
         public bool ingresarOrden(int robot1)
         {
-            throw new NotImplementedException();
+            try
+            {
+                TblLaberinto laberinto = new TblLaberinto { idRobot = robot1 };
+                bd.TblLaberintos.InsertOnSubmit(laberinto);
+                bd.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+            }
         }
     }
 }
