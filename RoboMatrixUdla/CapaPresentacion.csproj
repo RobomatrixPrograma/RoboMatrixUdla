@@ -88,6 +88,12 @@
     <Compile Include="frmSeguidorLego.Designer.cs">
       <DependentUpon>frmSeguidorLego.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmSeguidorLinea.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmSeguidorLinea.Designer.cs">
+      <DependentUpon>frmSeguidorLinea.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <EmbeddedResource Include="frmIngresarLlaves.resx">
@@ -110,6 +116,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmSeguidorLego.resx">
       <DependentUpon>frmSeguidorLego.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmSeguidorLinea.resx">
+      <DependentUpon>frmSeguidorLinea.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
