@@ -30,24 +30,57 @@ namespace CapaDatos
 		
     #region Extensibility Method Definitions
     partial void OnCreated();
-    partial void InsertTblRobot(TblRobot instance);
-    partial void UpdateTblRobot(TblRobot instance);
-    partial void DeleteTblRobot(TblRobot instance);
-    partial void InsertTblMinisumo(TblMinisumo instance);
-    partial void UpdateTblMinisumo(TblMinisumo instance);
-    partial void DeleteTblMinisumo(TblMinisumo instance);
-    partial void InsertTblMegasumo(TblMegasumo instance);
-    partial void UpdateTblMegasumo(TblMegasumo instance);
-    partial void DeleteTblMegasumo(TblMegasumo instance);
-    partial void InsertTblLegosumo(TblLegosumo instance);
-    partial void UpdateTblLegosumo(TblLegosumo instance);
-    partial void DeleteTblLegosumo(TblLegosumo instance);
-    partial void InsertTblEquipo(TblEquipo instance);
-    partial void UpdateTblEquipo(TblEquipo instance);
-    partial void DeleteTblEquipo(TblEquipo instance);
     partial void InsertTblCategoria(TblCategoria instance);
     partial void UpdateTblCategoria(TblCategoria instance);
     partial void DeleteTblCategoria(TblCategoria instance);
+    partial void InsertTblDrone(TblDrone instance);
+    partial void UpdateTblDrone(TblDrone instance);
+    partial void DeleteTblDrone(TblDrone instance);
+    partial void InsertTblEquipo(TblEquipo instance);
+    partial void UpdateTblEquipo(TblEquipo instance);
+    partial void DeleteTblEquipo(TblEquipo instance);
+    partial void InsertTblLaberinto(TblLaberinto instance);
+    partial void UpdateTblLaberinto(TblLaberinto instance);
+    partial void DeleteTblLaberinto(TblLaberinto instance);
+    partial void InsertTblLegosumo(TblLegosumo instance);
+    partial void UpdateTblLegosumo(TblLegosumo instance);
+    partial void DeleteTblLegosumo(TblLegosumo instance);
+    partial void InsertTblMegasumo(TblMegasumo instance);
+    partial void UpdateTblMegasumo(TblMegasumo instance);
+    partial void DeleteTblMegasumo(TblMegasumo instance);
+    partial void InsertTblMinisumo(TblMinisumo instance);
+    partial void UpdateTblMinisumo(TblMinisumo instance);
+    partial void DeleteTblMinisumo(TblMinisumo instance);
+    partial void InsertTblPuntajeDrone(TblPuntajeDrone instance);
+    partial void UpdateTblPuntajeDrone(TblPuntajeDrone instance);
+    partial void DeleteTblPuntajeDrone(TblPuntajeDrone instance);
+    partial void InsertTblPuntajeLaberinto(TblPuntajeLaberinto instance);
+    partial void UpdateTblPuntajeLaberinto(TblPuntajeLaberinto instance);
+    partial void DeleteTblPuntajeLaberinto(TblPuntajeLaberinto instance);
+    partial void InsertTblPuntajeSeguidorLinea(TblPuntajeSeguidorLinea instance);
+    partial void UpdateTblPuntajeSeguidorLinea(TblPuntajeSeguidorLinea instance);
+    partial void DeleteTblPuntajeSeguidorLinea(TblPuntajeSeguidorLinea instance);
+    partial void InsertTblResultadoLegosumo(TblResultadoLegosumo instance);
+    partial void UpdateTblResultadoLegosumo(TblResultadoLegosumo instance);
+    partial void DeleteTblResultadoLegosumo(TblResultadoLegosumo instance);
+    partial void InsertTblResultadoMinisumo(TblResultadoMinisumo instance);
+    partial void UpdateTblResultadoMinisumo(TblResultadoMinisumo instance);
+    partial void DeleteTblResultadoMinisumo(TblResultadoMinisumo instance);
+    partial void InsertTblResultadosMegasumo(TblResultadosMegasumo instance);
+    partial void UpdateTblResultadosMegasumo(TblResultadosMegasumo instance);
+    partial void DeleteTblResultadosMegasumo(TblResultadosMegasumo instance);
+    partial void InsertTblRobot(TblRobot instance);
+    partial void UpdateTblRobot(TblRobot instance);
+    partial void DeleteTblRobot(TblRobot instance);
+    partial void InsertTblSeguidorLego(TblSeguidorLego instance);
+    partial void UpdateTblSeguidorLego(TblSeguidorLego instance);
+    partial void DeleteTblSeguidorLego(TblSeguidorLego instance);
+    partial void InsertTblSeguidorLinea(TblSeguidorLinea instance);
+    partial void UpdateTblSeguidorLinea(TblSeguidorLinea instance);
+    partial void DeleteTblSeguidorLinea(TblSeguidorLinea instance);
+    partial void InsertTbPuntajeSeguidorLego(TbPuntajeSeguidorLego instance);
+    partial void UpdateTbPuntajeSeguidorLego(TbPuntajeSeguidorLego instance);
+    partial void DeleteTbPuntajeSeguidorLego(TbPuntajeSeguidorLego instance);
     #endregion
 		
 		public MERRobotDataContext() : 
@@ -80,123 +113,11 @@ namespace CapaDatos
 			OnCreated();
 		}
 		
-		public System.Data.Linq.Table<TbSeguidorLinea> TbSeguidorLineas
+		public System.Data.Linq.Table<TblCategoria> TblCategorias
 		{
 			get
 			{
-				return this.GetTable<TbSeguidorLinea>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TbPuntajeSeguidorLinea> TbPuntajeSeguidorLineas
-		{
-			get
-			{
-				return this.GetTable<TbPuntajeSeguidorLinea>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TbPuntajeSeguidorLego> TbPuntajeSeguidorLegos
-		{
-			get
-			{
-				return this.GetTable<TbPuntajeSeguidorLego>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblSeguidorLego> TblSeguidorLegos
-		{
-			get
-			{
-				return this.GetTable<TblSeguidorLego>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblRobot> TblRobots
-		{
-			get
-			{
-				return this.GetTable<TblRobot>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblResultadosMegasumo> TblResultadosMegasumos
-		{
-			get
-			{
-				return this.GetTable<TblResultadosMegasumo>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblResultadoMinisumo> TblResultadoMinisumos
-		{
-			get
-			{
-				return this.GetTable<TblResultadoMinisumo>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblResultadoLegosumo> TblResultadoLegosumos
-		{
-			get
-			{
-				return this.GetTable<TblResultadoLegosumo>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblPuntajeLaberinto> TblPuntajeLaberintos
-		{
-			get
-			{
-				return this.GetTable<TblPuntajeLaberinto>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblPuntajeDrone> TblPuntajeDrones
-		{
-			get
-			{
-				return this.GetTable<TblPuntajeDrone>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblMinisumo> TblMinisumos
-		{
-			get
-			{
-				return this.GetTable<TblMinisumo>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblMegasumo> TblMegasumos
-		{
-			get
-			{
-				return this.GetTable<TblMegasumo>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblLegosumo> TblLegosumos
-		{
-			get
-			{
-				return this.GetTable<TblLegosumo>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblLaberinto> TblLaberintos
-		{
-			get
-			{
-				return this.GetTable<TblLaberinto>();
-			}
-		}
-		
-		public System.Data.Linq.Table<TblEquipo> TblEquipos
-		{
-			get
-			{
-				return this.GetTable<TblEquipo>();
+				return this.GetTable<TblCategoria>();
 			}
 		}
 		
@@ -208,1916 +129,123 @@ namespace CapaDatos
 			}
 		}
 		
-		public System.Data.Linq.Table<TblCategoria> TblCategorias
+		public System.Data.Linq.Table<TblEquipo> TblEquipos
 		{
 			get
 			{
-				return this.GetTable<TblCategoria>();
+				return this.GetTable<TblEquipo>();
 			}
 		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TbSeguidorLinea")]
-	public partial class TbSeguidorLinea
-	{
 		
-		private int _idRobot;
-		
-		public TbSeguidorLinea()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
-		public int idRobot
-		{
-			get
-			{
-				return this._idRobot;
-			}
-			set
-			{
-				if ((this._idRobot != value))
-				{
-					this._idRobot = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TbPuntajeSeguidorLinea")]
-	public partial class TbPuntajeSeguidorLinea
-	{
-		
-		private int _idRobot;
-		
-		private System.Nullable<decimal> _timepo1;
-		
-		private System.Nullable<decimal> _tiempo2;
-		
-		private System.Nullable<decimal> _tiempo3;
-		
-		public TbPuntajeSeguidorLinea()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
-		public int idRobot
-		{
-			get
-			{
-				return this._idRobot;
-			}
-			set
-			{
-				if ((this._idRobot != value))
-				{
-					this._idRobot = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timepo1", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> timepo1
-		{
-			get
-			{
-				return this._timepo1;
-			}
-			set
-			{
-				if ((this._timepo1 != value))
-				{
-					this._timepo1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo2", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> tiempo2
-		{
-			get
-			{
-				return this._tiempo2;
-			}
-			set
-			{
-				if ((this._tiempo2 != value))
-				{
-					this._tiempo2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo3", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> tiempo3
-		{
-			get
-			{
-				return this._tiempo3;
-			}
-			set
-			{
-				if ((this._tiempo3 != value))
-				{
-					this._tiempo3 = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TbPuntajeSeguidorLego")]
-	public partial class TbPuntajeSeguidorLego
-	{
-		
-		private int _idRobot;
-		
-		private System.Nullable<decimal> _timepo1;
-		
-		private System.Nullable<decimal> _tiempo2;
-		
-		private System.Nullable<decimal> _tiempo3;
-		
-		public TbPuntajeSeguidorLego()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
-		public int idRobot
-		{
-			get
-			{
-				return this._idRobot;
-			}
-			set
-			{
-				if ((this._idRobot != value))
-				{
-					this._idRobot = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timepo1", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> timepo1
-		{
-			get
-			{
-				return this._timepo1;
-			}
-			set
-			{
-				if ((this._timepo1 != value))
-				{
-					this._timepo1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo2", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> tiempo2
-		{
-			get
-			{
-				return this._tiempo2;
-			}
-			set
-			{
-				if ((this._tiempo2 != value))
-				{
-					this._tiempo2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo3", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> tiempo3
-		{
-			get
-			{
-				return this._tiempo3;
-			}
-			set
-			{
-				if ((this._tiempo3 != value))
-				{
-					this._tiempo3 = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblSeguidorLego")]
-	public partial class TblSeguidorLego
-	{
-		
-		private int _idRobot;
-		
-		public TblSeguidorLego()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
-		public int idRobot
-		{
-			get
-			{
-				return this._idRobot;
-			}
-			set
-			{
-				if ((this._idRobot != value))
-				{
-					this._idRobot = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblRobot")]
-	public partial class TblRobot : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _idRobot;
-		
-		private string _nomRobot;
-		
-		private string _estadoRobot;
-		
-		private string _liderRobot;
-		
-		private int _idCategoria;
-		
-		private int _idEquipo;
-		
-		private EntitySet<TblMinisumo> _TblMinisumos;
-		
-		private EntitySet<TblMinisumo> _TblMinisumos1;
-		
-		private EntitySet<TblMegasumo> _TblMegasumos;
-		
-		private EntitySet<TblMegasumo> _TblMegasumos1;
-		
-		private EntitySet<TblLegosumo> _TblLegosumos;
-		
-		private EntitySet<TblLegosumo> _TblLegosumos1;
-		
-		private EntityRef<TblEquipo> _TblEquipo;
-		
-		private EntityRef<TblCategoria> _TblCategoria;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidRobotChanging(int value);
-    partial void OnidRobotChanged();
-    partial void OnnomRobotChanging(string value);
-    partial void OnnomRobotChanged();
-    partial void OnestadoRobotChanging(string value);
-    partial void OnestadoRobotChanged();
-    partial void OnliderRobotChanging(string value);
-    partial void OnliderRobotChanged();
-    partial void OnidCategoriaChanging(int value);
-    partial void OnidCategoriaChanged();
-    partial void OnidEquipoChanging(int value);
-    partial void OnidEquipoChanged();
-    #endregion
-		
-		public TblRobot()
-		{
-			this._TblMinisumos = new EntitySet<TblMinisumo>(new Action<TblMinisumo>(this.attach_TblMinisumos), new Action<TblMinisumo>(this.detach_TblMinisumos));
-			this._TblMinisumos1 = new EntitySet<TblMinisumo>(new Action<TblMinisumo>(this.attach_TblMinisumos1), new Action<TblMinisumo>(this.detach_TblMinisumos1));
-			this._TblMegasumos = new EntitySet<TblMegasumo>(new Action<TblMegasumo>(this.attach_TblMegasumos), new Action<TblMegasumo>(this.detach_TblMegasumos));
-			this._TblMegasumos1 = new EntitySet<TblMegasumo>(new Action<TblMegasumo>(this.attach_TblMegasumos1), new Action<TblMegasumo>(this.detach_TblMegasumos1));
-			this._TblLegosumos = new EntitySet<TblLegosumo>(new Action<TblLegosumo>(this.attach_TblLegosumos), new Action<TblLegosumo>(this.detach_TblLegosumos));
-			this._TblLegosumos1 = new EntitySet<TblLegosumo>(new Action<TblLegosumo>(this.attach_TblLegosumos1), new Action<TblLegosumo>(this.detach_TblLegosumos1));
-			this._TblEquipo = default(EntityRef<TblEquipo>);
-			this._TblCategoria = default(EntityRef<TblCategoria>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL", IsPrimaryKey=true)]
-		public int idRobot
-		{
-			get
-			{
-				return this._idRobot;
-			}
-			set
-			{
-				if ((this._idRobot != value))
-				{
-					this.OnidRobotChanging(value);
-					this.SendPropertyChanging();
-					this._idRobot = value;
-					this.SendPropertyChanged("idRobot");
-					this.OnidRobotChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomRobot", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string nomRobot
-		{
-			get
-			{
-				return this._nomRobot;
-			}
-			set
-			{
-				if ((this._nomRobot != value))
-				{
-					this.OnnomRobotChanging(value);
-					this.SendPropertyChanging();
-					this._nomRobot = value;
-					this.SendPropertyChanged("nomRobot");
-					this.OnnomRobotChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estadoRobot", DbType="Char(2)")]
-		public string estadoRobot
-		{
-			get
-			{
-				return this._estadoRobot;
-			}
-			set
-			{
-				if ((this._estadoRobot != value))
-				{
-					this.OnestadoRobotChanging(value);
-					this.SendPropertyChanging();
-					this._estadoRobot = value;
-					this.SendPropertyChanged("estadoRobot");
-					this.OnestadoRobotChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_liderRobot", DbType="VarChar(25)")]
-		public string liderRobot
-		{
-			get
-			{
-				return this._liderRobot;
-			}
-			set
-			{
-				if ((this._liderRobot != value))
-				{
-					this.OnliderRobotChanging(value);
-					this.SendPropertyChanging();
-					this._liderRobot = value;
-					this.SendPropertyChanged("liderRobot");
-					this.OnliderRobotChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCategoria", DbType="Int NOT NULL")]
-		public int idCategoria
-		{
-			get
-			{
-				return this._idCategoria;
-			}
-			set
-			{
-				if ((this._idCategoria != value))
-				{
-					if (this._TblCategoria.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidCategoriaChanging(value);
-					this.SendPropertyChanging();
-					this._idCategoria = value;
-					this.SendPropertyChanged("idCategoria");
-					this.OnidCategoriaChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEquipo", DbType="Int NOT NULL")]
-		public int idEquipo
-		{
-			get
-			{
-				return this._idEquipo;
-			}
-			set
-			{
-				if ((this._idEquipo != value))
-				{
-					if (this._TblEquipo.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidEquipoChanging(value);
-					this.SendPropertyChanging();
-					this._idEquipo = value;
-					this.SendPropertyChanged("idEquipo");
-					this.OnidEquipoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMinisumo", Storage="_TblMinisumos", ThisKey="idRobot", OtherKey="idRobotUno")]
-		public EntitySet<TblMinisumo> TblMinisumos
-		{
-			get
-			{
-				return this._TblMinisumos;
-			}
-			set
-			{
-				this._TblMinisumos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMinisumo1", Storage="_TblMinisumos1", ThisKey="idRobot", OtherKey="idRobotDos")]
-		public EntitySet<TblMinisumo> TblMinisumos1
-		{
-			get
-			{
-				return this._TblMinisumos1;
-			}
-			set
-			{
-				this._TblMinisumos1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMegasumo", Storage="_TblMegasumos", ThisKey="idRobot", OtherKey="idRobotUno")]
-		public EntitySet<TblMegasumo> TblMegasumos
-		{
-			get
-			{
-				return this._TblMegasumos;
-			}
-			set
-			{
-				this._TblMegasumos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMegasumo1", Storage="_TblMegasumos1", ThisKey="idRobot", OtherKey="idRobotDos")]
-		public EntitySet<TblMegasumo> TblMegasumos1
-		{
-			get
-			{
-				return this._TblMegasumos1;
-			}
-			set
-			{
-				this._TblMegasumos1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblLegosumo", Storage="_TblLegosumos", ThisKey="idRobot", OtherKey="idRobotUno")]
-		public EntitySet<TblLegosumo> TblLegosumos
-		{
-			get
-			{
-				return this._TblLegosumos;
-			}
-			set
-			{
-				this._TblLegosumos.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblLegosumo1", Storage="_TblLegosumos1", ThisKey="idRobot", OtherKey="idRobotDos")]
-		public EntitySet<TblLegosumo> TblLegosumos1
-		{
-			get
-			{
-				return this._TblLegosumos1;
-			}
-			set
-			{
-				this._TblLegosumos1.Assign(value);
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblEquipo_TblRobot", Storage="_TblEquipo", ThisKey="idEquipo", OtherKey="idEquipo", IsForeignKey=true)]
-		public TblEquipo TblEquipo
-		{
-			get
-			{
-				return this._TblEquipo.Entity;
-			}
-			set
-			{
-				TblEquipo previousValue = this._TblEquipo.Entity;
-				if (((previousValue != value) 
-							|| (this._TblEquipo.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TblEquipo.Entity = null;
-						previousValue.TblRobots.Remove(this);
-					}
-					this._TblEquipo.Entity = value;
-					if ((value != null))
-					{
-						value.TblRobots.Add(this);
-						this._idEquipo = value.idEquipo;
-					}
-					else
-					{
-						this._idEquipo = default(int);
-					}
-					this.SendPropertyChanged("TblEquipo");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblCategoria_TblRobot", Storage="_TblCategoria", ThisKey="idCategoria", OtherKey="idCat", IsForeignKey=true)]
-		public TblCategoria TblCategoria
-		{
-			get
-			{
-				return this._TblCategoria.Entity;
-			}
-			set
-			{
-				TblCategoria previousValue = this._TblCategoria.Entity;
-				if (((previousValue != value) 
-							|| (this._TblCategoria.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TblCategoria.Entity = null;
-						previousValue.TblRobots.Remove(this);
-					}
-					this._TblCategoria.Entity = value;
-					if ((value != null))
-					{
-						value.TblRobots.Add(this);
-						this._idCategoria = value.idCat;
-					}
-					else
-					{
-						this._idCategoria = default(int);
-					}
-					this.SendPropertyChanged("TblCategoria");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TblMinisumos(TblMinisumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot = this;
-		}
-		
-		private void detach_TblMinisumos(TblMinisumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot = null;
-		}
-		
-		private void attach_TblMinisumos1(TblMinisumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot1 = this;
-		}
-		
-		private void detach_TblMinisumos1(TblMinisumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot1 = null;
-		}
-		
-		private void attach_TblMegasumos(TblMegasumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot = this;
-		}
-		
-		private void detach_TblMegasumos(TblMegasumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot = null;
-		}
-		
-		private void attach_TblMegasumos1(TblMegasumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot1 = this;
-		}
-		
-		private void detach_TblMegasumos1(TblMegasumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot1 = null;
-		}
-		
-		private void attach_TblLegosumos(TblLegosumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot = this;
-		}
-		
-		private void detach_TblLegosumos(TblLegosumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot = null;
-		}
-		
-		private void attach_TblLegosumos1(TblLegosumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot1 = this;
-		}
-		
-		private void detach_TblLegosumos1(TblLegosumo entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblRobot1 = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblResultadosMegasumo")]
-	public partial class TblResultadosMegasumo
-	{
-		
-		private int _idBatalla;
-		
-		private int _puntosUno;
-		
-		private int _puntosDos;
-		
-		private int _idRobotUno;
-		
-		private int _idRobotDos;
-		
-		public TblResultadosMegasumo()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla", DbType="Int NOT NULL")]
-		public int idBatalla
-		{
-			get
-			{
-				return this._idBatalla;
-			}
-			set
-			{
-				if ((this._idBatalla != value))
-				{
-					this._idBatalla = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosUno", DbType="Int NOT NULL")]
-		public int puntosUno
-		{
-			get
-			{
-				return this._puntosUno;
-			}
-			set
-			{
-				if ((this._puntosUno != value))
-				{
-					this._puntosUno = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosDos", DbType="Int NOT NULL")]
-		public int puntosDos
-		{
-			get
-			{
-				return this._puntosDos;
-			}
-			set
-			{
-				if ((this._puntosDos != value))
-				{
-					this._puntosDos = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotUno", DbType="Int NOT NULL")]
-		public int idRobotUno
-		{
-			get
-			{
-				return this._idRobotUno;
-			}
-			set
-			{
-				if ((this._idRobotUno != value))
-				{
-					this._idRobotUno = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotDos", DbType="Int NOT NULL")]
-		public int idRobotDos
-		{
-			get
-			{
-				return this._idRobotDos;
-			}
-			set
-			{
-				if ((this._idRobotDos != value))
-				{
-					this._idRobotDos = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblResultadoMinisumo")]
-	public partial class TblResultadoMinisumo
-	{
-		
-		private int _idBatalla;
-		
-		private int _puntosUno;
-		
-		private int _puntosDos;
-		
-		private int _idRobotUno;
-		
-		private int _idRobotDos;
-		
-		public TblResultadoMinisumo()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla", DbType="Int NOT NULL")]
-		public int idBatalla
-		{
-			get
-			{
-				return this._idBatalla;
-			}
-			set
-			{
-				if ((this._idBatalla != value))
-				{
-					this._idBatalla = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosUno", DbType="Int NOT NULL")]
-		public int puntosUno
-		{
-			get
-			{
-				return this._puntosUno;
-			}
-			set
-			{
-				if ((this._puntosUno != value))
-				{
-					this._puntosUno = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosDos", DbType="Int NOT NULL")]
-		public int puntosDos
-		{
-			get
-			{
-				return this._puntosDos;
-			}
-			set
-			{
-				if ((this._puntosDos != value))
-				{
-					this._puntosDos = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotUno", DbType="Int NOT NULL")]
-		public int idRobotUno
-		{
-			get
-			{
-				return this._idRobotUno;
-			}
-			set
-			{
-				if ((this._idRobotUno != value))
-				{
-					this._idRobotUno = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotDos", DbType="Int NOT NULL")]
-		public int idRobotDos
-		{
-			get
-			{
-				return this._idRobotDos;
-			}
-			set
-			{
-				if ((this._idRobotDos != value))
-				{
-					this._idRobotDos = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblResultadoLegosumo")]
-	public partial class TblResultadoLegosumo
-	{
-		
-		private int _idBatalla;
-		
-		private int _puntosUno;
-		
-		private int _puntosDos;
-		
-		private int _idRobotUno;
-		
-		private int _idRobotDos;
-		
-		public TblResultadoLegosumo()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla", DbType="Int NOT NULL")]
-		public int idBatalla
-		{
-			get
-			{
-				return this._idBatalla;
-			}
-			set
-			{
-				if ((this._idBatalla != value))
-				{
-					this._idBatalla = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosUno", DbType="Int NOT NULL")]
-		public int puntosUno
-		{
-			get
-			{
-				return this._puntosUno;
-			}
-			set
-			{
-				if ((this._puntosUno != value))
-				{
-					this._puntosUno = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosDos", DbType="Int NOT NULL")]
-		public int puntosDos
-		{
-			get
-			{
-				return this._puntosDos;
-			}
-			set
-			{
-				if ((this._puntosDos != value))
-				{
-					this._puntosDos = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotUno", DbType="Int NOT NULL")]
-		public int idRobotUno
-		{
-			get
-			{
-				return this._idRobotUno;
-			}
-			set
-			{
-				if ((this._idRobotUno != value))
-				{
-					this._idRobotUno = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotDos", DbType="Int NOT NULL")]
-		public int idRobotDos
-		{
-			get
-			{
-				return this._idRobotDos;
-			}
-			set
-			{
-				if ((this._idRobotDos != value))
-				{
-					this._idRobotDos = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblPuntajeLaberinto")]
-	public partial class TblPuntajeLaberinto
-	{
-		
-		private int _idRobot;
-		
-		private System.Nullable<decimal> _timepo1;
-		
-		private System.Nullable<decimal> _tiempo2;
-		
-		private System.Nullable<decimal> _tiempo3;
-		
-		public TblPuntajeLaberinto()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
-		public int idRobot
-		{
-			get
-			{
-				return this._idRobot;
-			}
-			set
-			{
-				if ((this._idRobot != value))
-				{
-					this._idRobot = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timepo1", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> timepo1
+		public System.Data.Linq.Table<TblLaberinto> TblLaberintos
 		{
 			get
 			{
-				return this._timepo1;
+				return this.GetTable<TblLaberinto>();
 			}
-			set
-			{
-				if ((this._timepo1 != value))
-				{
-					this._timepo1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo2", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> tiempo2
-		{
-			get
-			{
-				return this._tiempo2;
-			}
-			set
-			{
-				if ((this._tiempo2 != value))
-				{
-					this._tiempo2 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo3", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> tiempo3
-		{
-			get
-			{
-				return this._tiempo3;
-			}
-			set
-			{
-				if ((this._tiempo3 != value))
-				{
-					this._tiempo3 = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblPuntajeDrone")]
-	public partial class TblPuntajeDrone
-	{
-		
-		private int _idRobot;
-		
-		private System.Nullable<decimal> _timepo1;
-		
-		private int _puntaje;
-		
-		public TblPuntajeDrone()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
-		public int idRobot
-		{
-			get
-			{
-				return this._idRobot;
-			}
-			set
-			{
-				if ((this._idRobot != value))
-				{
-					this._idRobot = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_timepo1", DbType="Decimal(5,2)")]
-		public System.Nullable<decimal> timepo1
-		{
-			get
-			{
-				return this._timepo1;
-			}
-			set
-			{
-				if ((this._timepo1 != value))
-				{
-					this._timepo1 = value;
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntaje", DbType="Int NOT NULL")]
-		public int puntaje
-		{
-			get
-			{
-				return this._puntaje;
-			}
-			set
-			{
-				if ((this._puntaje != value))
-				{
-					this._puntaje = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblMinisumo")]
-	public partial class TblMinisumo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _idBatalla_minisumo;
-		
-		private int _idRobotUno;
-		
-		private int _idRobotDos;
-		
-		private EntityRef<TblRobot> _TblRobot;
-		
-		private EntityRef<TblRobot> _TblRobot1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidBatalla_minisumoChanging(int value);
-    partial void OnidBatalla_minisumoChanged();
-    partial void OnidRobotUnoChanging(int value);
-    partial void OnidRobotUnoChanged();
-    partial void OnidRobotDosChanging(int value);
-    partial void OnidRobotDosChanged();
-    #endregion
-		
-		public TblMinisumo()
-		{
-			this._TblRobot = default(EntityRef<TblRobot>);
-			this._TblRobot1 = default(EntityRef<TblRobot>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla_minisumo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int idBatalla_minisumo
-		{
-			get
-			{
-				return this._idBatalla_minisumo;
-			}
-			set
-			{
-				if ((this._idBatalla_minisumo != value))
-				{
-					this.OnidBatalla_minisumoChanging(value);
-					this.SendPropertyChanging();
-					this._idBatalla_minisumo = value;
-					this.SendPropertyChanged("idBatalla_minisumo");
-					this.OnidBatalla_minisumoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotUno", DbType="Int NOT NULL")]
-		public int idRobotUno
-		{
-			get
-			{
-				return this._idRobotUno;
-			}
-			set
-			{
-				if ((this._idRobotUno != value))
-				{
-					if (this._TblRobot.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidRobotUnoChanging(value);
-					this.SendPropertyChanging();
-					this._idRobotUno = value;
-					this.SendPropertyChanged("idRobotUno");
-					this.OnidRobotUnoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotDos", DbType="Int NOT NULL")]
-		public int idRobotDos
-		{
-			get
-			{
-				return this._idRobotDos;
-			}
-			set
-			{
-				if ((this._idRobotDos != value))
-				{
-					if (this._TblRobot1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidRobotDosChanging(value);
-					this.SendPropertyChanging();
-					this._idRobotDos = value;
-					this.SendPropertyChanged("idRobotDos");
-					this.OnidRobotDosChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMinisumo", Storage="_TblRobot", ThisKey="idRobotUno", OtherKey="idRobot", IsForeignKey=true)]
-		public TblRobot TblRobot
-		{
-			get
-			{
-				return this._TblRobot.Entity;
-			}
-			set
-			{
-				TblRobot previousValue = this._TblRobot.Entity;
-				if (((previousValue != value) 
-							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TblRobot.Entity = null;
-						previousValue.TblMinisumos.Remove(this);
-					}
-					this._TblRobot.Entity = value;
-					if ((value != null))
-					{
-						value.TblMinisumos.Add(this);
-						this._idRobotUno = value.idRobot;
-					}
-					else
-					{
-						this._idRobotUno = default(int);
-					}
-					this.SendPropertyChanged("TblRobot");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMinisumo1", Storage="_TblRobot1", ThisKey="idRobotDos", OtherKey="idRobot", IsForeignKey=true)]
-		public TblRobot TblRobot1
-		{
-			get
-			{
-				return this._TblRobot1.Entity;
-			}
-			set
-			{
-				TblRobot previousValue = this._TblRobot1.Entity;
-				if (((previousValue != value) 
-							|| (this._TblRobot1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TblRobot1.Entity = null;
-						previousValue.TblMinisumos1.Remove(this);
-					}
-					this._TblRobot1.Entity = value;
-					if ((value != null))
-					{
-						value.TblMinisumos1.Add(this);
-						this._idRobotDos = value.idRobot;
-					}
-					else
-					{
-						this._idRobotDos = default(int);
-					}
-					this.SendPropertyChanged("TblRobot1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblMegasumo")]
-	public partial class TblMegasumo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _idBatalla_megasumo;
-		
-		private int _idRobotUno;
-		
-		private int _idRobotDos;
-		
-		private EntityRef<TblRobot> _TblRobot;
-		
-		private EntityRef<TblRobot> _TblRobot1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidBatalla_megasumoChanging(int value);
-    partial void OnidBatalla_megasumoChanged();
-    partial void OnidRobotUnoChanging(int value);
-    partial void OnidRobotUnoChanged();
-    partial void OnidRobotDosChanging(int value);
-    partial void OnidRobotDosChanged();
-    #endregion
-		
-		public TblMegasumo()
-		{
-			this._TblRobot = default(EntityRef<TblRobot>);
-			this._TblRobot1 = default(EntityRef<TblRobot>);
-			OnCreated();
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla_megasumo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int idBatalla_megasumo
-		{
-			get
-			{
-				return this._idBatalla_megasumo;
-			}
-			set
-			{
-				if ((this._idBatalla_megasumo != value))
-				{
-					this.OnidBatalla_megasumoChanging(value);
-					this.SendPropertyChanging();
-					this._idBatalla_megasumo = value;
-					this.SendPropertyChanged("idBatalla_megasumo");
-					this.OnidBatalla_megasumoChanged();
-				}
-			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotUno", DbType="Int NOT NULL")]
-		public int idRobotUno
+		public System.Data.Linq.Table<TblLegosumo> TblLegosumos
 		{
 			get
 			{
-				return this._idRobotUno;
+				return this.GetTable<TblLegosumo>();
 			}
-			set
-			{
-				if ((this._idRobotUno != value))
-				{
-					if (this._TblRobot.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidRobotUnoChanging(value);
-					this.SendPropertyChanging();
-					this._idRobotUno = value;
-					this.SendPropertyChanged("idRobotUno");
-					this.OnidRobotUnoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotDos", DbType="Int NOT NULL")]
-		public int idRobotDos
-		{
-			get
-			{
-				return this._idRobotDos;
-			}
-			set
-			{
-				if ((this._idRobotDos != value))
-				{
-					if (this._TblRobot1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidRobotDosChanging(value);
-					this.SendPropertyChanging();
-					this._idRobotDos = value;
-					this.SendPropertyChanged("idRobotDos");
-					this.OnidRobotDosChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMegasumo", Storage="_TblRobot", ThisKey="idRobotUno", OtherKey="idRobot", IsForeignKey=true)]
-		public TblRobot TblRobot
-		{
-			get
-			{
-				return this._TblRobot.Entity;
-			}
-			set
-			{
-				TblRobot previousValue = this._TblRobot.Entity;
-				if (((previousValue != value) 
-							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TblRobot.Entity = null;
-						previousValue.TblMegasumos.Remove(this);
-					}
-					this._TblRobot.Entity = value;
-					if ((value != null))
-					{
-						value.TblMegasumos.Add(this);
-						this._idRobotUno = value.idRobot;
-					}
-					else
-					{
-						this._idRobotUno = default(int);
-					}
-					this.SendPropertyChanged("TblRobot");
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMegasumo1", Storage="_TblRobot1", ThisKey="idRobotDos", OtherKey="idRobot", IsForeignKey=true)]
-		public TblRobot TblRobot1
-		{
-			get
-			{
-				return this._TblRobot1.Entity;
-			}
-			set
-			{
-				TblRobot previousValue = this._TblRobot1.Entity;
-				if (((previousValue != value) 
-							|| (this._TblRobot1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TblRobot1.Entity = null;
-						previousValue.TblMegasumos1.Remove(this);
-					}
-					this._TblRobot1.Entity = value;
-					if ((value != null))
-					{
-						value.TblMegasumos1.Add(this);
-						this._idRobotDos = value.idRobot;
-					}
-					else
-					{
-						this._idRobotDos = default(int);
-					}
-					this.SendPropertyChanged("TblRobot1");
-				}
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblLegosumo")]
-	public partial class TblLegosumo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _idBatalla_Legosumo;
-		
-		private int _idRobotUno;
-		
-		private int _idRobotDos;
-		
-		private EntityRef<TblRobot> _TblRobot;
-		
-		private EntityRef<TblRobot> _TblRobot1;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidBatalla_LegosumoChanging(int value);
-    partial void OnidBatalla_LegosumoChanged();
-    partial void OnidRobotUnoChanging(int value);
-    partial void OnidRobotUnoChanged();
-    partial void OnidRobotDosChanging(int value);
-    partial void OnidRobotDosChanged();
-    #endregion
-		
-		public TblLegosumo()
-		{
-			this._TblRobot = default(EntityRef<TblRobot>);
-			this._TblRobot1 = default(EntityRef<TblRobot>);
-			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla_Legosumo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int idBatalla_Legosumo
+		public System.Data.Linq.Table<TblMegasumo> TblMegasumos
 		{
 			get
 			{
-				return this._idBatalla_Legosumo;
+				return this.GetTable<TblMegasumo>();
 			}
-			set
-			{
-				if ((this._idBatalla_Legosumo != value))
-				{
-					this.OnidBatalla_LegosumoChanging(value);
-					this.SendPropertyChanging();
-					this._idBatalla_Legosumo = value;
-					this.SendPropertyChanged("idBatalla_Legosumo");
-					this.OnidBatalla_LegosumoChanged();
-				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotUno", DbType="Int NOT NULL")]
-		public int idRobotUno
-		{
-			get
-			{
-				return this._idRobotUno;
-			}
-			set
-			{
-				if ((this._idRobotUno != value))
-				{
-					if (this._TblRobot.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidRobotUnoChanging(value);
-					this.SendPropertyChanging();
-					this._idRobotUno = value;
-					this.SendPropertyChanged("idRobotUno");
-					this.OnidRobotUnoChanged();
-				}
-			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotDos", DbType="Int NOT NULL")]
-		public int idRobotDos
+		public System.Data.Linq.Table<TblMinisumo> TblMinisumos
 		{
 			get
-			{
-				return this._idRobotDos;
-			}
-			set
 			{
-				if ((this._idRobotDos != value))
-				{
-					if (this._TblRobot1.HasLoadedOrAssignedValue)
-					{
-						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
-					}
-					this.OnidRobotDosChanging(value);
-					this.SendPropertyChanging();
-					this._idRobotDos = value;
-					this.SendPropertyChanged("idRobotDos");
-					this.OnidRobotDosChanged();
-				}
+				return this.GetTable<TblMinisumo>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblLegosumo", Storage="_TblRobot", ThisKey="idRobotUno", OtherKey="idRobot", IsForeignKey=true)]
-		public TblRobot TblRobot
+		public System.Data.Linq.Table<TblPuntajeDrone> TblPuntajeDrones
 		{
 			get
 			{
-				return this._TblRobot.Entity;
+				return this.GetTable<TblPuntajeDrone>();
 			}
-			set
-			{
-				TblRobot previousValue = this._TblRobot.Entity;
-				if (((previousValue != value) 
-							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TblRobot.Entity = null;
-						previousValue.TblLegosumos.Remove(this);
-					}
-					this._TblRobot.Entity = value;
-					if ((value != null))
-					{
-						value.TblLegosumos.Add(this);
-						this._idRobotUno = value.idRobot;
-					}
-					else
-					{
-						this._idRobotUno = default(int);
-					}
-					this.SendPropertyChanged("TblRobot");
-				}
-			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblLegosumo1", Storage="_TblRobot1", ThisKey="idRobotDos", OtherKey="idRobot", IsForeignKey=true)]
-		public TblRobot TblRobot1
+		public System.Data.Linq.Table<TblPuntajeLaberinto> TblPuntajeLaberintos
 		{
 			get
-			{
-				return this._TblRobot1.Entity;
-			}
-			set
 			{
-				TblRobot previousValue = this._TblRobot1.Entity;
-				if (((previousValue != value) 
-							|| (this._TblRobot1.HasLoadedOrAssignedValue == false)))
-				{
-					this.SendPropertyChanging();
-					if ((previousValue != null))
-					{
-						this._TblRobot1.Entity = null;
-						previousValue.TblLegosumos1.Remove(this);
-					}
-					this._TblRobot1.Entity = value;
-					if ((value != null))
-					{
-						value.TblLegosumos1.Add(this);
-						this._idRobotDos = value.idRobot;
-					}
-					else
-					{
-						this._idRobotDos = default(int);
-					}
-					this.SendPropertyChanged("TblRobot1");
-				}
+				return this.GetTable<TblPuntajeLaberinto>();
 			}
 		}
 		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
-			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
-			}
-		}
-		
-		protected virtual void SendPropertyChanged(String propertyName)
-		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblLaberinto")]
-	public partial class TblLaberinto
-	{
-		
-		private int _idRobot;
-		
-		public TblLaberinto()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
-		public int idRobot
+		public System.Data.Linq.Table<TblPuntajeSeguidorLinea> TblPuntajeSeguidorLineas
 		{
 			get
 			{
-				return this._idRobot;
+				return this.GetTable<TblPuntajeSeguidorLinea>();
 			}
-			set
-			{
-				if ((this._idRobot != value))
-				{
-					this._idRobot = value;
-				}
-			}
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblEquipo")]
-	public partial class TblEquipo : INotifyPropertyChanging, INotifyPropertyChanged
-	{
-		
-		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
-		
-		private int _idEquipo;
-		
-		private string _nomEquipo;
-		
-		private string _paisEquipo;
-		
-		private string _lugarEquipo;
-		
-		private System.Data.Linq.Binary _imgEquipo;
-		
-		private EntitySet<TblRobot> _TblRobots;
-		
-    #region Extensibility Method Definitions
-    partial void OnLoaded();
-    partial void OnValidate(System.Data.Linq.ChangeAction action);
-    partial void OnCreated();
-    partial void OnidEquipoChanging(int value);
-    partial void OnidEquipoChanged();
-    partial void OnnomEquipoChanging(string value);
-    partial void OnnomEquipoChanged();
-    partial void OnpaisEquipoChanging(string value);
-    partial void OnpaisEquipoChanged();
-    partial void OnlugarEquipoChanging(string value);
-    partial void OnlugarEquipoChanged();
-    partial void OnimgEquipoChanging(System.Data.Linq.Binary value);
-    partial void OnimgEquipoChanged();
-    #endregion
-		
-		public TblEquipo()
-		{
-			this._TblRobots = new EntitySet<TblRobot>(new Action<TblRobot>(this.attach_TblRobots), new Action<TblRobot>(this.detach_TblRobots));
-			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEquipo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int idEquipo
+		public System.Data.Linq.Table<TblResultadoLegosumo> TblResultadoLegosumos
 		{
 			get
-			{
-				return this._idEquipo;
-			}
-			set
 			{
-				if ((this._idEquipo != value))
-				{
-					this.OnidEquipoChanging(value);
-					this.SendPropertyChanging();
-					this._idEquipo = value;
-					this.SendPropertyChanged("idEquipo");
-					this.OnidEquipoChanged();
-				}
+				return this.GetTable<TblResultadoLegosumo>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomEquipo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
-		public string nomEquipo
+		public System.Data.Linq.Table<TblResultadoMinisumo> TblResultadoMinisumos
 		{
 			get
-			{
-				return this._nomEquipo;
-			}
-			set
 			{
-				if ((this._nomEquipo != value))
-				{
-					this.OnnomEquipoChanging(value);
-					this.SendPropertyChanging();
-					this._nomEquipo = value;
-					this.SendPropertyChanged("nomEquipo");
-					this.OnnomEquipoChanged();
-				}
+				return this.GetTable<TblResultadoMinisumo>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paisEquipo", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
-		public string paisEquipo
+		public System.Data.Linq.Table<TblResultadosMegasumo> TblResultadosMegasumos
 		{
 			get
-			{
-				return this._paisEquipo;
-			}
-			set
 			{
-				if ((this._paisEquipo != value))
-				{
-					this.OnpaisEquipoChanging(value);
-					this.SendPropertyChanging();
-					this._paisEquipo = value;
-					this.SendPropertyChanged("paisEquipo");
-					this.OnpaisEquipoChanged();
-				}
+				return this.GetTable<TblResultadosMegasumo>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lugarEquipo", DbType="VarChar(50)")]
-		public string lugarEquipo
+		public System.Data.Linq.Table<TblRobot> TblRobots
 		{
 			get
-			{
-				return this._lugarEquipo;
-			}
-			set
 			{
-				if ((this._lugarEquipo != value))
-				{
-					this.OnlugarEquipoChanging(value);
-					this.SendPropertyChanging();
-					this._lugarEquipo = value;
-					this.SendPropertyChanged("lugarEquipo");
-					this.OnlugarEquipoChanged();
-				}
+				return this.GetTable<TblRobot>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imgEquipo", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
-		public System.Data.Linq.Binary imgEquipo
+		public System.Data.Linq.Table<TblSeguidorLego> TblSeguidorLegos
 		{
 			get
-			{
-				return this._imgEquipo;
-			}
-			set
 			{
-				if ((this._imgEquipo != value))
-				{
-					this.OnimgEquipoChanging(value);
-					this.SendPropertyChanging();
-					this._imgEquipo = value;
-					this.SendPropertyChanged("imgEquipo");
-					this.OnimgEquipoChanged();
-				}
+				return this.GetTable<TblSeguidorLego>();
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblEquipo_TblRobot", Storage="_TblRobots", ThisKey="idEquipo", OtherKey="idEquipo")]
-		public EntitySet<TblRobot> TblRobots
+		public System.Data.Linq.Table<TblSeguidorLinea> TblSeguidorLineas
 		{
 			get
-			{
-				return this._TblRobots;
-			}
-			set
-			{
-				this._TblRobots.Assign(value);
-			}
-		}
-		
-		public event PropertyChangingEventHandler PropertyChanging;
-		
-		public event PropertyChangedEventHandler PropertyChanged;
-		
-		protected virtual void SendPropertyChanging()
-		{
-			if ((this.PropertyChanging != null))
 			{
-				this.PropertyChanging(this, emptyChangingEventArgs);
+				return this.GetTable<TblSeguidorLinea>();
 			}
 		}
 		
-		protected virtual void SendPropertyChanged(String propertyName)
+		public System.Data.Linq.Table<TbPuntajeSeguidorLego> TbPuntajeSeguidorLegos
 		{
-			if ((this.PropertyChanged != null))
-			{
-				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
-			}
-		}
-		
-		private void attach_TblRobots(TblRobot entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblEquipo = this;
-		}
-		
-		private void detach_TblRobots(TblRobot entity)
-		{
-			this.SendPropertyChanging();
-			entity.TblEquipo = null;
-		}
-	}
-	
-	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblDrone")]
-	public partial class TblDrone
-	{
-		
-		private int _idRobot;
-		
-		public TblDrone()
-		{
-		}
-		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
-		public int idRobot
-		{
 			get
-			{
-				return this._idRobot;
-			}
-			set
 			{
-				if ((this._idRobot != value))
-				{
-					this._idRobot = value;
-				}
+				return this.GetTable<TbPuntajeSeguidorLego>();
 			}
 		}
 	}
@@ -2257,6 +385,3832 @@ namespace CapaDatos
 		{
 			this.SendPropertyChanging();
 			entity.TblCategoria = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblDrones")]
+	public partial class TblDrone : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idBatalla_Drones;
+		
+		private int _idRobot;
+		
+		private string _estado;
+		
+		private EntitySet<TblPuntajeDrone> _TblPuntajeDrones;
+		
+		private EntityRef<TblRobot> _TblRobot;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidBatalla_DronesChanging(int value);
+    partial void OnidBatalla_DronesChanged();
+    partial void OnidRobotChanging(int value);
+    partial void OnidRobotChanged();
+    partial void OnestadoChanging(string value);
+    partial void OnestadoChanged();
+    #endregion
+		
+		public TblDrone()
+		{
+			this._TblPuntajeDrones = new EntitySet<TblPuntajeDrone>(new Action<TblPuntajeDrone>(this.attach_TblPuntajeDrones), new Action<TblPuntajeDrone>(this.detach_TblPuntajeDrones));
+			this._TblRobot = default(EntityRef<TblRobot>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla_Drones", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idBatalla_Drones
+		{
+			get
+			{
+				return this._idBatalla_Drones;
+			}
+			set
+			{
+				if ((this._idBatalla_Drones != value))
+				{
+					this.OnidBatalla_DronesChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla_Drones = value;
+					this.SendPropertyChanged("idBatalla_Drones");
+					this.OnidBatalla_DronesChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
+		public int idRobot
+		{
+			get
+			{
+				return this._idRobot;
+			}
+			set
+			{
+				if ((this._idRobot != value))
+				{
+					if (this._TblRobot.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidRobotChanging(value);
+					this.SendPropertyChanging();
+					this._idRobot = value;
+					this.SendPropertyChanged("idRobot");
+					this.OnidRobotChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Char(2) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this.OnestadoChanging(value);
+					this.SendPropertyChanging();
+					this._estado = value;
+					this.SendPropertyChanged("estado");
+					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblDrone_TblPuntajeDrone", Storage="_TblPuntajeDrones", ThisKey="idBatalla_Drones", OtherKey="idBatalla")]
+		public EntitySet<TblPuntajeDrone> TblPuntajeDrones
+		{
+			get
+			{
+				return this._TblPuntajeDrones;
+			}
+			set
+			{
+				this._TblPuntajeDrones.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblDrone", Storage="_TblRobot", ThisKey="idRobot", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot
+		{
+			get
+			{
+				return this._TblRobot.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot.Entity = null;
+						previousValue.TblDrones.Remove(this);
+					}
+					this._TblRobot.Entity = value;
+					if ((value != null))
+					{
+						value.TblDrones.Add(this);
+						this._idRobot = value.idRobot;
+					}
+					else
+					{
+						this._idRobot = default(int);
+					}
+					this.SendPropertyChanged("TblRobot");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TblPuntajeDrones(TblPuntajeDrone entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblDrone = this;
+		}
+		
+		private void detach_TblPuntajeDrones(TblPuntajeDrone entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblDrone = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblEquipo")]
+	public partial class TblEquipo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idEquipo;
+		
+		private string _nomEquipo;
+		
+		private string _paisEquipo;
+		
+		private string _lugarEquipo;
+		
+		private System.Data.Linq.Binary _imgEquipo;
+		
+		private EntitySet<TblRobot> _TblRobots;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidEquipoChanging(int value);
+    partial void OnidEquipoChanged();
+    partial void OnnomEquipoChanging(string value);
+    partial void OnnomEquipoChanged();
+    partial void OnpaisEquipoChanging(string value);
+    partial void OnpaisEquipoChanged();
+    partial void OnlugarEquipoChanging(string value);
+    partial void OnlugarEquipoChanged();
+    partial void OnimgEquipoChanging(System.Data.Linq.Binary value);
+    partial void OnimgEquipoChanged();
+    #endregion
+		
+		public TblEquipo()
+		{
+			this._TblRobots = new EntitySet<TblRobot>(new Action<TblRobot>(this.attach_TblRobots), new Action<TblRobot>(this.detach_TblRobots));
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEquipo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idEquipo
+		{
+			get
+			{
+				return this._idEquipo;
+			}
+			set
+			{
+				if ((this._idEquipo != value))
+				{
+					this.OnidEquipoChanging(value);
+					this.SendPropertyChanging();
+					this._idEquipo = value;
+					this.SendPropertyChanged("idEquipo");
+					this.OnidEquipoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomEquipo", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nomEquipo
+		{
+			get
+			{
+				return this._nomEquipo;
+			}
+			set
+			{
+				if ((this._nomEquipo != value))
+				{
+					this.OnnomEquipoChanging(value);
+					this.SendPropertyChanging();
+					this._nomEquipo = value;
+					this.SendPropertyChanged("nomEquipo");
+					this.OnnomEquipoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_paisEquipo", DbType="VarChar(25) NOT NULL", CanBeNull=false)]
+		public string paisEquipo
+		{
+			get
+			{
+				return this._paisEquipo;
+			}
+			set
+			{
+				if ((this._paisEquipo != value))
+				{
+					this.OnpaisEquipoChanging(value);
+					this.SendPropertyChanging();
+					this._paisEquipo = value;
+					this.SendPropertyChanged("paisEquipo");
+					this.OnpaisEquipoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_lugarEquipo", DbType="VarChar(50)")]
+		public string lugarEquipo
+		{
+			get
+			{
+				return this._lugarEquipo;
+			}
+			set
+			{
+				if ((this._lugarEquipo != value))
+				{
+					this.OnlugarEquipoChanging(value);
+					this.SendPropertyChanging();
+					this._lugarEquipo = value;
+					this.SendPropertyChanged("lugarEquipo");
+					this.OnlugarEquipoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imgEquipo", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		public System.Data.Linq.Binary imgEquipo
+		{
+			get
+			{
+				return this._imgEquipo;
+			}
+			set
+			{
+				if ((this._imgEquipo != value))
+				{
+					this.OnimgEquipoChanging(value);
+					this.SendPropertyChanging();
+					this._imgEquipo = value;
+					this.SendPropertyChanged("imgEquipo");
+					this.OnimgEquipoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblEquipo_TblRobot", Storage="_TblRobots", ThisKey="idEquipo", OtherKey="idEquipo")]
+		public EntitySet<TblRobot> TblRobots
+		{
+			get
+			{
+				return this._TblRobots;
+			}
+			set
+			{
+				this._TblRobots.Assign(value);
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TblRobots(TblRobot entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblEquipo = this;
+		}
+		
+		private void detach_TblRobots(TblRobot entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblEquipo = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblLaberinto")]
+	public partial class TblLaberinto : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idBatalla_Laberinto;
+		
+		private int _idRobot;
+		
+		private string _estado;
+		
+		private EntitySet<TblPuntajeLaberinto> _TblPuntajeLaberintos;
+		
+		private EntityRef<TblRobot> _TblRobot;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidBatalla_LaberintoChanging(int value);
+    partial void OnidBatalla_LaberintoChanged();
+    partial void OnidRobotChanging(int value);
+    partial void OnidRobotChanged();
+    partial void OnestadoChanging(string value);
+    partial void OnestadoChanged();
+    #endregion
+		
+		public TblLaberinto()
+		{
+			this._TblPuntajeLaberintos = new EntitySet<TblPuntajeLaberinto>(new Action<TblPuntajeLaberinto>(this.attach_TblPuntajeLaberintos), new Action<TblPuntajeLaberinto>(this.detach_TblPuntajeLaberintos));
+			this._TblRobot = default(EntityRef<TblRobot>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla_Laberinto", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idBatalla_Laberinto
+		{
+			get
+			{
+				return this._idBatalla_Laberinto;
+			}
+			set
+			{
+				if ((this._idBatalla_Laberinto != value))
+				{
+					this.OnidBatalla_LaberintoChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla_Laberinto = value;
+					this.SendPropertyChanged("idBatalla_Laberinto");
+					this.OnidBatalla_LaberintoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
+		public int idRobot
+		{
+			get
+			{
+				return this._idRobot;
+			}
+			set
+			{
+				if ((this._idRobot != value))
+				{
+					if (this._TblRobot.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidRobotChanging(value);
+					this.SendPropertyChanging();
+					this._idRobot = value;
+					this.SendPropertyChanged("idRobot");
+					this.OnidRobotChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Char(2) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this.OnestadoChanging(value);
+					this.SendPropertyChanging();
+					this._estado = value;
+					this.SendPropertyChanged("estado");
+					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblLaberinto_TblPuntajeLaberinto", Storage="_TblPuntajeLaberintos", ThisKey="idBatalla_Laberinto", OtherKey="idBatalla")]
+		public EntitySet<TblPuntajeLaberinto> TblPuntajeLaberintos
+		{
+			get
+			{
+				return this._TblPuntajeLaberintos;
+			}
+			set
+			{
+				this._TblPuntajeLaberintos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblLaberinto", Storage="_TblRobot", ThisKey="idRobot", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot
+		{
+			get
+			{
+				return this._TblRobot.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot.Entity = null;
+						previousValue.TblLaberintos.Remove(this);
+					}
+					this._TblRobot.Entity = value;
+					if ((value != null))
+					{
+						value.TblLaberintos.Add(this);
+						this._idRobot = value.idRobot;
+					}
+					else
+					{
+						this._idRobot = default(int);
+					}
+					this.SendPropertyChanged("TblRobot");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TblPuntajeLaberintos(TblPuntajeLaberinto entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblLaberinto = this;
+		}
+		
+		private void detach_TblPuntajeLaberintos(TblPuntajeLaberinto entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblLaberinto = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblLegosumo")]
+	public partial class TblLegosumo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idBatalla_Legosumo;
+		
+		private int _idRobotUno;
+		
+		private int _idRobotDos;
+		
+		private string _estado;
+		
+		private EntitySet<TblResultadoLegosumo> _TblResultadoLegosumos;
+		
+		private EntityRef<TblRobot> _TblRobot;
+		
+		private EntityRef<TblRobot> _TblRobot1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidBatalla_LegosumoChanging(int value);
+    partial void OnidBatalla_LegosumoChanged();
+    partial void OnidRobotUnoChanging(int value);
+    partial void OnidRobotUnoChanged();
+    partial void OnidRobotDosChanging(int value);
+    partial void OnidRobotDosChanged();
+    partial void OnestadoChanging(string value);
+    partial void OnestadoChanged();
+    #endregion
+		
+		public TblLegosumo()
+		{
+			this._TblResultadoLegosumos = new EntitySet<TblResultadoLegosumo>(new Action<TblResultadoLegosumo>(this.attach_TblResultadoLegosumos), new Action<TblResultadoLegosumo>(this.detach_TblResultadoLegosumos));
+			this._TblRobot = default(EntityRef<TblRobot>);
+			this._TblRobot1 = default(EntityRef<TblRobot>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla_Legosumo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idBatalla_Legosumo
+		{
+			get
+			{
+				return this._idBatalla_Legosumo;
+			}
+			set
+			{
+				if ((this._idBatalla_Legosumo != value))
+				{
+					this.OnidBatalla_LegosumoChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla_Legosumo = value;
+					this.SendPropertyChanged("idBatalla_Legosumo");
+					this.OnidBatalla_LegosumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotUno", DbType="Int NOT NULL")]
+		public int idRobotUno
+		{
+			get
+			{
+				return this._idRobotUno;
+			}
+			set
+			{
+				if ((this._idRobotUno != value))
+				{
+					if (this._TblRobot.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidRobotUnoChanging(value);
+					this.SendPropertyChanging();
+					this._idRobotUno = value;
+					this.SendPropertyChanged("idRobotUno");
+					this.OnidRobotUnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotDos", DbType="Int NOT NULL")]
+		public int idRobotDos
+		{
+			get
+			{
+				return this._idRobotDos;
+			}
+			set
+			{
+				if ((this._idRobotDos != value))
+				{
+					if (this._TblRobot1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidRobotDosChanging(value);
+					this.SendPropertyChanging();
+					this._idRobotDos = value;
+					this.SendPropertyChanged("idRobotDos");
+					this.OnidRobotDosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Char(2) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this.OnestadoChanging(value);
+					this.SendPropertyChanging();
+					this._estado = value;
+					this.SendPropertyChanged("estado");
+					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblLegosumo_TblResultadoLegosumo", Storage="_TblResultadoLegosumos", ThisKey="idBatalla_Legosumo", OtherKey="idBatalla")]
+		public EntitySet<TblResultadoLegosumo> TblResultadoLegosumos
+		{
+			get
+			{
+				return this._TblResultadoLegosumos;
+			}
+			set
+			{
+				this._TblResultadoLegosumos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblLegosumo", Storage="_TblRobot", ThisKey="idRobotUno", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot
+		{
+			get
+			{
+				return this._TblRobot.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot.Entity = null;
+						previousValue.TblLegosumos.Remove(this);
+					}
+					this._TblRobot.Entity = value;
+					if ((value != null))
+					{
+						value.TblLegosumos.Add(this);
+						this._idRobotUno = value.idRobot;
+					}
+					else
+					{
+						this._idRobotUno = default(int);
+					}
+					this.SendPropertyChanged("TblRobot");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblLegosumo1", Storage="_TblRobot1", ThisKey="idRobotDos", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot1
+		{
+			get
+			{
+				return this._TblRobot1.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot1.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot1.Entity = null;
+						previousValue.TblLegosumos1.Remove(this);
+					}
+					this._TblRobot1.Entity = value;
+					if ((value != null))
+					{
+						value.TblLegosumos1.Add(this);
+						this._idRobotDos = value.idRobot;
+					}
+					else
+					{
+						this._idRobotDos = default(int);
+					}
+					this.SendPropertyChanged("TblRobot1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TblResultadoLegosumos(TblResultadoLegosumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblLegosumo = this;
+		}
+		
+		private void detach_TblResultadoLegosumos(TblResultadoLegosumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblLegosumo = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblMegasumo")]
+	public partial class TblMegasumo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idBatalla_megasumo;
+		
+		private int _idRobotUno;
+		
+		private int _idRobotDos;
+		
+		private string _estado;
+		
+		private EntitySet<TblResultadosMegasumo> _TblResultadosMegasumos;
+		
+		private EntityRef<TblRobot> _TblRobot;
+		
+		private EntityRef<TblRobot> _TblRobot1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidBatalla_megasumoChanging(int value);
+    partial void OnidBatalla_megasumoChanged();
+    partial void OnidRobotUnoChanging(int value);
+    partial void OnidRobotUnoChanged();
+    partial void OnidRobotDosChanging(int value);
+    partial void OnidRobotDosChanged();
+    partial void OnestadoChanging(string value);
+    partial void OnestadoChanged();
+    #endregion
+		
+		public TblMegasumo()
+		{
+			this._TblResultadosMegasumos = new EntitySet<TblResultadosMegasumo>(new Action<TblResultadosMegasumo>(this.attach_TblResultadosMegasumos), new Action<TblResultadosMegasumo>(this.detach_TblResultadosMegasumos));
+			this._TblRobot = default(EntityRef<TblRobot>);
+			this._TblRobot1 = default(EntityRef<TblRobot>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla_megasumo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idBatalla_megasumo
+		{
+			get
+			{
+				return this._idBatalla_megasumo;
+			}
+			set
+			{
+				if ((this._idBatalla_megasumo != value))
+				{
+					this.OnidBatalla_megasumoChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla_megasumo = value;
+					this.SendPropertyChanged("idBatalla_megasumo");
+					this.OnidBatalla_megasumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotUno", DbType="Int NOT NULL")]
+		public int idRobotUno
+		{
+			get
+			{
+				return this._idRobotUno;
+			}
+			set
+			{
+				if ((this._idRobotUno != value))
+				{
+					if (this._TblRobot.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidRobotUnoChanging(value);
+					this.SendPropertyChanging();
+					this._idRobotUno = value;
+					this.SendPropertyChanged("idRobotUno");
+					this.OnidRobotUnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotDos", DbType="Int NOT NULL")]
+		public int idRobotDos
+		{
+			get
+			{
+				return this._idRobotDos;
+			}
+			set
+			{
+				if ((this._idRobotDos != value))
+				{
+					if (this._TblRobot1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidRobotDosChanging(value);
+					this.SendPropertyChanging();
+					this._idRobotDos = value;
+					this.SendPropertyChanged("idRobotDos");
+					this.OnidRobotDosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Char(2) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this.OnestadoChanging(value);
+					this.SendPropertyChanging();
+					this._estado = value;
+					this.SendPropertyChanged("estado");
+					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblMegasumo_TblResultadosMegasumo", Storage="_TblResultadosMegasumos", ThisKey="idBatalla_megasumo", OtherKey="idBatalla")]
+		public EntitySet<TblResultadosMegasumo> TblResultadosMegasumos
+		{
+			get
+			{
+				return this._TblResultadosMegasumos;
+			}
+			set
+			{
+				this._TblResultadosMegasumos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMegasumo", Storage="_TblRobot", ThisKey="idRobotUno", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot
+		{
+			get
+			{
+				return this._TblRobot.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot.Entity = null;
+						previousValue.TblMegasumos.Remove(this);
+					}
+					this._TblRobot.Entity = value;
+					if ((value != null))
+					{
+						value.TblMegasumos.Add(this);
+						this._idRobotUno = value.idRobot;
+					}
+					else
+					{
+						this._idRobotUno = default(int);
+					}
+					this.SendPropertyChanged("TblRobot");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMegasumo1", Storage="_TblRobot1", ThisKey="idRobotDos", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot1
+		{
+			get
+			{
+				return this._TblRobot1.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot1.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot1.Entity = null;
+						previousValue.TblMegasumos1.Remove(this);
+					}
+					this._TblRobot1.Entity = value;
+					if ((value != null))
+					{
+						value.TblMegasumos1.Add(this);
+						this._idRobotDos = value.idRobot;
+					}
+					else
+					{
+						this._idRobotDos = default(int);
+					}
+					this.SendPropertyChanged("TblRobot1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TblResultadosMegasumos(TblResultadosMegasumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblMegasumo = this;
+		}
+		
+		private void detach_TblResultadosMegasumos(TblResultadosMegasumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblMegasumo = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblMinisumo")]
+	public partial class TblMinisumo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idBatalla_minisumo;
+		
+		private int _idRobotUno;
+		
+		private int _idRobotDos;
+		
+		private string _estado;
+		
+		private EntitySet<TblResultadoMinisumo> _TblResultadoMinisumos;
+		
+		private EntityRef<TblRobot> _TblRobot;
+		
+		private EntityRef<TblRobot> _TblRobot1;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidBatalla_minisumoChanging(int value);
+    partial void OnidBatalla_minisumoChanged();
+    partial void OnidRobotUnoChanging(int value);
+    partial void OnidRobotUnoChanged();
+    partial void OnidRobotDosChanging(int value);
+    partial void OnidRobotDosChanged();
+    partial void OnestadoChanging(string value);
+    partial void OnestadoChanged();
+    #endregion
+		
+		public TblMinisumo()
+		{
+			this._TblResultadoMinisumos = new EntitySet<TblResultadoMinisumo>(new Action<TblResultadoMinisumo>(this.attach_TblResultadoMinisumos), new Action<TblResultadoMinisumo>(this.detach_TblResultadoMinisumos));
+			this._TblRobot = default(EntityRef<TblRobot>);
+			this._TblRobot1 = default(EntityRef<TblRobot>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla_minisumo", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idBatalla_minisumo
+		{
+			get
+			{
+				return this._idBatalla_minisumo;
+			}
+			set
+			{
+				if ((this._idBatalla_minisumo != value))
+				{
+					this.OnidBatalla_minisumoChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla_minisumo = value;
+					this.SendPropertyChanged("idBatalla_minisumo");
+					this.OnidBatalla_minisumoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotUno", DbType="Int NOT NULL")]
+		public int idRobotUno
+		{
+			get
+			{
+				return this._idRobotUno;
+			}
+			set
+			{
+				if ((this._idRobotUno != value))
+				{
+					if (this._TblRobot.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidRobotUnoChanging(value);
+					this.SendPropertyChanging();
+					this._idRobotUno = value;
+					this.SendPropertyChanged("idRobotUno");
+					this.OnidRobotUnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobotDos", DbType="Int NOT NULL")]
+		public int idRobotDos
+		{
+			get
+			{
+				return this._idRobotDos;
+			}
+			set
+			{
+				if ((this._idRobotDos != value))
+				{
+					if (this._TblRobot1.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidRobotDosChanging(value);
+					this.SendPropertyChanging();
+					this._idRobotDos = value;
+					this.SendPropertyChanged("idRobotDos");
+					this.OnidRobotDosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Char(2) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this.OnestadoChanging(value);
+					this.SendPropertyChanging();
+					this._estado = value;
+					this.SendPropertyChanged("estado");
+					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblMinisumo_TblResultadoMinisumo", Storage="_TblResultadoMinisumos", ThisKey="idBatalla_minisumo", OtherKey="idBatalla")]
+		public EntitySet<TblResultadoMinisumo> TblResultadoMinisumos
+		{
+			get
+			{
+				return this._TblResultadoMinisumos;
+			}
+			set
+			{
+				this._TblResultadoMinisumos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMinisumo", Storage="_TblRobot", ThisKey="idRobotUno", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot
+		{
+			get
+			{
+				return this._TblRobot.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot.Entity = null;
+						previousValue.TblMinisumos.Remove(this);
+					}
+					this._TblRobot.Entity = value;
+					if ((value != null))
+					{
+						value.TblMinisumos.Add(this);
+						this._idRobotUno = value.idRobot;
+					}
+					else
+					{
+						this._idRobotUno = default(int);
+					}
+					this.SendPropertyChanged("TblRobot");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMinisumo1", Storage="_TblRobot1", ThisKey="idRobotDos", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot1
+		{
+			get
+			{
+				return this._TblRobot1.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot1.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot1.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot1.Entity = null;
+						previousValue.TblMinisumos1.Remove(this);
+					}
+					this._TblRobot1.Entity = value;
+					if ((value != null))
+					{
+						value.TblMinisumos1.Add(this);
+						this._idRobotDos = value.idRobot;
+					}
+					else
+					{
+						this._idRobotDos = default(int);
+					}
+					this.SendPropertyChanged("TblRobot1");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TblResultadoMinisumos(TblResultadoMinisumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblMinisumo = this;
+		}
+		
+		private void detach_TblResultadoMinisumos(TblResultadoMinisumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblMinisumo = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblPuntajeDrones")]
+	public partial class TblPuntajeDrone : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idPuntaje;
+		
+		private int _idBatalla;
+		
+		private System.Nullable<decimal> _tiempo1;
+		
+		private int _puntaje;
+		
+		private EntityRef<TblDrone> _TblDrone;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidPuntajeChanging(int value);
+    partial void OnidPuntajeChanged();
+    partial void OnidBatallaChanging(int value);
+    partial void OnidBatallaChanged();
+    partial void Ontiempo1Changing(System.Nullable<decimal> value);
+    partial void Ontiempo1Changed();
+    partial void OnpuntajeChanging(int value);
+    partial void OnpuntajeChanged();
+    #endregion
+		
+		public TblPuntajeDrone()
+		{
+			this._TblDrone = default(EntityRef<TblDrone>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPuntaje", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idPuntaje
+		{
+			get
+			{
+				return this._idPuntaje;
+			}
+			set
+			{
+				if ((this._idPuntaje != value))
+				{
+					this.OnidPuntajeChanging(value);
+					this.SendPropertyChanging();
+					this._idPuntaje = value;
+					this.SendPropertyChanged("idPuntaje");
+					this.OnidPuntajeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla", DbType="Int NOT NULL")]
+		public int idBatalla
+		{
+			get
+			{
+				return this._idBatalla;
+			}
+			set
+			{
+				if ((this._idBatalla != value))
+				{
+					if (this._TblDrone.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidBatallaChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla = value;
+					this.SendPropertyChanged("idBatalla");
+					this.OnidBatallaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo1", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> tiempo1
+		{
+			get
+			{
+				return this._tiempo1;
+			}
+			set
+			{
+				if ((this._tiempo1 != value))
+				{
+					this.Ontiempo1Changing(value);
+					this.SendPropertyChanging();
+					this._tiempo1 = value;
+					this.SendPropertyChanged("tiempo1");
+					this.Ontiempo1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntaje", DbType="Int NOT NULL")]
+		public int puntaje
+		{
+			get
+			{
+				return this._puntaje;
+			}
+			set
+			{
+				if ((this._puntaje != value))
+				{
+					this.OnpuntajeChanging(value);
+					this.SendPropertyChanging();
+					this._puntaje = value;
+					this.SendPropertyChanged("puntaje");
+					this.OnpuntajeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblDrone_TblPuntajeDrone", Storage="_TblDrone", ThisKey="idBatalla", OtherKey="idBatalla_Drones", IsForeignKey=true)]
+		public TblDrone TblDrone
+		{
+			get
+			{
+				return this._TblDrone.Entity;
+			}
+			set
+			{
+				TblDrone previousValue = this._TblDrone.Entity;
+				if (((previousValue != value) 
+							|| (this._TblDrone.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblDrone.Entity = null;
+						previousValue.TblPuntajeDrones.Remove(this);
+					}
+					this._TblDrone.Entity = value;
+					if ((value != null))
+					{
+						value.TblPuntajeDrones.Add(this);
+						this._idBatalla = value.idBatalla_Drones;
+					}
+					else
+					{
+						this._idBatalla = default(int);
+					}
+					this.SendPropertyChanged("TblDrone");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblPuntajeLaberinto")]
+	public partial class TblPuntajeLaberinto : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idPuntaje;
+		
+		private int _idBatalla;
+		
+		private System.Nullable<decimal> _tiempo1;
+		
+		private System.Nullable<decimal> _tiempo2;
+		
+		private System.Nullable<decimal> _tiempo3;
+		
+		private System.Nullable<decimal> _mejorTiempo;
+		
+		private EntityRef<TblLaberinto> _TblLaberinto;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidPuntajeChanging(int value);
+    partial void OnidPuntajeChanged();
+    partial void OnidBatallaChanging(int value);
+    partial void OnidBatallaChanged();
+    partial void Ontiempo1Changing(System.Nullable<decimal> value);
+    partial void Ontiempo1Changed();
+    partial void Ontiempo2Changing(System.Nullable<decimal> value);
+    partial void Ontiempo2Changed();
+    partial void Ontiempo3Changing(System.Nullable<decimal> value);
+    partial void Ontiempo3Changed();
+    partial void OnmejorTiempoChanging(System.Nullable<decimal> value);
+    partial void OnmejorTiempoChanged();
+    #endregion
+		
+		public TblPuntajeLaberinto()
+		{
+			this._TblLaberinto = default(EntityRef<TblLaberinto>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPuntaje", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idPuntaje
+		{
+			get
+			{
+				return this._idPuntaje;
+			}
+			set
+			{
+				if ((this._idPuntaje != value))
+				{
+					this.OnidPuntajeChanging(value);
+					this.SendPropertyChanging();
+					this._idPuntaje = value;
+					this.SendPropertyChanged("idPuntaje");
+					this.OnidPuntajeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla", DbType="Int NOT NULL")]
+		public int idBatalla
+		{
+			get
+			{
+				return this._idBatalla;
+			}
+			set
+			{
+				if ((this._idBatalla != value))
+				{
+					if (this._TblLaberinto.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidBatallaChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla = value;
+					this.SendPropertyChanged("idBatalla");
+					this.OnidBatallaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo1", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> tiempo1
+		{
+			get
+			{
+				return this._tiempo1;
+			}
+			set
+			{
+				if ((this._tiempo1 != value))
+				{
+					this.Ontiempo1Changing(value);
+					this.SendPropertyChanging();
+					this._tiempo1 = value;
+					this.SendPropertyChanged("tiempo1");
+					this.Ontiempo1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo2", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> tiempo2
+		{
+			get
+			{
+				return this._tiempo2;
+			}
+			set
+			{
+				if ((this._tiempo2 != value))
+				{
+					this.Ontiempo2Changing(value);
+					this.SendPropertyChanging();
+					this._tiempo2 = value;
+					this.SendPropertyChanged("tiempo2");
+					this.Ontiempo2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo3", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> tiempo3
+		{
+			get
+			{
+				return this._tiempo3;
+			}
+			set
+			{
+				if ((this._tiempo3 != value))
+				{
+					this.Ontiempo3Changing(value);
+					this.SendPropertyChanging();
+					this._tiempo3 = value;
+					this.SendPropertyChanged("tiempo3");
+					this.Ontiempo3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mejorTiempo", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> mejorTiempo
+		{
+			get
+			{
+				return this._mejorTiempo;
+			}
+			set
+			{
+				if ((this._mejorTiempo != value))
+				{
+					this.OnmejorTiempoChanging(value);
+					this.SendPropertyChanging();
+					this._mejorTiempo = value;
+					this.SendPropertyChanged("mejorTiempo");
+					this.OnmejorTiempoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblLaberinto_TblPuntajeLaberinto", Storage="_TblLaberinto", ThisKey="idBatalla", OtherKey="idBatalla_Laberinto", IsForeignKey=true)]
+		public TblLaberinto TblLaberinto
+		{
+			get
+			{
+				return this._TblLaberinto.Entity;
+			}
+			set
+			{
+				TblLaberinto previousValue = this._TblLaberinto.Entity;
+				if (((previousValue != value) 
+							|| (this._TblLaberinto.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblLaberinto.Entity = null;
+						previousValue.TblPuntajeLaberintos.Remove(this);
+					}
+					this._TblLaberinto.Entity = value;
+					if ((value != null))
+					{
+						value.TblPuntajeLaberintos.Add(this);
+						this._idBatalla = value.idBatalla_Laberinto;
+					}
+					else
+					{
+						this._idBatalla = default(int);
+					}
+					this.SendPropertyChanged("TblLaberinto");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblPuntajeSeguidorLinea")]
+	public partial class TblPuntajeSeguidorLinea : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idPuntaje;
+		
+		private int _idBatalla;
+		
+		private System.Nullable<decimal> _tiempo1;
+		
+		private System.Nullable<decimal> _tiempo2;
+		
+		private System.Nullable<decimal> _tiempo3;
+		
+		private System.Nullable<decimal> _mejorTiempo;
+		
+		private EntityRef<TblSeguidorLinea> _TblSeguidorLinea;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidPuntajeChanging(int value);
+    partial void OnidPuntajeChanged();
+    partial void OnidBatallaChanging(int value);
+    partial void OnidBatallaChanged();
+    partial void Ontiempo1Changing(System.Nullable<decimal> value);
+    partial void Ontiempo1Changed();
+    partial void Ontiempo2Changing(System.Nullable<decimal> value);
+    partial void Ontiempo2Changed();
+    partial void Ontiempo3Changing(System.Nullable<decimal> value);
+    partial void Ontiempo3Changed();
+    partial void OnmejorTiempoChanging(System.Nullable<decimal> value);
+    partial void OnmejorTiempoChanged();
+    #endregion
+		
+		public TblPuntajeSeguidorLinea()
+		{
+			this._TblSeguidorLinea = default(EntityRef<TblSeguidorLinea>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPuntaje", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idPuntaje
+		{
+			get
+			{
+				return this._idPuntaje;
+			}
+			set
+			{
+				if ((this._idPuntaje != value))
+				{
+					this.OnidPuntajeChanging(value);
+					this.SendPropertyChanging();
+					this._idPuntaje = value;
+					this.SendPropertyChanged("idPuntaje");
+					this.OnidPuntajeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla", DbType="Int NOT NULL")]
+		public int idBatalla
+		{
+			get
+			{
+				return this._idBatalla;
+			}
+			set
+			{
+				if ((this._idBatalla != value))
+				{
+					if (this._TblSeguidorLinea.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidBatallaChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla = value;
+					this.SendPropertyChanged("idBatalla");
+					this.OnidBatallaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo1", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> tiempo1
+		{
+			get
+			{
+				return this._tiempo1;
+			}
+			set
+			{
+				if ((this._tiempo1 != value))
+				{
+					this.Ontiempo1Changing(value);
+					this.SendPropertyChanging();
+					this._tiempo1 = value;
+					this.SendPropertyChanged("tiempo1");
+					this.Ontiempo1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo2", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> tiempo2
+		{
+			get
+			{
+				return this._tiempo2;
+			}
+			set
+			{
+				if ((this._tiempo2 != value))
+				{
+					this.Ontiempo2Changing(value);
+					this.SendPropertyChanging();
+					this._tiempo2 = value;
+					this.SendPropertyChanged("tiempo2");
+					this.Ontiempo2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo3", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> tiempo3
+		{
+			get
+			{
+				return this._tiempo3;
+			}
+			set
+			{
+				if ((this._tiempo3 != value))
+				{
+					this.Ontiempo3Changing(value);
+					this.SendPropertyChanging();
+					this._tiempo3 = value;
+					this.SendPropertyChanged("tiempo3");
+					this.Ontiempo3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mejorTiempo", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> mejorTiempo
+		{
+			get
+			{
+				return this._mejorTiempo;
+			}
+			set
+			{
+				if ((this._mejorTiempo != value))
+				{
+					this.OnmejorTiempoChanging(value);
+					this.SendPropertyChanging();
+					this._mejorTiempo = value;
+					this.SendPropertyChanged("mejorTiempo");
+					this.OnmejorTiempoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblSeguidorLinea_TblPuntajeSeguidorLinea", Storage="_TblSeguidorLinea", ThisKey="idBatalla", OtherKey="idBatalla_SeguidorLinea", IsForeignKey=true)]
+		public TblSeguidorLinea TblSeguidorLinea
+		{
+			get
+			{
+				return this._TblSeguidorLinea.Entity;
+			}
+			set
+			{
+				TblSeguidorLinea previousValue = this._TblSeguidorLinea.Entity;
+				if (((previousValue != value) 
+							|| (this._TblSeguidorLinea.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblSeguidorLinea.Entity = null;
+						previousValue.TblPuntajeSeguidorLineas.Remove(this);
+					}
+					this._TblSeguidorLinea.Entity = value;
+					if ((value != null))
+					{
+						value.TblPuntajeSeguidorLineas.Add(this);
+						this._idBatalla = value.idBatalla_SeguidorLinea;
+					}
+					else
+					{
+						this._idBatalla = default(int);
+					}
+					this.SendPropertyChanged("TblSeguidorLinea");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblResultadoLegosumo")]
+	public partial class TblResultadoLegosumo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idPuntaje;
+		
+		private int _idBatalla;
+		
+		private int _puntosUno;
+		
+		private int _puntosDos;
+		
+		private int _idGanador;
+		
+		private EntityRef<TblLegosumo> _TblLegosumo;
+		
+		private EntityRef<TblRobot> _TblRobot;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidPuntajeChanging(int value);
+    partial void OnidPuntajeChanged();
+    partial void OnidBatallaChanging(int value);
+    partial void OnidBatallaChanged();
+    partial void OnpuntosUnoChanging(int value);
+    partial void OnpuntosUnoChanged();
+    partial void OnpuntosDosChanging(int value);
+    partial void OnpuntosDosChanged();
+    partial void OnidGanadorChanging(int value);
+    partial void OnidGanadorChanged();
+    #endregion
+		
+		public TblResultadoLegosumo()
+		{
+			this._TblLegosumo = default(EntityRef<TblLegosumo>);
+			this._TblRobot = default(EntityRef<TblRobot>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPuntaje", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idPuntaje
+		{
+			get
+			{
+				return this._idPuntaje;
+			}
+			set
+			{
+				if ((this._idPuntaje != value))
+				{
+					this.OnidPuntajeChanging(value);
+					this.SendPropertyChanging();
+					this._idPuntaje = value;
+					this.SendPropertyChanged("idPuntaje");
+					this.OnidPuntajeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla", DbType="Int NOT NULL")]
+		public int idBatalla
+		{
+			get
+			{
+				return this._idBatalla;
+			}
+			set
+			{
+				if ((this._idBatalla != value))
+				{
+					if (this._TblLegosumo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidBatallaChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla = value;
+					this.SendPropertyChanged("idBatalla");
+					this.OnidBatallaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosUno", DbType="Int NOT NULL")]
+		public int puntosUno
+		{
+			get
+			{
+				return this._puntosUno;
+			}
+			set
+			{
+				if ((this._puntosUno != value))
+				{
+					this.OnpuntosUnoChanging(value);
+					this.SendPropertyChanging();
+					this._puntosUno = value;
+					this.SendPropertyChanged("puntosUno");
+					this.OnpuntosUnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosDos", DbType="Int NOT NULL")]
+		public int puntosDos
+		{
+			get
+			{
+				return this._puntosDos;
+			}
+			set
+			{
+				if ((this._puntosDos != value))
+				{
+					this.OnpuntosDosChanging(value);
+					this.SendPropertyChanging();
+					this._puntosDos = value;
+					this.SendPropertyChanged("puntosDos");
+					this.OnpuntosDosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGanador", DbType="Int NOT NULL")]
+		public int idGanador
+		{
+			get
+			{
+				return this._idGanador;
+			}
+			set
+			{
+				if ((this._idGanador != value))
+				{
+					if (this._TblRobot.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidGanadorChanging(value);
+					this.SendPropertyChanging();
+					this._idGanador = value;
+					this.SendPropertyChanged("idGanador");
+					this.OnidGanadorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblLegosumo_TblResultadoLegosumo", Storage="_TblLegosumo", ThisKey="idBatalla", OtherKey="idBatalla_Legosumo", IsForeignKey=true)]
+		public TblLegosumo TblLegosumo
+		{
+			get
+			{
+				return this._TblLegosumo.Entity;
+			}
+			set
+			{
+				TblLegosumo previousValue = this._TblLegosumo.Entity;
+				if (((previousValue != value) 
+							|| (this._TblLegosumo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblLegosumo.Entity = null;
+						previousValue.TblResultadoLegosumos.Remove(this);
+					}
+					this._TblLegosumo.Entity = value;
+					if ((value != null))
+					{
+						value.TblResultadoLegosumos.Add(this);
+						this._idBatalla = value.idBatalla_Legosumo;
+					}
+					else
+					{
+						this._idBatalla = default(int);
+					}
+					this.SendPropertyChanged("TblLegosumo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblResultadoLegosumo", Storage="_TblRobot", ThisKey="idGanador", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot
+		{
+			get
+			{
+				return this._TblRobot.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot.Entity = null;
+						previousValue.TblResultadoLegosumos.Remove(this);
+					}
+					this._TblRobot.Entity = value;
+					if ((value != null))
+					{
+						value.TblResultadoLegosumos.Add(this);
+						this._idGanador = value.idRobot;
+					}
+					else
+					{
+						this._idGanador = default(int);
+					}
+					this.SendPropertyChanged("TblRobot");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblResultadoMinisumo")]
+	public partial class TblResultadoMinisumo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idPuntaje;
+		
+		private int _idBatalla;
+		
+		private int _puntosUno;
+		
+		private int _puntosDos;
+		
+		private int _idGanador;
+		
+		private EntityRef<TblMinisumo> _TblMinisumo;
+		
+		private EntityRef<TblRobot> _TblRobot;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidPuntajeChanging(int value);
+    partial void OnidPuntajeChanged();
+    partial void OnidBatallaChanging(int value);
+    partial void OnidBatallaChanged();
+    partial void OnpuntosUnoChanging(int value);
+    partial void OnpuntosUnoChanged();
+    partial void OnpuntosDosChanging(int value);
+    partial void OnpuntosDosChanged();
+    partial void OnidGanadorChanging(int value);
+    partial void OnidGanadorChanged();
+    #endregion
+		
+		public TblResultadoMinisumo()
+		{
+			this._TblMinisumo = default(EntityRef<TblMinisumo>);
+			this._TblRobot = default(EntityRef<TblRobot>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPuntaje", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idPuntaje
+		{
+			get
+			{
+				return this._idPuntaje;
+			}
+			set
+			{
+				if ((this._idPuntaje != value))
+				{
+					this.OnidPuntajeChanging(value);
+					this.SendPropertyChanging();
+					this._idPuntaje = value;
+					this.SendPropertyChanged("idPuntaje");
+					this.OnidPuntajeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla", DbType="Int NOT NULL")]
+		public int idBatalla
+		{
+			get
+			{
+				return this._idBatalla;
+			}
+			set
+			{
+				if ((this._idBatalla != value))
+				{
+					if (this._TblMinisumo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidBatallaChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla = value;
+					this.SendPropertyChanged("idBatalla");
+					this.OnidBatallaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosUno", DbType="Int NOT NULL")]
+		public int puntosUno
+		{
+			get
+			{
+				return this._puntosUno;
+			}
+			set
+			{
+				if ((this._puntosUno != value))
+				{
+					this.OnpuntosUnoChanging(value);
+					this.SendPropertyChanging();
+					this._puntosUno = value;
+					this.SendPropertyChanged("puntosUno");
+					this.OnpuntosUnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosDos", DbType="Int NOT NULL")]
+		public int puntosDos
+		{
+			get
+			{
+				return this._puntosDos;
+			}
+			set
+			{
+				if ((this._puntosDos != value))
+				{
+					this.OnpuntosDosChanging(value);
+					this.SendPropertyChanging();
+					this._puntosDos = value;
+					this.SendPropertyChanged("puntosDos");
+					this.OnpuntosDosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGanador", DbType="Int NOT NULL")]
+		public int idGanador
+		{
+			get
+			{
+				return this._idGanador;
+			}
+			set
+			{
+				if ((this._idGanador != value))
+				{
+					if (this._TblRobot.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidGanadorChanging(value);
+					this.SendPropertyChanging();
+					this._idGanador = value;
+					this.SendPropertyChanged("idGanador");
+					this.OnidGanadorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblMinisumo_TblResultadoMinisumo", Storage="_TblMinisumo", ThisKey="idBatalla", OtherKey="idBatalla_minisumo", IsForeignKey=true)]
+		public TblMinisumo TblMinisumo
+		{
+			get
+			{
+				return this._TblMinisumo.Entity;
+			}
+			set
+			{
+				TblMinisumo previousValue = this._TblMinisumo.Entity;
+				if (((previousValue != value) 
+							|| (this._TblMinisumo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblMinisumo.Entity = null;
+						previousValue.TblResultadoMinisumos.Remove(this);
+					}
+					this._TblMinisumo.Entity = value;
+					if ((value != null))
+					{
+						value.TblResultadoMinisumos.Add(this);
+						this._idBatalla = value.idBatalla_minisumo;
+					}
+					else
+					{
+						this._idBatalla = default(int);
+					}
+					this.SendPropertyChanged("TblMinisumo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblResultadoMinisumo", Storage="_TblRobot", ThisKey="idGanador", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot
+		{
+			get
+			{
+				return this._TblRobot.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot.Entity = null;
+						previousValue.TblResultadoMinisumos.Remove(this);
+					}
+					this._TblRobot.Entity = value;
+					if ((value != null))
+					{
+						value.TblResultadoMinisumos.Add(this);
+						this._idGanador = value.idRobot;
+					}
+					else
+					{
+						this._idGanador = default(int);
+					}
+					this.SendPropertyChanged("TblRobot");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblResultadosMegasumo")]
+	public partial class TblResultadosMegasumo : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idPuntaje;
+		
+		private int _idBatalla;
+		
+		private int _puntosUno;
+		
+		private int _puntosDos;
+		
+		private int _idGanador;
+		
+		private EntityRef<TblMegasumo> _TblMegasumo;
+		
+		private EntityRef<TblRobot> _TblRobot;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidPuntajeChanging(int value);
+    partial void OnidPuntajeChanged();
+    partial void OnidBatallaChanging(int value);
+    partial void OnidBatallaChanged();
+    partial void OnpuntosUnoChanging(int value);
+    partial void OnpuntosUnoChanged();
+    partial void OnpuntosDosChanging(int value);
+    partial void OnpuntosDosChanged();
+    partial void OnidGanadorChanging(int value);
+    partial void OnidGanadorChanged();
+    #endregion
+		
+		public TblResultadosMegasumo()
+		{
+			this._TblMegasumo = default(EntityRef<TblMegasumo>);
+			this._TblRobot = default(EntityRef<TblRobot>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPuntaje", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idPuntaje
+		{
+			get
+			{
+				return this._idPuntaje;
+			}
+			set
+			{
+				if ((this._idPuntaje != value))
+				{
+					this.OnidPuntajeChanging(value);
+					this.SendPropertyChanging();
+					this._idPuntaje = value;
+					this.SendPropertyChanged("idPuntaje");
+					this.OnidPuntajeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla", DbType="Int NOT NULL")]
+		public int idBatalla
+		{
+			get
+			{
+				return this._idBatalla;
+			}
+			set
+			{
+				if ((this._idBatalla != value))
+				{
+					if (this._TblMegasumo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidBatallaChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla = value;
+					this.SendPropertyChanged("idBatalla");
+					this.OnidBatallaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosUno", DbType="Int NOT NULL")]
+		public int puntosUno
+		{
+			get
+			{
+				return this._puntosUno;
+			}
+			set
+			{
+				if ((this._puntosUno != value))
+				{
+					this.OnpuntosUnoChanging(value);
+					this.SendPropertyChanging();
+					this._puntosUno = value;
+					this.SendPropertyChanged("puntosUno");
+					this.OnpuntosUnoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_puntosDos", DbType="Int NOT NULL")]
+		public int puntosDos
+		{
+			get
+			{
+				return this._puntosDos;
+			}
+			set
+			{
+				if ((this._puntosDos != value))
+				{
+					this.OnpuntosDosChanging(value);
+					this.SendPropertyChanging();
+					this._puntosDos = value;
+					this.SendPropertyChanged("puntosDos");
+					this.OnpuntosDosChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idGanador", DbType="Int NOT NULL")]
+		public int idGanador
+		{
+			get
+			{
+				return this._idGanador;
+			}
+			set
+			{
+				if ((this._idGanador != value))
+				{
+					if (this._TblRobot.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidGanadorChanging(value);
+					this.SendPropertyChanging();
+					this._idGanador = value;
+					this.SendPropertyChanged("idGanador");
+					this.OnidGanadorChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblMegasumo_TblResultadosMegasumo", Storage="_TblMegasumo", ThisKey="idBatalla", OtherKey="idBatalla_megasumo", IsForeignKey=true)]
+		public TblMegasumo TblMegasumo
+		{
+			get
+			{
+				return this._TblMegasumo.Entity;
+			}
+			set
+			{
+				TblMegasumo previousValue = this._TblMegasumo.Entity;
+				if (((previousValue != value) 
+							|| (this._TblMegasumo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblMegasumo.Entity = null;
+						previousValue.TblResultadosMegasumos.Remove(this);
+					}
+					this._TblMegasumo.Entity = value;
+					if ((value != null))
+					{
+						value.TblResultadosMegasumos.Add(this);
+						this._idBatalla = value.idBatalla_megasumo;
+					}
+					else
+					{
+						this._idBatalla = default(int);
+					}
+					this.SendPropertyChanged("TblMegasumo");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblResultadosMegasumo", Storage="_TblRobot", ThisKey="idGanador", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot
+		{
+			get
+			{
+				return this._TblRobot.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot.Entity = null;
+						previousValue.TblResultadosMegasumos.Remove(this);
+					}
+					this._TblRobot.Entity = value;
+					if ((value != null))
+					{
+						value.TblResultadosMegasumos.Add(this);
+						this._idGanador = value.idRobot;
+					}
+					else
+					{
+						this._idGanador = default(int);
+					}
+					this.SendPropertyChanged("TblRobot");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblRobot")]
+	public partial class TblRobot : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idRobot;
+		
+		private string _nomRobot;
+		
+		private string _estadoRobot;
+		
+		private string _liderRobot;
+		
+		private int _idCategoria;
+		
+		private int _idEquipo;
+		
+		private EntitySet<TblDrone> _TblDrones;
+		
+		private EntitySet<TblLaberinto> _TblLaberintos;
+		
+		private EntitySet<TblLegosumo> _TblLegosumos;
+		
+		private EntitySet<TblLegosumo> _TblLegosumos1;
+		
+		private EntitySet<TblMegasumo> _TblMegasumos;
+		
+		private EntitySet<TblMegasumo> _TblMegasumos1;
+		
+		private EntitySet<TblMinisumo> _TblMinisumos;
+		
+		private EntitySet<TblMinisumo> _TblMinisumos1;
+		
+		private EntitySet<TblResultadoLegosumo> _TblResultadoLegosumos;
+		
+		private EntitySet<TblResultadoMinisumo> _TblResultadoMinisumos;
+		
+		private EntitySet<TblResultadosMegasumo> _TblResultadosMegasumos;
+		
+		private EntitySet<TblSeguidorLego> _TblSeguidorLegos;
+		
+		private EntitySet<TblSeguidorLinea> _TblSeguidorLineas;
+		
+		private EntityRef<TblCategoria> _TblCategoria;
+		
+		private EntityRef<TblEquipo> _TblEquipo;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidRobotChanging(int value);
+    partial void OnidRobotChanged();
+    partial void OnnomRobotChanging(string value);
+    partial void OnnomRobotChanged();
+    partial void OnestadoRobotChanging(string value);
+    partial void OnestadoRobotChanged();
+    partial void OnliderRobotChanging(string value);
+    partial void OnliderRobotChanged();
+    partial void OnidCategoriaChanging(int value);
+    partial void OnidCategoriaChanged();
+    partial void OnidEquipoChanging(int value);
+    partial void OnidEquipoChanged();
+    #endregion
+		
+		public TblRobot()
+		{
+			this._TblDrones = new EntitySet<TblDrone>(new Action<TblDrone>(this.attach_TblDrones), new Action<TblDrone>(this.detach_TblDrones));
+			this._TblLaberintos = new EntitySet<TblLaberinto>(new Action<TblLaberinto>(this.attach_TblLaberintos), new Action<TblLaberinto>(this.detach_TblLaberintos));
+			this._TblLegosumos = new EntitySet<TblLegosumo>(new Action<TblLegosumo>(this.attach_TblLegosumos), new Action<TblLegosumo>(this.detach_TblLegosumos));
+			this._TblLegosumos1 = new EntitySet<TblLegosumo>(new Action<TblLegosumo>(this.attach_TblLegosumos1), new Action<TblLegosumo>(this.detach_TblLegosumos1));
+			this._TblMegasumos = new EntitySet<TblMegasumo>(new Action<TblMegasumo>(this.attach_TblMegasumos), new Action<TblMegasumo>(this.detach_TblMegasumos));
+			this._TblMegasumos1 = new EntitySet<TblMegasumo>(new Action<TblMegasumo>(this.attach_TblMegasumos1), new Action<TblMegasumo>(this.detach_TblMegasumos1));
+			this._TblMinisumos = new EntitySet<TblMinisumo>(new Action<TblMinisumo>(this.attach_TblMinisumos), new Action<TblMinisumo>(this.detach_TblMinisumos));
+			this._TblMinisumos1 = new EntitySet<TblMinisumo>(new Action<TblMinisumo>(this.attach_TblMinisumos1), new Action<TblMinisumo>(this.detach_TblMinisumos1));
+			this._TblResultadoLegosumos = new EntitySet<TblResultadoLegosumo>(new Action<TblResultadoLegosumo>(this.attach_TblResultadoLegosumos), new Action<TblResultadoLegosumo>(this.detach_TblResultadoLegosumos));
+			this._TblResultadoMinisumos = new EntitySet<TblResultadoMinisumo>(new Action<TblResultadoMinisumo>(this.attach_TblResultadoMinisumos), new Action<TblResultadoMinisumo>(this.detach_TblResultadoMinisumos));
+			this._TblResultadosMegasumos = new EntitySet<TblResultadosMegasumo>(new Action<TblResultadosMegasumo>(this.attach_TblResultadosMegasumos), new Action<TblResultadosMegasumo>(this.detach_TblResultadosMegasumos));
+			this._TblSeguidorLegos = new EntitySet<TblSeguidorLego>(new Action<TblSeguidorLego>(this.attach_TblSeguidorLegos), new Action<TblSeguidorLego>(this.detach_TblSeguidorLegos));
+			this._TblSeguidorLineas = new EntitySet<TblSeguidorLinea>(new Action<TblSeguidorLinea>(this.attach_TblSeguidorLineas), new Action<TblSeguidorLinea>(this.detach_TblSeguidorLineas));
+			this._TblCategoria = default(EntityRef<TblCategoria>);
+			this._TblEquipo = default(EntityRef<TblEquipo>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL", IsPrimaryKey=true)]
+		public int idRobot
+		{
+			get
+			{
+				return this._idRobot;
+			}
+			set
+			{
+				if ((this._idRobot != value))
+				{
+					this.OnidRobotChanging(value);
+					this.SendPropertyChanging();
+					this._idRobot = value;
+					this.SendPropertyChanged("idRobot");
+					this.OnidRobotChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_nomRobot", DbType="VarChar(50) NOT NULL", CanBeNull=false)]
+		public string nomRobot
+		{
+			get
+			{
+				return this._nomRobot;
+			}
+			set
+			{
+				if ((this._nomRobot != value))
+				{
+					this.OnnomRobotChanging(value);
+					this.SendPropertyChanging();
+					this._nomRobot = value;
+					this.SendPropertyChanged("nomRobot");
+					this.OnnomRobotChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estadoRobot", DbType="Char(2)")]
+		public string estadoRobot
+		{
+			get
+			{
+				return this._estadoRobot;
+			}
+			set
+			{
+				if ((this._estadoRobot != value))
+				{
+					this.OnestadoRobotChanging(value);
+					this.SendPropertyChanging();
+					this._estadoRobot = value;
+					this.SendPropertyChanged("estadoRobot");
+					this.OnestadoRobotChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_liderRobot", DbType="VarChar(25)")]
+		public string liderRobot
+		{
+			get
+			{
+				return this._liderRobot;
+			}
+			set
+			{
+				if ((this._liderRobot != value))
+				{
+					this.OnliderRobotChanging(value);
+					this.SendPropertyChanging();
+					this._liderRobot = value;
+					this.SendPropertyChanged("liderRobot");
+					this.OnliderRobotChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idCategoria", DbType="Int NOT NULL")]
+		public int idCategoria
+		{
+			get
+			{
+				return this._idCategoria;
+			}
+			set
+			{
+				if ((this._idCategoria != value))
+				{
+					if (this._TblCategoria.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidCategoriaChanging(value);
+					this.SendPropertyChanging();
+					this._idCategoria = value;
+					this.SendPropertyChanged("idCategoria");
+					this.OnidCategoriaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idEquipo", DbType="Int NOT NULL")]
+		public int idEquipo
+		{
+			get
+			{
+				return this._idEquipo;
+			}
+			set
+			{
+				if ((this._idEquipo != value))
+				{
+					if (this._TblEquipo.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidEquipoChanging(value);
+					this.SendPropertyChanging();
+					this._idEquipo = value;
+					this.SendPropertyChanged("idEquipo");
+					this.OnidEquipoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblDrone", Storage="_TblDrones", ThisKey="idRobot", OtherKey="idRobot")]
+		public EntitySet<TblDrone> TblDrones
+		{
+			get
+			{
+				return this._TblDrones;
+			}
+			set
+			{
+				this._TblDrones.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblLaberinto", Storage="_TblLaberintos", ThisKey="idRobot", OtherKey="idRobot")]
+		public EntitySet<TblLaberinto> TblLaberintos
+		{
+			get
+			{
+				return this._TblLaberintos;
+			}
+			set
+			{
+				this._TblLaberintos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblLegosumo", Storage="_TblLegosumos", ThisKey="idRobot", OtherKey="idRobotUno")]
+		public EntitySet<TblLegosumo> TblLegosumos
+		{
+			get
+			{
+				return this._TblLegosumos;
+			}
+			set
+			{
+				this._TblLegosumos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblLegosumo1", Storage="_TblLegosumos1", ThisKey="idRobot", OtherKey="idRobotDos")]
+		public EntitySet<TblLegosumo> TblLegosumos1
+		{
+			get
+			{
+				return this._TblLegosumos1;
+			}
+			set
+			{
+				this._TblLegosumos1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMegasumo", Storage="_TblMegasumos", ThisKey="idRobot", OtherKey="idRobotUno")]
+		public EntitySet<TblMegasumo> TblMegasumos
+		{
+			get
+			{
+				return this._TblMegasumos;
+			}
+			set
+			{
+				this._TblMegasumos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMegasumo1", Storage="_TblMegasumos1", ThisKey="idRobot", OtherKey="idRobotDos")]
+		public EntitySet<TblMegasumo> TblMegasumos1
+		{
+			get
+			{
+				return this._TblMegasumos1;
+			}
+			set
+			{
+				this._TblMegasumos1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMinisumo", Storage="_TblMinisumos", ThisKey="idRobot", OtherKey="idRobotUno")]
+		public EntitySet<TblMinisumo> TblMinisumos
+		{
+			get
+			{
+				return this._TblMinisumos;
+			}
+			set
+			{
+				this._TblMinisumos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblMinisumo1", Storage="_TblMinisumos1", ThisKey="idRobot", OtherKey="idRobotDos")]
+		public EntitySet<TblMinisumo> TblMinisumos1
+		{
+			get
+			{
+				return this._TblMinisumos1;
+			}
+			set
+			{
+				this._TblMinisumos1.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblResultadoLegosumo", Storage="_TblResultadoLegosumos", ThisKey="idRobot", OtherKey="idGanador")]
+		public EntitySet<TblResultadoLegosumo> TblResultadoLegosumos
+		{
+			get
+			{
+				return this._TblResultadoLegosumos;
+			}
+			set
+			{
+				this._TblResultadoLegosumos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblResultadoMinisumo", Storage="_TblResultadoMinisumos", ThisKey="idRobot", OtherKey="idGanador")]
+		public EntitySet<TblResultadoMinisumo> TblResultadoMinisumos
+		{
+			get
+			{
+				return this._TblResultadoMinisumos;
+			}
+			set
+			{
+				this._TblResultadoMinisumos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblResultadosMegasumo", Storage="_TblResultadosMegasumos", ThisKey="idRobot", OtherKey="idGanador")]
+		public EntitySet<TblResultadosMegasumo> TblResultadosMegasumos
+		{
+			get
+			{
+				return this._TblResultadosMegasumos;
+			}
+			set
+			{
+				this._TblResultadosMegasumos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblSeguidorLego", Storage="_TblSeguidorLegos", ThisKey="idRobot", OtherKey="idRobot")]
+		public EntitySet<TblSeguidorLego> TblSeguidorLegos
+		{
+			get
+			{
+				return this._TblSeguidorLegos;
+			}
+			set
+			{
+				this._TblSeguidorLegos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblSeguidorLinea", Storage="_TblSeguidorLineas", ThisKey="idRobot", OtherKey="idRobot")]
+		public EntitySet<TblSeguidorLinea> TblSeguidorLineas
+		{
+			get
+			{
+				return this._TblSeguidorLineas;
+			}
+			set
+			{
+				this._TblSeguidorLineas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblCategoria_TblRobot", Storage="_TblCategoria", ThisKey="idCategoria", OtherKey="idCat", IsForeignKey=true)]
+		public TblCategoria TblCategoria
+		{
+			get
+			{
+				return this._TblCategoria.Entity;
+			}
+			set
+			{
+				TblCategoria previousValue = this._TblCategoria.Entity;
+				if (((previousValue != value) 
+							|| (this._TblCategoria.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblCategoria.Entity = null;
+						previousValue.TblRobots.Remove(this);
+					}
+					this._TblCategoria.Entity = value;
+					if ((value != null))
+					{
+						value.TblRobots.Add(this);
+						this._idCategoria = value.idCat;
+					}
+					else
+					{
+						this._idCategoria = default(int);
+					}
+					this.SendPropertyChanged("TblCategoria");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblEquipo_TblRobot", Storage="_TblEquipo", ThisKey="idEquipo", OtherKey="idEquipo", IsForeignKey=true)]
+		public TblEquipo TblEquipo
+		{
+			get
+			{
+				return this._TblEquipo.Entity;
+			}
+			set
+			{
+				TblEquipo previousValue = this._TblEquipo.Entity;
+				if (((previousValue != value) 
+							|| (this._TblEquipo.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblEquipo.Entity = null;
+						previousValue.TblRobots.Remove(this);
+					}
+					this._TblEquipo.Entity = value;
+					if ((value != null))
+					{
+						value.TblRobots.Add(this);
+						this._idEquipo = value.idEquipo;
+					}
+					else
+					{
+						this._idEquipo = default(int);
+					}
+					this.SendPropertyChanged("TblEquipo");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TblDrones(TblDrone entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = this;
+		}
+		
+		private void detach_TblDrones(TblDrone entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = null;
+		}
+		
+		private void attach_TblLaberintos(TblLaberinto entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = this;
+		}
+		
+		private void detach_TblLaberintos(TblLaberinto entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = null;
+		}
+		
+		private void attach_TblLegosumos(TblLegosumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = this;
+		}
+		
+		private void detach_TblLegosumos(TblLegosumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = null;
+		}
+		
+		private void attach_TblLegosumos1(TblLegosumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot1 = this;
+		}
+		
+		private void detach_TblLegosumos1(TblLegosumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot1 = null;
+		}
+		
+		private void attach_TblMegasumos(TblMegasumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = this;
+		}
+		
+		private void detach_TblMegasumos(TblMegasumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = null;
+		}
+		
+		private void attach_TblMegasumos1(TblMegasumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot1 = this;
+		}
+		
+		private void detach_TblMegasumos1(TblMegasumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot1 = null;
+		}
+		
+		private void attach_TblMinisumos(TblMinisumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = this;
+		}
+		
+		private void detach_TblMinisumos(TblMinisumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = null;
+		}
+		
+		private void attach_TblMinisumos1(TblMinisumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot1 = this;
+		}
+		
+		private void detach_TblMinisumos1(TblMinisumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot1 = null;
+		}
+		
+		private void attach_TblResultadoLegosumos(TblResultadoLegosumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = this;
+		}
+		
+		private void detach_TblResultadoLegosumos(TblResultadoLegosumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = null;
+		}
+		
+		private void attach_TblResultadoMinisumos(TblResultadoMinisumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = this;
+		}
+		
+		private void detach_TblResultadoMinisumos(TblResultadoMinisumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = null;
+		}
+		
+		private void attach_TblResultadosMegasumos(TblResultadosMegasumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = this;
+		}
+		
+		private void detach_TblResultadosMegasumos(TblResultadosMegasumo entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = null;
+		}
+		
+		private void attach_TblSeguidorLegos(TblSeguidorLego entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = this;
+		}
+		
+		private void detach_TblSeguidorLegos(TblSeguidorLego entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = null;
+		}
+		
+		private void attach_TblSeguidorLineas(TblSeguidorLinea entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = this;
+		}
+		
+		private void detach_TblSeguidorLineas(TblSeguidorLinea entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblRobot = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblSeguidorLego")]
+	public partial class TblSeguidorLego : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idBatalla_SeguidorLego;
+		
+		private int _idRobot;
+		
+		private string _estado;
+		
+		private EntitySet<TbPuntajeSeguidorLego> _TbPuntajeSeguidorLegos;
+		
+		private EntityRef<TblRobot> _TblRobot;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidBatalla_SeguidorLegoChanging(int value);
+    partial void OnidBatalla_SeguidorLegoChanged();
+    partial void OnidRobotChanging(int value);
+    partial void OnidRobotChanged();
+    partial void OnestadoChanging(string value);
+    partial void OnestadoChanged();
+    #endregion
+		
+		public TblSeguidorLego()
+		{
+			this._TbPuntajeSeguidorLegos = new EntitySet<TbPuntajeSeguidorLego>(new Action<TbPuntajeSeguidorLego>(this.attach_TbPuntajeSeguidorLegos), new Action<TbPuntajeSeguidorLego>(this.detach_TbPuntajeSeguidorLegos));
+			this._TblRobot = default(EntityRef<TblRobot>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla_SeguidorLego", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idBatalla_SeguidorLego
+		{
+			get
+			{
+				return this._idBatalla_SeguidorLego;
+			}
+			set
+			{
+				if ((this._idBatalla_SeguidorLego != value))
+				{
+					this.OnidBatalla_SeguidorLegoChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla_SeguidorLego = value;
+					this.SendPropertyChanged("idBatalla_SeguidorLego");
+					this.OnidBatalla_SeguidorLegoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
+		public int idRobot
+		{
+			get
+			{
+				return this._idRobot;
+			}
+			set
+			{
+				if ((this._idRobot != value))
+				{
+					if (this._TblRobot.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidRobotChanging(value);
+					this.SendPropertyChanging();
+					this._idRobot = value;
+					this.SendPropertyChanged("idRobot");
+					this.OnidRobotChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Char(2) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this.OnestadoChanging(value);
+					this.SendPropertyChanging();
+					this._estado = value;
+					this.SendPropertyChanged("estado");
+					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblSeguidorLego_TbPuntajeSeguidorLego", Storage="_TbPuntajeSeguidorLegos", ThisKey="idBatalla_SeguidorLego", OtherKey="idBatalla")]
+		public EntitySet<TbPuntajeSeguidorLego> TbPuntajeSeguidorLegos
+		{
+			get
+			{
+				return this._TbPuntajeSeguidorLegos;
+			}
+			set
+			{
+				this._TbPuntajeSeguidorLegos.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblSeguidorLego", Storage="_TblRobot", ThisKey="idRobot", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot
+		{
+			get
+			{
+				return this._TblRobot.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot.Entity = null;
+						previousValue.TblSeguidorLegos.Remove(this);
+					}
+					this._TblRobot.Entity = value;
+					if ((value != null))
+					{
+						value.TblSeguidorLegos.Add(this);
+						this._idRobot = value.idRobot;
+					}
+					else
+					{
+						this._idRobot = default(int);
+					}
+					this.SendPropertyChanged("TblRobot");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TbPuntajeSeguidorLegos(TbPuntajeSeguidorLego entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblSeguidorLego = this;
+		}
+		
+		private void detach_TbPuntajeSeguidorLegos(TbPuntajeSeguidorLego entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblSeguidorLego = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TblSeguidorLinea")]
+	public partial class TblSeguidorLinea : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idBatalla_SeguidorLinea;
+		
+		private int _idRobot;
+		
+		private string _estado;
+		
+		private EntitySet<TblPuntajeSeguidorLinea> _TblPuntajeSeguidorLineas;
+		
+		private EntityRef<TblRobot> _TblRobot;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidBatalla_SeguidorLineaChanging(int value);
+    partial void OnidBatalla_SeguidorLineaChanged();
+    partial void OnidRobotChanging(int value);
+    partial void OnidRobotChanged();
+    partial void OnestadoChanging(string value);
+    partial void OnestadoChanged();
+    #endregion
+		
+		public TblSeguidorLinea()
+		{
+			this._TblPuntajeSeguidorLineas = new EntitySet<TblPuntajeSeguidorLinea>(new Action<TblPuntajeSeguidorLinea>(this.attach_TblPuntajeSeguidorLineas), new Action<TblPuntajeSeguidorLinea>(this.detach_TblPuntajeSeguidorLineas));
+			this._TblRobot = default(EntityRef<TblRobot>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla_SeguidorLinea", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idBatalla_SeguidorLinea
+		{
+			get
+			{
+				return this._idBatalla_SeguidorLinea;
+			}
+			set
+			{
+				if ((this._idBatalla_SeguidorLinea != value))
+				{
+					this.OnidBatalla_SeguidorLineaChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla_SeguidorLinea = value;
+					this.SendPropertyChanged("idBatalla_SeguidorLinea");
+					this.OnidBatalla_SeguidorLineaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idRobot", DbType="Int NOT NULL")]
+		public int idRobot
+		{
+			get
+			{
+				return this._idRobot;
+			}
+			set
+			{
+				if ((this._idRobot != value))
+				{
+					if (this._TblRobot.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidRobotChanging(value);
+					this.SendPropertyChanging();
+					this._idRobot = value;
+					this.SendPropertyChanged("idRobot");
+					this.OnidRobotChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_estado", DbType="Char(2) NOT NULL", CanBeNull=false)]
+		public string estado
+		{
+			get
+			{
+				return this._estado;
+			}
+			set
+			{
+				if ((this._estado != value))
+				{
+					this.OnestadoChanging(value);
+					this.SendPropertyChanging();
+					this._estado = value;
+					this.SendPropertyChanged("estado");
+					this.OnestadoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblSeguidorLinea_TblPuntajeSeguidorLinea", Storage="_TblPuntajeSeguidorLineas", ThisKey="idBatalla_SeguidorLinea", OtherKey="idBatalla")]
+		public EntitySet<TblPuntajeSeguidorLinea> TblPuntajeSeguidorLineas
+		{
+			get
+			{
+				return this._TblPuntajeSeguidorLineas;
+			}
+			set
+			{
+				this._TblPuntajeSeguidorLineas.Assign(value);
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblRobot_TblSeguidorLinea", Storage="_TblRobot", ThisKey="idRobot", OtherKey="idRobot", IsForeignKey=true)]
+		public TblRobot TblRobot
+		{
+			get
+			{
+				return this._TblRobot.Entity;
+			}
+			set
+			{
+				TblRobot previousValue = this._TblRobot.Entity;
+				if (((previousValue != value) 
+							|| (this._TblRobot.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblRobot.Entity = null;
+						previousValue.TblSeguidorLineas.Remove(this);
+					}
+					this._TblRobot.Entity = value;
+					if ((value != null))
+					{
+						value.TblSeguidorLineas.Add(this);
+						this._idRobot = value.idRobot;
+					}
+					else
+					{
+						this._idRobot = default(int);
+					}
+					this.SendPropertyChanged("TblRobot");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_TblPuntajeSeguidorLineas(TblPuntajeSeguidorLinea entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblSeguidorLinea = this;
+		}
+		
+		private void detach_TblPuntajeSeguidorLineas(TblPuntajeSeguidorLinea entity)
+		{
+			this.SendPropertyChanging();
+			entity.TblSeguidorLinea = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.TbPuntajeSeguidorLego")]
+	public partial class TbPuntajeSeguidorLego : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _idPuntaje;
+		
+		private int _idBatalla;
+		
+		private System.Nullable<decimal> _tiempo1;
+		
+		private System.Nullable<decimal> _tiempo2;
+		
+		private System.Nullable<decimal> _tiempo3;
+		
+		private System.Nullable<decimal> _mejorTiempo;
+		
+		private EntityRef<TblSeguidorLego> _TblSeguidorLego;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void OnidPuntajeChanging(int value);
+    partial void OnidPuntajeChanged();
+    partial void OnidBatallaChanging(int value);
+    partial void OnidBatallaChanged();
+    partial void Ontiempo1Changing(System.Nullable<decimal> value);
+    partial void Ontiempo1Changed();
+    partial void Ontiempo2Changing(System.Nullable<decimal> value);
+    partial void Ontiempo2Changed();
+    partial void Ontiempo3Changing(System.Nullable<decimal> value);
+    partial void Ontiempo3Changed();
+    partial void OnmejorTiempoChanging(System.Nullable<decimal> value);
+    partial void OnmejorTiempoChanged();
+    #endregion
+		
+		public TbPuntajeSeguidorLego()
+		{
+			this._TblSeguidorLego = default(EntityRef<TblSeguidorLego>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idPuntaje", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int idPuntaje
+		{
+			get
+			{
+				return this._idPuntaje;
+			}
+			set
+			{
+				if ((this._idPuntaje != value))
+				{
+					this.OnidPuntajeChanging(value);
+					this.SendPropertyChanging();
+					this._idPuntaje = value;
+					this.SendPropertyChanged("idPuntaje");
+					this.OnidPuntajeChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_idBatalla", DbType="Int NOT NULL")]
+		public int idBatalla
+		{
+			get
+			{
+				return this._idBatalla;
+			}
+			set
+			{
+				if ((this._idBatalla != value))
+				{
+					if (this._TblSeguidorLego.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.OnidBatallaChanging(value);
+					this.SendPropertyChanging();
+					this._idBatalla = value;
+					this.SendPropertyChanged("idBatalla");
+					this.OnidBatallaChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo1", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> tiempo1
+		{
+			get
+			{
+				return this._tiempo1;
+			}
+			set
+			{
+				if ((this._tiempo1 != value))
+				{
+					this.Ontiempo1Changing(value);
+					this.SendPropertyChanging();
+					this._tiempo1 = value;
+					this.SendPropertyChanged("tiempo1");
+					this.Ontiempo1Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo2", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> tiempo2
+		{
+			get
+			{
+				return this._tiempo2;
+			}
+			set
+			{
+				if ((this._tiempo2 != value))
+				{
+					this.Ontiempo2Changing(value);
+					this.SendPropertyChanging();
+					this._tiempo2 = value;
+					this.SendPropertyChanged("tiempo2");
+					this.Ontiempo2Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_tiempo3", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> tiempo3
+		{
+			get
+			{
+				return this._tiempo3;
+			}
+			set
+			{
+				if ((this._tiempo3 != value))
+				{
+					this.Ontiempo3Changing(value);
+					this.SendPropertyChanging();
+					this._tiempo3 = value;
+					this.SendPropertyChanged("tiempo3");
+					this.Ontiempo3Changed();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_mejorTiempo", DbType="Decimal(5,2)")]
+		public System.Nullable<decimal> mejorTiempo
+		{
+			get
+			{
+				return this._mejorTiempo;
+			}
+			set
+			{
+				if ((this._mejorTiempo != value))
+				{
+					this.OnmejorTiempoChanging(value);
+					this.SendPropertyChanging();
+					this._mejorTiempo = value;
+					this.SendPropertyChanged("mejorTiempo");
+					this.OnmejorTiempoChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="TblSeguidorLego_TbPuntajeSeguidorLego", Storage="_TblSeguidorLego", ThisKey="idBatalla", OtherKey="idBatalla_SeguidorLego", IsForeignKey=true)]
+		public TblSeguidorLego TblSeguidorLego
+		{
+			get
+			{
+				return this._TblSeguidorLego.Entity;
+			}
+			set
+			{
+				TblSeguidorLego previousValue = this._TblSeguidorLego.Entity;
+				if (((previousValue != value) 
+							|| (this._TblSeguidorLego.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._TblSeguidorLego.Entity = null;
+						previousValue.TbPuntajeSeguidorLegos.Remove(this);
+					}
+					this._TblSeguidorLego.Entity = value;
+					if ((value != null))
+					{
+						value.TbPuntajeSeguidorLegos.Add(this);
+						this._idBatalla = value.idBatalla_SeguidorLego;
+					}
+					else
+					{
+						this._idBatalla = default(int);
+					}
+					this.SendPropertyChanged("TblSeguidorLego");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
 		}
 	}
 }
