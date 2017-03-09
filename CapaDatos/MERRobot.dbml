@@ -8,9 +8,12 @@
       <Association Name="TblCategoria_TblRobot" Member="TblRobots" ThisKey="idCat" OtherKey="idCategoria" Type="TblRobot" />
     </Type>
   </Table>
-  <Table Name="dbo.TblDrone" Member="TblDrones">
+  <Table Name="dbo.TblDrones" Member="TblDrones">
     <Type Name="TblDrone">
+      <Column Name="idBatalla_Drones" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idRobot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Association Name="TblDrone_TblPuntajeDrone" Member="TblPuntajeDrones" ThisKey="idBatalla_Drones" OtherKey="idBatalla" Type="TblPuntajeDrone" />
       <Association Name="TblRobot_TblDrone" Member="TblRobot" ThisKey="idRobot" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
     </Type>
   </Table>
@@ -26,7 +29,10 @@
   </Table>
   <Table Name="dbo.TblLaberinto" Member="TblLaberintos">
     <Type Name="TblLaberinto">
+      <Column Name="idBatalla_Laberinto" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idRobot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Association Name="TblLaberinto_TblPuntajeLaberinto" Member="TblPuntajeLaberintos" ThisKey="idBatalla_Laberinto" OtherKey="idBatalla" Type="TblPuntajeLaberinto" />
       <Association Name="TblRobot_TblLaberinto" Member="TblRobot" ThisKey="idRobot" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
     </Type>
   </Table>
@@ -35,6 +41,7 @@
       <Column Name="idBatalla_Legosumo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idRobotUno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="idRobotDos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
       <Association Name="TblLegosumo_TblResultadoLegosumo" Member="TblResultadoLegosumos" ThisKey="idBatalla_Legosumo" OtherKey="idBatalla" Type="TblResultadoLegosumo" />
       <Association Name="TblRobot_TblLegosumo" Member="TblRobot" ThisKey="idRobotUno" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
       <Association Name="TblRobot_TblLegosumo1" Member="TblRobot1" ThisKey="idRobotDos" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
@@ -45,6 +52,7 @@
       <Column Name="idBatalla_megasumo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idRobotUno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="idRobotDos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
       <Association Name="TblMegasumo_TblResultadosMegasumo" Member="TblResultadosMegasumos" ThisKey="idBatalla_megasumo" OtherKey="idBatalla" Type="TblResultadosMegasumo" />
       <Association Name="TblRobot_TblMegasumo" Member="TblRobot" ThisKey="idRobotUno" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
       <Association Name="TblRobot_TblMegasumo1" Member="TblRobot1" ThisKey="idRobotDos" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
@@ -55,69 +63,74 @@
       <Column Name="idBatalla_minisumo" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idRobotUno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="idRobotDos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
       <Association Name="TblMinisumo_TblResultadoMinisumo" Member="TblResultadoMinisumos" ThisKey="idBatalla_minisumo" OtherKey="idBatalla" Type="TblResultadoMinisumo" />
       <Association Name="TblRobot_TblMinisumo" Member="TblRobot" ThisKey="idRobotUno" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
       <Association Name="TblRobot_TblMinisumo1" Member="TblRobot1" ThisKey="idRobotDos" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.TblPuntajeDrone" Member="TblPuntajeDrones">
+  <Table Name="dbo.TblPuntajeDrones" Member="TblPuntajeDrones">
     <Type Name="TblPuntajeDrone">
-      <Column Name="idPuntuje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="idRobot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="timepo1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="idPuntaje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idBatalla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tiempo1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
       <Column Name="puntaje" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="estado" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
-      <Association Name="TblRobot_TblPuntajeDrone" Member="TblRobot" ThisKey="idRobot" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
+      <Association Name="TblDrone_TblPuntajeDrone" Member="TblDrone" ThisKey="idBatalla" OtherKey="idBatalla_Drones" Type="TblDrone" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TblPuntajeLaberinto" Member="TblPuntajeLaberintos">
     <Type Name="TblPuntajeLaberinto">
-      <Column Name="idPuntuje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="idRobot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="timepo1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="idPuntaje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idBatalla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tiempo1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
       <Column Name="tiempo2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
       <Column Name="tiempo3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Column Name="estado" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
-      <Association Name="TblRobot_TblPuntajeLaberinto" Member="TblRobot" ThisKey="idRobot" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
+      <Column Name="mejorTiempo" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Association Name="TblLaberinto_TblPuntajeLaberinto" Member="TblLaberinto" ThisKey="idBatalla" OtherKey="idBatalla_Laberinto" Type="TblLaberinto" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblPuntajeSeguidorLinea" Member="TblPuntajeSeguidorLineas">
+    <Type Name="TblPuntajeSeguidorLinea">
+      <Column Name="idPuntaje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idBatalla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tiempo1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tiempo2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="tiempo3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="mejorTiempo" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Association Name="TblSeguidorLinea_TblPuntajeSeguidorLinea" Member="TblSeguidorLinea" ThisKey="idBatalla" OtherKey="idBatalla_SeguidorLinea" Type="TblSeguidorLinea" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TblResultadoLegosumo" Member="TblResultadoLegosumos">
     <Type Name="TblResultadoLegosumo">
-      <Column Name="idPuntuje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idPuntaje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idBatalla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="puntosUno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="puntosDos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idRobotUno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idRobotDos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idGanador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="TblLegosumo_TblResultadoLegosumo" Member="TblLegosumo" ThisKey="idBatalla" OtherKey="idBatalla_Legosumo" Type="TblLegosumo" IsForeignKey="true" />
-      <Association Name="TblRobot_TblResultadoLegosumo" Member="TblRobot" ThisKey="idRobotUno" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
-      <Association Name="TblRobot_TblResultadoLegosumo1" Member="TblRobot1" ThisKey="idRobotDos" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
+      <Association Name="TblRobot_TblResultadoLegosumo" Member="TblRobot" ThisKey="idGanador" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TblResultadoMinisumo" Member="TblResultadoMinisumos">
     <Type Name="TblResultadoMinisumo">
-      <Column Name="idPuntuje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idPuntaje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idBatalla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="puntosUno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="puntosDos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idRobotUno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idRobotDos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idGanador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="TblMinisumo_TblResultadoMinisumo" Member="TblMinisumo" ThisKey="idBatalla" OtherKey="idBatalla_minisumo" Type="TblMinisumo" IsForeignKey="true" />
-      <Association Name="TblRobot_TblResultadoMinisumo" Member="TblRobot" ThisKey="idRobotUno" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
-      <Association Name="TblRobot_TblResultadoMinisumo1" Member="TblRobot1" ThisKey="idRobotDos" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
+      <Association Name="TblRobot_TblResultadoMinisumo" Member="TblRobot" ThisKey="idGanador" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TblResultadosMegasumo" Member="TblResultadosMegasumos">
     <Type Name="TblResultadosMegasumo">
-      <Column Name="idPuntuje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idPuntaje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idBatalla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="puntosUno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Column Name="puntosDos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idRobotUno" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="idRobotDos" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="idGanador" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
       <Association Name="TblMegasumo_TblResultadosMegasumo" Member="TblMegasumo" ThisKey="idBatalla" OtherKey="idBatalla_megasumo" Type="TblMegasumo" IsForeignKey="true" />
-      <Association Name="TblRobot_TblResultadosMegasumo" Member="TblRobot" ThisKey="idRobotUno" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
-      <Association Name="TblRobot_TblResultadosMegasumo1" Member="TblRobot1" ThisKey="idRobotDos" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
+      <Association Name="TblRobot_TblResultadosMegasumo" Member="TblRobot" ThisKey="idGanador" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TblRobot" Member="TblRobots">
@@ -136,54 +149,42 @@
       <Association Name="TblRobot_TblMegasumo1" Member="TblMegasumos1" ThisKey="idRobot" OtherKey="idRobotDos" Type="TblMegasumo" />
       <Association Name="TblRobot_TblMinisumo" Member="TblMinisumos" ThisKey="idRobot" OtherKey="idRobotUno" Type="TblMinisumo" />
       <Association Name="TblRobot_TblMinisumo1" Member="TblMinisumos1" ThisKey="idRobot" OtherKey="idRobotDos" Type="TblMinisumo" />
-      <Association Name="TblRobot_TblPuntajeDrone" Member="TblPuntajeDrones" ThisKey="idRobot" OtherKey="idRobot" Type="TblPuntajeDrone" />
-      <Association Name="TblRobot_TblPuntajeLaberinto" Member="TblPuntajeLaberintos" ThisKey="idRobot" OtherKey="idRobot" Type="TblPuntajeLaberinto" />
-      <Association Name="TblRobot_TblResultadoLegosumo" Member="TblResultadoLegosumos" ThisKey="idRobot" OtherKey="idRobotUno" Type="TblResultadoLegosumo" />
-      <Association Name="TblRobot_TblResultadoLegosumo1" Member="TblResultadoLegosumos1" ThisKey="idRobot" OtherKey="idRobotDos" Type="TblResultadoLegosumo" />
-      <Association Name="TblRobot_TblResultadoMinisumo" Member="TblResultadoMinisumos" ThisKey="idRobot" OtherKey="idRobotUno" Type="TblResultadoMinisumo" />
-      <Association Name="TblRobot_TblResultadoMinisumo1" Member="TblResultadoMinisumos1" ThisKey="idRobot" OtherKey="idRobotDos" Type="TblResultadoMinisumo" />
-      <Association Name="TblRobot_TblResultadosMegasumo" Member="TblResultadosMegasumos" ThisKey="idRobot" OtherKey="idRobotUno" Type="TblResultadosMegasumo" />
-      <Association Name="TblRobot_TblResultadosMegasumo1" Member="TblResultadosMegasumos1" ThisKey="idRobot" OtherKey="idRobotDos" Type="TblResultadosMegasumo" />
+      <Association Name="TblRobot_TblResultadoLegosumo" Member="TblResultadoLegosumos" ThisKey="idRobot" OtherKey="idGanador" Type="TblResultadoLegosumo" />
+      <Association Name="TblRobot_TblResultadoMinisumo" Member="TblResultadoMinisumos" ThisKey="idRobot" OtherKey="idGanador" Type="TblResultadoMinisumo" />
+      <Association Name="TblRobot_TblResultadosMegasumo" Member="TblResultadosMegasumos" ThisKey="idRobot" OtherKey="idGanador" Type="TblResultadosMegasumo" />
       <Association Name="TblRobot_TblSeguidorLego" Member="TblSeguidorLegos" ThisKey="idRobot" OtherKey="idRobot" Type="TblSeguidorLego" />
-      <Association Name="TblRobot_TbPuntajeSeguidorLego" Member="TbPuntajeSeguidorLegos" ThisKey="idRobot" OtherKey="idRobot" Type="TbPuntajeSeguidorLego" />
-      <Association Name="TblRobot_TbPuntajeSeguidorLinea" Member="TbPuntajeSeguidorLineas" ThisKey="idRobot" OtherKey="idRobot" Type="TbPuntajeSeguidorLinea" />
-      <Association Name="TblRobot_TbSeguidorLinea" Member="TbSeguidorLineas" ThisKey="idRobot" OtherKey="idRobot" Type="TbSeguidorLinea" />
+      <Association Name="TblRobot_TblSeguidorLinea" Member="TblSeguidorLineas" ThisKey="idRobot" OtherKey="idRobot" Type="TblSeguidorLinea" />
       <Association Name="TblCategoria_TblRobot" Member="TblCategoria" ThisKey="idCategoria" OtherKey="idCat" Type="TblCategoria" IsForeignKey="true" />
       <Association Name="TblEquipo_TblRobot" Member="TblEquipo" ThisKey="idEquipo" OtherKey="idEquipo" Type="TblEquipo" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TblSeguidorLego" Member="TblSeguidorLegos">
     <Type Name="TblSeguidorLego">
+      <Column Name="idBatalla_SeguidorLego" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
       <Column Name="idRobot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Association Name="TblSeguidorLego_TbPuntajeSeguidorLego" Member="TbPuntajeSeguidorLegos" ThisKey="idBatalla_SeguidorLego" OtherKey="idBatalla" Type="TbPuntajeSeguidorLego" />
       <Association Name="TblRobot_TblSeguidorLego" Member="TblRobot" ThisKey="idRobot" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.TblSeguidorLinea" Member="TblSeguidorLineas">
+    <Type Name="TblSeguidorLinea">
+      <Column Name="idBatalla_SeguidorLinea" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idRobot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="estado" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
+      <Association Name="TblSeguidorLinea_TblPuntajeSeguidorLinea" Member="TblPuntajeSeguidorLineas" ThisKey="idBatalla_SeguidorLinea" OtherKey="idBatalla" Type="TblPuntajeSeguidorLinea" />
+      <Association Name="TblRobot_TblSeguidorLinea" Member="TblRobot" ThisKey="idRobot" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
     </Type>
   </Table>
   <Table Name="dbo.TbPuntajeSeguidorLego" Member="TbPuntajeSeguidorLegos">
     <Type Name="TbPuntajeSeguidorLego">
-      <Column Name="idPuntuje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="idRobot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="timepo1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Column Name="idPuntaje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="idBatalla" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="tiempo1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
       <Column Name="tiempo2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
       <Column Name="tiempo3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Column Name="estado" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
-      <Association Name="TblRobot_TbPuntajeSeguidorLego" Member="TblRobot" ThisKey="idRobot" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TbPuntajeSeguidorLinea" Member="TbPuntajeSeguidorLineas">
-    <Type Name="TbPuntajeSeguidorLinea">
-      <Column Name="idPuntuje" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
-      <Column Name="idRobot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Column Name="timepo1" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Column Name="tiempo2" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Column Name="tiempo3" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
-      <Column Name="estado" Type="System.String" DbType="Char(2) NOT NULL" CanBeNull="false" />
-      <Association Name="TblRobot_TbPuntajeSeguidorLinea" Member="TblRobot" ThisKey="idRobot" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
-    </Type>
-  </Table>
-  <Table Name="dbo.TbSeguidorLinea" Member="TbSeguidorLineas">
-    <Type Name="TbSeguidorLinea">
-      <Column Name="idRobot" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
-      <Association Name="TblRobot_TbSeguidorLinea" Member="TblRobot" ThisKey="idRobot" OtherKey="idRobot" Type="TblRobot" IsForeignKey="true" />
+      <Column Name="mejorTiempo" Type="System.Decimal" DbType="Decimal(5,2)" CanBeNull="true" />
+      <Association Name="TblSeguidorLego_TbPuntajeSeguidorLego" Member="TblSeguidorLego" ThisKey="idBatalla" OtherKey="idBatalla_SeguidorLego" Type="TblSeguidorLego" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

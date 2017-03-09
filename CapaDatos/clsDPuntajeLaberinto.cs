@@ -9,11 +9,11 @@ namespace CapaDatos
     public class clsDPuntajeLaberinto
     {
         MERRobotDataContext bd = new MERRobotDataContext();
-        public bool D_ingresarPuntaje(int id, decimal t1, decimal t2, decimal t3)
+        public bool D_ingresarPuntaje(int id, decimal t1, decimal t2, decimal t3, decimal mejor)
         {
             try
             {
-                TblPuntajeLaberinto p1 = new TblPuntajeLaberinto { idRobot = id, timepo1=t1, tiempo2=t2, tiempo3=t3  };
+                TblPuntajeLaberinto p1 = new TblPuntajeLaberinto { idBatalla = id, tiempo1 = t1, tiempo2 = t2, tiempo3 = t3, mejorTiempo = mejor  };
                 bd.TblPuntajeLaberintos.InsertOnSubmit(p1);
                 bd.SubmitChanges();
                 return true;
@@ -29,7 +29,7 @@ namespace CapaDatos
             try
             {
                 var rob1 = from r in bd.TblPuntajeLaberintos
-                           select new { r.idRobot, r.timepo1, r.tiempo2, r.tiempo3 };
+                           select new { r.TblLaberinto.TblRobot.nomRobot, r.mejorTiempo, r.tiempo1, r.tiempo2, r.tiempo3};
                 return rob1;
             }
             catch

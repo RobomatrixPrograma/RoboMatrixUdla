@@ -42,6 +42,8 @@
   <ItemGroup>
     <Compile Include="clsNLaberinto.cs" />
     <Compile Include="clsNPuntajeLaberinto.cs" />
+    <Compile Include="clsNPuntajeSeguidorLego.cs" />
+    <Compile Include="clsNSeguidorLego.cs" />
     <Compile Include="clsN_Categoria.cs" />
     <Compile Include="clsN_Equipo.cs" />
     <Compile Include="clsNRobot.cs" />
