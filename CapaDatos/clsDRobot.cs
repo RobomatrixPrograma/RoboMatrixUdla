@@ -12,12 +12,39 @@ namespace CapaDatos
     {
         MERRobotDataContext bd = new MERRobotDataContext();
 
+        public object D_consultaRobotPresentacion()
+        {
+            try
+            {
+                var rob1 = from r in bd.TblRobots
+                           select new {
+                               Código_Robot = r.idRobot,
+                               Nombre = r.nomRobot,
+                               Estado = r.estadoRobot,
+                               Líder = r.liderRobot,
+                               Categoría = r.TblCategoria.nomCat,
+                               Equipo = r.TblEquipo.nomEquipo,
+                           };
+                return rob1;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+        }
         public object D_consultaRobot()
         {
             try
             {
                 var rob1 = from r in bd.TblRobots
-                           select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
+                           select new {
+                               r.idRobot,
+                               r.nomRobot,
+                               r.estadoRobot,
+                               r.liderRobot,
+                               r.idCategoria,
+                               r.idEquipo,
+                           };
                 return rob1;
             }
             catch
@@ -95,8 +122,16 @@ namespace CapaDatos
             try
             {
                 var rob1 = from r in bd.TblRobots
-                           where r.nomRobot==nombre || r.idRobot==a || r.estadoRobot==nombre || r.liderRobot==nombre || r.idCategoria==a || r.idEquipo==a
-                           select new { r.idRobot, r.nomRobot, r.estadoRobot, r.liderRobot, r.idCategoria, r.idEquipo };
+                           where r.nomRobot.Contains(nombre) || r.idRobot==a || r.estadoRobot.Contains(nombre) || r.liderRobot.Contains(nombre) || r.TblCategoria.nomCat.Contains(nombre) || r.TblEquipo.nomEquipo.Contains(nombre)
+                           select new
+                           {
+                               Código_Robot = r.idRobot,
+                               Nombre = r.nomRobot,
+                               Estado = r.estadoRobot,
+                               Líder = r.liderRobot,
+                               Categoría = r.TblCategoria.nomCat,
+                               Equipo = r.TblEquipo.nomEquipo,
+                           };
                 return rob1;
             }
             catch

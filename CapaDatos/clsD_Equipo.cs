@@ -33,7 +33,7 @@ namespace CapaDatos
             {
                 TblEquipo equi1 = bd.TblEquipos.First(r => r.idEquipo == id);
                 equi1.nomEquipo = nomEquipo;
-                equi1.paisEquipo  = paisEquipo;
+                equi1.paisEquipo = paisEquipo;
                 equi1.lugarEquipo = lugarEquipo;
                 bd.SubmitChanges();
                 return true;
@@ -44,13 +44,36 @@ namespace CapaDatos
 
             }
         }
+        public bool D_EliminarEquipo(int id)
+        {
+            try
+            {
+                TblEquipo equi1 = bd.TblEquipos.First(r => r.idEquipo == id);
 
-        public object D_consultaEquipo2()
+                bd.TblEquipos.DeleteOnSubmit(equi1);
+                bd.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+
+            }
+        }
+
+        public object D_consultaEquipoPresentacion()
         {
             try
             {
                 var equ1 = from e in bd.TblEquipos
-                           select new { e.idEquipo, e.nomEquipo, e.paisEquipo, e.lugarEquipo, e.imgEquipo };
+                           select new
+                           {
+                               Código_Equipo = e.idEquipo,
+                               Nombre = e.nomEquipo,
+                               País = e.paisEquipo,
+                               Universidad = e.lugarEquipo,
+                               Logo = e.imgEquipo,
+                           };
                 return equ1;
             }
             catch
@@ -69,6 +92,37 @@ namespace CapaDatos
             adaptador.Fill(ds2, "TblEquipo");
             clsConexion.cerrarConexion();
             return ds2;
+        }
+
+        public object D_consultaEquipoId(int idEquipo)
+        {
+            var equ1 = from e in bd.TblEquipos
+                      where e.idEquipo == idEquipo
+                      select new
+                      {
+                          Código_Equipo = e.idEquipo,
+                          Nombre = e.nomEquipo,
+                          País = e.paisEquipo,
+                          Universidad = e.lugarEquipo,
+                          Logo = e.imgEquipo,
+                      };
+            return equ1;
+        }
+
+        public object D_consultaEquipoNombre(string nombre)
+        {
+            Console.WriteLine(nombre);
+            var equ1= from r in bd.TblEquipos
+                      where r.nomEquipo.Contains(nombre) || r.paisEquipo.Contains(nombre) || r.lugarEquipo.Contains(nombre)
+                      select new
+                      {
+                          Código_Equipo = r.idEquipo,
+                          Nombre = r.nomEquipo,
+                          País = r.paisEquipo,
+                          Universidad = r.lugarEquipo,
+                          Logo = r.imgEquipo,
+                      };
+            return equ1;
         }
 
         public object D_consultaLugar()
@@ -100,40 +154,34 @@ namespace CapaDatos
             DataSet ds2 = new DataSet();
             SqlDataAdapter adaptador;
             clsConexion.abrirConexion();
-            string sql = "select * from TblEquipo where paisEquipo =" + paisEquipo +" AND lugarEquipo = "+ lugarEquipo ;
+            string sql = "select * from TblEquipo where paisEquipo =" + paisEquipo + " AND lugarEquipo = " + lugarEquipo;
             adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
             adaptador.Fill(ds2, "TblEquipo");
             clsConexion.cerrarConexion();
             return ds2;
         }
 
-        public DataSet D_consultaEquipo()
-        {
-            DataSet ds2 = new DataSet();
-            SqlDataAdapter adaptador;
-            clsConexion.abrirConexion();
-            string sql = "select * from TblEquipo ";
-            adaptador = new SqlDataAdapter(sql, clsConexion.conexion);
-            adaptador.Fill(ds2, "TblEquipo");
-            clsConexion.cerrarConexion();
-            return ds2;
-        }
 
-        public bool D_EliminarRobot(int id)
+        public object D_consultaEquipo()
         {
             try
             {
-                TblEquipo equi1 = bd.TblEquipos.First(r => r.idEquipo == id);
-
-                bd.TblEquipos.DeleteOnSubmit(equi1);
-                bd.SubmitChanges();
-                return true;
+                var equ1 = from e in bd.TblEquipos
+                           select new
+                           {
+                               e.idEquipo,
+                               e.nomEquipo,
+                               e.paisEquipo,
+                               e.lugarEquipo,
+                               e.imgEquipo,
+                           };
+                return equ1;
             }
             catch
             {
-                return false;
-
+                throw new NotImplementedException();
             }
+
         }
     }
 }

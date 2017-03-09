@@ -13,7 +13,7 @@ namespace RoboMatrixUdla
 {
     public partial class frmIngresarLlaves : Form
     {
-        clsN_Llaves N_llaves = new clsN_Llaves();
+        clsN_OrdenLlaves N_llaves = new clsN_OrdenLlaves();
         clsN_Categoria N_Categoria = new clsN_Categoria();
         clsNRobot N_Robot = new clsNRobot();
         DataSet ds = new DataSet();
@@ -48,14 +48,19 @@ namespace RoboMatrixUdla
             int idr2 = int.Parse(cmbRobot2.SelectedValue.ToString());
             int cat = int.Parse(cmbCategoria.SelectedValue.ToString());
             Console.WriteLine("Robot 1: " + idr1 + "  Robot 2: " + idr2);
-            if (idr1 != idr2)
+            if(N_llaves.comprobar(idr1, idr2,cat))
             {
-                Console.WriteLine("Categoria: " + cat);
-                if (N_llaves.N_ingresarCategoria(cat, idr1, idr2))
-                    MessageBox.Show("Ingreso Correcto");
-                else
-                    MessageBox.Show("Ingreso Incorrecto");
+                if (idr1 != idr2)
+                {
+                    Console.WriteLine("Categoria: " + cat);
+                    if (N_llaves.N_ingresarCategoria(cat, idr1, idr2))
+                        MessageBox.Show("Ingreso Correcto");
+                    else
+                        MessageBox.Show("Ingreso Incorrecto");
+                }
             }
+            else
+                MessageBox.Show("Llave Ya Existe");
             frmGenerarLlaves_Load(sender, e);
         }
 

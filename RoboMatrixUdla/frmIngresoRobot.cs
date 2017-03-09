@@ -23,13 +23,13 @@ namespace RoboMatrixUdla
         }
         private void consultaRobot()
         {
-            dgvRobot.DataSource = N_objRobot.N_consultaRobot();
+            dgvRobot.DataSource = N_objRobot.N_consultaRobotPresentacion();
             
         }
 
         private void cargarCombo()
         {
-            cmbEquipo.DataSource = N_objEquipo.consultaEquipo2();
+            cmbEquipo.DataSource = N_objEquipo.consultaEquipo();
             cmbEquipo.ValueMember = "idEquipo";
             cmbEquipo.DisplayMember = "nomEquipo";
         }
@@ -44,10 +44,22 @@ namespace RoboMatrixUdla
             try
             {
                 consultaRobot();
-                cargarCombo();
-                cargarCombo2();
+                Limpiar();
                 cmbCategoria.SelectedIndex = 0;
                 cmbEstado.SelectedIndex = 0;
+                txtNombre.MaxLength = 50;
+                txtlider.MaxLength = 25;
+                btnBorrarRobot.Enabled = false;
+                btnModificarRobot.Enabled = false;
+                btnIngresarRobot.Enabled = false;
+                btnHabilitarRobot.Enabled = true;
+                txtlider.Enabled = false;
+                txtIdRobot.Enabled = false;
+                txtNombre.Enabled = false;
+                cmbCategoria.Enabled = false;
+                cmbEquipo.Enabled = false;
+                cmbEstado.Enabled = false;
+
             }
             catch
             {
@@ -59,13 +71,20 @@ namespace RoboMatrixUdla
 
         private void btnIngresarRobot_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text != "" && (cmbEstado.Text == "ACTIVO" || cmbEstado.Text == "DESACTIVADO"))
+            if (txtNombre.Text != "" && (cmbEstado.Text == "ACTIVO" && cmbEstado.Text == "DESACTIVADO") && txtIdRobot.Text != "" )
             {
                 try
                 {
                     if (N_objRobot.N_IngresarRobot(int.Parse(txtIdRobot.Text),txtNombre.Text,cmbEstado.Text,txtlider.Text,int.Parse(cmbCategoria.SelectedValue.ToString()),int.Parse(cmbEquipo.SelectedValue.ToString())))
                     {
                         MessageBox.Show("INGRESO CORRECTO");
+                        Limpiar();
+                        txtlider.Enabled = false;
+                        txtIdRobot.Enabled = false;
+                        txtNombre.Enabled = false;
+                        cmbCategoria.Enabled = false;
+                        cmbEquipo.Enabled = false;
+                        cmbEstado.Enabled = false;
                     }
                     else
                     {
@@ -86,9 +105,9 @@ namespace RoboMatrixUdla
                     MessageBox.Show("ERROR EN LA CONSULTA DE ROBOTS");
                 }
             }
-            else if (txtNombre.Text == "")
+            else if (txtNombre.Text == "" || txtIdRobot.Text == "")
             {
-                MessageBox.Show("INGRESE EL NOMBRE");
+                MessageBox.Show("Llene todos los campos");
             }
 
             else if (cmbEstado.Text != "ACTIVO" || cmbEstado.Text != "DESACTIVADO")
@@ -103,14 +122,24 @@ namespace RoboMatrixUdla
         {
             try
             {
-                if (N_objRobot.N_ActualizarRobot(int.Parse(txtIdRobot.Text), txtNombre.Text, cmbEstado.Text, txtlider.Text, int.Parse(cmbCategoria.SelectedValue.ToString()), int.Parse(cmbEquipo.SelectedValue.ToString())))
+                if(txtNombre.Text!= "" && txtIdRobot.Text != "")
                 {
-                    MessageBox.Show("ACTUALIZACION CORRECTA");
+                    if (N_objRobot.N_ActualizarRobot(int.Parse(txtIdRobot.Text), txtNombre.Text, cmbEstado.Text, txtlider.Text, int.Parse(cmbCategoria.SelectedValue.ToString()), int.Parse(cmbEquipo.SelectedValue.ToString())))
+                    {
+                        MessageBox.Show("ACTUALIZACION CORRECTA");
+                        Limpiar();
+                        txtlider.Enabled = false;
+                        txtIdRobot.Enabled = false;
+                        txtNombre.Enabled = false;
+                        cmbCategoria.Enabled = false;
+                        cmbEquipo.Enabled = false;
+                        cmbEstado.Enabled = false;
+                    }
+                    else
+                        MessageBox.Show("ACTUALIZACION INCORRECTA");
                 }
                 else
-                {
-                    MessageBox.Show("ACTUALIZACION INCORRECTA");
-                }
+                    MessageBox.Show("Llene todos los campos");
             }
             catch
             {
@@ -125,18 +154,27 @@ namespace RoboMatrixUdla
             {
                 MessageBox.Show("ERROR EN LA CONSULTA DE CATEGORÍAS");
             }
-            txtIdRobot.Enabled = true;
         }
 
         private void btnHabilitarModificaciones_Click(object sender, EventArgs e)
+        {
+            habilitarModificaciones();
+        }
+
+        private void habilitarModificaciones()
         {
             btnIngresarRobot.Enabled = false;
             btnHabilitarRobot.Enabled = true;
             btnModificarRobot.Enabled = true;
             btnBorrarRobot.Enabled = true;
+            btnHabilitarRobot.Enabled = true;
+            Limpiar();
+            txtlider.Enabled = true;
             txtIdRobot.Enabled = true;
-            txtIdRobot.Text = "";
-            txtNombre.Clear();
+            txtNombre.Enabled = true;
+            cmbCategoria.Enabled = true;
+            cmbEquipo.Enabled = true;
+            cmbEstado.Enabled = true;
         }
 
         private void btnHabilitarRobot_Click(object sender, EventArgs e)
@@ -146,9 +184,25 @@ namespace RoboMatrixUdla
             btnModificarRobot.Enabled = false;
             btnBorrarRobot.Enabled = false;
             txtIdRobot.Enabled = true;
-            txtIdRobot.Text = "";
+            Limpiar();
+            txtlider.Enabled = true;
+            txtIdRobot.Enabled = true;
+            txtNombre.Enabled = true;
+            cmbCategoria.Enabled = true;
+            cmbEquipo.Enabled = true;
+            cmbEstado.Enabled = true;
+        }
+
+        private void Limpiar()
+        {
+            txtIdRobot.Clear();
+            txtlider.Clear();
             txtNombre.Clear();
-            
+            txtFiltroNombre.Clear();
+            cargarCombo();
+            cargarCombo2();
+            cmbCategoria.SelectedIndex = 0;
+            cmbEstado.SelectedIndex = 0;
         }
 
         private void cmbIdRobot_SelectedIndexChanged(object sender, EventArgs e)
@@ -163,6 +217,13 @@ namespace RoboMatrixUdla
                 if (N_objRobot.N_EliminarRobot(int.Parse(txtIdRobot.Text)))
                 {
                     MessageBox.Show("ELIMINACION CORRECTA");
+                    Limpiar();
+                    txtlider.Enabled = false;
+                    txtIdRobot.Enabled = false;
+                    txtNombre.Enabled = false;
+                    cmbCategoria.Enabled = false;
+                    cmbEquipo.Enabled = false;
+                    cmbEstado.Enabled = false;
                 }
                 else
                 {
@@ -183,7 +244,6 @@ namespace RoboMatrixUdla
             {
                 MessageBox.Show("ERROR EN LA CONSULTA DE CATEGORÍAS");
             }
-            txtIdRobot.Enabled = true;
         }
 
         private void dgvRobot_CellContentClick(object sender, DataGridViewCellEventArgs e)
@@ -193,28 +253,17 @@ namespace RoboMatrixUdla
 
         private void btnFiltrar_Click(object sender, EventArgs e)
         {
-            if (a == 1)
-            {
-                
-                 dgvRobot.DataSource = N_objRobot.N_consultaRobotPorNombre(txtFiltroNombre.Text);
-           
-            }
         }
 
         private void btnQuitarFiltro_Click(object sender, EventArgs e)
         {
+            txtFiltroNombre.Clear();
             consultaRobot();
         }
 
         private void dgvRobot_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            btnIngresarRobot.Enabled = false;
-            btnHabilitarRobot.Enabled = true;
-            btnModificarRobot.Enabled = true;
-            btnBorrarRobot.Enabled = true;
-            txtIdRobot.Enabled = true;
-            txtIdRobot.Text = "";
-            txtNombre.Clear();
+            habilitarModificaciones();
             int b = int.Parse(dgvRobot.CurrentRow.Cells[0].Value.ToString());
             if (a == 1)
             {
@@ -223,11 +272,11 @@ namespace RoboMatrixUdla
                 txtNombre.Text = ds.Tables[0].Rows[0]["nomRobot"].ToString();
                 if(ds.Tables[0].Rows[0]["estadoRobot"].ToString()=="AC")
                 {
-                    cmbEstado.Text = "ACTIVO";
+                    cmbEstado.SelectedIndex = 0;
                 }
                 else
                 {
-                    cmbEstado.Text = "DESACTIVADO";
+                    cmbEstado.SelectedIndex = 1;
                 }
 
                 txtlider.Text = ds.Tables[0].Rows[0]["liderRobot"].ToString();
@@ -237,6 +286,11 @@ namespace RoboMatrixUdla
                 txtIdRobot.Enabled = false;
                 btnIngresarRobot.Enabled = false;
             }
+        }
+
+        private void txtFiltroNombre_TextChanged(object sender, EventArgs e)
+        {
+            dgvRobot.DataSource = N_objRobot.N_consultaRobotPorNombre(txtFiltroNombre.Text);
         }
     }
 }

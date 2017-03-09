@@ -104,5 +104,10 @@ namespace CapaDatos
                 throw new NotImplementedException();
             }
         }
+
+        public bool ingresarOrden(int robot1)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

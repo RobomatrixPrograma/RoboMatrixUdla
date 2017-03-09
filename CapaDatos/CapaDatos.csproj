@@ -47,10 +47,12 @@
     <Compile Include="clsDPuntajeSeguidorLego.cs" />
     <Compile Include="clsDSeguidorLego.cs" />
     <Compile Include="clsD_Categoria.cs" />
+    <Compile Include="clsD_Dron.cs" />
     <Compile Include="clsD_Equipo.cs" />
     <Compile Include="clsDRobot.cs" />
     <Compile Include="clsD_Megasumo.cs" />
     <Compile Include="clsD_Minisumo.cs" />
+    <Compile Include="clsD_SeguidorLinea.cs" />
     <Compile Include="clsD_SumoLego.cs" />
     <Compile Include="MERRobot.designer.cs">
       <AutoGen>True</AutoGen>

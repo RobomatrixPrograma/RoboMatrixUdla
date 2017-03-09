@@ -30,7 +30,13 @@ namespace CapaDatos
             try
             {
                 var legos = from l in bd.TblLegosumos
-                            select new { l.idBatalla_Legosumo };
+                            select new {
+                                N_Batalla = l.idBatalla_Legosumo,
+                                Robot_1 = l.TblRobot.nomRobot,
+                                Equipo_1 = l.TblRobot.TblEquipo.nomEquipo,
+                                Robot_2 = l.TblRobot1.nomRobot,
+                                Equipo_2 = l.TblRobot1.TblEquipo.nomEquipo,
+                            };
                 return legos;
             }
             catch
@@ -38,6 +44,22 @@ namespace CapaDatos
                 throw new NotImplementedException();
             }
 
+        }
+
+        public object comprobar(int robot1, int robot2)
+        {
+            var legos = from m in bd.TblLegosumos
+                        where m.idRobotUno == robot1 && m.idRobotDos == robot2 ||
+                        m.idRobotUno == robot2 && m.idRobotDos == robot1
+                        group m by
+                        new
+                        {
+                            m.idRobotUno,
+                            m.idRobotDos,
+                        } into grp
+                        where grp.Count() > 1
+                        select grp.Key;
+            return legos;
         }
     }
 }
