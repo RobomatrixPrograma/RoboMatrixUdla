@@ -127,7 +127,7 @@ namespace CapaDatos
         {
             try
             {
-                TblLaberinto laberinto = new TblLaberinto { idRobot = robot1 };
+                TblLaberinto laberinto = new TblLaberinto { idRobot = robot1, estado = "NO" };
                 bd.TblLaberintos.InsertOnSubmit(laberinto);
                 bd.SubmitChanges();
                 return true;

@@ -14,7 +14,7 @@ namespace CapaDatos
 
             try
             {
-                TblMinisumo minis = new TblMinisumo { idRobotUno = robot1, idRobotDos = robot2, };
+                TblMinisumo minis = new TblMinisumo { idRobotUno = robot1, idRobotDos = robot2, estado= "NO"};
                 bd.TblMinisumos.InsertOnSubmit(minis);
                 bd.SubmitChanges();
                 return true;
@@ -45,6 +45,23 @@ namespace CapaDatos
                 throw new NotImplementedException();
             }
         }
+
+        public bool D_actualizarEstado(int idBatalla, string estado)
+        {
+            try
+            {
+                TblMinisumo minis = bd.TblMinisumos.First(r => r.idBatalla_minisumo == idBatalla);
+                minis.estado = estado;
+                bd.SubmitChanges();
+                return true;
+            }
+            catch
+            {
+                return false;
+
+            }
+        }
+
         public object comprobar(int robot1, int robot2)
         {
             var minis = from m in bd.TblMinisumos

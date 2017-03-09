@@ -88,6 +88,19 @@ namespace CapaNegocio
             idRobot = id;
             return D_objRobot.D_consultaRobot(idRobot);
         }
+
+        public string N_ConsultaEquipo(int robot1)
+        {
+            idRobot = robot1;
+            return D_objRobot.consultaEquipo(idRobot);
+        }
+
+        public string N_ConsultaNombre(int robot1)
+        {
+            idRobot = robot1;
+            return D_objRobot.D_consultaNombre(idRobot);
+        }
+
         public object N_consultaRobotCat(int cat)
         {
             idCat = cat;

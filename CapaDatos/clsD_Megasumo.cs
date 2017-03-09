@@ -14,7 +14,7 @@ namespace CapaDatos
 
             try
             {
-                TblMegasumo megas = new TblMegasumo { idRobotUno = robot1, idRobotDos = robot2, };
+                TblMegasumo megas = new TblMegasumo { idRobotUno = robot1, idRobotDos = robot2, estado = "NO" };
                 bd.TblMegasumos.InsertOnSubmit(megas);
                 bd.SubmitChanges();
                 return true;
