@@ -9,13 +9,13 @@ namespace CapaDatos
     public class clsD_SumoLego
     {
         MERRobotDataContext bd = new MERRobotDataContext();
-        public bool agregarBatalla(int robot1, string nom1, int robot2, string nomRobot2)
+        public bool agregarBatalla(int robot1, int robot2)
         {
 
             try
             {
                 TblLegosumo legos = new TblLegosumo { idRobotUno = robot1, idRobotDos = robot2, };
-                bd.TblLegosumo.InsertOnSubmit(legos);
+                bd.TblLegosumos.InsertOnSubmit(legos);
                 bd.SubmitChanges();
                 return true;
             }
@@ -23,6 +23,21 @@ namespace CapaDatos
             {
                 return false;
             }
+        }
+
+        public object consultaLegoSumo()
+        {
+            try
+            {
+                var legos = from l in bd.TblLegosumos
+                            select new { l.idBatalla_Legosumo };
+                return legos;
+            }
+            catch
+            {
+                throw new NotImplementedException();
+            }
+
         }
     }
 }

@@ -74,7 +74,6 @@ namespace CapaNegocio
         public bool N_EliminarRobot(int id)
         {
             idRobot = id;
-
             return D_objRobot.D_EliminarRobot(idRobot);
         }
         public DataSet N_consultaRobot(int id)
@@ -82,15 +81,16 @@ namespace CapaNegocio
             idRobot = id;
             return D_objRobot.D_consultaRobot(idRobot);
         }
-        public DataSet N_consultaRobotCat(int cat)
+        public object N_consultaRobotCat(int cat)
         {
             idCat = cat;
-            return D_objRobot.D_consultaRobotCat(idCat);
+            return D_objRobot.D_consultaRobotCategoria(idCat);
         }
-        public object N_consultaRobotExcepto(int idR)
+        public object N_consultaRobotExcepto(int idR, int idC)
         {
             idRobot = idR;
-            return D_objRobot.D_consultaRobotExcepto(idRobot);
+            idCat = idC;
+            return D_objRobot.D_consultaRobotExcepto(idRobot, idC);
         }
     }
 }

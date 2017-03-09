@@ -36,6 +36,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.cmbRobot1 = new System.Windows.Forms.ComboBox();
             this.cmbRobot2 = new System.Windows.Forms.ComboBox();
+            this.btnSelccionar = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLlaves)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,7 +49,7 @@
             this.cmbCategoria.Size = new System.Drawing.Size(183, 21);
             this.cmbCategoria.TabIndex = 0;
             this.cmbCategoria.SelectedIndexChanged += new System.EventHandler(this.cmbCategoria_SelectedIndexChanged);
-            this.cmbCategoria.Click += new System.EventHandler(this.cmbCategoria_Click);
+            this.cmbCategoria.DropDownClosed += new System.EventHandler(this.cmbCategoria_DropDownClosed);
             // 
             // lblCategoria
             // 
@@ -61,9 +62,9 @@
             // 
             // btnGenerar
             // 
-            this.btnGenerar.Location = new System.Drawing.Point(398, 60);
+            this.btnGenerar.Location = new System.Drawing.Point(398, 94);
             this.btnGenerar.Name = "btnGenerar";
-            this.btnGenerar.Size = new System.Drawing.Size(136, 37);
+            this.btnGenerar.Size = new System.Drawing.Size(136, 24);
             this.btnGenerar.TabIndex = 2;
             this.btnGenerar.Text = "Ingresar Batalla";
             this.btnGenerar.UseVisualStyleBackColor = true;
@@ -106,6 +107,7 @@
             this.cmbRobot1.Size = new System.Drawing.Size(183, 21);
             this.cmbRobot1.TabIndex = 6;
             this.cmbRobot1.SelectedIndexChanged += new System.EventHandler(this.cmbRobot1_SelectedIndexChanged);
+            this.cmbRobot1.DropDownClosed += new System.EventHandler(this.cmbRobot1_DropDownClosed);
             this.cmbRobot1.Click += new System.EventHandler(this.cmbRobot1_Click);
             // 
             // cmbRobot2
@@ -119,11 +121,22 @@
             this.cmbRobot2.SelectedIndexChanged += new System.EventHandler(this.cmbRobot2_SelectedIndexChanged);
             this.cmbRobot2.Click += new System.EventHandler(this.cmbRobot2_Click);
             // 
+            // btnSelccionar
+            // 
+            this.btnSelccionar.Location = new System.Drawing.Point(398, 50);
+            this.btnSelccionar.Name = "btnSelccionar";
+            this.btnSelccionar.Size = new System.Drawing.Size(136, 23);
+            this.btnSelccionar.TabIndex = 8;
+            this.btnSelccionar.Text = "Seleccionar Categoria";
+            this.btnSelccionar.UseVisualStyleBackColor = true;
+            this.btnSelccionar.Click += new System.EventHandler(this.btnSelccionar_Click);
+            // 
             // frmIngresarLlaves
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(572, 440);
+            this.Controls.Add(this.btnSelccionar);
             this.Controls.Add(this.cmbRobot2);
             this.Controls.Add(this.cmbRobot1);
             this.Controls.Add(this.label2);
@@ -151,5 +164,6 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbRobot1;
         private System.Windows.Forms.ComboBox cmbRobot2;
+        private System.Windows.Forms.Button btnSelccionar;
     }
 }

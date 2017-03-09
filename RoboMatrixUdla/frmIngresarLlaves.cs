@@ -16,7 +16,8 @@ namespace RoboMatrixUdla
         clsN_Llaves N_llaves = new clsN_Llaves();
         clsN_Categoria N_Categoria = new clsN_Categoria();
         clsNRobot N_Robot = new clsNRobot();
-        int a = 0;
+        DataSet ds = new DataSet();
+        int aux = 0;
         public frmIngresarLlaves()
         {
             InitializeComponent();
@@ -24,12 +25,13 @@ namespace RoboMatrixUdla
 
         private void frmGenerarLlaves_Load(object sender, EventArgs e)
         {
-            cargarCategorias();
+            if(aux == 0 )
+                cargarCategorias();
+            aux = 1;
+            cmbCategoria.Enabled = false;
             cmbRobot1.Enabled = false;
             cmbRobot2.Enabled = false;
             btnGenerar.Enabled = false;
-            a = 1;
-
         }
 
         private void cargarCategorias()
@@ -44,48 +46,40 @@ namespace RoboMatrixUdla
         {
             int idr1 = int.Parse(cmbRobot1.SelectedValue.ToString());
             int idr2 = int.Parse(cmbRobot2.SelectedValue.ToString());
-            string nom1 = cmbRobot1.SelectedItem.ToString();
-            string nom2 = cmbRobot2.SelectedItem.ToString();
-            string cat = cmbCategoria.SelectedText.ToString();
-            if(idr1 != idr2)
+            int cat = int.Parse(cmbCategoria.SelectedValue.ToString());
+            Console.WriteLine("Robot 1: " + idr1 + "  Robot 2: " + idr2);
+            if (idr1 != idr2)
             {
-
-                if (N_llaves.N_ingresarCategoria(cat, idr1, idr2, nom1, nom2))
+                Console.WriteLine("Categoria: " + cat);
+                if (N_llaves.N_ingresarCategoria(cat, idr1, idr2))
                     MessageBox.Show("Ingreso Correcto");
                 else
                     MessageBox.Show("Ingreso Incorrecto");
             }
+            frmGenerarLlaves_Load(sender, e);
         }
 
         private void cmbCategoria_SelectedIndexChanged(object sender, EventArgs e)
         {
+            if (aux == 1)
+            {
+                int cat = int.Parse(cmbCategoria.SelectedValue.ToString());
+                cargarRobot1(cat);
+            }
         }
 
         private void cargarRobot1(int cat)
         {
-
-            var robot = N_Robot.N_consultaRobot();
-            cmbRobot1.DataSource = robot;
-            cmbRobot1.DisplayMember = "nomRobot";
-            cmbRobot1.ValueMember = "idRobot";
-            cmbRobot1.SelectedIndex = 0;
-        }
-
-        private void cargarRobot2()
-        {
-            if(a==1)
+            var robot = N_Robot.N_consultaRobotCat(cat);
+            if (robot != null)
             {
-                var robot = N_Robot.N_consultaRobot();
-                cmbRobot2.DataSource = robot;
-                cmbRobot2.DisplayMember = "nomRobot";
-                cmbRobot2.ValueMember = "idRobot";
-                cmbRobot2.SelectedIndex = 0;
-
+                cmbRobot1.DataSource = robot;
+                cmbRobot1.DisplayMember = "nomRobot";
+                cmbRobot1.ValueMember = "idRobot";
 
             }
-
         }
-        
+
         private void cmbRobot2_SelectedIndexChanged(object sender, EventArgs e)
         {
             btnGenerar.Enabled = true;
@@ -93,35 +87,66 @@ namespace RoboMatrixUdla
 
         private void cmbRobot1_SelectedIndexChanged(object sender, EventArgs e)
         {
-
         }
 
-
-
-            if (a == 1)
-            {
-                cargarRobot2();
-                //cmbRobot2.Items.Remove(cmbRobot1.SelectedItem);
-                cmbRobot2.Enabled = true;
-            }
-            
-
-        }
         private void cmbCategoria_Click(object sender, EventArgs e)
         {
-            int cat = int.Parse(cmbCategoria.SelectedValue.ToString());
-            cargarRobot1(cat);
-            cmbRobot1.Enabled = true;
-            cmbRobot2.Enabled = false;
-
         }
 
-        private void cargarRobot2(int idR)
+        private void cmbRobot2_Click(object sender, EventArgs e)
         {
-            var robot = N_Robot.N_consultaRobotExcepto(idR);
+        }
+
+        private void cmbRobot1_Click(object sender, EventArgs e)
+        {
+        }
+
+        private void cargarRobot2(int idR ,int cate)
+        {
+            var robot = N_Robot.N_consultaRobotExcepto(idR, cate);
             cmbRobot2.DataSource = robot;
             cmbRobot2.DisplayMember = "nomRobot";
             cmbRobot2.ValueMember = "idRobot";
+        }
+
+        private void btnSelccionar_Click(object sender, EventArgs e)
+        {
+            cmbCategoria.Enabled = true;
+        }
+
+        private void cmbCategoria_DropDownClosed(object sender, EventArgs e)
+        {
+            int cat = int.Parse(cmbCategoria.SelectedValue.ToString());
+            cargarRobot1(cat);
+            consultaCategoria(cat);
+            cmbRobot1.Enabled = true;
+            cmbRobot2.Enabled = false;
+            cmbCategoria.Enabled = false;
+        }
+
+        private void consultaCategoria(int cat)
+        {
+            try
+            {
+                var llaves = N_llaves.consultaCategorias(cat);
+                dgvLlaves.DataSource = llaves;
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error al recuperar la informacion", "Error",
+                    MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void cmbRobot1_DropDownClosed(object sender, EventArgs e)
+        {
+            int cat = int.Parse(cmbCategoria.SelectedValue.ToString());
+            if (cmbRobot1.SelectedValue != null)
+            {
+                int idR = int.Parse(cmbRobot1.SelectedValue.ToString());
+                cargarRobot2(idR, cat);
+                cmbRobot2.Enabled = true;
+            }
         }
     }
 }
