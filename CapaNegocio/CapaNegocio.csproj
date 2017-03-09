@@ -42,7 +42,9 @@
   <ItemGroup>
     <Compile Include="clsNLaberinto.cs" />
     <Compile Include="clsNPuntajeLaberinto.cs" />
+    <Compile Include="clsNPuntajeSeguidorLinea.cs" />
     <Compile Include="clsNPuntajeSeguidorLego.cs" />
+    <Compile Include="clsNSeguidorLinea.cs" />
     <Compile Include="clsNSeguidorLego.cs" />
     <Compile Include="clsN_Categoria.cs" />
     <Compile Include="clsN_Equipo.cs" />

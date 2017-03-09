@@ -10,14 +10,14 @@ using System.Windows.Forms;
 using CapaNegocio;
 namespace RoboMatrixUdla
 {
-    public partial class frmSeguidorLego : Form
+    public partial class frmSeguidorLinea : Form
     {
-        public frmSeguidorLego()
+        public frmSeguidorLinea()
         {
             InitializeComponent();
         }
-        clsNSeguidorLego N_objSeguidor = new clsNSeguidorLego();
-        clsNPuntajeSeguidorLego N_objPuntajeSeguidor = new clsNPuntajeSeguidorLego();
+        clsNSeguidorLinea N_objSeguidor = new clsNSeguidorLinea();
+        clsNPuntajeSeguidorLinea N_objPuntajeSeguidor = new clsNPuntajeSeguidorLinea();
         DataSet ds = new DataSet();
         int a = 0;
         int id = 0;
@@ -31,11 +31,33 @@ namespace RoboMatrixUdla
             dgvPuntajes.DataSource = N_objPuntajeSeguidor.N_consultaLista();
 
         }
-        private void frmSeguidorLego_Load(object sender, EventArgs e)
+        private void frmSeguidorLinea_Load(object sender, EventArgs e)
         {
             consultaLista();
             consultaPuntajes();
             btnEnviarTiempo.Enabled = false;
+        }
+
+        private void btnNuevoParticipante_Click(object sender, EventArgs e)
+        {
+            try
+            {
+                id = N_objSeguidor.N_consultaListaID();
+                int idBatallla = N_objSeguidor.N_consultaListaIDBatalla();
+                MessageBox.Show("Participante " + N_objSeguidor.N_consultaListaParticipante() + " listo para comenzar");
+                lblCambiarNombre.Text = N_objSeguidor.N_consultaListaParticipante();
+                lblCambiarEquipo.Text = N_objSeguidor.N_consultaListaParticipante2();
+                if (!(N_objSeguidor.actualizarEstado(id)))
+                {
+                    MessageBox.Show("FALLA EN EL INGRESO DEL PARTICIPANTE");
+                }
+                consultaLista();
+                btnEnviarTiempo.Enabled = true;
+            }
+            catch
+            {
+                MessageBox.Show("NO EXISTEN PARTICIPANTES EN COLA");
+            }
         }
 
         private void btnEnviarTiempo_Click(object sender, EventArgs e)
@@ -78,29 +100,6 @@ namespace RoboMatrixUdla
             else
             {
                 MessageBox.Show("TIEMPO INVÁLIDO");
-            }
-
-        }
-
-        private void btnNuevoParticipante_Click(object sender, EventArgs e)
-        {
-            try
-            {
-                id = N_objSeguidor.N_consultaListaID();
-                int idBatallla = N_objSeguidor.N_consultaListaIDBatalla();
-                MessageBox.Show("Participante " + N_objSeguidor.N_consultaListaParticipante() + " listo para comenzar");
-                lblCambiarNombre.Text = N_objSeguidor.N_consultaListaParticipante();
-                lblCambiarEquipo.Text = N_objSeguidor.N_consultaListaParticipante2();
-                if (!(N_objSeguidor.actualizarEstado(id)))
-                {
-                    MessageBox.Show("FALLA EN EL INGRESO DEL PARTICIPANTE");
-                }
-                consultaLista();
-                btnEnviarTiempo.Enabled = true;
-            }
-            catch
-            {
-                MessageBox.Show("NO EXISTEN PARTICIPANTES EN COLA");
             }
         }
     }
