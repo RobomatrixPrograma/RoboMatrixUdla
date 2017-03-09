@@ -15,7 +15,7 @@ namespace CapaDatos
             try
             {
                 TblLegosumo legos = new TblLegosumo { idRobotUno = robot1, idRobotDos = robot2, estado = "NO" };
-                bd.TblLegosumo.InsertOnSubmit(legos);
+                bd.TblLegosumos.InsertOnSubmit(legos);
                 bd.SubmitChanges();
                 return true;
             }
@@ -29,7 +29,7 @@ namespace CapaDatos
         {
             try
             {
-                var legos = from l in bd.TblLegosumo
+                var legos = from l in bd.TblLegosumos
                             select new {
                                 N_Batalla = l.idBatalla_Legosumo,
                                 Robot_1 = l.TblRobot.nomRobot,
@@ -48,7 +48,7 @@ namespace CapaDatos
 
         public object comprobar(int robot1, int robot2)
         {
-            var legos = from m in bd.TblLegosumo
+            var legos = from m in bd.TblLegosumos
                         where m.idRobotUno == robot1 && m.idRobotDos == robot2 ||
                         m.idRobotUno == robot2 && m.idRobotDos == robot1
                         group m by
@@ -66,7 +66,7 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblLegosumo
+                int a = (from r in bd.TblLegosumos
                          where r.estado != "SI"
                          select new { r.idBatalla_Legosumo }).FirstOrDefault().idBatalla_Legosumo;
 

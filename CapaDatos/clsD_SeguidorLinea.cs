@@ -16,7 +16,7 @@ namespace CapaDatos
             try
             {
                 TblSeguidorLinea seguidor = new TblSeguidorLinea{ idRobot = robot1, estado = "NO" };
-                bd.TblSeguidorLinea.InsertOnSubmit(seguidor);
+                bd.TblSeguidorLineas.InsertOnSubmit(seguidor);
                 bd.SubmitChanges();
                 return true;
             }
@@ -35,7 +35,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblSeguidorLinea
+                var rob1 = from r in bd.TblSeguidorLineas
                            select new {
                                Código_Robot = r.idRobot,
                                Nombre = r.TblRobot.nomRobot,

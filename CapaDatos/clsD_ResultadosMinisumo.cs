@@ -14,7 +14,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblResultadoMinisumo
+                var rob1 = from r in bd.TblResultadoMinisumos
                            select new {
                                N_Batalla = r.idBatalla,
                                Robot_1 = r.TblMinisumo.TblRobot.nomRobot,
