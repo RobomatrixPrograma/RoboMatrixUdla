@@ -159,6 +159,7 @@
             this.legosumoToolStripMenuItem.Name = "legosumoToolStripMenuItem";
             this.legosumoToolStripMenuItem.Size = new System.Drawing.Size(75, 20);
             this.legosumoToolStripMenuItem.Text = "Legosumo";
+            this.legosumoToolStripMenuItem.Click += new System.EventHandler(this.legosumoToolStripMenuItem_Click);
             // 
             // seguidorDeLíneaToolStripMenuItem
             // 

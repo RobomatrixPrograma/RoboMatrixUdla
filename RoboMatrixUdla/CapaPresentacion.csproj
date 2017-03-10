@@ -82,6 +82,12 @@
     <Compile Include="frmLaberinto.Designer.cs">
       <DependentUpon>frmLaberinto.cs</DependentUpon>
     </Compile>
+    <Compile Include="frmLegoSumo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frmLegoSumo.Designer.cs">
+      <DependentUpon>frmLegoSumo.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmMDI.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -125,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmLaberinto.resx">
       <DependentUpon>frmLaberinto.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frmLegoSumo.resx">
+      <DependentUpon>frmLegoSumo.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmMDI.resx">
       <DependentUpon>frmMDI.cs</DependentUpon>
