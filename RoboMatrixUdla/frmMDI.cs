@@ -49,7 +49,8 @@ namespace RoboMatrixUdla
 
         private void seguidorDeLíneaToolStripMenuItem_Click(object sender, EventArgs e)
         {
-
+            frmSeguidorLinea objSeguidorLinea = new frmSeguidorLinea();
+            objSeguidorLinea.Show();
         }
 
         private void seguidorDeLíneaLegoToolStripMenuItem_Click(object sender, EventArgs e)
@@ -68,6 +69,12 @@ namespace RoboMatrixUdla
         {
             frmMinisumo objMinisumo = new frmMinisumo();
             objMinisumo.Show();
+        }
+
+        private void dronToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmDrones objDron = new frmDrones();
+            objDron.Show();
         }
     }
 }

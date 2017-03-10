@@ -40,7 +40,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="clsNDron.cs" />
     <Compile Include="clsNLaberinto.cs" />
+    <Compile Include="clsNPuntajeDron.cs" />
     <Compile Include="clsNPuntajeLaberinto.cs" />
     <Compile Include="clsNPuntajeSeguidorLinea.cs" />
     <Compile Include="clsNPuntajeSeguidorLego.cs" />
