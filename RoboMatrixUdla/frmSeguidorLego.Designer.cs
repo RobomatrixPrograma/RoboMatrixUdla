@@ -101,7 +101,7 @@
             // 
             // btnEnviarTiempo
             // 
-            this.btnEnviarTiempo.Location = new System.Drawing.Point(311, 231);
+            this.btnEnviarTiempo.Location = new System.Drawing.Point(311, 226);
             this.btnEnviarTiempo.Name = "btnEnviarTiempo";
             this.btnEnviarTiempo.Size = new System.Drawing.Size(117, 23);
             this.btnEnviarTiempo.TabIndex = 25;
