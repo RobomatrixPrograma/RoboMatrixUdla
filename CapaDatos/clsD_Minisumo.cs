@@ -8,7 +8,7 @@ namespace CapaDatos
 {
     public class clsD_Minisumo
     {
-        MERRobotDataContext bd = new MERRobotDataContext();
+        MERRobotsDataContext bd = new MERRobotsDataContext();
         public bool agregarBatalla(int robot1, int robot2)
         {
 

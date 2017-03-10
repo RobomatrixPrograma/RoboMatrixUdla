@@ -16,7 +16,8 @@ namespace RoboMatrixUdla
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new frmSeguidorLego());
+            Application.Run(new frmMDI());
+
         }
     }
 }
