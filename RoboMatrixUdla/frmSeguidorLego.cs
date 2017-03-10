@@ -30,6 +30,8 @@ namespace RoboMatrixUdla
         private void consultaPuntajes()
         {
             dgvPuntajes.DataSource = N_objPuntajeSeguidor.N_consultaLista();
+            dgvPuntajes.Columns[1].DefaultCellStyle.BackColor = Color.GreenYellow;
+            dgvPuntajes.ClearSelection();
 
         }
         private void frmSeguidorLego_Load(object sender, EventArgs e)

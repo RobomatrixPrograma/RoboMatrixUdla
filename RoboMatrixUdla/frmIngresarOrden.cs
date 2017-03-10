@@ -30,6 +30,7 @@ namespace RoboMatrixUdla
             btnGenerar.Enabled = false;
             int idC = int.Parse(cmbCategoria.SelectedValue.ToString());
             int idR = int.Parse(cmbRobot.SelectedValue.ToString());
+            MessageBox.Show(""+idC+" "+idR);
             if(N_OrdenLlaves.N_ingresarCategoria(idC,idR))
                 MessageBox.Show("Ingreso Correcto");  
             else

@@ -77,10 +77,16 @@ namespace RoboMatrixUdla
             objDron.Show();
         }
 
+        private void megasumoToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            frmMegasumo objMegasumo = new frmMegasumo();
+            objMegasumo.Show();
+
         private void legosumoToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmLegoSumo objLegoSumo = new frmLegoSumo();
             objLegoSumo.Show();
+
         }
     }
 }
