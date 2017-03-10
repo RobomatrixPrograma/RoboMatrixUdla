@@ -20,7 +20,8 @@ namespace RoboMatrixUdla
         clsNPuntajeSeguidorLinea N_objPuntajeSeguidor = new clsNPuntajeSeguidorLinea();
         DataSet ds = new DataSet();
         int a = 0;
-        int id = 0, idBatallla=0;
+        int id = 0;
+        int idBatallla = 0;
         private void consultaLista()
         {
             dgvLista.DataSource = N_objSeguidor.N_consultaLista();

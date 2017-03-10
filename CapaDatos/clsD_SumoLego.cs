@@ -8,10 +8,9 @@ namespace CapaDatos
 {
     public class clsD_SumoLego
     {
-        MERRobotDataContext bd = new MERRobotDataContext();
+        MERRobotsDataContext  bd = new MERRobotsDataContext();
         public bool agregarBatalla(int robot1, int robot2)
         {
-
             try
             {
                 TblLegosumo legos = new TblLegosumo { idRobotUno = robot1, idRobotDos = robot2, estado = "NO" };

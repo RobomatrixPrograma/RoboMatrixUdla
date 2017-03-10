@@ -1,4 +1,263 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
+
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 19" name="MERRobots">
+  <DataContextMoniker Name="/MERRobotsDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5d529660-90bc-4353-a067-d71bdb8dcd43" absoluteBounds="0.75, 9.625, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblCategoria" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8910b56-4f9c-4b49-93c4-03b80d4aaaa4" absoluteBounds="0.765, 10.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="a46928b9-03a5-49a0-b954-99969404558d" absoluteBounds="6.25, 2.125, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblDrones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="810f6592-679e-48a8-9947-9eff709562a2" absoluteBounds="6.265, 2.585, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="6fa8dd4f-bb8d-4a01-afec-144d6869bf52" absoluteBounds="6.25, 4.625, 2, 1.3862939453125005">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblLaberinto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="f52f2cbf-4de4-470f-9c01-1a6295c8254c" absoluteBounds="6.265, 5.085, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="c3ad0149-9ad7-493b-973c-2a14f673bcdd" absoluteBounds="0.75, 6.5, 2, 1.7708968098958335">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblEquipo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="b6433ec3-e759-4fdb-8e88-436ace22c618" absoluteBounds="0.765, 6.96, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="1bc30212-5059-4ec8-8ee6-656db828e4aa" absoluteBounds="6.25, 12.5, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblLegosumo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="048ae637-30ea-485f-af1d-edfaac47aa55" absoluteBounds="6.265, 12.96, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="3559f746-554d-4b4d-bf41-968de17e7668" absoluteBounds="6.25, 14.75, 2, 1.5785953776041684">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblMegasumo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="17d0d48d-72bf-4d6c-aee7-88a845f0097d" absoluteBounds="6.265, 15.21, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="9a60283b-4135-449d-96a0-d68b3799c605" absoluteBounds="6.25, 17.125, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblMinisumo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="51c9275a-a9cf-4f7b-acfe-6d5efaa9f85b" absoluteBounds="6.265, 17.585, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ace70776-a37b-4ae6-9255-2e8dbc50ff52" absoluteBounds="9, 2, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblPuntajeDrones" />
+      <nestedChildShapes>
+        <elementListCompartment Id="5732df0b-75eb-4735-883c-02847f85d2fe" absoluteBounds="9.015, 2.46, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="01cd62b9-1082-43c3-9d68-a1ad058f893b" absoluteBounds="9, 4.25, 2, 1.9631982421875005">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblPuntajeLaberinto" />
+      <nestedChildShapes>
+        <elementListCompartment Id="4184700c-0f9a-4ae0-a035-5ba33dae2103" absoluteBounds="9.015, 4.71, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="04ff5a0b-369d-47d7-b1ea-905c2a009479" absoluteBounds="9, 12.75, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblResultadoLegosumo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="53be33bb-ea01-4299-b420-f7c1440b760f" absoluteBounds="9.015, 13.21, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="15186b88-3b1f-4155-b88d-b015f130a278" absoluteBounds="9, 9.75, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblPuntajeSeguidorLinea" />
+      <nestedChildShapes>
+        <elementListCompartment Id="0f6f7536-88f4-4a11-9d0a-f8b077fce41a" absoluteBounds="9.015, 10.21, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="0163436c-abd1-4682-8b9c-5dfc12a1789f" absoluteBounds="9, 16.125, 2, 1.7708968098958309">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblResultadoMinisumo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="8821627d-9fe7-4d45-8a01-bae860e49205" absoluteBounds="9.015, 16.585, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="dab4cccc-f2ef-4079-ac50-6d04671a9633" absoluteBounds="12, 12, 2, 1.7708968098958344">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblResultadosMegasumo" />
+      <nestedChildShapes>
+        <elementListCompartment Id="edae8ad1-0831-4b99-b519-82b7930b33eb" absoluteBounds="12.015, 12.46, 1.9700000000000002, 1.2108968098958333" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" absoluteBounds="3.5, 9.375, 2, 1.9631982421874987">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblRobot" />
+      <nestedChildShapes>
+        <elementListCompartment Id="73463138-d4ff-48bb-857d-11704ca98560" absoluteBounds="3.515, 9.835, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="eaada259-175f-4438-9731-04c74406443f" absoluteBounds="6.25, 7.25, 2, 1.3862939453124996">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblSeguidorLego" />
+      <nestedChildShapes>
+        <elementListCompartment Id="05e542ad-b41e-4877-9177-20daa63f8405" absoluteBounds="6.265, 7.71, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="494494f6-a41c-452b-8c00-f5708c8a60ad" absoluteBounds="6.25, 10, 2, 1.3862939453124987">
+      <DataClassMoniker Name="/MERRobotsDataContext/TblSeguidorLinea" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9caf57fc-07e6-4e51-b069-2851b5cb97a0" absoluteBounds="6.265, 10.46, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="ee338092-ca79-411d-85a5-babcb0a0b7aa" absoluteBounds="9, 7, 2, 1.9631982421874996">
+      <DataClassMoniker Name="/MERRobotsDataContext/TbPuntajeSeguidorLego" />
+      <nestedChildShapes>
+        <elementListCompartment Id="505adc7c-02e6-438d-a6a7-0766562a1645" absoluteBounds="9.015, 7.46, 1.9700000000000002, 1.4031982421875" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(8.25 : 2.81814697265625); (9 : 2.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblDrones/TblDrones_TblPuntajeDrones" />
+      <nodes>
+        <classShapeMoniker Id="a46928b9-03a5-49a0-b954-99969404558d" />
+        <classShapeMoniker Id="ace70776-a37b-4ae6-9255-2e8dbc50ff52" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 5.31814697265625); (9 : 5.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblLaberinto/TblLaberinto_TblPuntajeLaberinto" />
+      <nodes>
+        <classShapeMoniker Id="6fa8dd4f-bb8d-4a01-afec-144d6869bf52" />
+        <classShapeMoniker Id="01cd62b9-1082-43c3-9d68-a1ad058f893b" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 13.4142976888021); (9 : 13.4142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblLegosumo/TblLegosumo_TblResultadoLegosumo" />
+      <nodes>
+        <classShapeMoniker Id="1bc30212-5059-4ec8-8ee6-656db828e4aa" />
+        <classShapeMoniker Id="04ff5a0b-369d-47d7-b1ea-905c2a009479" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 17.5104484049479); (9 : 17.5104484049479)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblMinisumo/TblMinisumo_TblResultadoMinisumo" />
+      <nodes>
+        <classShapeMoniker Id="9a60283b-4135-449d-96a0-d68b3799c605" />
+        <classShapeMoniker Id="0163436c-abd1-4682-8b9c-5dfc12a1789f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 15.40625); (13 : 15.40625); (13 : 13.7708968098958)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblMegasumo/TblMegasumo_TblResultadosMegasumo" />
+      <nodes>
+        <classShapeMoniker Id="3559f746-554d-4b4d-bf41-968de17e7668" />
+        <classShapeMoniker Id="dab4cccc-f2ef-4079-ac50-6d04671a9633" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 9.375); (4.5 : 2.81814697265625); (6.25 : 2.81814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblDrones" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="a46928b9-03a5-49a0-b954-99969404558d" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 9.375); (5.0312525 : 5.31814697265625); (6.25 : 5.31814697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblLaberinto" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="6fa8dd4f-bb8d-4a01-afec-144d6869bf52" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.5 : 11.3381982421875); (4.5 : 13.2892976888021); (4.68229291666667 : 13.2892976888021 : JumpStart); (4.84895958333333 : 13.2892976888021 : JumpEnd); (5.21354541666667 : 13.2892976888021 : JumpStart); (5.51302520833333 : 13.2892976888021 : JumpEnd); (6.25 : 13.2892976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblLegosumo" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="1bc30212-5059-4ec8-8ee6-656db828e4aa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.0312525 : 11.3381982421875); (5.0312525 : 12.863396344401); (5.21354541666667 : 12.863396344401 : JumpStart); (5.51302520833333 : 12.863396344401 : JumpEnd); (6.25 : 12.863396344401)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblLegosumo1" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="1bc30212-5059-4ec8-8ee6-656db828e4aa" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.9687475 : 11.3381982421875); (3.9687475 : 15.5392976888021); (4.15104041666667 : 15.5392976888021 : JumpStart); (4.31770708333333 : 15.5392976888021 : JumpEnd); (4.68229291666667 : 15.5392976888021 : JumpStart); (4.84895958333333 : 15.5392976888021 : JumpEnd); (5.34635854166667 : 15.5392976888021 : JumpStart); (5.51302520833333 : 15.5392976888021 : JumpEnd); (6.25 : 15.5392976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblMegasumo" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="3559f746-554d-4b4d-bf41-968de17e7668" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.29687875 : 11.3381982421875); (5.29687875 : 15.113396344401); (5.34635854166667 : 15.113396344401 : JumpStart); (5.51302520833333 : 15.113396344401 : JumpEnd); (6.25 : 15.113396344401)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblMegasumo1" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="3559f746-554d-4b4d-bf41-968de17e7668" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.76562625 : 11.3381982421875); (4.76562625 : 17.9142976888021); (6.25 : 17.9142976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblMinisumo" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="9a60283b-4135-449d-96a0-d68b3799c605" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(4.23437375 : 11.3381982421875); (4.23437375 : 17.488396344401); (4.68229291666667 : 17.488396344401 : JumpStart); (4.84895958333333 : 17.488396344401 : JumpEnd); (6.25 : 17.488396344401)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblMinisumo1" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="9a60283b-4135-449d-96a0-d68b3799c605" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(3.70312125 : 11.3381982421875); (3.70312125 : 14.33099609375); (3.88541416666667 : 14.33099609375 : JumpStart); (4.05208083333333 : 14.33099609375 : JumpEnd); (4.15104041666667 : 14.33099609375 : JumpStart); (4.31770708333333 : 14.33099609375 : JumpEnd); (4.68229291666667 : 14.33099609375 : JumpStart); (4.84895958333333 : 14.33099609375 : JumpEnd); (5.21354541666667 : 14.33099609375 : JumpStart); (5.51302520833333 : 14.33099609375 : JumpEnd); (9 : 14.33099609375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblResultadoLegosumo" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="04ff5a0b-369d-47d7-b1ea-905c2a009479" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.429691875 : 11.3381982421875); (5.429691875 : 16.7267976888021); (9 : 16.7267976888021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblResultadoMinisumo" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="0163436c-abd1-4682-8b9c-5dfc12a1789f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.164065625 : 11.3381982421875); (5.164065625 : 12.21875); (5.21354541666667 : 12.21875 : JumpStart); (5.51302520833333 : 12.21875 : JumpEnd); (12 : 12.21875)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblResultadosMegasumo" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="dab4cccc-f2ef-4079-ac50-6d04671a9633" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 10.3181469726562); (3.5 : 10.3181469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblCategoria/TblCategoria_TblRobot" />
+      <nodes>
+        <classShapeMoniker Id="5d529660-90bc-4353-a067-d71bdb8dcd43" />
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(2.75 : 7.38544840494792); (3.9687475 : 7.38544840494792); (3.9687475 : 9.375)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblEquipo/TblEquipo_TblRobot" />
+      <nodes>
+        <classShapeMoniker Id="c3ad0149-9ad7-493b-973c-2a14f673bcdd" />
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.29687875 : 9.375); (5.29687875 : 8.01087117513021); (6.25 : 8.01087117513021)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblSeguidorLego" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="eaada259-175f-4438-9731-04c74406443f" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 10.6931469726562); (9 : 10.6931469726562)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblSeguidorLinea/TblSeguidorLinea_TblPuntajeSeguidorLinea" />
+      <nodes>
+        <classShapeMoniker Id="494494f6-a41c-452b-8c00-f5708c8a60ad" />
+        <classShapeMoniker Id="15186b88-3b1f-4155-b88d-b015f130a278" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(5.5 : 10.6690991210937); (6.25 : 10.6690991210937)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblRobot/TblRobot_TblSeguidorLinea" />
+      <nodes>
+        <classShapeMoniker Id="ace6f6c3-9d2a-4e93-936a-e223ca744709" />
+        <classShapeMoniker Id="494494f6-a41c-452b-8c00-f5708c8a60ad" />
+      </nodes>
+    </associationConnector>
+    <associationConnector edgePoints="[(8.25 : 7.94314697265625); (9 : 7.94314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/MERRobotsDataContext/TblSeguidorLego/TblSeguidorLego_TbPuntajeSeguidorLego" />
+      <nodes>
+        <classShapeMoniker Id="eaada259-175f-4438-9731-04c74406443f" />
+        <classShapeMoniker Id="ee338092-ca79-411d-85a5-babcb0a0b7aa" />
+=======
 <ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 14.25, 19" name="MERRobot">
   <DataContextMoniker Name="/MERRobotDataContext" />
   <nestedChildShapes>
@@ -256,6 +515,7 @@
       <nodes>
         <classShapeMoniker Id="9181255f-0e77-4b14-9f6b-5e314ca24bfa" />
         <classShapeMoniker Id="1222cb8c-e0c1-4e8d-889d-02bbf60fdfcb" />
+
       </nodes>
     </associationConnector>
   </nestedChildShapes>

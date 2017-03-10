@@ -10,7 +10,7 @@ namespace CapaDatos
 {
     public class clsD_Equipo
     {
-        MERRobotDataContext bd = new MERRobotDataContext();
+        MERRobotsDataContext bd = new MERRobotsDataContext();
         public bool ingresarEquipo(string nom, string pais, string lugar)
         {
             try

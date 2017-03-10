@@ -53,6 +53,7 @@
     <Compile Include="clsNRobot.cs" />
     <Compile Include="clsN_Minisumo.cs" />
     <Compile Include="clsN_OrdenLlaves.cs" />
+    <Compile Include="clsN_ResultadoMinisumo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

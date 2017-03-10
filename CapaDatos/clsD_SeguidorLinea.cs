@@ -9,7 +9,7 @@ namespace CapaDatos
     
     public class clsD_SeguidorLinea
     {
-        MERRobotDataContext bd = new MERRobotDataContext();
+        MERRobotsDataContext bd = new MERRobotsDataContext();
         public bool ingresarOrden(int robot1)
         {
 

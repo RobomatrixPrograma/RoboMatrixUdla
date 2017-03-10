@@ -15,7 +15,11 @@ namespace RoboMatrixUdla
     {
         clsN_Minisumo N_Minisumo = new clsN_Minisumo();
         clsN_Equipo N_Equipo = new clsN_Equipo();
-        clsNRobot N_Robot = new clsNRobot();      
+        clsNRobot N_Robot = new clsNRobot();
+        clsN_ResultadoMinisumo N_PuntajeMinisumo = new clsN_ResultadoMinisumo();
+        int idBatalla = 0;
+        int robot1 = 0;
+        int robot2 = 0;
         public frmMinisumo()
         {
             InitializeComponent();
@@ -63,7 +67,7 @@ namespace RoboMatrixUdla
 
         private void cargarResultados()
         {
-
+            dgvResultados.DataSource = N_PuntajeMinisumo.N_consultarPuntaje();
         }
         private void ocultarLbl()
         {
@@ -87,9 +91,9 @@ namespace RoboMatrixUdla
             try
             {
                 empezarBatalla();
-                int idBatalla = N_Minisumo.N_ConsultaIdBatalla();
-                int robot1 = N_Minisumo.N_ConsultaRobot1(idBatalla);
-                int robot2 = N_Minisumo.N_ConsultaRobot2(idBatalla);
+                idBatalla = N_Minisumo.N_ConsultaIdBatalla();
+                robot1 = N_Minisumo.N_ConsultaRobot1(idBatalla);
+                robot2 = N_Minisumo.N_ConsultaRobot2(idBatalla);
                 string nom1 = N_Robot.N_ConsultaNombre(robot1);
                 string nom2 = N_Robot.N_ConsultaNombre(robot2);
                 string equi1 = N_Robot.N_ConsultaEquipo(robot1);
@@ -106,17 +110,32 @@ namespace RoboMatrixUdla
                 }
                 cargarParticipantes();
 
-            }    
+            }
             catch
             {
                 MessageBox.Show("NO EXISTEN PARTICIPANTES EN COLA");
             }
+        }        
 
-}
-
-        private void btnTerminar_Click(object sender, EventArgs e)
+        private void btnTerminar_Click_1(object sender, EventArgs e)
         {
+            int ganador = 0;
+            if (int.Parse(nudRobot1.Value.ToString()) > int.Parse(nudRobot2.Value.ToString()))
+                ganador = robot1;
+            else
+                ganador = robot2;
+            if (N_PuntajeMinisumo.N_IngresarPuntaje(idBatalla, int.Parse(nudRobot1.Value.ToString()), int.Parse(nudRobot2.Value.ToString()), ganador))
+            {
+                MessageBox.Show("PUNTAJE GUARDADO");
+            }
+            else
+            {
+                MessageBox.Show("PUNTAJE NO GUARDADO");
+
+            }
+            dgvResultados.DataSource = N_PuntajeMinisumo.N_consultarPuntaje();
             terminarBatalla();
+
         }
     }
 }
