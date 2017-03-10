@@ -13,7 +13,7 @@ namespace CapaDatos
         {
             try
             {
-                TblDrones dron = new TblDrones { idRobot = robot1 };
+                TblDrone dron = new TblDrone { idRobot = robot1 };
                 bd.TblDrones.InsertOnSubmit(dron);
                 bd.SubmitChanges();
                 return true;

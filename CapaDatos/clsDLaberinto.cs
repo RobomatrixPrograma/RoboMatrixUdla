@@ -13,7 +13,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblLaberinto
+                var rob1 = from r in bd.TblLaberintos
                            where r.estado != "SI"
                            select new { r.idRobot, r.TblRobot.nomRobot};
                 return rob1;
@@ -27,7 +27,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblLaberinto
+                var rob1 = from r in bd.TblLaberintos
                            select new
                            {
                                Código_Robot = r.idRobot,
@@ -46,7 +46,7 @@ namespace CapaDatos
         {
             try
             {
-                string rob1 = (from r in bd.TblLaberinto
+                string rob1 = (from r in bd.TblLaberintos
                          where r.estado!="SI"
                          select new { r.TblRobot.nomRobot }).FirstOrDefault().nomRobot;
                 
@@ -62,7 +62,7 @@ namespace CapaDatos
         {
             try
             {
-                TblLaberinto lab1 = bd.TblLaberinto.First(r => r.idBatalla_Laberinto == id);
+                TblLaberinto lab1 = bd.TblLaberintos.First(r => r.idBatalla_Laberinto == id);
                 lab1.estado = estado;             
                 bd.SubmitChanges();
                 return true;
@@ -78,7 +78,7 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblLaberinto
+                int a = (from r in bd.TblLaberintos
                          where r.estado != "SI"
                          select new { r.idBatalla_Laberinto }).FirstOrDefault().idBatalla_Laberinto;
 
@@ -94,7 +94,7 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblLaberinto
+                int a = (from r in bd.TblLaberintos
                          where r.estado != "SI"
                          select new { r.idRobot }).FirstOrDefault().idRobot;
                 
@@ -110,9 +110,9 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblLaberinto
+                int a = (from r in bd.TblLaberintos
                          select new { r.idRobot }).FirstOrDefault().idRobot;
-                string rob1 = (from r in bd.TblRobot
+                string rob1 = (from r in bd.TblRobots
                                where r.idRobot == a
                                select new { r.TblEquipo.nomEquipo }).FirstOrDefault().nomEquipo;
                 return rob1;
@@ -128,7 +128,7 @@ namespace CapaDatos
             try
             {
                 TblLaberinto laberinto = new TblLaberinto { idRobot = robot1, estado = "NO" };
-                bd.TblLaberinto.InsertOnSubmit(laberinto);
+                bd.TblLaberintos.InsertOnSubmit(laberinto);
                 bd.SubmitChanges();
                 return true;
             }

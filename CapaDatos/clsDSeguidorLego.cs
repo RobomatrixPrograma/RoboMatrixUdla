@@ -13,7 +13,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblSeguidorLego
+                var rob1 = from r in bd.TblSeguidorLegos
                            where r.estado != "SI"
                            select new { r.idRobot, r.TblRobot.nomRobot };
                 return rob1;
@@ -28,7 +28,7 @@ namespace CapaDatos
         {
             try
             {
-                var rob1 = from r in bd.TblSeguidorLego
+                var rob1 = from r in bd.TblSeguidorLegos
                            select new
                            {
                                Código_Robot = r.idRobot,
@@ -47,7 +47,7 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblSeguidorLego
+                int a = (from r in bd.TblSeguidorLegos
                          where r.estado != "SI"
                          select new { r.idRobot }).FirstOrDefault().idRobot;
 
@@ -63,7 +63,7 @@ namespace CapaDatos
         {
             try
             {
-                TblSeguidorLego lab1 = bd.TblSeguidorLego.First(r => r.idBatalla_SeguidorLego == id);
+                TblSeguidorLego lab1 = bd.TblSeguidorLegos.First(r => r.idBatalla_SeguidorLego == id);
                 lab1.estado = estado;
                 bd.SubmitChanges();
                 return true;
@@ -79,7 +79,7 @@ namespace CapaDatos
         {
             try
             {
-                string rob1 = (from r in bd.TblSeguidorLego
+                string rob1 = (from r in bd.TblSeguidorLegos
                                where r.estado != "SI"
                                select new { r.TblRobot.nomRobot }).FirstOrDefault().nomRobot;
 
@@ -94,9 +94,9 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblSeguidorLego
+                int a = (from r in bd.TblSeguidorLegos
                          select new { r.idRobot }).FirstOrDefault().idRobot;
-                string rob1 = (from r in bd.TblRobot
+                string rob1 = (from r in bd.TblRobots
                                where r.idRobot == a
                                select new { r.TblEquipo.nomEquipo }).FirstOrDefault().nomEquipo;
                 return rob1;
@@ -113,7 +113,7 @@ namespace CapaDatos
             try
             {
                 TblSeguidorLego seguidor = new TblSeguidorLego { idRobot = robot1, estado = "NO" };
-                bd.TblSeguidorLego.InsertOnSubmit(seguidor);
+                bd.TblSeguidorLegos.InsertOnSubmit(seguidor);
                 bd.SubmitChanges();
                 return true;
             }
@@ -127,7 +127,7 @@ namespace CapaDatos
         {
             try
             {
-                int a = (from r in bd.TblSeguidorLego
+                int a = (from r in bd.TblSeguidorLegos
                          where r.estado != "SI"
                          select new { r.idBatalla_SeguidorLego }).FirstOrDefault().idBatalla_SeguidorLego;
 

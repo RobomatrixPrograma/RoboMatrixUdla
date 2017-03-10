@@ -14,7 +14,7 @@ namespace CapaDatos
         {
             try
             {
-                var Cat = from c in bd.TblCategoria
+                var Cat = from c in bd.TblCategorias
                           select new
                           {
                               c.idCat,
@@ -33,7 +33,7 @@ namespace CapaDatos
         {
             try
             {
-                var Cat = from c in bd.TblCategoria
+                var Cat = from c in bd.TblCategorias
                           where c.tipoCat == opcion
                           select new
                           {
@@ -53,7 +53,7 @@ namespace CapaDatos
         {
             try
             {
-                var cat1 = (from c in bd.TblCategoria
+                var cat1 = (from c in bd.TblCategorias
                             where c.idCat == idCategoria
                             select new { c.nomCat }).FirstOrDefault().nomCat.ToString();
                 return cat1;

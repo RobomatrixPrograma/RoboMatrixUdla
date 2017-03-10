@@ -13,6 +13,7 @@ namespace CapaDatos
         {
             try
             {
+
                 var rob1 = from r in bd.TblResultadoMinisumo
                            select new
                            {
