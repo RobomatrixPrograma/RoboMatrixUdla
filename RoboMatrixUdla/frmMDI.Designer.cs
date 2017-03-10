@@ -186,6 +186,7 @@
             this.dronToolStripMenuItem.Name = "dronToolStripMenuItem";
             this.dronToolStripMenuItem.Size = new System.Drawing.Size(45, 20);
             this.dronToolStripMenuItem.Text = "Dron";
+            this.dronToolStripMenuItem.Click += new System.EventHandler(this.dronToolStripMenuItem_Click);
             // 
             // frmMDI
             // 

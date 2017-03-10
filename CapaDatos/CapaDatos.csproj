@@ -42,7 +42,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="clsConexion.cs" />
+    <Compile Include="clsDDron.cs" />
     <Compile Include="clsDLaberinto.cs" />
+    <Compile Include="clsDPuntajeDron.cs" />
     <Compile Include="clsDPuntajeLaberinto.cs" />
     <Compile Include="clsDPuntajeSeguidorLinea.cs" />
     <Compile Include="clsDPuntajeSeguidorLego.cs" />

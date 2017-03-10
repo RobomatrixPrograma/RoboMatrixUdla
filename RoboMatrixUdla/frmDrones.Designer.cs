@@ -39,19 +39,20 @@
             this.dgvPuntajes = new System.Windows.Forms.DataGridView();
             this.dgvLista = new System.Windows.Forms.DataGridView();
             this.lblPuntaje = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
+            this.txtPuntaje = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPuntajes)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).BeginInit();
             this.SuspendLayout();
             // 
             // btnEnviarTiempo
             // 
-            this.btnEnviarTiempo.Location = new System.Drawing.Point(311, 303);
+            this.btnEnviarTiempo.Location = new System.Drawing.Point(311, 266);
             this.btnEnviarTiempo.Name = "btnEnviarTiempo";
             this.btnEnviarTiempo.Size = new System.Drawing.Size(117, 23);
             this.btnEnviarTiempo.TabIndex = 25;
             this.btnEnviarTiempo.Text = "Enviar Tiempo";
             this.btnEnviarTiempo.UseVisualStyleBackColor = true;
+            this.btnEnviarTiempo.Click += new System.EventHandler(this.btnEnviarTiempo_Click);
             // 
             // btnNuevoParticipante
             // 
@@ -61,6 +62,7 @@
             this.btnNuevoParticipante.TabIndex = 24;
             this.btnNuevoParticipante.Text = "Nuevo Participante";
             this.btnNuevoParticipante.UseVisualStyleBackColor = true;
+            this.btnNuevoParticipante.Click += new System.EventHandler(this.btnNuevoParticipante_Click);
             // 
             // txtTiempo
             // 
@@ -137,21 +139,19 @@
             this.lblPuntaje.TabIndex = 26;
             this.lblPuntaje.Text = "Puntaje";
             // 
-            // label1
+            // txtPuntaje
             // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(283, 266);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(35, 13);
-            this.label1.TabIndex = 27;
-            this.label1.Text = "label1";
+            this.txtPuntaje.Location = new System.Drawing.Point(367, 224);
+            this.txtPuntaje.Name = "txtPuntaje";
+            this.txtPuntaje.Size = new System.Drawing.Size(100, 20);
+            this.txtPuntaje.TabIndex = 27;
             // 
             // frmDrones
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1040, 483);
-            this.Controls.Add(this.label1);
+            this.Controls.Add(this.txtPuntaje);
             this.Controls.Add(this.lblPuntaje);
             this.Controls.Add(this.btnEnviarTiempo);
             this.Controls.Add(this.btnNuevoParticipante);
@@ -165,6 +165,7 @@
             this.Controls.Add(this.dgvLista);
             this.Name = "frmDrones";
             this.Text = "Drones";
+            this.Load += new System.EventHandler(this.frmDrones_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPuntajes)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvLista)).EndInit();
             this.ResumeLayout(false);
@@ -185,6 +186,6 @@
         private System.Windows.Forms.DataGridView dgvPuntajes;
         private System.Windows.Forms.DataGridView dgvLista;
         private System.Windows.Forms.Label lblPuntaje;
-        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.TextBox txtPuntaje;
     }
 }

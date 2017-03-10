@@ -14,7 +14,7 @@ namespace CapaDatos
             try
             {
 
-                var rob1 = from r in bd.TblResultadoMinisumo
+                var rob1 = from r in bd.TblResultadoMinisumos
                            select new
                            {
                                Robot_Ganador = r.TblRobot.nomRobot,
@@ -36,7 +36,7 @@ namespace CapaDatos
             try
             {
                 TblResultadoMinisumo puntaje = new TblResultadoMinisumo { idBatalla = idBatalla, puntosUno = puntaje1, puntosDos = puntaje2, idGanador = ganador };
-                bd.TblResultadoMinisumo.InsertOnSubmit(puntaje);
+                bd.TblResultadoMinisumos.InsertOnSubmit(puntaje);
                 bd.SubmitChanges();
                 return true;
             }
