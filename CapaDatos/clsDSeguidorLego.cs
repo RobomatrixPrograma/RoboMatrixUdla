@@ -15,7 +15,7 @@ namespace CapaDatos
             {
                 var rob1 = from r in bd.TblSeguidorLegos
                            where r.estado != "SI"
-                           select new { r.idRobot, r.TblRobot.nomRobot };
+                           select new { Código_Robot = r.idRobot, Nombre_Robot=r.TblRobot.nomRobot };
                 return rob1;
             }
             catch

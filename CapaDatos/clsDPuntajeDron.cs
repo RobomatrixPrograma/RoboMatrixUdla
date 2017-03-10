@@ -14,7 +14,8 @@ namespace CapaDatos
             try
             {
                 var rob1 = from r in bd.TblPuntajeDrones
-                           select new { r.TblDrone.TblRobot.nomRobot, r.puntaje, r.tiempo1 };
+                           orderby r.puntaje
+                           select new { Nombre_Robot=r.TblDrone.TblRobot.nomRobot, Puntaje=r.puntaje, Tiempo=r.tiempo1 };
                 return rob1;
             }
             catch
