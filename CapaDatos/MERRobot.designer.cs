@@ -23,7 +23,7 @@ namespace CapaDatos
 	
 	
 	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="dbRoboMatrixUdla")]
-	public partial class MERRobotDataContext : System.Data.Linq.DataContext
+	public partial class MERRobotsDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -83,31 +83,31 @@ namespace CapaDatos
     partial void DeleteTbPuntajeSeguidorLego(TbPuntajeSeguidorLego instance);
     #endregion
 		
-		public MERRobotDataContext() : 
+		public MERRobotsDataContext() : 
 				base(global::CapaDatos.Properties.Settings.Default.dbRoboMatrixUdlaConnectionString1, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public MERRobotDataContext(string connection) : 
+		public MERRobotsDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public MERRobotDataContext(System.Data.IDbConnection connection) : 
+		public MERRobotsDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public MERRobotDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public MERRobotsDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public MERRobotDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public MERRobotsDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -866,7 +866,7 @@ namespace CapaDatos
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imgEquipo", DbType="Image", UpdateCheck=UpdateCheck.Never)]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_imgEquipo", DbType="Image", CanBeNull=true, UpdateCheck=UpdateCheck.Never)]
 		public System.Data.Linq.Binary imgEquipo
 		{
 			get

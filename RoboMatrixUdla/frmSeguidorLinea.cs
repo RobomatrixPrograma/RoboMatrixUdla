@@ -21,6 +21,7 @@ namespace RoboMatrixUdla
         DataSet ds = new DataSet();
         int a = 0;
         int id = 0;
+        int idBatallla = 0;
         private void consultaLista()
         {
             dgvLista.DataSource = N_objSeguidor.N_consultaLista();
@@ -43,11 +44,11 @@ namespace RoboMatrixUdla
             try
             {
                 id = N_objSeguidor.N_consultaListaID();
-                int idBatallla = N_objSeguidor.N_consultaListaIDBatalla();
+                idBatallla = N_objSeguidor.N_consultaListaIDBatalla();
                 MessageBox.Show("Participante " + N_objSeguidor.N_consultaListaParticipante() + " listo para comenzar");
                 lblCambiarNombre.Text = N_objSeguidor.N_consultaListaParticipante();
                 lblCambiarEquipo.Text = N_objSeguidor.N_consultaListaParticipante2();
-                if (!(N_objSeguidor.actualizarEstado(id)))
+                if (!(N_objSeguidor.actualizarEstado(idBatallla)))
                 {
                     MessageBox.Show("FALLA EN EL INGRESO DEL PARTICIPANTE");
                 }
@@ -79,7 +80,7 @@ namespace RoboMatrixUdla
                 else if (a == 3)
                 {
                     lblTiempo3.Text = txtTiempo.Text;
-                    if (N_objPuntajeSeguidor.N_IngresarPuntaje(id, decimal.Parse(lblTiempo1.Text), decimal.Parse(lblTiempo2.Text), decimal.Parse(lblTiempo3.Text)))
+                    if (N_objPuntajeSeguidor.N_IngresarPuntaje(idBatallla, decimal.Parse(lblTiempo1.Text), decimal.Parse(lblTiempo2.Text), decimal.Parse(lblTiempo3.Text)))
                     {
                         MessageBox.Show("PUNTAJE GUARDADO");
                     }

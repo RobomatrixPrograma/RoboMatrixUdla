@@ -1,4 +1,4 @@
-﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbRoboMatrixUdla" Class="DataClasses1DataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="dbRoboMatrixUdla" Class="MERRobotsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
   <Connection Mode="AppSettings" ConnectionString="Data Source=JUANMAVIANA;Initial Catalog=dbRoboMatrixUdla;Integrated Security=True" SettingsObjectName="CapaDatos.Properties.Settings" SettingsPropertyName="dbRoboMatrixUdlaConnectionString1" Provider="System.Data.SqlClient" />
   <Table Name="dbo.TblCategoria" Member="TblCategoria">
     <Type Name="TblCategoria">

@@ -17,6 +17,7 @@ namespace RoboMatrixUdla
         DataSet ds = new DataSet();
         int a = 0;
         int id = 0;
+        int idBatallla = 0;
         public frmLaberinto()
         {
             InitializeComponent();
@@ -48,7 +49,7 @@ namespace RoboMatrixUdla
             else if( a==3)
             {
                 lblTiempo3.Text = txtTiempo.Text;
-                if (N_objPuntajeLaberinto.N_IngresarPuntaje(id, decimal.Parse(lblTiempo1.Text), decimal.Parse(lblTiempo2.Text), decimal.Parse(lblTiempo3.Text)))
+                if (N_objPuntajeLaberinto.N_IngresarPuntaje(idBatallla, decimal.Parse(lblTiempo1.Text), decimal.Parse(lblTiempo2.Text), decimal.Parse(lblTiempo3.Text)))
                 {
                     MessageBox.Show("PUNTAJE GUARDADO");
                 }
@@ -81,11 +82,11 @@ namespace RoboMatrixUdla
             try
             {
                 id = N_objLaberinto.N_consultaListaID();
-                int idBatallla = N_objLaberinto.N_consultaListaIDBatalla();
+                idBatallla = N_objLaberinto.N_consultaListaIDBatalla();
                 MessageBox.Show("Participante " + N_objLaberinto.N_consultaListaParticipante() + " listo para comenzar");
                 lblCambiarNombre.Text = N_objLaberinto.N_consultaListaParticipante();
                 lblCambiarEquipo.Text = N_objLaberinto.N_consultaListaParticipante2();
-                if (!(N_objLaberinto.actualizarEstado(id)))
+                if (!(N_objLaberinto.actualizarEstado(idBatallla)))
                 {
                     MessageBox.Show("FALLA EN EL INGRESO DEL PARTICIPANTE");
                 }

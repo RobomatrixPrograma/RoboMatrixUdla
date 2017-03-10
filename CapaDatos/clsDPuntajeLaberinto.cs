@@ -8,7 +8,7 @@ namespace CapaDatos
 {
     public class clsDPuntajeLaberinto
     {
-        MERRobotDataContext bd = new MERRobotDataContext();
+        MERRobotsDataContext bd = new MERRobotsDataContext();
         public bool D_ingresarPuntaje(int id, decimal t1, decimal t2, decimal t3, decimal mejor)
         {
             try

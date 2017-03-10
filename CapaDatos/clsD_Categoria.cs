@@ -8,7 +8,7 @@ namespace CapaDatos
 {
     public class clsD_Categoria
     {
-        MERRobotDataContext bd = new MERRobotDataContext();
+        MERRobotsDataContext bd = new MERRobotsDataContext();
 
         public object D_consultaCategoria()
         {

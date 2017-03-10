@@ -8,7 +8,7 @@ namespace CapaDatos
 {
     public class clsDLaberinto
     {
-        MERRobotDataContext bd = new MERRobotDataContext();
+        MERRobotsDataContext bd = new MERRobotsDataContext();
         public object D_consultaLista()
         {
             try

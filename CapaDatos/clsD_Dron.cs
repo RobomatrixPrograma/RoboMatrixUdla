@@ -8,10 +8,9 @@ namespace CapaDatos
 {
     public class clsD_Dron
     {
-        MERRobotDataContext bd = new MERRobotDataContext();
+        MERRobotsDataContext bd = new MERRobotsDataContext();
         public bool ingresarOrden(int robot1)
         {
-
             try
             {
                 TblDrones dron = new TblDrones { idRobot = robot1 };
