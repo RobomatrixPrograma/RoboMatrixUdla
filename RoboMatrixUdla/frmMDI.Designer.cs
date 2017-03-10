@@ -153,6 +153,7 @@
             this.megasumoToolStripMenuItem.Name = "megasumoToolStripMenuItem";
             this.megasumoToolStripMenuItem.Size = new System.Drawing.Size(79, 20);
             this.megasumoToolStripMenuItem.Text = "Megasumo";
+            this.megasumoToolStripMenuItem.Click += new System.EventHandler(this.megasumoToolStripMenuItem_Click);
             // 
             // legosumoToolStripMenuItem
             // 

@@ -77,6 +77,7 @@
             this.btnTerminar.TabIndex = 23;
             this.btnTerminar.Text = "Terminar Batalla";
             this.btnTerminar.UseVisualStyleBackColor = true;
+            this.btnTerminar.Click += new System.EventHandler(this.btnTerminar_Click);
             // 
             // btnSiguiente
             // 
@@ -86,6 +87,7 @@
             this.btnSiguiente.TabIndex = 22;
             this.btnSiguiente.Text = "Siguiente Batalla";
             this.btnSiguiente.UseVisualStyleBackColor = true;
+            this.btnSiguiente.Click += new System.EventHandler(this.btnSiguiente_Click);
             // 
             // lblVs
             // 
@@ -200,6 +202,7 @@
             this.Controls.Add(this.dgvParticipantes);
             this.Name = "frmMegasumo";
             this.Text = "Megasumo";
+            this.Load += new System.EventHandler(this.frmMegasumo_Load);
             ((System.ComponentModel.ISupportInitialize)(this.nudRobot1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.nudRobot2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.dgvResultados)).EndInit();

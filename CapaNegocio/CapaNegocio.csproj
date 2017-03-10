@@ -51,8 +51,10 @@
     <Compile Include="clsN_Categoria.cs" />
     <Compile Include="clsN_Equipo.cs" />
     <Compile Include="clsNRobot.cs" />
+    <Compile Include="clsN_Megasumo.cs" />
     <Compile Include="clsN_Minisumo.cs" />
     <Compile Include="clsN_OrdenLlaves.cs" />
+    <Compile Include="clsN_ResultadoMegasumo.cs" />
     <Compile Include="clsN_ResultadoMinisumo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

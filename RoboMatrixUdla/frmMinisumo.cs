@@ -97,7 +97,7 @@ namespace RoboMatrixUdla
                 string nom1 = N_Robot.N_ConsultaNombre(robot1);
                 string nom2 = N_Robot.N_ConsultaNombre(robot2);
                 string equi1 = N_Robot.N_ConsultaEquipo(robot1);
-                string equi2 = N_Robot.N_ConsultaEquipo(robot1);
+                string equi2 = N_Robot.N_ConsultaEquipo(robot2);
                 MessageBox.Show("Siguiente Batalla: " + nom1 + " vs " + nom2);
                 lblRobot1.Text = nom1;
                 lblRobot2.Text = nom2;

@@ -4,7 +4,6 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using CapaDatos;
-
 namespace CapaNegocio
 {
     public class clsN_Megasumo
@@ -13,7 +12,7 @@ namespace CapaNegocio
         public int idBatalla { get; set; }
         public int idRobot1 { get; set; }
         public int idRobot2 { get; set; }
-        public string  estado { get; set; }
+        public string estado { get; set; }
 
         public int N_ConsultaIdBatalla()
         {
@@ -31,7 +30,7 @@ namespace CapaNegocio
             idBatalla = idB;
             return D_Megasumo.D_consultaRobot2(idBatalla);
         }
-        
+
         public bool actualizarEstado(int idB)
         {
             idBatalla = idB;
