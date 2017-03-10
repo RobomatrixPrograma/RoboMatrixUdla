@@ -29,6 +29,8 @@ namespace RoboMatrixUdla
         private void consultaPuntajes()
         {
             dgvPuntajes.DataSource = N_objPuntajeDron.N_consultaLista();
+            dgvPuntajes.Columns[1].DefaultCellStyle.BackColor = Color.GreenYellow;
+            dgvPuntajes.ClearSelection();
 
         }
 

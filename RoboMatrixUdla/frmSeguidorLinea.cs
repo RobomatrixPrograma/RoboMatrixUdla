@@ -25,12 +25,14 @@ namespace RoboMatrixUdla
         private void consultaLista()
         {
             dgvLista.DataSource = N_objSeguidor.N_consultaLista();
+            dgvLista.ClearSelection();
 
         }
         private void consultaPuntajes()
         {
             dgvPuntajes.DataSource = N_objPuntajeSeguidor.N_consultaLista();
-
+            dgvPuntajes.Columns[1].DefaultCellStyle.BackColor = Color.GreenYellow;
+            dgvPuntajes.ClearSelection();
         }
         private void frmSeguidorLinea_Load(object sender, EventArgs e)
         {
