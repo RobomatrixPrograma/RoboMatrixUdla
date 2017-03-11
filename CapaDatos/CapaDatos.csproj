@@ -58,6 +58,7 @@
     <Compile Include="clsD_Megasumo.cs" />
     <Compile Include="clsD_Minisumo.cs" />
     <Compile Include="clsD_ResultadosLegosumo.cs" />
+    <Compile Include="clsD_ResultadosMegasumo.cs" />
     <Compile Include="clsD_ResultadosMinisumo.cs" />
     <Compile Include="clsD_SeguidorLinea.cs" />
     <Compile Include="clsD_SumoLego.cs" />
