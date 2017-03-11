@@ -30,6 +30,8 @@ namespace RoboMatrixUdla
         private void consultaPuntajes()
         {
             dgvPuntajes.DataSource = N_objPuntajeLaberinto.N_consultaLista();
+            dgvPuntajes.Columns[1].DefaultCellStyle.BackColor = Color.GreenYellow;
+            dgvPuntajes.ClearSelection();
 
         }
         private void btnEnviarTiempo_Click(object sender, EventArgs e)

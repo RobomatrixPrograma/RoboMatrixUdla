@@ -46,6 +46,7 @@
             // 
             // btnEnviarTiempo
             // 
+            this.btnEnviarTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEnviarTiempo.Location = new System.Drawing.Point(311, 266);
             this.btnEnviarTiempo.Name = "btnEnviarTiempo";
             this.btnEnviarTiempo.Size = new System.Drawing.Size(117, 23);
@@ -56,6 +57,7 @@
             // 
             // btnNuevoParticipante
             // 
+            this.btnNuevoParticipante.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnNuevoParticipante.Location = new System.Drawing.Point(311, 47);
             this.btnNuevoParticipante.Name = "btnNuevoParticipante";
             this.btnNuevoParticipante.Size = new System.Drawing.Size(117, 23);
@@ -66,56 +68,63 @@
             // 
             // txtTiempo
             // 
+            this.txtTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtTiempo.Location = new System.Drawing.Point(367, 177);
             this.txtTiempo.Name = "txtTiempo";
-            this.txtTiempo.Size = new System.Drawing.Size(100, 20);
+            this.txtTiempo.Size = new System.Drawing.Size(100, 23);
             this.txtTiempo.TabIndex = 23;
             // 
             // lblCambiarEquipo
             // 
             this.lblCambiarEquipo.AutoSize = true;
+            this.lblCambiarEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCambiarEquipo.Location = new System.Drawing.Point(364, 137);
             this.lblCambiarEquipo.Name = "lblCambiarEquipo";
-            this.lblCambiarEquipo.Size = new System.Drawing.Size(0, 13);
+            this.lblCambiarEquipo.Size = new System.Drawing.Size(0, 17);
             this.lblCambiarEquipo.TabIndex = 22;
             // 
             // lblCambiarNombre
             // 
             this.lblCambiarNombre.AutoSize = true;
+            this.lblCambiarNombre.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblCambiarNombre.Location = new System.Drawing.Point(365, 97);
             this.lblCambiarNombre.Name = "lblCambiarNombre";
-            this.lblCambiarNombre.Size = new System.Drawing.Size(0, 13);
+            this.lblCambiarNombre.Size = new System.Drawing.Size(0, 17);
             this.lblCambiarNombre.TabIndex = 21;
             // 
             // lblTiempo
             // 
             this.lblTiempo.AutoSize = true;
+            this.lblTiempo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTiempo.Location = new System.Drawing.Point(280, 180);
             this.lblTiempo.Name = "lblTiempo";
-            this.lblTiempo.Size = new System.Drawing.Size(45, 13);
+            this.lblTiempo.Size = new System.Drawing.Size(59, 17);
             this.lblTiempo.TabIndex = 20;
             this.lblTiempo.Text = "Tiempo:";
             // 
             // lblEquipo
             // 
             this.lblEquipo.AutoSize = true;
+            this.lblEquipo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblEquipo.Location = new System.Drawing.Point(280, 137);
             this.lblEquipo.Name = "lblEquipo";
-            this.lblEquipo.Size = new System.Drawing.Size(43, 13);
+            this.lblEquipo.Size = new System.Drawing.Size(56, 17);
             this.lblEquipo.TabIndex = 19;
             this.lblEquipo.Text = "Equipo:";
             // 
             // lblRobot
             // 
             this.lblRobot.AutoSize = true;
+            this.lblRobot.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblRobot.Location = new System.Drawing.Point(280, 97);
             this.lblRobot.Name = "lblRobot";
-            this.lblRobot.Size = new System.Drawing.Size(39, 13);
+            this.lblRobot.Size = new System.Drawing.Size(50, 17);
             this.lblRobot.TabIndex = 18;
             this.lblRobot.Text = "Robot:";
             // 
             // dgvPuntajes
             // 
+            this.dgvPuntajes.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvPuntajes.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvPuntajes.Location = new System.Drawing.Point(483, 12);
             this.dgvPuntajes.Name = "dgvPuntajes";
@@ -124,6 +133,7 @@
             // 
             // dgvLista
             // 
+            this.dgvLista.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.ColumnHeader;
             this.dgvLista.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvLista.Location = new System.Drawing.Point(12, 12);
             this.dgvLista.Name = "dgvLista";
@@ -133,17 +143,19 @@
             // lblPuntaje
             // 
             this.lblPuntaje.AutoSize = true;
+            this.lblPuntaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblPuntaje.Location = new System.Drawing.Point(280, 227);
             this.lblPuntaje.Name = "lblPuntaje";
-            this.lblPuntaje.Size = new System.Drawing.Size(43, 13);
+            this.lblPuntaje.Size = new System.Drawing.Size(56, 17);
             this.lblPuntaje.TabIndex = 26;
             this.lblPuntaje.Text = "Puntaje";
             // 
             // txtPuntaje
             // 
+            this.txtPuntaje.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtPuntaje.Location = new System.Drawing.Point(367, 224);
             this.txtPuntaje.Name = "txtPuntaje";
-            this.txtPuntaje.Size = new System.Drawing.Size(100, 20);
+            this.txtPuntaje.Size = new System.Drawing.Size(100, 23);
             this.txtPuntaje.TabIndex = 27;
             // 
             // frmDrones

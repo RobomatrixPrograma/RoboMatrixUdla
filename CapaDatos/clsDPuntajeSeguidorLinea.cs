@@ -14,7 +14,8 @@ namespace CapaDatos
             try
             {
                 var rob1 = from r in bd.TblPuntajeSeguidorLineas
-                           select new { r.TblSeguidorLinea.TblRobot.nomRobot, r.mejorTiempo, r.tiempo1, r.tiempo2, r.tiempo3 };
+                           orderby r.mejorTiempo
+                           select new { Nombre_Robot=r.TblSeguidorLinea.TblRobot.nomRobot, Mejor_tiempo = r.mejorTiempo, Tiempo_1 = r.tiempo1, Tiempo_2 = r.tiempo2, Tiempo_3 = r.tiempo3 };
                 return rob1;
             }
             catch
