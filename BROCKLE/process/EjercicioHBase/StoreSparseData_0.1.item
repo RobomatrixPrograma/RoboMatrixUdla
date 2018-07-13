@@ -121,7 +121,7 @@
     <elementParameter field="HADOOP_DISTRIBUTION" name="HBASE" value=""/>
     <elementParameter field="HADOOP_JARS_DIALOG" name="HADOOP_CUSTOM_JARS" value="" show="false"/>
     <elementParameter field="CLOSED_LIST" name="HADOOP_CUSTOM_VERSION" value="HADOOP_1" show="false"/>
-    <elementParameter field="TEXT" name="ZOOKEEPER_QUORUM" value=" &quot;ClusterCDH54&quot;"/>
+    <elementParameter field="TEXT" name="ZOOKEEPER_QUORUM" value=" &quot;localhost&quot;"/>
     <elementParameter field="TEXT" name="ZOOKEEPER_CLIENT_PORT" value="&quot;2181&quot;"/>
     <elementParameter field="CHECK" name="SET_ZNODE_PARENT" value="false"/>
     <elementParameter field="TEXT" name="ZNODE_PARENT" value="&quot;&quot;" show="false"/>
