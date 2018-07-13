@@ -6,7 +6,7 @@
     <parameters xmi:id="_-ufrM4bREeigN5tKlZEqhQ" key="CONN_PARA_KEY_RESOURCEMANAGER_SCHEDULER_ADDRESS" value="10.10.130.160:8030"/>
     <parameters xmi:id="_-ufrNIbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_USE_CUSTOM_CONFS" value="true"/>
     <parameters xmi:id="_-ufrNYbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_NAME_NODE_URL" value="hdfs://10.10.130.160:8020"/>
-    <parameters xmi:id="_-ufrNobREeigN5tKlZEqhQ" key="CONN_PARA_KEY_USERNAME" value="cloudera"/>
+    <parameters xmi:id="_-ufrNobREeigN5tKlZEqhQ" key="CONN_PARA_KEY_USERNAME" value="hdfs"/>
     <parameters xmi:id="_-ufrN4bREeigN5tKlZEqhQ" key="CONN_PARA_KEY_HADOOP_CLUSTER_ID" value="_b8cBgIbREeigN5tKlZEqhQ"/>
     <parameters xmi:id="_-ufrOIbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_JOB_HISTORY_PRINCIPAL" value="mapred/_HOST@EXAMPLE.COM"/>
     <parameters xmi:id="_-ufrOYbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_HBASE_VERSION" value="Cloudera_CDH5_10"/>
@@ -15,7 +15,7 @@
     <parameters xmi:id="_-ufrPIbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_HIVE_VERSION" value="Cloudera_CDH5_10"/>
     <parameters xmi:id="_-ufrPYbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_HBASE_ZNODE_PARENT" value="/hbase"/>
     <parameters xmi:id="_-ufrPobREeigN5tKlZEqhQ" key="CONN_PARA_KEY_USE_DATANODE_HOSTNAME" value="true"/>
-    <parameters xmi:id="_-ufrP4bREeigN5tKlZEqhQ" key="CONN_PARA_KEY_DB_SERVER" value="quickstart.cloudera"/>
+    <parameters xmi:id="_-ufrP4bREeigN5tKlZEqhQ" key="CONN_PARA_KEY_DB_SERVER" value="10.10.130.160"/>
     <parameters xmi:id="_-ufrQIbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_DB_TYPE" value="HBase"/>
     <parameters xmi:id="_-ufrQYbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_MAPRDB_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
     <parameters xmi:id="_-ufrQobREeigN5tKlZEqhQ" key="CONN_PARA_KEY_JOB_TRACKER_PRINCIPAL" value="yarn/_HOST@EXAMPLE.COM"/>
@@ -30,6 +30,7 @@
     <parameters xmi:id="_-ufrS4bREeigN5tKlZEqhQ" key="CONN_PARA_KEY_HIVE_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
     <parameters xmi:id="_-ufrTIbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_HBASE_SET_ZNODE_PARENT" value="true"/>
     <parameters xmi:id="_-ufrTYbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_HBASE_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
+    <parameters xmi:id="_ibNw4IbTEeigN5tKlZEqhQ" key="CONN_PARA_KEY_HADOOP_CUSTOM_JARS"/>
   </TalendMetadata:DatabaseConnection>
   <orgomg.cwm.resource.relational:Catalog xmi:id="_-ufrTobREeigN5tKlZEqhQ" name="HBase" dataManager="_-ufrMIbREeigN5tKlZEqhQ"/>
 </xmi:XMI>
