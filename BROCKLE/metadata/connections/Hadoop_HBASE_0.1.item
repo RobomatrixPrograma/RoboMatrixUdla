@@ -30,6 +30,7 @@
     <parameters xmi:id="_AmMlG4YUEeiXOPOaMXNA9w" key="CONN_PARA_KEY_HIVE_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
     <parameters xmi:id="_AmMlHIYUEeiXOPOaMXNA9w" key="CONN_PARA_KEY_HBASE_SET_ZNODE_PARENT" value="true"/>
     <parameters xmi:id="_AmMlHYYUEeiXOPOaMXNA9w" key="CONN_PARA_KEY_HBASE_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
+    <parameters xmi:id="_RIkrwIbQEeigN5tKlZEqhQ" key="CONN_PARA_KEY_HADOOP_CUSTOM_JARS"/>
   </TalendMetadata:DatabaseConnection>
   <orgomg.cwm.resource.relational:Catalog xmi:id="_AmNMEIYUEeiXOPOaMXNA9w" name="HBase" dataManager="_AmMlAIYUEeiXOPOaMXNA9w"/>
 </xmi:XMI>
