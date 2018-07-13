@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<talendfile:ContextType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" xmi:id="_D2LHwIazEeialsRbw8BQgw" confirmationNeeded="false" name="Default">
+  <contextParameter xmi:id="_D2LHwYazEeialsRbw8BQgw" comment="" name="pathName" prompt="pathName?" promptNeeded="false" type="id_String" value="&quot;C:/Users/kruger/Documents/Practica_HBASE/&quot;"/>
+</talendfile:ContextType>
