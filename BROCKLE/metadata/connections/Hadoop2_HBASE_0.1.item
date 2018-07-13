@@ -1,6 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:TalendMetadata="http://www.talend.org/metadata/connection/2010" xmlns:orgomg.cwm.resource.relational="http:///orgomg/cwm/resource/relational.ecore">
-  <TalendMetadata:DatabaseConnection xmi:id="_-ufrMIbREeigN5tKlZEqhQ" dataPackage="_-ufrTobREeigN5tKlZEqhQ" DatabaseType="HBase" Port="2181" Username="cloudera" ServerName="quickstart.cloudera" SID="HBase" DbmsId="mysql_id" ProductId="HBASE">
+  <TalendMetadata:DatabaseConnection xmi:id="_-ufrMIbREeigN5tKlZEqhQ" name="Hadoop2_HBASE" id="_-qxo0IbREeigN5tKlZEqhQ" label="Hadoop2_HBASE" dataPackage="_-ufrTobREeigN5tKlZEqhQ" DatabaseType="HBase" URL="127.0.0.1" Port="2181" Username="cloudera" Password="" ServerName="10.10.130.160" SID="HBase" SqlSynthax="Sintaxis SQL" DbmsId="mysql_id" ProductId="HBASE" StandardSQL="true">
+    <taggedValue xmi:id="_kRVdoIbWEeigN5tKlZEqhQ" tag="Is Conn Need Reload" value="false"/>
+    <taggedValue xmi:id="_mFY1MIbWEeigN5tKlZEqhQ" tag="Status" value=""/>
+    <taggedValue xmi:id="_mFY1MYbWEeigN5tKlZEqhQ" tag="Version" value="0.1"/>
+    <taggedValue xmi:id="_mFY1MobWEeigN5tKlZEqhQ" tag="Purpose" value=""/>
+    <taggedValue xmi:id="_mFY1M4bWEeigN5tKlZEqhQ" tag="Description" value=""/>
+    <taggedValue xmi:id="_mFY1NIbWEeigN5tKlZEqhQ" tag="Author" value=""/>
+    <taggedValue xmi:id="_mFY1NYbWEeigN5tKlZEqhQ" tag="otherParameter"/>
     <parameters xmi:id="_-ufrMYbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_DB_PORT" value="2181"/>
     <parameters xmi:id="_-ufrMobREeigN5tKlZEqhQ" key="CONN_PARA_KEY_USE_YARN" value="true"/>
     <parameters xmi:id="_-ufrM4bREeigN5tKlZEqhQ" key="CONN_PARA_KEY_RESOURCEMANAGER_SCHEDULER_ADDRESS" value="10.10.130.160:8030"/>
@@ -31,6 +38,7 @@
     <parameters xmi:id="_-ufrTIbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_HBASE_SET_ZNODE_PARENT" value="true"/>
     <parameters xmi:id="_-ufrTYbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_HBASE_AUTHENTICATION_USE_MAPRTICKET" value="false"/>
     <parameters xmi:id="_ibNw4IbTEeigN5tKlZEqhQ" key="CONN_PARA_KEY_HADOOP_CUSTOM_JARS"/>
+    <parameters xmi:id="_kPcAMIbWEeigN5tKlZEqhQ" key="CONN_PARA_KEY_MAPRDB_TABLE_NS_MAPPING" value=""/>
   </TalendMetadata:DatabaseConnection>
   <orgomg.cwm.resource.relational:Catalog xmi:id="_-ufrTobREeigN5tKlZEqhQ" name="HBase" dataManager="_-ufrMIbREeigN5tKlZEqhQ"/>
 </xmi:XMI>
