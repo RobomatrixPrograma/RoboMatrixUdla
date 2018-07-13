@@ -531,21 +531,19 @@
       <column comment="" key="false" length="2" name="Dec" nullable="true" pattern="&quot;dd-MM-yyyy&quot;" precision="0" type="id_Integer" usefulColumn="true"/>
     </metadata>
   </node>
-  <node componentName="tHBaseClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="192">
+  <node componentName="tHBaseClose" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="256" posY="448">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tHBaseClose_1" show="false"/>
     <elementParameter field="COMPONENT_LIST" name="CONNECTION" value="tHBaseConnection_1"/>
     <elementParameter field="TEXT" name="CONNECTION_FORMAT" value="row"/>
   </node>
   <node componentName="tHBaseConnection" componentVersion="0.102" offsetLabelX="0" offsetLabelY="0" posX="64" posY="96">
     <elementParameter field="TEXT" name="UNIQUE_NAME" value="tHBaseConnection_1" show="false"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:PROPERTY_TYPE" value="REPOSITORY"/>
-    <elementParameter field="TECHNICAL" name="PROPERTY:REPOSITORY_PROPERTY_TYPE" value="_-qxo0IbREeigN5tKlZEqhQ" show="false"/>
     <elementParameter field="CLOSED_LIST" name="DISTRIBUTION" value="CLOUDERA"/>
     <elementParameter field="CLOSED_LIST" name="HBASE_VERSION" value="Cloudera_CDH5_10"/>
     <elementParameter field="HADOOP_DISTRIBUTION" name="HBASE" value=""/>
     <elementParameter field="HADOOP_JARS_DIALOG" name="HADOOP_CUSTOM_JARS" value="" show="false"/>
     <elementParameter field="CLOSED_LIST" name="HADOOP_CUSTOM_VERSION" value="HADOOP_1" show="false"/>
-    <elementParameter field="TEXT" name="ZOOKEEPER_QUORUM" value="&quot;quickstart.cloudera&quot;"/>
+    <elementParameter field="TEXT" name="ZOOKEEPER_QUORUM" value="&quot;10.10.130.160&quot;"/>
     <elementParameter field="TEXT" name="ZOOKEEPER_CLIENT_PORT" value="&quot;2181&quot;"/>
     <elementParameter field="CHECK" name="SET_ZNODE_PARENT" value="true"/>
     <elementParameter field="TEXT" name="ZNODE_PARENT" value="&quot;/hbase&quot;"/>
