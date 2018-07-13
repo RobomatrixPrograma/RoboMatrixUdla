@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <talendfile:ProcessType xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:talendfile="platform:/resource/org.talend.model/model/TalendFile.xsd" defaultContext="Default" jobType="Standard">
   <context confirmationNeeded="false" name="Default">
-    <contextParameter comment="" name="pathName" prompt="pathName?" promptNeeded="false" type="id_String" value="&quot;C:/Users/kruger/Documents/Practica_HBASE/&quot;"/>
-    <contextParameter comment="" name="fileName" prompt="fileName?" promptNeeded="false" type="id_String" value="&quot;HBase_sample&quot;"/>
+    <contextParameter comment="" name="pathName" prompt="pathName?" promptNeeded="false" repositoryContextId="_D1bg4IazEeialsRbw8BQgw" type="id_String" value="&quot;C:/Users/kruger/Documents/Practica_HBASE/&quot;"/>
+    <contextParameter comment="" name="fileName" prompt="fileName?" promptNeeded="false" repositoryContextId="_D1bg4IazEeialsRbw8BQgw" type="id_String" value="&quot;HBase_sample&quot;"/>
   </context>
   <parameters>
     <elementParameter field="TEXT" name="SCREEN_OFFSET_X" value="0" show="false"/>
