@@ -4,7 +4,7 @@
   <parameters xmi:id="_-uo1IobREeigN5tKlZEqhQ" key="CONN_PARA_KEY_RESOURCEMANAGER_SCHEDULER_ADDRESS" value="10.10.130.160:8030"/>
   <parameters xmi:id="_-uo1I4bREeigN5tKlZEqhQ" key="CONN_PARA_KEY_USE_CUSTOM_CONFS" value="true"/>
   <parameters xmi:id="_-uo1JIbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_NAME_NODE_URL" value="hdfs://10.10.130.160:8020"/>
-  <parameters xmi:id="_-uo1JYbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_USERNAME" value="hdfs"/>
+  <parameters xmi:id="_-uo1JYbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_USERNAME" value="cloudera"/>
   <parameters xmi:id="_-uo1JobREeigN5tKlZEqhQ" key="CONN_PARA_KEY_HADOOP_CLUSTER_ID" value="_b8cBgIbREeigN5tKlZEqhQ"/>
   <parameters xmi:id="_-uo1J4bREeigN5tKlZEqhQ" key="CONN_PARA_KEY_JOB_HISTORY_PRINCIPAL" value="mapred/_HOST@EXAMPLE.COM"/>
   <parameters xmi:id="_-uo1KIbREeigN5tKlZEqhQ" key="CONN_PARA_KEY_HBASE_VERSION" value="Cloudera_CDH5_10"/>
